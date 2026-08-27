@@ -178,34 +178,7 @@ export default function ContactBlock() {
           </div>
         </div>
 
-        {/* ── Mapa embebido de Google Maps ──
-            Anclado a las coordenadas reales de LocalBusiness.
-            loading="lazy" para no penalizar el LCP. */}
-        <figure className="mt-10 rounded-2xl overflow-hidden border border-white/10 bg-coal">
-          <iframe
-            title="Ubicación de MISTERRED360 en Google Maps · Las Rozas de Madrid"
-            src="https://www.google.com/maps?q=Las+Rozas+de+Madrid,+28230,+Espa%C3%B1a&output=embed"
-            width="100%"
-            height="260"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
-          <figcaption className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-smoke flex items-center justify-between gap-4">
-            <span>Las Rozas de Madrid</span>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=MISTERRED360+Las+Rozas+de+Madrid"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand hover:text-flame transition-colors"
-            >
-              Ver en Google Maps ↗
-            </a>
-          </figcaption>
-        </figure>
-
-        <div className="mt-12 inline-flex items-center gap-3 rounded-full border border-white/12 px-5 py-3">
+        <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/12 px-5 py-3">
           <span className="w-2 h-2 rounded-full bg-brand animate-blink" aria-hidden="true" />
           <span className="text-[11px] uppercase tracking-[0.22em] text-smoke">
             {t("form.status")}

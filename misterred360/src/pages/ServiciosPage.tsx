@@ -120,10 +120,11 @@ export default function ServiciosPage({
         return (
           <section
             key={block.id}
+            id={block.id}
             ref={(el) => {
               refs.current[block.id] = el;
             }}
-            className={`px-5 md:px-10 xl:px-16 py-20 md:py-28 ${bi % 2 ? "bg-coal/50" : "bg-ink"}`}
+            className={`px-5 md:px-10 xl:px-16 py-20 md:py-28 scroll-mt-32 ${bi % 2 ? "bg-coal/50" : "bg-ink"}`}
           >
             <div className="max-w-[1600px] mx-auto">
               {/* Cabecera del bloque */}
@@ -186,6 +187,12 @@ export default function ServiciosPage({
                             alt={s.imageAlt}
                             className="w-full h-full object-cover object-[center_22%] duotone-red transition-transform duration-700 group-hover:scale-[1.04]"
                             loading="lazy"
+                            onError={(e) => {
+                              const img = e.currentTarget;
+                              if (img.src.includes("chimp-meeting")) {
+                                img.src = img.src.replace("chimp-meeting", "chimp-data");
+                              }
+                            }}
                           />
                           <span
                             className={`absolute top-4 right-4 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white ${
@@ -239,6 +246,52 @@ export default function ServiciosPage({
           </section>
         );
       })}
+
+      {/* ── Precios ── */}
+      <section id="precios" className="relative bg-ink overflow-hidden scroll-mt-32">
+        <div className="absolute inset-0 glow-brand pointer-events-none" aria-hidden="true" />
+        <div className="relative px-5 md:px-10 xl:px-16 py-20 md:py-28 max-w-[1600px] mx-auto">
+          <div className="max-w-2xl mb-14 md:mb-16">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-5">
+              {t("page.srv.pricing.kicker")}
+            </p>
+            <h2 className="font-display font-semibold uppercase leading-[0.97] text-[clamp(2rem,4.4vw,3.8rem)]">
+              {t("page.srv.pricing.title")}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-smoke max-w-xl">
+              {t("page.srv.pricing.desc")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {["web", "estrategia", "gabinete"].map((id, i) => (
+              <motion.div
+                key={id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.7, delay: i * 0.08, ease }}
+                className="group bg-coal border border-white/[0.07] rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-1.5 hover:border-brand/40"
+              >
+                <span className="font-display text-sm text-ash">0{i + 1} —</span>
+                <h3 className="mt-5 font-display font-semibold text-2xl leading-tight text-paper">
+                  {t(`page.srv.pricing.${id}.name`)}
+                </h3>
+                <p className="mt-4 font-display font-semibold text-3xl md:text-4xl text-brand">
+                  {t(`page.srv.pricing.${id}.price`)}
+                </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-smoke flex-1">
+                  {t(`page.srv.pricing.${id}.desc`)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-[13px] leading-relaxed text-ash max-w-2xl">
+            {t("page.srv.pricing.note")}
+          </p>
+        </div>
+      </section>
 
       {/* ── El círculo completo ── */}
       <section className="bg-paper text-ink">

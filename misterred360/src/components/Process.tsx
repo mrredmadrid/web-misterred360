@@ -95,7 +95,7 @@ export default function Process() {
               <span className="text-outline-ink">{t("method.title.b")}</span>
             </h2>
             <p className="mt-5 text-sm md:text-base text-ink/60 max-w-md">
-              Cuatro fases que se van montando una sobre otra hasta cerrar el
+              Cinco fases que se van montando una sobre otra hasta cerrar el
               círculo. Haz scroll para verlas apilarse.
             </p>
           </motion.div>
@@ -149,7 +149,7 @@ export default function Process() {
         {reduce ? (
           <div className="space-y-6">
             {processSteps.map((step, i) => (
-              <StaticCard key={step.index} step={step} index={i} />
+              <StaticCard key={step.index} step={step} index={i} total={processSteps.length} />
             ))}
             <StaticClosingPanel />
           </div>
@@ -197,7 +197,7 @@ export default function Process() {
             {/* Móvil */}
             <div className="md:hidden space-y-6">
               {processSteps.map((step, i) => (
-                <StaticCard key={step.index} step={step} index={i} />
+                <StaticCard key={step.index} step={step} index={i} total={processSteps.length} />
               ))}
               <StaticClosingPanel />
             </div>
@@ -345,9 +345,11 @@ function ClosingBox() {
 function StaticCard({
   step,
   index,
+  total,
 }: {
   step: (typeof import("../lib/data").processSteps)[number];
   index: number;
+  total: number;
 }) {
   return (
     <motion.article
@@ -385,7 +387,7 @@ function StaticCard({
         </div>
 
         <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.24em] text-brand">
-          Fase {index + 1} / 4
+          Fase {index + 1} / {total}
         </p>
         <h3 className="mt-2 font-display font-semibold text-xl leading-tight text-ink break-words">
           {step.title}

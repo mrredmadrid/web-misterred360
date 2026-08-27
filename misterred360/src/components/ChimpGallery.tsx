@@ -44,6 +44,9 @@ export default function ChimpGallery() {
               className="mt-6 md:mt-8 font-display font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-[clamp(2.4rem,5.6vw,5.4rem)]"
               text={t("cast.title")}
             />
+            <p className="mt-6 text-base md:text-lg text-ink/65 leading-relaxed max-w-xl">
+              {t("cast.subtitle")}
+            </p>
           </div>
           <div className="flex items-center gap-3 text-ink/50">
             <MoveHorizontal className="w-5 h-5" />

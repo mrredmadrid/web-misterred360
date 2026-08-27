@@ -16,6 +16,8 @@ export default function Hero({ start }: { start: boolean }) {
     { label: t("hero.chip.prensa"), dot: "bg-brand", pos: "top-[16%] -right-4 md:-right-10", anim: "animate-float" },
     { label: t("hero.chip.branding"), dot: "bg-ocean", pos: "bottom-[30%] -left-4 md:-left-12", anim: "animate-float-delay" },
     { label: t("hero.chip.av"), dot: "bg-brand", pos: "bottom-[8%] right-[12%]", anim: "animate-float" },
+    { label: t("hero.chip.estrategia"), dot: "bg-ocean", pos: "top-[44%] -left-6 md:-left-16", anim: "animate-float" },
+    { label: t("hero.chip.impacto"), dot: "bg-brand", pos: "top-[2%] left-[14%]", anim: "animate-float-delay" },
   ];
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();

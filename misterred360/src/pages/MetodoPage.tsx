@@ -18,21 +18,26 @@ function Rich({ text }: { text: string }) {
 }
 
 /* ───────────────────────────────────────────────────────────
-   Página · MÉTODO 360 — las cuatro fases en profundidad,
+   Página · MÉTODO 360 — las cinco fases en profundidad,
    con el arco de grados como motivo narrativo
    ─────────────────────────────────────────────────────────── */
 
 const phaseMap: Record<string, { deg: string; accent: "brand" | "ocean"; verbKey: string }> = {
-  "01": { deg: "90°", accent: "brand", verbKey: "page.met.verb.observar" },
-  "02": { deg: "180°", accent: "ocean", verbKey: "page.met.verb.pensar" },
-  "03": { deg: "270°", accent: "brand", verbKey: "page.met.verb.crear" },
-  "04": { deg: "360°", accent: "ocean", verbKey: "page.met.verb.amplificar" },
+  "01": { deg: "72°", accent: "brand", verbKey: "page.met.verb.observar" },
+  "02": { deg: "144°", accent: "ocean", verbKey: "page.met.verb.pensar" },
+  "03": { deg: "216°", accent: "brand", verbKey: "page.met.verb.crear" },
+  "04": { deg: "288°", accent: "ocean", verbKey: "page.met.verb.amplificar" },
+  "05": { deg: "360°", accent: "brand", verbKey: "page.met.verb.visionar" },
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 function phaseVerbId(index: string) {
-  return { "01": "observar", "02": "pensar", "03": "crear", "04": "amplificar" }[index] ?? "observar";
+  return (
+    { "01": "observar", "02": "pensar", "03": "crear", "04": "amplificar", "05": "visionar" }[
+      index
+    ] ?? "observar"
+  );
 }
 
 export default function MetodoPage({

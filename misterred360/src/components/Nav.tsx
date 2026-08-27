@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
-import { socialLinks } from "../lib/data";
-import { scrollToHash } from "../lib/scroll";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { serviceBlocks, socialLinks } from "../lib/data";
+import { navigateTo } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { Wordmark } from "./ui";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -11,12 +11,18 @@ import LanguageSwitcher from "./LanguageSwitcher";
    Nav · sticky con blur + menú full-screen de autor + i18n
    ─────────────────────────────────────────────────────────── */
 
+/* "Servicios" despliega un mega-menú en fondo blanco con los
+   tres bloques de servicios + Método 360 + Precios. */
 const NAV_ROUTES = [
   { key: "nav.manifiesto", href: "#/manifiesto" },
-  { key: "nav.servicios", href: "#/servicios" },
-  { key: "nav.metodo", href: "#/metodo" },
+  { key: "nav.servicios", href: "#/servicios", dropdown: true },
   { key: "nav.elenco", href: "#/elenco" },
   { key: "nav.insights", href: "#/insights" },
+] as const;
+
+const SERVICES_DROPDOWN_EXTRA = [
+  { key: "nav.metodo", href: "#/metodo" },
+  { key: "nav.precios", href: "#/servicios#precios" },
 ] as const;
 
 export default function Nav({
@@ -28,6 +34,8 @@ export default function Nav({
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { t } = useI18n();
 
   useEffect(() => {
@@ -40,15 +48,28 @@ export default function Nav({
   const go = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     setOpen(false);
+    setDropdown(false);
     if (onNavigate) onNavigate(href);
-    else scrollToHash(href);
+    else navigateTo(href);
+  };
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropdown(true);
+  };
+  const scheduleCloseDropdown = () => {
+    closeTimer.current = setTimeout(() => setDropdown(false), 150);
   };
 
   const mobileLinks = [
     { key: "nav.inicio", href: "#top" },
-    ...NAV_ROUTES,
-    { key: "nav.contacto", href: "#/contacto" },
-    { key: "nav.book", href: "#/agendar" },
+    { key: "nav.manifiesto", href: "#/manifiesto" },
+    { key: "nav.servicios", href: "#/servicios" },
+    { key: "nav.metodo", href: "#/metodo" },
+    { key: "nav.precios", href: "#/servicios#precios" },
+    { key: "nav.elenco", href: "#/elenco" },
+    { key: "nav.insights", href: "#/insights" },
+    { key: "nav.talk", href: "#/contacto" },
   ];
 
   return (
@@ -75,37 +96,85 @@ export default function Nav({
             className="hidden lg:flex items-center gap-8"
             aria-label={t("nav.manifiesto")}
           >
-            {NAV_ROUTES.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={(e) => go(e, l.href)}
-                className="link-line text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
-              >
-                {t(l.key)}
-              </a>
-            ))}
+            {NAV_ROUTES.map((l) =>
+              "dropdown" in l && l.dropdown ? (
+                <div
+                  key={l.href}
+                  className="relative"
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={scheduleCloseDropdown}
+                >
+                  <a
+                    href={l.href}
+                    onClick={(e) => go(e, l.href)}
+                    aria-expanded={dropdown}
+                    className="link-line inline-flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                  >
+                    {t(l.key)}
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${dropdown ? "rotate-180" : ""}`}
+                    />
+                  </a>
+                  <AnimatePresence>
+                    {dropdown && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[300px]"
+                      >
+                        <div className="rounded-2xl bg-paper text-ink border border-ink/10 shadow-[0_30px_60px_-20px_rgba(8,8,10,0.4)] overflow-hidden p-2">
+                          {serviceBlocks.map((b) => (
+                            <a
+                              key={b.id}
+                              href={`#/servicios#${b.id}`}
+                              onClick={(e) => go(e, `#/servicios#${b.id}`)}
+                              className="flex items-baseline gap-3 rounded-xl px-4 py-3 text-[13px] font-medium hover:bg-ink/5 transition-colors"
+                            >
+                              <span className="font-display text-brand text-xs font-semibold">
+                                {b.index}
+                              </span>
+                              {t(`sblock.${b.id}.title`)}
+                            </a>
+                          ))}
+                          <div className="my-1.5 h-px bg-ink/10" />
+                          {SERVICES_DROPDOWN_EXTRA.map((e2) => (
+                            <a
+                              key={e2.href}
+                              href={e2.href}
+                              onClick={(e) => go(e, e2.href)}
+                              className="flex items-center rounded-xl px-4 py-3 text-[13px] font-semibold uppercase tracking-[0.08em] hover:bg-ink/5 transition-colors"
+                            >
+                              {t(e2.key)}
+                            </a>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={(e) => go(e, l.href)}
+                  className="link-line text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                >
+                  {t(l.key)}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-3">
-            <span className="hidden md:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-smoke">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand animate-blink" />
-              {t("nav.status")}
-            </span>
             <LanguageSwitcher />
-            <a
-              href="#/agendar"
-              onClick={(e) => go(e, "#/agendar")}
-              className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-paper transition-colors hover:border-brand hover:text-brand"
-            >
-              {t("nav.book")}
-            </a>
             <a
               href="#/contacto"
               onClick={(e) => go(e, "#/contacto")}
-              className="group hidden sm:inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-flame"
+              className="group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
-              {t("nav.cta")}
+              {t("nav.talk")}
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <button

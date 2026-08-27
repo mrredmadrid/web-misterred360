@@ -90,6 +90,19 @@ function extractInnerAnchor(href: string): string | null {
   return href.slice(secondHash); // "#agendar"
 }
 
+/* Reintenta hasta ~1.5s hasta que el elemento del ancla exista en el DOM
+   (la página interior tarda 450ms en montar tras la transición de ruta)
+   y entonces hace scroll. Evita depender de un delay fijo que a veces
+   dispara antes de que el contenido nuevo esté montado. */
+function waitForElementAndScroll(hash: string, attempt = 0) {
+  if (document.querySelector(hash)) {
+    scrollToHash(hash);
+    return;
+  }
+  if (attempt >= 15) return;
+  setTimeout(() => waitForElementAndScroll(hash, attempt + 1), 100);
+}
+
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [route, setRoute] = useState<Route>(() => parseRoute());
@@ -146,8 +159,11 @@ export default function App() {
       setRoute(parseRoute());
       const inner = extractInnerAnchor(href);
       if (inner) {
-        /* Espera al montaje de la nueva página antes de saltar al ancla */
-        setTimeout(() => scrollToHash(inner), 220);
+        /* Espera al montaje de la nueva página antes de saltar al ancla.
+           La transición de ruta tarda 450ms (AnimatePresence "wait"), así
+           que reintentamos hasta que el elemento exista en el DOM en vez
+           de fiarnos de un único delay fijo. */
+        waitForElementAndScroll(inner);
       } else {
         jumpTop();
       }
