@@ -304,6 +304,20 @@ collections:
               - { label: "Nombre", name: name, widget: string }
               - { label: "Cargo y empresa", name: role, widget: string }
 
+      - label: "Ajustes de diseño"
+        name: design
+        file: "misterred360/src/content/design.json"
+        fields:
+          - label: "Tamaño de letra de toda la web"
+            name: fontScale
+            widget: select
+            hint: "Tamaño de partida para todo el mundo. Cada visitante puede además ajustarlo más a su gusto desde el icono de accesibilidad, sin que eso afecte a lo que ven los demás."
+            options:
+              - { label: "Normal", value: 100 }
+              - { label: "Grande", value: 115 }
+              - { label: "Muy grande", value: 130 }
+              - { label: "Máximo", value: 150 }
+
       - label: "Marca, footer y contacto"
         name: site
         file: "misterred360/src/content/site.json"

@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { siteFontScale } from "./data";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Accesibilidad
@@ -30,8 +31,17 @@ export interface A11ySettings {
   pauseGrain: boolean;
 }
 
+/* El punto de partida es el tamaño de letra fijado desde el panel
+   /admin ("Ajustes de diseño"). Si el visitante guarda su propio
+   ajuste, ese ajuste manda (ver carga desde localStorage abajo). */
+const siteDefaultFontScale = ([100, 115, 130, 150] as FontScale[]).includes(
+  siteFontScale as FontScale
+)
+  ? (siteFontScale as FontScale)
+  : 100;
+
 export const defaultA11y: A11ySettings = {
-  fontScale: 100,
+  fontScale: siteDefaultFontScale,
   spacing: "normal",
   highContrast: false,
   underlineLinks: false,

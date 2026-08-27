@@ -22,6 +22,7 @@ import pricingContent from "../content/pricing.json";
 import heroContent from "../content/hero.json";
 import manifestoContent from "../content/manifesto.json";
 import siteContent from "../content/site.json";
+import designContent from "../content/design.json";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Capa de resolución de contenido
@@ -221,6 +222,12 @@ export function getFooterSlogan(locale: Locale): string {
 }
 export const siteContact = siteContent.contact;
 export const siteLegal = siteContent.legal;
+
+/* Tamaño de letra por defecto de toda la web, editable desde el
+   panel /admin ("Ajustes de diseño"). El visitante puede seguir
+   ajustándolo a su gusto desde el panel de accesibilidad; este
+   valor es solo el punto de partida. */
+export const siteFontScale = designContent.fontScale;
 
 /* ── Marquee ────────────────────────────────────────────── */
 export const marqueeItems = [
