@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Kicker, LineReveal, Wordmark } from "./ui";
-import { navLinks } from "../lib/data";
+import { navLinks, getBrandTagline } from "../lib/data";
 import { usePageSeo } from "../lib/seo";
 import type { PageSeoOptions } from "../lib/seo";
 import { useCookies } from "../lib/cookies";
@@ -57,7 +57,7 @@ export default function PageShell({
 }: PageShellProps) {
   const { openPanel } = useCookies();
   const { openPanel: openA11y } = useA11y();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   /* Si el texto empieza por "page." o similar, se traduce; si no, se usa tal cual */
   const tr = (v: string) => (v.includes(".") && !v.includes(" ") ? t(v) : v);
@@ -196,7 +196,7 @@ export default function PageShell({
               <Wordmark className="text-xl" />
             </button>
             <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand">
-              {t("brand.tagline")}
+              {getBrandTagline(locale)}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-smoke max-w-sm">
               {t("shell.footer.short")}

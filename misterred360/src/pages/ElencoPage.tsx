@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { castMembers } from "../lib/data";
+import { getCastMembers } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 import CastImage from "../components/CastImage";
@@ -32,7 +32,8 @@ export default function ElencoPage({
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const castMembers = getCastMembers(locale);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -43,9 +44,9 @@ export default function ElencoPage({
     hasPart: castMembers.map((m) => ({
       "@type": "ImageObject",
       contentUrl: `${SITE}${m.image}`,
-      name: t(`cast.${m.id}.role`),
-      caption: t(`cast.${m.id}.quote`),
-      about: t(`cast.${m.id}.area`),
+      name: m.role,
+      caption: m.quote,
+      about: m.area,
     })),
   };
   return (
@@ -161,7 +162,7 @@ export default function ElencoPage({
                 <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden border border-white/10">
                   <CastImage
                     src={m.image}
-                    alt={t(`cast.${m.id}.role`)}
+                    alt={m.role}
                     className="w-full h-full object-cover duotone-red transition-transform duration-700 group-hover:scale-[1.05]"
                     loading="lazy"
                   />
@@ -179,15 +180,15 @@ export default function ElencoPage({
                       i % 2 ? "bg-ocean" : "bg-brand"
                     }`}
                   >
-                    {t(`cast.${m.id}.area`)}
+                    {m.area}
                   </span>
                 </div>
                 <figcaption className="mt-5">
                   <p className="font-display font-semibold text-2xl leading-tight text-paper transition-colors group-hover:text-brand">
-                    {t(`cast.${m.id}.role`)}
+                    {m.role}
                   </p>
                   <p className="mt-1 font-quote italic text-lg text-smoke">
-                    {t(`cast.${m.id}.quote`)}
+                    {m.quote}
                   </p>
                 </figcaption>
               </motion.figure>

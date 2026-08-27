@@ -1,0 +1,7 @@
+name = "misterred360-cms-auth"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Los secrets (GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET) NO van aquí.
+# Se configuran con `wrangler secret put` o desde el dashboard de
+# Cloudflare. Ver GUIA-CMS-SETUP.md para el paso a paso.

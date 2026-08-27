@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
-import { serviceBlocks } from "../lib/data";
+import { getServiceBlocks } from "../lib/data";
 import { navigateTo } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { Kicker, LineReveal } from "./ui";
@@ -13,7 +13,8 @@ import { Kicker, LineReveal } from "./ui";
    ─────────────────────────────────────────────────────────── */
 
 export default function Services() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const serviceBlocks = getServiceBlocks(locale);
   const [blockIdx, setBlockIdx] = useState(0);
   const [openIdx, setOpenIdx] = useState(0);
 
@@ -52,8 +53,8 @@ export default function Services() {
             <div className="border-b border-ink/10">
               {serviceBlocks.map((b, i) => {
                 const isActive = i === blockIdx;
-                const bTitle = t(`sblock.${b.id}.title`);
-                const bClaim = t(`sblock.${b.id}.claim`);
+                const bTitle = b.title;
+                const bClaim = b.claim;
                 return (
                   <h3 key={b.id} className="m-0 border-t border-ink/10">
                   <button
@@ -136,7 +137,7 @@ export default function Services() {
                 <div className="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between gap-4">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.3em] text-white/70 mb-1.5">
-                      {block.index} · {t(`sblock.${block.id}.title`)}
+                      {block.index} · {block.title}
                     </p>
                     <p className="font-display font-semibold text-xl text-white leading-tight">
                       {active.name}
@@ -248,7 +249,7 @@ export default function Services() {
                     aria-hidden="true"
                   />
                   <p className="text-sm leading-relaxed text-ink/60">
-                    {t(`sblock.${block.id}.desc`)}
+                    {block.description}
                   </p>
                 </div>
               </motion.div>

@@ -1,0 +1,45 @@
+name: Compilar y publicar en OVH
+
+# Se dispara con cada push a main (incluidos los commits que hace el
+# panel /admin al guardar un cambio) y también se puede lanzar a mano
+# desde la pestaña Actions de GitHub.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "misterred360/**"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: misterred360/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: misterred360
+        run: npm ci
+
+      - name: Compilar la web
+        working-directory: misterred360
+        run: npm run build
+
+      - name: Subir dist/ a OVH por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: misterred360/dist/
+          server-dir: www/
+          # No borramos archivos del servidor que no vengan del build,
+          # por si hay algo subido a mano (evita sorpresas destructivas).
+          dangerous-clean-slate: false

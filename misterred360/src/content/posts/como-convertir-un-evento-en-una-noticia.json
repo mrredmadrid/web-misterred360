@@ -1,0 +1,89 @@
+{
+  "slug": "como-convertir-un-evento-en-una-noticia",
+  "date": "7 abr 2026",
+  "dateEn": "Apr 7, 2026",
+  "author": "MISTERRED360",
+  "image": "/images/chimp-events.jpg",
+  "es": {
+    "category": "Eventos",
+    "title": "Cómo convertir un evento en una noticia",
+    "excerpt": "Un evento no termina cuando se apagan las luces. Si se diseña con estrategia, puede generar agenda, relaciones y contenido durante semanas.",
+    "readTime": "7 min",
+    "meta": "7 min · Abr 2026",
+    "authorRole": "RRPP y eventos",
+    "imageAlt": "Chimpancé de MISTERRED360 hablando en un escenario de evento corporativo",
+    "tags": [
+      "RRPP",
+      "Eventos",
+      "Difusión"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "El evento es uno de los formatos más potentes para activar reputación porque combina presencia, relación y relato. Pero para que funcione como herramienta de comunicación debe diseñarse desde el titular final, no solo desde la logística."
+      },
+      {
+        "type": "heading",
+        "text": "La cobertura empieza antes de abrir puertas"
+      },
+      {
+        "type": "paragraph",
+        "text": "El antes genera expectativa, el durante produce contenido y el después consolida impacto. Si cada fase tiene mensajes, portavoces y piezas planificadas, el evento deja de ser una fecha y se convierte en campaña."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Crea un ángulo informativo claro antes de convocar.",
+          "Prepara fotografías, clips y declaraciones útiles para medios y redes.",
+          "Diseña momentos visuales que puedan circular por sí mismos.",
+          "Cierra con resumen, datos de asistencia, impactos y próximos pasos."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "La diferencia entre un acto y una acción de comunicación está en la intención. Lo que no se planifica, normalmente no se cuenta."
+      }
+    ]
+  },
+  "en": {
+    "category": "Events",
+    "title": "How to turn an event into a news story",
+    "excerpt": "An event doesn't end when the lights go down. When it's designed strategically, it can generate agenda, relationships and content for weeks.",
+    "readTime": "7 min read",
+    "meta": "7 min · Apr 2026",
+    "authorRole": "PR and events",
+    "imageAlt": "MISTERRED360's chimp speaking on a corporate event stage",
+    "tags": [
+      "PR",
+      "Events",
+      "Distribution"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "The event is one of the most powerful formats to activate reputation because it combines presence, relationships and storytelling. But for it to work as a communication tool it must be designed from the final headline, not just from the logistics."
+      },
+      {
+        "type": "heading",
+        "text": "Coverage starts before the doors open"
+      },
+      {
+        "type": "paragraph",
+        "text": "The build-up creates expectation, the event produces content and the after-phase consolidates impact. If each phase has planned messages, spokespeople and assets, the event stops being a date and becomes a campaign."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Craft a clear news angle before you invite anyone.",
+          "Prepare photos, clips and quotes ready for media and social use.",
+          "Design visual moments that can travel on their own.",
+          "Close with a summary, attendance data, coverage and next steps."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The difference between hosting a gathering and running a communication action is intent. What isn't planned usually isn't told."
+      }
+    ]
+  }
+}

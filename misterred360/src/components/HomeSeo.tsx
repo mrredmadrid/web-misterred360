@@ -1,5 +1,5 @@
 import { faqs } from "./Faq";
-import { serviceBlocks } from "../lib/data";
+import { getAllServices } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE, usePageSeo } from "../lib/seo";
 
@@ -9,9 +9,9 @@ import { SITE, usePageSeo } from "../lib/seo";
    ─────────────────────────────────────────────────────────── */
 
 export default function HomeSeo() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
-  const allServices = serviceBlocks.flatMap((b) => b.services);
+  const allServices = getAllServices(locale);
 
   usePageSeo({
     title: t("seo.title"),
@@ -39,7 +39,7 @@ export default function HomeSeo() {
           "@type": "ListItem",
           position: i + 1,
           url: `${SITE}/servicios#${s.id}`,
-          name: t(`service.${s.id}.name`),
+          name: s.name,
         })),
       },
     ],

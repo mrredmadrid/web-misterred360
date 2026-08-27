@@ -1,0 +1,89 @@
+{
+  "slug": "estudios-de-mercado-antes-de-decidir-campana",
+  "date": "9 jun 2026",
+  "dateEn": "Jun 9, 2026",
+  "author": "MISTERRED360",
+  "image": "/images/chimp-data.jpg",
+  "es": {
+    "category": "Datos",
+    "title": "Estudios de mercado antes de decidir campaña",
+    "excerpt": "Investigar antes de comunicar no ralentiza la estrategia: evita invertir en mensajes que el mercado no necesita escuchar.",
+    "readTime": "7 min",
+    "meta": "7 min · Jun 2026",
+    "authorRole": "Investigación y estrategia",
+    "imageAlt": "Chimpancé de MISTERRED360 analizando gráficos de mercado",
+    "tags": [
+      "Estudios de mercado",
+      "Datos",
+      "Planificación"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "La investigación no es una fase burocrática: es una forma de escuchar antes de hablar. Permite entender qué preocupa al mercado, qué lenguaje usa la audiencia y dónde existe una oportunidad real de posicionamiento."
+      },
+      {
+        "type": "heading",
+        "text": "Los datos no sustituyen la creatividad, la enfocan"
+      },
+      {
+        "type": "paragraph",
+        "text": "Una campaña sin investigación puede ser brillante y equivocada. Con una base de datos, entrevistas, escucha social o análisis competitivo, la creatividad encuentra un blanco más preciso."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Detecta necesidades, objeciones y motivaciones antes del mensaje.",
+          "Mapea competidores para evitar territorios saturados.",
+          "Identifica oportunidades de comunicación no explotadas.",
+          "Convierte hallazgos en decisiones de tono, canal y oferta."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "El mercado siempre habla. La ventaja está en escucharlo antes de que lo haga la competencia."
+      }
+    ]
+  },
+  "en": {
+    "category": "Data",
+    "title": "Market research before deciding the campaign",
+    "excerpt": "Researching before communicating doesn't slow the strategy down: it stops you from investing in messages the market doesn't need to hear.",
+    "readTime": "7 min read",
+    "meta": "7 min · Jun 2026",
+    "authorRole": "Research and strategy",
+    "imageAlt": "MISTERRED360's chimp analyzing market charts",
+    "tags": [
+      "Market research",
+      "Data",
+      "Planning"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Research isn't a bureaucratic phase: it's a way of listening before speaking. It lets you understand what worries the market, what language the audience uses and where there's a real positioning opportunity."
+      },
+      {
+        "type": "heading",
+        "text": "Data doesn't replace creativity, it focuses it"
+      },
+      {
+        "type": "paragraph",
+        "text": "A campaign without research can be brilliant and wrong. With a base of data, interviews, social listening or competitive analysis, creativity finds a sharper target."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Detect needs, objections and motivations before crafting the message.",
+          "Map competitors to avoid saturated territories.",
+          "Identify unexploited communication opportunities.",
+          "Turn findings into decisions on tone, channel and offer."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The market is always talking. The advantage lies in listening to it before your competition does."
+      }
+    ]
+  }
+}
