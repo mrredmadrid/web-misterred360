@@ -91,30 +91,43 @@ async function handleCallback(url, env, request) {
 }
 
 /**
- * Devuelve la página HTML mínima que Decap CMS espera: envía un
- * postMessage con el resultado a la ventana que abrió el popup de login.
+ * Devuelve la página HTML que Decap CMS espera: envía un postMessage
+ * con el resultado a la ventana que abrió el popup de login. Muestra
+ * SIEMPRE un texto visible (antes se quedaba en blanco si algo fallaba,
+ * lo que hacía imposible saber qué había pasado).
  */
 function renderResult(success, errorMessage, token) {
   const payload = success
     ? { token, provider: "github" }
     : { message: errorMessage };
   const status = success ? "success" : "error";
+  const visibleText = success
+    ? "Sesión iniciada. Ya puedes cerrar esta ventana."
+    : `Error: ${errorMessage || "algo ha ido mal."}`;
   const body = `<!doctype html>
-<html><body>
-<script>
-  (function () {
-    function receiveMessage(message) {
-      window.opener.postMessage(
-        'authorization:github:${status}:${JSON.stringify(payload).replace(/'/g, "\\'")}',
-        message.origin
-      );
-      window.removeEventListener("message", receiveMessage, false);
-    }
-    window.addEventListener("message", receiveMessage, false);
-    window.opener.postMessage("authorizing:github", "*");
-  })();
-</script>
-</body></html>`;
+<html>
+<body style="font-family: sans-serif; background: #08080a; color: #f2efe7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; padding: 24px;">
+  <p id="msg">${visibleText}</p>
+  <script>
+    (function () {
+      // Si esta página no se abrió como popup desde el panel /admin
+      // (p. ej. la has visitado directamente para probarla), no hay
+      // "opener" al que avisar: nos quedamos solo con el texto visible.
+      if (!window.opener) return;
+
+      function receiveMessage(message) {
+        window.opener.postMessage(
+          'authorization:github:${status}:${JSON.stringify(payload).replace(/'/g, "\\'")}',
+          message.origin
+        );
+        window.removeEventListener("message", receiveMessage, false);
+      }
+      window.addEventListener("message", receiveMessage, false);
+      window.opener.postMessage("authorizing:github", "*");
+    })();
+  </script>
+</body>
+</html>`;
   return new Response(body, {
     status: 200,
     headers: { "Content-Type": "text/html; charset=utf-8" },
