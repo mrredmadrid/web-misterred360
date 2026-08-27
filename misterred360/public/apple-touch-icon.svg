@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>MISTERRED360</title>
+  <!-- Fondo con margen de seguridad iOS -->
+  <rect width="512" height="512" fill="#08080A"/>
+  <!-- Orejas -->
+  <circle cx="128" cy="288" r="88" fill="#E8262B"/>
+  <circle cx="384" cy="288" r="88" fill="#E8262B"/>
+  <!-- Cabeza -->
+  <ellipse cx="256" cy="304" rx="148" ry="146" fill="#E8262B"/>
+  <!-- Rostro interior -->
+  <ellipse cx="256" cy="340" rx="108" ry="120" fill="#08080A"/>
+  <!-- Ceja / diadema -->
+  <rect x="176" y="204" width="160" height="30" rx="15" fill="#08080A"/>
+  <!-- Ojos -->
+  <circle cx="212" cy="302" r="20" fill="#F2EFE7"/>
+  <circle cx="300" cy="302" r="20" fill="#F2EFE7"/>
+</svg>

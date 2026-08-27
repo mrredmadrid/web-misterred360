@@ -1,0 +1,49 @@
+import { faqs } from "./Faq";
+import { serviceBlocks } from "../lib/data";
+import { useI18n } from "../lib/i18n";
+import { SITE, usePageSeo } from "../lib/seo";
+
+/* ───────────────────────────────────────────────────────────
+   SEO enriquecido para la home:
+   WebPage + FAQPage + ItemList de servicios + BreadcrumbList
+   ─────────────────────────────────────────────────────────── */
+
+export default function HomeSeo() {
+  const { t } = useI18n();
+
+  const allServices = serviceBlocks.flatMap((b) => b.services);
+
+  usePageSeo({
+    title: t("seo.title"),
+    description: t("seo.desc"),
+    path: "/",
+    ogImage: `${SITE}/images/chimp-hero.jpg`,
+    breadcrumbs: [{ name: "Inicio", path: "/" }],
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `${SITE}/#faq`,
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": `${SITE}/#servicios-lista`,
+        name: "Servicios de comunicación 360",
+        itemListElement: allServices.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${SITE}/servicios#${s.id}`,
+          name: t(`service.${s.id}.name`),
+        })),
+      },
+    ],
+  });
+
+  return null;
+}

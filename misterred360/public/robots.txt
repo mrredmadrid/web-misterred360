@@ -1,0 +1,107 @@
+# ═══════════════════════════════════════════════════════════
+#  MISTERRED360 · robots.txt
+#  Web: https://misterred360.es
+#  Contacto: misterred@misterred360.es
+# ═══════════════════════════════════════════════════════════
+
+# ── Reglas para todos los rastreadores ──────────────────────
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /favicon.svg
+Allow: /apple-touch-icon.svg
+Allow: /site.webmanifest
+
+# Rutas internas o auxiliares que no aportan valor SEO
+Disallow: /downloads/
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
+
+# Retardo prudente para no saturar el servidor
+Crawl-delay: 5
+
+# ═══════════════════════════════════════════════════════════
+#  Bots de IA generativa · PERMITIDOS
+#  Se autoriza explícitamente que ChatGPT, Google Gemini,
+#  Claude, Perplexity y demás motores de IA rastreen e
+#  incluyan el contenido de la web en sus respuestas y
+#  motores de búsqueda conversacionales.
+# ═══════════════════════════════════════════════════════════
+
+# OpenAI — rastreo, entrenamiento y ChatGPT Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google — Gemini y funciones de IA (SGE / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic — Claude y motor de búsqueda
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl (base de datos usada por múltiples LLMs)
+User-agent: CCBot
+Allow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Allow: /
+
+# Amazon y Meta
+User-agent: Amazonbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ── Bots de scraping SEO agresivo · bloqueados ─────────────
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# ── Sitemap principal ───────────────────────────────────────
+Sitemap: https://misterred360.es/sitemap.xml

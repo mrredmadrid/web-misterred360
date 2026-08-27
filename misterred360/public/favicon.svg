@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>MISTERRED360</title>
+  <!-- Fondo negro redondeado -->
+  <rect width="512" height="512" rx="112" fill="#08080A"/>
+  <!-- Orejas -->
+  <circle cx="152" cy="272" r="78" fill="#E8262B"/>
+  <circle cx="360" cy="272" r="78" fill="#E8262B"/>
+  <!-- Cabeza -->
+  <ellipse cx="256" cy="290" rx="132" ry="130" fill="#E8262B"/>
+  <!-- Rostro interior negro -->
+  <ellipse cx="256" cy="322" rx="98" ry="108" fill="#08080A"/>
+  <!-- Ceja / diadema -->
+  <rect x="186" y="200" width="140" height="26" rx="13" fill="#08080A"/>
+  <!-- Ojos -->
+  <circle cx="216" cy="288" r="18" fill="#F2EFE7"/>
+  <circle cx="296" cy="288" r="18" fill="#F2EFE7"/>
+</svg>

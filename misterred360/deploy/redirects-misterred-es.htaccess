@@ -1,0 +1,115 @@
+# ═══════════════════════════════════════════════════════════
+#  MISTERRED.ES · Redirecciones 301 hacia MISTERRED360.ES
+#  Sube este archivo como .htaccess a la raíz de misterred.es
+#  (o pega su contenido al principio del .htaccess actual).
+#
+#  Cubre las 82 URLs del sitemap wp-sitemap.xml:
+#  · 7 páginas principales
+#  · ~40 posts
+#  · categorías, autores, tags y archivos WordPress
+#
+#  Cada URL antigua salta a su equivalente semántica en
+#  misterred360.es. El dominio, el protocolo (https) y la
+#  ausencia de "www" se normalizan también.
+# ═══════════════════════════════════════════════════════════
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── 1 · Forzar HTTPS + dominio destino sin www ──────────────
+  # Cualquier variante (http, www, mayúsculas) apunta al mismo destino.
+  RewriteCond %{HTTP_HOST} ^(www\.)?misterred\.es$ [NC]
+
+  # ── 2 · Redirecciones específicas de páginas WordPress ──────
+  # Home
+  RewriteRule ^$ https://misterred360.es/ [R=301,L]
+
+  # Servicios (agrupado a la sección de servicios de MISTERRED360)
+  RewriteRule ^servicios/?$ https://misterred360.es/#/servicios [R=301,L]
+
+  # Cada servicio antiguo salta al hub 360 (sección /servicios)
+  RewriteRule ^servicios/gabinete-de-prensa/?$      https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/comunicacion-corporativa/?$ https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/plan-de-comunicacion/?$    https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/imagen-corporativa/?$      https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/identidad-corporativa/?$   https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/branding/?$                https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/creacion-audiovisual/?$    https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/publicidad-y-marketing/?$  https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/rrpp-y-eventos/?$          https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/comunicacion-2-0/?$        https://misterred360.es/#/servicios [R=301,L]
+  RewriteRule ^servicios/estudios-de-mercado/?$     https://misterred360.es/#/servicios [R=301,L]
+
+  # Contacto
+  RewriteRule ^contacto/?$              https://misterred360.es/#/contacto [R=301,L]
+  RewriteRule ^contactar/?$             https://misterred360.es/#/contacto [R=301,L]
+
+  # Sobre nosotros / equipo → Manifiesto y Elenco
+  RewriteRule ^sobre-nosotros/?$        https://misterred360.es/#/manifiesto [R=301,L]
+  RewriteRule ^quienes-somos/?$         https://misterred360.es/#/manifiesto [R=301,L]
+  RewriteRule ^nosotros/?$              https://misterred360.es/#/manifiesto [R=301,L]
+  RewriteRule ^equipo/?$                https://misterred360.es/#/elenco [R=301,L]
+  RewriteRule ^metodologia/?$           https://misterred360.es/#/metodo [R=301,L]
+  RewriteRule ^metodo/?$                https://misterred360.es/#/metodo [R=301,L]
+
+  # Página "Ejemplo" de WordPress
+  RewriteRule ^ejemplo/?$               https://misterred360.es/ [R=301,L]
+  RewriteRule ^sample-page/?$           https://misterred360.es/ [R=301,L]
+
+  # ── 3 · Páginas legales ────────────────────────────────────
+  RewriteRule ^aviso-legal/?$                  https://misterred360.es/#/politica-de-privacidad [R=301,L]
+  RewriteRule ^politica-de-privacidad/?$       https://misterred360.es/#/politica-de-privacidad [R=301,L]
+  RewriteRule ^privacidad/?$                   https://misterred360.es/#/politica-de-privacidad [R=301,L]
+  RewriteRule ^politica-de-cookies/?$          https://misterred360.es/#/politica-de-cookies [R=301,L]
+  RewriteRule ^cookies/?$                      https://misterred360.es/#/politica-de-cookies [R=301,L]
+  RewriteRule ^politica-de-ia/?$               https://misterred360.es/#/politica-de-ia [R=301,L]
+
+  # ── 4 · Blog / posts / actualidad ──────────────────────────
+  # Todos los posts individuales caen al índice del blog nuevo
+  # (Insights). Cuando se migre cada post uno a uno con su nuevo
+  # slug, sustituye aquí la regla genérica por reglas específicas.
+  RewriteRule ^blog/?$                  https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^noticias/?$              https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^actualidad/?$            https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^prensa/?$                https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^blog/([^/]+)/?$          https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^noticias/([^/]+)/?$      https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^actualidad/([^/]+)/?$    https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^([0-9]{4})/([0-9]{2})/([0-9]{2})/([^/]+)/?$ https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^([0-9]{4})/([0-9]{2})/([^/]+)/?$            https://misterred360.es/#/insights [R=301,L]
+
+  # ── 5 · Taxonomías WordPress (categorías, tags, autores) ────
+  RewriteRule ^category/([^/]+)/?$      https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^tag/([^/]+)/?$           https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^author/([^/]+)/?$        https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^etiqueta/([^/]+)/?$      https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^categoria/([^/]+)/?$     https://misterred360.es/#/insights [R=301,L]
+  RewriteRule ^autor/([^/]+)/?$         https://misterred360.es/#/insights [R=301,L]
+
+  # ── 6 · Archivos WordPress y feeds ──────────────────────────
+  # Cortamos alimentaciones RSS, comentarios, trackbacks, etc.
+  RewriteRule ^feed/?$                  https://misterred360.es/ [R=301,L]
+  RewriteRule ^comments/feed/?$         https://misterred360.es/ [R=301,L]
+  RewriteRule ^wp-content/uploads/(.*)$ https://misterred360.es/ [R=301,L]
+
+  # ── 7 · Sitemap antiguo → nuevo ─────────────────────────────
+  RewriteRule ^wp-sitemap\.xml$         https://misterred360.es/sitemap.xml [R=301,L]
+  RewriteRule ^wp-sitemap[^\s]*\.xml$   https://misterred360.es/sitemap.xml [R=301,L]
+  RewriteRule ^sitemap\.xml$            https://misterred360.es/sitemap.xml [R=301,L]
+
+  # ── 8 · Catch-all · cualquier otra URL cae a la home nueva ──
+  # Debe ir SIEMPRE la última para no interferir con las reglas
+  # específicas de arriba. Las 301 preservan el peso SEO.
+  RewriteRule ^(.*)$ https://misterred360.es/ [R=301,L]
+</IfModule>
+
+# ═══════════════════════════════════════════════════════════
+#  Cabeceras HTTP recomendadas
+# ═══════════════════════════════════════════════════════════
+<IfModule mod_headers.c>
+  # Que Google entienda que la redirección es permanente y actualice el índice
+  Header set X-Robots-Tag "noindex, follow"
+  # Refuerzo del canonical hacia el nuevo dominio
+  Header set Link "<https://misterred360.es/>; rel=\"canonical\""
+</IfModule>

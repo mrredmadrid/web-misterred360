@@ -1,0 +1,525 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════
+   MISTERRED360 · SISTEMA DE DISEÑO
+   Paleta: rojo corporativo + azul corporativo + neutros premium
+   Tipografía: Clash Display (titulares) / Archivo (texto)
+   ═══════════════════════════════════════════════════════════ */
+
+@theme {
+  --color-ink: #08080a;
+  --color-coal: #101014;
+  --color-panel: #15151b;
+  --color-mist: #1d1d24;
+  --color-paper: #f2efe7;
+  --color-bone: #e8e4d8;
+  --color-smoke: #97959a;
+  --color-ash: #6b6a70;
+  --color-brand: #e8262b;
+  --color-flame: #ff4b44;
+  --color-wine: #8f1115;
+  --color-ocean: #2e55e8;
+  --color-steel: #7b95ff;
+
+  --font-display: "Clash Display", "Archivo", sans-serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-quote: "Instrument Serif", Georgia, serif;
+}
+
+:root {
+  --mr-ease: cubic-bezier(0.65, 0.05, 0, 1);
+}
+
+html {
+  scrollbar-color: rgba(232, 38, 43, 0.55) #0a0a0d;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  /* Evita cualquier scroll horizontal accidental por elementos que
+     sobresalen en móvil (marquees, sombras, glows). */
+  max-width: 100vw;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE GLOBAL · Compactación de espacios en móvil y tablet
+   Reduce paddings y márgenes verticales grandes automáticamente,
+   así se evita "wall of scroll" en móvil sin tocar componente a
+   componente. Se aplica solo por debajo de 768 px (breakpoint md).
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767.98px) {
+  /* Padding vertical grande → medio */
+  .py-24, .py-28, .py-32, .py-36, .py-40 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  .pt-24, .pt-28, .pt-32, .pt-36, .pt-40 { padding-top: 3.5rem !important; }
+  .pb-24, .pb-28, .pb-32, .pb-36, .pb-40 { padding-bottom: 3.5rem !important; }
+  /* Padding sticky-top (páginas interiores) */
+  .pt-28 { padding-top: 5.5rem !important; }
+
+  /* Margenes verticales grandes */
+  .mb-14, .mb-16, .mb-20, .mb-24 { margin-bottom: 2rem !important; }
+  .mt-14, .mt-16, .mt-20, .mt-24 { margin-top: 2rem !important; }
+  .my-14, .my-16, .my-20, .my-24 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
+
+  /* Separaciones internas dentro de textos */
+  .mt-10 { margin-top: 1.25rem !important; }
+  .mt-12 { margin-top: 1.5rem !important; }
+  .mt-8 { margin-top: 1.15rem !important; }
+  .mt-6 { margin-top: 1rem !important; }
+  .space-y-8 > * + * { margin-top: 1.15rem !important; }
+  .space-y-7 > * + * { margin-top: 1rem !important; }
+  .space-y-6 > * + * { margin-top: 0.9rem !important; }
+  /* Interlínea de párrafos más ajustada */
+  p { line-height: 1.55 !important; }
+
+  /* Gaps grandes en flex y grid → medios */
+  .gap-8, .gap-10, .gap-12, .gap-14, .gap-16 { gap: 1.25rem !important; }
+  .lg\:gap-16, .lg\:gap-20 { gap: 1.25rem !important; }
+
+  /* Titulares con line-height más ajustada en móvil */
+  h1, h2 { line-height: 1 !important; }
+}
+
+/* Tablet: reducción intermedia */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .md\:py-32, .md\:py-36, .md\:py-40 { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+  .md\:pt-32, .md\:pt-36, .md\:pt-40 { padding-top: 4.5rem !important; }
+  .md\:pb-32, .md\:pb-36, .md\:pb-40 { padding-bottom: 4.5rem !important; }
+  .md\:mb-20, .md\:mb-24 { margin-bottom: 3rem !important; }
+  .md\:mt-20, .md\:mt-24 { margin-top: 3rem !important; }
+}
+
+/* Móviles muy pequeños (iPhone SE, Galaxy A02s, etc.) · < 400 px
+   Todos los titulares con clamp() bajan a mínimo 1.7rem y las líneas
+   se ajustan para que quepan sin cortes ni desbordes horizontales. */
+@media (max-width: 399.98px) {
+  h1[class*="clamp"], h2[class*="clamp"], .font-display[class*="clamp"] {
+    font-size: clamp(1.55rem, 8.5vw, 2.2rem) !important;
+    line-height: 1 !important;
+  }
+  .text-\[clamp\(3rem\2c 9vw\2c 9rem\)\] {
+    font-size: 2rem !important;
+  }
+  /* Elimina márgenes horizontales negativos que puedan causar scroll */
+  .-mx-4, .-mx-5, .-mx-6, .-mx-8 { margin-left: 0 !important; margin-right: 0 !important; }
+}
+
+/* Marquee: reducir tipografía y padding en móvil para que no se
+   coma tanto espacio vertical y no desborde tan bruscamente. */
+@media (max-width: 767.98px) {
+  .animate-marquee .font-display {
+    font-size: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Imágenes 100% responsive por defecto (evita desbordes en móvil) */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+img[width][height] {
+  height: auto;
+}
+
+/* Regla global: los textos dentro de tarjetas nunca se deben cortar.
+   Fuerza wrap y evita overflow horizontal en h3/h4/p dentro de <article>. */
+article h3,
+article h4,
+article p,
+article span,
+article li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+/* iframe de mapas mantiene su altura fija (necesaria para Google Maps) */
+iframe[title*="Maps"] {
+  height: 240px;
+}
+@media (min-width: 768px) {
+  iframe[title*="Maps"] {
+    height: 320px;
+  }
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a42;
+  border-radius: 8px;
+  border: 2px solid #0a0a0d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Cursor personalizado solo en punteros finos */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  [data-cursor] {
+    cursor: none;
+  }
+  input,
+  textarea,
+  select {
+    cursor: auto;
+  }
+}
+
+/* ── Utilidades de display ─────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+}
+.text-outline {
+  -webkit-text-stroke: 1.2px rgba(242, 239, 231, 0.32);
+  color: transparent;
+}
+.text-outline-brand {
+  -webkit-text-stroke: 1.2px rgba(232, 38, 43, 0.75);
+  color: transparent;
+}
+.text-outline-ink {
+  -webkit-text-stroke: 1.2px rgba(8, 8, 10, 0.35);
+  color: transparent;
+}
+
+/* ── Grano cinematográfico global ──────────────────────── */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.9s steps(4) infinite;
+}
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1.4%); }
+  50% { transform: translate(1.6%, -1.2%); }
+  75% { transform: translate(-1%, -1.8%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ── Marquee editorial ─────────────────────────────────── */
+.animate-marquee {
+  animation: mr-marquee var(--marquee-dur, 32s) linear infinite;
+}
+.animate-marquee-reverse {
+  animation-direction: reverse;
+}
+@keyframes mr-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+/* ── Rotación lenta (badge circular) ───────────────────── */
+.animate-spin-slow {
+  animation: mr-spin 18s linear infinite;
+}
+.animate-spin-slower {
+  animation: mr-spin 30s linear infinite;
+}
+@keyframes mr-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Flotación de chips sobre el hero ──────────────────── */
+.animate-float {
+  animation: mr-float 5s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: mr-float 6.5s ease-in-out 1.1s infinite;
+}
+@keyframes mr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ── Parpadeo del punto de estado ──────────────────────── */
+.animate-blink {
+  animation: mr-blink 2.2s ease-in-out infinite;
+}
+@keyframes mr-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+/* ── Glow radial controlado (sin gradientes lineales) ──── */
+.glow-brand {
+  background: radial-gradient(
+    ellipse 55% 45% at 70% 30%,
+    rgba(232, 38, 43, 0.16),
+    transparent 65%
+  );
+}
+.glow-ocean {
+  background: radial-gradient(
+    ellipse 45% 40% at 15% 75%,
+    rgba(46, 85, 232, 0.12),
+    transparent 65%
+  );
+}
+
+/* ── Línea luminosa de scroll (hero) ───────────────────── */
+.scroll-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(50% 40% at 50% 0%, rgba(232, 38, 43, 0.9), transparent 75%);
+  animation: scroll-pulse 2.4s var(--mr-ease) infinite;
+}
+@keyframes scroll-pulse {
+  0% { transform: translateY(-100%); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* ── Enlaces de navegación con subrayado reactivo ──────── */
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-brand);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--mr-ease);
+}
+.link-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ── Duotono rojo para retratos monocromos ─────────────── */
+.duotone-red {
+  filter: grayscale(1) contrast(1.08) brightness(0.94);
+  transition: filter 0.7s var(--mr-ease);
+}
+.group:hover .duotone-red {
+  filter: grayscale(0) contrast(1.02) brightness(1);
+}
+
+/* ── Movimiento reducido: desactiva todo lo decorativo ─── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-spin-slower,
+  .animate-float,
+  .animate-float-delay,
+  .animate-blink,
+  .grain,
+  .scroll-line::after {
+    animation: none !important;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ACCESIBILIDAD · aplicada mediante clases en <html>
+   ═══════════════════════════════════════════════════════════ */
+
+/* Skip link (salta al contenido principal) */
+.a11y-skip {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -110%);
+  z-index: 200;
+  background: var(--color-brand);
+  color: #fff;
+  padding: 0.65rem 1.2rem;
+  border-radius: 0 0 0.8rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.25s var(--mr-ease);
+}
+.a11y-skip:focus,
+.a11y-skip:focus-visible {
+  transform: translate(-50%, 0);
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Escala tipográfica global */
+:root {
+  --a11y-font-scale: 1;
+}
+html {
+  font-size: calc(16px * var(--a11y-font-scale));
+}
+
+/* Espaciado amplio */
+.a11y-spacing-wide {
+  letter-spacing: 0.02em;
+}
+.a11y-spacing-wide p,
+.a11y-spacing-wide li,
+.a11y-spacing-wide dd,
+.a11y-spacing-wide blockquote {
+  line-height: 1.85 !important;
+  word-spacing: 0.08em;
+}
+.a11y-spacing-wide h1,
+.a11y-spacing-wide h2,
+.a11y-spacing-wide h3 {
+  line-height: 1.15 !important;
+}
+
+/* Alto contraste */
+.a11y-contrast {
+  --color-ink: #000000;
+  --color-coal: #0a0a0a;
+  --color-panel: #101010;
+  --color-mist: #161616;
+  --color-paper: #ffffff;
+  --color-bone: #ffffff;
+  --color-smoke: #ffffff;
+  --color-ash: #d5d5d5;
+}
+.a11y-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+.a11y-contrast .glow-brand,
+.a11y-contrast .glow-ocean,
+.a11y-contrast .grain {
+  display: none !important;
+}
+.a11y-contrast .duotone-red {
+  filter: grayscale(1) contrast(1.5) brightness(1.1) !important;
+}
+.a11y-contrast .bg-paper {
+  background: #fff !important;
+}
+.a11y-contrast .bg-paper,
+.a11y-contrast .text-ink {
+  color: #000 !important;
+}
+
+/* Subrayado de enlaces reforzado */
+.a11y-underline a,
+.a11y-underline button[data-cursor],
+.a11y-underline .link-line {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Movimiento reducido activado por el usuario */
+.a11y-reduce-motion *,
+.a11y-reduce-motion *::before,
+.a11y-reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+.a11y-reduce-motion .grain,
+.a11y-reduce-motion .scroll-line::after {
+  animation: none !important;
+}
+
+/* Cursor grande + cursor personalizado más visible */
+.a11y-cursor,
+.a11y-cursor body,
+.a11y-cursor a,
+.a11y-cursor button,
+.a11y-cursor [data-cursor] {
+  cursor: auto !important;
+}
+.a11y-cursor,
+.a11y-cursor *,
+.a11y-cursor a,
+.a11y-cursor button {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path d='M4 2 L4 30 L12 22 L18 32 L22 30 L16 20 L26 20 Z' fill='%23e8262b' stroke='white' stroke-width='2' stroke-linejoin='round'/></svg>") 4 2, auto !important;
+}
+
+/* Grano pausado */
+.a11y-pause-grain .grain {
+  animation: none !important;
+  opacity: 0.02;
+}
+
+/* Dislexia: fuente sans neutra y más espaciado */
+.a11y-dyslexia,
+.a11y-dyslexia body,
+.a11y-dyslexia * {
+  font-family: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.06em !important;
+}
+.a11y-dyslexia .font-display,
+.a11y-dyslexia .font-quote {
+  font-family: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Guía de lectura */
+.a11y-guide {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: var(--color-brand);
+  box-shadow: 0 0 10px rgba(232, 38, 43, 0.6);
+  pointer-events: none;
+  z-index: 91;
+}
+
+/* Máscara de lectura */
+.a11y-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+  z-index: 91;
+}
+.a11y-mask-top {
+  top: 0;
+  height: 0;
+}
+.a11y-mask-bot {
+  bottom: 0;
+  top: 0;
+  height: 100vh;
+}

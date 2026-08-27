@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- ═════════════════════════════════════════════════════════
+       MISTERRED360 · Sitemap principal
+       Todas las páginas de la web con alternates ES/EN.
+       ═════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ HOME ═══ -->
+  <url>
+    <loc>https://misterred360.es/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/" />
+  </url>
+
+  <!-- ═══ PÁGINAS INTERIORES ═══ -->
+  <url>
+    <loc>https://misterred360.es/manifiesto</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/manifiesto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/manifiesto?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/manifiesto" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/servicios</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/servicios?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/servicios" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/metodo</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/metodo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/metodo?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/metodo" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/elenco</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/elenco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/elenco?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/elenco" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/contacto</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/contacto?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/contacto" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/agendar</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/agendar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/agendar?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/agendar" />
+  </url>
+
+  <!-- ═══ BLOG ═══ -->
+  <url>
+    <loc>https://misterred360.es/insights</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/insights" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/insights?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/insights" />
+  </url>
+
+  <!-- ── Noticias del blog (una URL por publicación) ── -->
+  <url>
+    <loc>https://misterred360.es/insights/el-comunicado-ha-muerto-larga-vida-al-relato</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/insights/reputacion-el-activo-que-no-sale-en-el-balance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/insights/del-like-al-lead-redes-sociales-con-proposito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/insights/como-convertir-un-evento-en-una-noticia</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/insights/video-corporativo-que-trabaja-para-ventas</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/insights/estudios-de-mercado-antes-de-decidir-campana</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ═══ LEGAL ═══ -->
+  <url>
+    <loc>https://misterred360.es/politica-de-privacidad</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/politica-de-privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/politica-de-privacidad?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/politica-de-privacidad" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/politica-de-cookies</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/politica-de-cookies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/politica-de-cookies?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/politica-de-cookies" />
+  </url>
+
+  <url>
+    <loc>https://misterred360.es/politica-de-ia</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://misterred360.es/politica-de-ia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://misterred360.es/politica-de-ia?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://misterred360.es/politica-de-ia" />
+  </url>
+</urlset>

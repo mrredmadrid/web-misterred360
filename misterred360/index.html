@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <!-- ═══════════════════════════════════════════════════════
+         MISTERRED360 · Plantilla HTML base optimizada
+         · Search Essentials (Core Web Vitals · mobile-first)
+         · Structured Data (Schema.org / JSON-LD alineado con el DOM)
+         · Google Business Profile · Google Maps · NAP coherente
+         · Legibilidad para AI Overviews / AI Mode (GEO / AEO)
+         Comentarios explicativos junto a cada bloque crítico.
+
+         ── ACTUALIZACIÓN DE CONTENIDOS (ver PORTADA-MISTERRED-1-2.docx) ──
+         · Naming confirmado: MISTERRED360 / MR.RED360 (NO "Señor Rojo 360").
+         · Slogan hero grande: "Déjate de monerías y marca la diferencia".
+         · Slogan de marca (junto al logo / footer): "MISTERRED 360 la
+           evolución de la comunicación".
+         · Descripción institucional actualizada: agencia de comunicación 360
+           especializada en estrategia de marca, generando valor y
+           aumentando el retorno con mayor conocimiento y presencia en
+           medios locales, regionales, nacionales e internacionales.
+         · Se retira toda alusión a "sin becarios" (tono negativo).
+         · Palabras clave de marca: Identidad · Reputación · Creación ·
+           Estrategia · Impacto.
+         ═══════════════════════════════════════════════════════ -->
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- ─── SEO principal · title 50–60 car · description 140–155 ─── -->
+    <title>Agencia de Comunicación 360 en Madrid | MISTERRED360</title>
+    <meta
+      name="description"
+      content="Agencia de Comunicación 360 en Madrid especializada en estrategia de marca. Aportamos valor e incrementamos el retorno con mayor presencia en medios locales, regionales, nacionales e internacionales."
+    />
+    <meta name="author" content="MR. RED S.L." />
+    <meta name="publisher" content="MR. RED S.L." />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- ─── Canónica + hreflang (evita duplicados y sirve señal internacional) ─── -->
+    <link rel="canonical" href="https://misterred360.es/" />
+    <link rel="alternate" hreflang="es-ES" href="https://misterred360.es/" />
+    <link rel="alternate" hreflang="en" href="https://misterred360.es/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://misterred360.es/" />
+
+    <!-- ─── Geo · señal complementaria de negocio local ─── -->
+    <meta name="geo.region" content="ES-MD" />
+    <meta name="geo.placename" content="Las Rozas de Madrid" />
+    <meta name="geo.position" content="40.4923;-3.8735" />
+    <meta name="ICBM" content="40.4923, -3.8735" />
+
+    <!-- ─── Open Graph · 1200×630 apaisado (compatible con LinkedIn, WhatsApp…) ─── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="MISTERRED360" />
+    <meta property="og:url" content="https://misterred360.es/" />
+    <meta
+      property="og:title"
+      content="Agencia de Comunicación 360 en Madrid | MISTERRED360"
+    />
+    <meta
+      property="og:description"
+      content="Déjate de monerías y marca la diferencia. MISTERRED360: la evolución de la comunicación. Agencia de comunicación 360 con nombre, cara y teléfono."
+    />
+    <meta property="og:image" content="https://misterred360.es/images/og-share.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="MISTERRED360 · Agencia de comunicación 360 en Madrid · Déjate de monerías y marca la diferencia."
+    />
+
+    <!-- ─── Twitter Card ─── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@misterred360" />
+    <meta name="twitter:creator" content="@misterred360" />
+    <meta
+      name="twitter:title"
+      content="Agencia de Comunicación 360 en Madrid | MISTERRED360"
+    />
+    <meta
+      name="twitter:description"
+      content="MISTERRED 360, la evolución de la comunicación. Cuéntanos tu reto: contesta una persona, al momento."
+    />
+    <meta name="twitter:image" content="https://misterred360.es/images/og-share.svg" />
+    <meta
+      name="twitter:image:alt"
+      content="Sello editorial MISTERRED360 con el slogan MISTERRED 360, la evolución de la comunicación."
+    />
+
+    <meta name="theme-color" content="#08080A" />
+    <meta name="msapplication-TileColor" content="#08080A" />
+
+    <!-- ─── Iconos · SVG vectorial universal + PWA ─── -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="alternate icon" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.svg" />
+    <link rel="mask-icon" href="./favicon.svg" color="#E8262B" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="MISTERRED360" />
+    <meta name="application-name" content="MISTERRED360" />
+
+    <!-- ─── Rendimiento · Core Web Vitals (LCP · INP · CLS) ───
+         · preconnect a orígenes de fuentes (ahorra ~150 ms de RTT en el LCP)
+         · preload del hero image (imagen dominante del pliegue superior)
+         · Nota: los width/height reales de <img> se definen en el JSX de Hero
+           para evitar CLS. La imagen del hero pasa a mostrar un equipo mixto
+           (monos y monas) de tono cercano y sonriente, nunca "gritando". -->
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="./images/chimp-hero.jpg"
+      fetchpriority="high"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SCHEMA.ORG · JSON-LD (rich results + credibilidad para IA)
+         5 tipos en un solo grafo con @id únicos y referencias cruzadas:
+         · Organization ................. entidad legal (padre)
+         · ProfessionalService .......... el activo comercial (subtipo)
+         · LocalBusiness ................ ficha con NAP + geo + horarios
+         · WebSite ...................... con SearchAction (Sitelinks SB)
+         · WebPage ...................... página actual, enlazada al resto
+         Se mantiene alineado 1:1 con el contenido visible del DOM.
+         ═══════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://misterred360.es/#organizacion",
+            "name": "MISTERRED360",
+            "legalName": "MR. RED S.L.",
+            "alternateName": ["MR.RED360", "Mister Red 360", "MR RED", "Mister Red"],
+            "url": "https://misterred360.es/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://misterred360.es/apple-touch-icon.svg",
+              "width": 512,
+              "height": 512,
+              "caption": "MISTERRED360 · Agencia de comunicación 360"
+            },
+            "image": "https://misterred360.es/images/og-share.svg",
+            "slogan": "MISTERRED 360, la evolución de la comunicación",
+            "description": "Agencia de Comunicación 360 en Madrid especializada en estrategia de marca y comunicación, aportando valor e incrementando el retorno con un mayor grado de conocimiento y presencia en medios de comunicación locales, regionales, nacionales e internacionales.",
+            "foundingDate": "2011",
+            "vatID": "B56916133",
+            "taxID": "B56916133",
+            "email": "misterred@misterred360.es",
+            "telephone": "+34910360360",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Ciudadela 12",
+              "addressLocality": "Las Rozas de Madrid",
+              "addressRegion": "MD",
+              "postalCode": "28230",
+              "addressCountry": "ES"
+            },
+            "areaServed": [
+              { "@type": "Country", "name": "España" },
+              { "@type": "Place", "name": "Ámbito regional, nacional e internacional" }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/misterred360",
+              "https://www.linkedin.com/company/misterred360",
+              "https://x.com/misterred360",
+              "https://www.youtube.com/@misterred360"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "misterred@misterred360.es",
+                "telephone": "+34910360360",
+                "areaServed": "ES",
+                "availableLanguage": ["es", "en"]
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "misterred@misterred360.es",
+                "telephone": "+34910360360",
+                "areaServed": "ES",
+                "availableLanguage": ["es", "en"]
+              }
+            ]
+          },
+          {
+            "@type": ["ProfessionalService", "LocalBusiness"],
+            "@id": "https://misterred360.es/#agencia",
+            "name": "MISTERRED360 — Agencia de Comunicación 360",
+            "description": "Agencia de Comunicación 360 en Madrid especializada en estrategia de marca: gabinete de prensa, identidad e imagen corporativa, creación y difusión, y presencia en medios locales, regionales, nacionales e internacionales.",
+            "url": "https://misterred360.es/",
+            "image": "https://misterred360.es/images/og-share.svg",
+            "logo": "https://misterred360.es/apple-touch-icon.svg",
+            "priceRange": "€€€",
+            "currenciesAccepted": "EUR",
+            "paymentAccepted": "Cash, Credit Card, Wire Transfer",
+            "parentOrganization": { "@id": "https://misterred360.es/#organizacion" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Ciudadela 12",
+              "addressLocality": "Las Rozas de Madrid",
+              "addressRegion": "MD",
+              "postalCode": "28230",
+              "addressCountry": "ES"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.4923,
+              "longitude": -3.8735
+            },
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=MISTERRED360+Las+Rozas+de+Madrid",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            ],
+            "email": "misterred@misterred360.es",
+            "telephone": "+34910360360",
+            "areaServed": [
+              { "@type": "Country", "name": "España" },
+              { "@type": "AdministrativeArea", "name": "Comunidad de Madrid" },
+              { "@type": "City", "name": "Madrid" }
+            ],
+            "knowsAbout": [
+              "Estrategia de marca",
+              "Comunicación estratégica",
+              "Gabinete de prensa",
+              "Reputación de marca",
+              "Identidad e imagen corporativa",
+              "Branding",
+              "Creación y difusión de contenidos",
+              "Publicidad",
+              "Marketing digital",
+              "RRPP y eventos",
+              "Estudios de mercado",
+              "Posicionamiento de marca"
+            ],
+            "sameAs": [
+              "https://www.instagram.com/misterred360",
+              "https://www.linkedin.com/company/misterred360",
+              "https://x.com/misterred360",
+              "https://www.youtube.com/@misterred360"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios 360 — Identidad · Reputación · Creación · Estrategia · Impacto",
+              "itemListElement": [
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Reputación",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Gabinete de Prensa",
+                        "description": "Ya nunca volverás a ser uno más. Transformamos tu actividad en noticias, contenidos y oportunidades de visibilidad para que tu marca gane presencia, credibilidad e impacto público."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "RRPP e Institucionales",
+                        "description": "La puerta se abre desde dentro. Conocemos a quien está detrás."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Comunicación de Crisis 72h",
+                        "description": "Protocolo activo en 3 horas. Comité, mensajes clave, portavoz y respuesta coordinada."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Estrategia",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Plan de Comunicación 360",
+                        "description": "Antes de hablar, saber qué decir. Planes de comunicación y estrategia desde 1.500 euros, adaptados a las necesidades del cliente."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Auditoría Roja",
+                        "description": "Doce preguntas. Una radiografía. Ninguna concesión."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "DIRCOM Externo",
+                        "description": "Un director de comunicación de primer nivel. Sin nómina."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Identidad",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Imagen Corporativa",
+                        "description": "Tu marca ya dice algo de ti. La pregunta es si dice lo que tú quieres."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Identidad Verbal y Naming",
+                        "description": "Si tu marca sonara, ¿la reconocerías con los ojos cerrados?"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Creación",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Creación Audiovisual",
+                        "description": "Noventa segundos bien hechos valen más que cuarenta diapositivas."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Publicidad y Campañas",
+                        "description": "Un anuncio que no se recuerda es un gasto. Uno que se recuerda es una inversión."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Eventos",
+                        "description": "Un evento no se mide por los asistentes. Se mide por lo que cuentan al día siguiente."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Impacto",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Servicios Web desde 1.000€",
+                        "description": "Diseño y desarrollo web con franja de precios clara, desde 1.000 euros."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Comunicación 2.0",
+                        "description": "Tu marca tiene voz. Que se le note de quién es."
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Formación en IA aplicada",
+                        "description": "La IA no te va a quitar el trabajo. Te va a quitar las excusas."
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://misterred360.es/#web",
+            "url": "https://misterred360.es/",
+            "name": "MISTERRED360",
+            "inLanguage": ["es-ES", "en"],
+            "publisher": { "@id": "https://misterred360.es/#organizacion" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://misterred360.es/#/insights?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://misterred360.es/#pagina",
+            "url": "https://misterred360.es/",
+            "name": "Agencia de Comunicación 360 en Madrid | MISTERRED360",
+            "description": "Agencia de Comunicación 360 en Madrid especializada en estrategia de marca. Déjate de monerías y marca la diferencia.",
+            "isPartOf": { "@id": "https://misterred360.es/#web" },
+            "about": { "@id": "https://misterred360.es/#agencia" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://misterred360.es/images/og-share.svg"
+            },
+            "inLanguage": "es-ES",
+            "breadcrumb": { "@id": "https://misterred360.es/#breadcrumbs" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://misterred360.es/#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://misterred360.es/"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!--
+      Landmark ARIA principal (#contenido-principal) usado por el skip link
+      del propio App.tsx. La app React se monta aquí; usa <header>, <nav>,
+      <main id="contenido-principal">, <section>, <article>, <footer> con
+      jerarquía H1 → H2 → H3 (verificable en el DOM renderizado).
+
+      ── Notas de contenido pendientes de aplicar en los componentes React ──
+      1. HERO / PORTADA
+         · Frase grande: "Déjate de monerías y marca la diferencia".
+         · Slogan junto al logo: "MISTERRED 360 la evolución de la comunicación".
+         · Bio corta: "Agencia de Comunicación 360 en Madrid especializada en
+           estrategia de marca y comunicación aportando valor e incrementando
+           el retorno con un mayor grado de conocimiento y presencia en medios
+           de comunicación locales, regionales, nacionales e internacionales."
+         · Slide principal e imagen de portada/vídeo corporativo: sustituir por
+           un mono y una mona (no imágenes de "monos gritando").
+         · Tres palabras junto al mono / franja roja: Identidad, Reputación,
+           Creación, Estrategia, Impacto.
+      2. MENÚ
+         · Desplegable en fondo blanco (estilo Storimake): Servicios / Método 360
+           / Precios (Web desde 1.000€, Estrategia y planes desde 1.500€,
+           gestión de contenidos y gabinete de prensa según proyecto) / Equipo /
+           Conocimiento (antes "Perspectivas").
+         · Quitar "Contestamos en 24 horas" (se resuelve por WhatsApp + asistente
+           virtual al momento).
+         · Unificar "Pedir llamada" y "Cuéntanos tu reto" en un único bloque
+           "¿Hablamos?" con opción de agendar reunión, mandar mail o WhatsApp.
+           Mantener asistente virtual y WhatsApp visibles en esquina inferior
+           derecha con su logo, en la ubicación actual.
+      3. GLOBAL
+         · Eliminar en toda la web imágenes de "monos gritando" y toda alusión
+           a "becarios" (tono negativo). Usar imágenes sonrientes, con mezcla
+           de monos y monas para evitar sesgo de género.
+         · Sección Servicios: fondo blanco / contraste invertido para reducir
+           saturación visual del negro. Replicar el criterio en otras secciones.
+      4. EQUIPO
+         · Texto: "No somos versiones, somos profesionales con experiencia con
+           un mismo instinto: marcar la diferencia y hacer que tu marca crezca."
+         · Imagen de conjunto de 8 monos + 5 monas + 3 monos de distinta edad,
+           vestimenta moderna y colorida (no blanco y negro) en Manifiesto/Portada.
+      5. FOOTER
+         · Actualizar el slogan de marca también en el footer.
+         · Quitar el mapa y simplificar las opciones de contacto.
+      6. BLOG / CONOCIMIENTO (antes "Perspectivas")
+         · Imágenes con color, ya no de monos, en las entradas para no saturar.
+    -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
