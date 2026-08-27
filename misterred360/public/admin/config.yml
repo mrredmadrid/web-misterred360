@@ -1,0 +1,328 @@
+backend:
+  name: github
+  repo: mrredmadrid/web-misterred360
+  branch: main
+  base_url: https://misterred360-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  auth_endpoint: auth
+
+# Los archivos de contenido viven en misterred360/src/content/ dentro del repo
+site_url: https://misterred360.es
+display_url: https://misterred360.es
+logo_url: /apple-touch-icon.svg
+
+media_folder: "misterred360/public/images"
+public_folder: "/images"
+
+locale: "es"
+
+collections:
+  # ══════════════════════════════════════════════════════════
+  # PERSPECTIVAS (blog): una entrada por noticia
+  # ══════════════════════════════════════════════════════════
+  - name: "posts"
+    label: "Perspectivas (blog)"
+    label_singular: "Noticia"
+    folder: "misterred360/src/content/posts"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{es.title}}"
+    fields:
+      - { label: "Slug (URL, sin espacios ni acentos)", name: slug, widget: string, hint: "Debe coincidir con el nombre del archivo, ej. mi-noticia" }
+      - { label: "Fecha (ES, ej. 12 ene 2026)", name: date, widget: string }
+      - { label: "Fecha (EN, ej. Jan 12, 2026)", name: dateEn, widget: string }
+      - { label: "Autor/firma", name: author, widget: string, default: "MISTERRED360" }
+      - { label: "Imagen principal", name: image, widget: image }
+      - label: "Español"
+        name: es
+        widget: object
+        fields:
+          - { label: "Categoría", name: category, widget: string }
+          - { label: "Titular", name: title, widget: string }
+          - { label: "Entradilla", name: excerpt, widget: text }
+          - { label: "Tiempo de lectura (ej. 6 min)", name: readTime, widget: string }
+          - { label: "Meta (ej. 6 min · Ene 2026)", name: meta, widget: string }
+          - { label: "Rol del autor", name: authorRole, widget: string }
+          - { label: "Alt de la imagen", name: imageAlt, widget: string }
+          - { label: "Etiquetas", name: tags, widget: list, field: { label: Etiqueta, name: tag, widget: string } }
+          - label: "Cuerpo"
+            name: content
+            widget: list
+            types:
+              - label: "Párrafo"
+                name: paragraph
+                widget: object
+                fields:
+                  - { label: Texto, name: text, widget: text }
+              - label: "Subtítulo"
+                name: heading
+                widget: object
+                fields:
+                  - { label: Texto, name: text, widget: string }
+              - label: "Cita destacada"
+                name: quote
+                widget: object
+                fields:
+                  - { label: Texto, name: text, widget: text }
+                  - { label: Firma (opcional), name: cite, widget: string, required: false }
+              - label: "Lista"
+                name: list
+                widget: object
+                fields:
+                  - { label: Elementos, name: items, widget: list, field: { label: Elemento, name: item, widget: string } }
+      - label: "English"
+        name: en
+        widget: object
+        fields:
+          - { label: "Category", name: category, widget: string }
+          - { label: "Headline", name: title, widget: string }
+          - { label: "Excerpt", name: excerpt, widget: text }
+          - { label: "Read time (e.g. 6 min read)", name: readTime, widget: string }
+          - { label: "Meta (e.g. 6 min · Jan 2026)", name: meta, widget: string }
+          - { label: "Author role", name: authorRole, widget: string }
+          - { label: "Image alt text", name: imageAlt, widget: string }
+          - { label: "Tags", name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+          - label: "Body"
+            name: content
+            widget: list
+            types:
+              - label: "Paragraph"
+                name: paragraph
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: text }
+              - label: "Heading"
+                name: heading
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: string }
+              - label: "Quote"
+                name: quote
+                widget: object
+                fields:
+                  - { label: Text, name: text, widget: text }
+                  - { label: Citation (optional), name: cite, widget: string, required: false }
+              - label: "List"
+                name: list
+                widget: object
+                fields:
+                  - { label: Items, name: items, widget: list, field: { label: Item, name: item, widget: string } }
+
+  # ══════════════════════════════════════════════════════════
+  # PÁGINAS Y SECCIONES: un archivo por bloque de la web
+  # ══════════════════════════════════════════════════════════
+  - name: "pages"
+    label: "Páginas y secciones"
+    files:
+      - label: "Portada · Hero"
+        name: hero
+        file: "misterred360/src/content/hero.json"
+        fields:
+          - label: "Frase pequeña (kicker)"
+            name: kicker
+            widget: object
+            fields: &loc_string
+              - { label: Español, name: es, widget: string }
+              - { label: English, name: en, widget: string }
+          - label: "Titular grande (usa *palabra* para resaltarla en rojo)"
+            name: title
+            widget: object
+            fields: &loc_text
+              - { label: Español, name: es, widget: text }
+              - { label: English, name: en, widget: text }
+          - label: "Descripción (usa {b}texto{/b} para negrita)"
+            name: description
+            widget: object
+            fields: *loc_text
+          - { label: "Botón principal", name: ctaPrimary, widget: object, fields: *loc_string }
+          - { label: "Botón secundario", name: ctaSecondary, widget: object, fields: *loc_string }
+          - { label: "Línea de audiencia (separar con ' / ')", name: audience, widget: object, fields: *loc_string }
+          - { label: "Etiqueta bajo la foto", name: badge, widget: object, fields: *loc_string }
+          - label: "Palabras flotantes (5)"
+            name: chips
+            widget: object
+            fields:
+              - { label: "Reputación", name: prensa, widget: object, fields: *loc_string }
+              - { label: "Identidad", name: branding, widget: object, fields: *loc_string }
+              - { label: "Creación", name: av, widget: object, fields: *loc_string }
+              - { label: "Estrategia", name: estrategia, widget: object, fields: *loc_string }
+              - { label: "Impacto", name: impacto, widget: object, fields: *loc_string }
+
+      - label: "Manifiesto"
+        name: manifesto
+        file: "misterred360/src/content/manifesto.json"
+        fields:
+          - { label: "Frase pequeña (kicker)", name: kicker, widget: object, fields: *loc_string }
+          - { label: "Titular (usa *palabra* para resaltarla)", name: title, widget: object, fields: *loc_text }
+          - { label: "Frase de eco (en rojo)", name: eco, widget: object, fields: *loc_string }
+          - { label: "Párrafo 1", name: p1, widget: object, fields: *loc_text }
+          - { label: "Párrafo 2", name: p2, widget: object, fields: *loc_text }
+          - { label: "Cita del manifiesto", name: quote, widget: object, fields: *loc_text }
+          - { label: "Pie de figura", name: fig, widget: object, fields: *loc_string }
+          - { label: "Etiqueta sobre la foto", name: badge, widget: object, fields: *loc_string }
+          - { label: "Cita del CEO", name: ceoQuote, widget: object, fields: *loc_text }
+          - { label: "Firma del CEO", name: ceoRole, widget: object, fields: *loc_string }
+          - { label: "Foto de equipo (a color)", name: image, widget: image }
+          - { label: "Foto de repuesto (si la de arriba falla)", name: imageFallback, widget: image }
+
+      - label: "Por qué nosotros"
+        name: whyus
+        file: "misterred360/src/content/whyus.json"
+        fields:
+          - { label: "Frase pequeña (kicker)", name: kicker, widget: object, fields: *loc_string }
+          - { label: "Titular (usa *palabra* para resaltarla)", name: title, widget: object, fields: *loc_text }
+          - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - label: "Diferenciales (4 tarjetas, solo español)"
+            name: differentials
+            widget: list
+            fields:
+              - { label: Título, name: title, widget: string }
+              - { label: Descripción, name: description, widget: text }
+          - label: "Alianzas"
+            name: partners
+            widget: object
+            fields:
+              - { label: "Frase pequeña", name: kicker, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+
+      - label: "Cifras (Manifiesto + Por qué nosotros)"
+        name: stats
+        file: "misterred360/src/content/stats.json"
+        fields:
+          - label: "Cifras (4, en el mismo orden en que aparecen)"
+            name: items
+            widget: list
+            fields:
+              - { label: "Número", name: value, widget: number, value_type: int }
+              - { label: "Sufijo (%, +, h...)", name: suffix, widget: string }
+              - { label: "Etiqueta", name: label, widget: string }
+
+      - label: "Servicios"
+        name: services
+        file: "misterred360/src/content/services.json"
+        fields:
+          - label: "Bloques de servicios (3)"
+            name: blocks
+            widget: list
+            summary: "{{fields.title.es}}"
+            fields:
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
+              - { label: "Número (01, 02, 03)", name: index, widget: string }
+              - { label: "Color de acento", name: accent, widget: select, options: ["brand", "ocean"] }
+              - { label: "Título del bloque", name: title, widget: object, fields: *loc_string }
+              - { label: "Frase (claim)", name: claim, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - label: "Servicios de este bloque"
+                name: services
+                widget: list
+                summary: "{{fields.name.es}}"
+                fields:
+                  - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
+                  - { label: "Icono", name: icon, widget: select, options: ["newspaper", "compass", "radio-tower", "users", "fingerprint", "clapperboard", "megaphone", "bar-chart-3"] }
+                  - { label: "Imagen", name: image, widget: image }
+                  - { label: "Alt de la imagen (accesibilidad)", name: imageAlt, widget: string }
+                  - { label: "Nombre del servicio", name: name, widget: object, fields: *loc_string }
+                  - { label: "Frase corta (tagline)", name: tagline, widget: object, fields: *loc_string }
+                  - { label: "Descripción breve", name: brief, widget: object, fields: *loc_text }
+                  - { label: "Descripción larga", name: long, widget: object, fields: *loc_text }
+
+      - label: "Precios"
+        name: pricing
+        file: "misterred360/src/content/pricing.json"
+        fields:
+          - { label: "Frase pequeña (kicker)", name: kicker, widget: object, fields: *loc_string }
+          - { label: "Titular", name: title, widget: object, fields: *loc_text }
+          - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - { label: "Nota al pie", name: note, widget: object, fields: *loc_text }
+          - label: "Franjas de precio (3)"
+            name: tiers
+            widget: list
+            summary: "{{fields.name.es}}"
+            fields:
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
+              - { label: "Nombre", name: name, widget: object, fields: *loc_string }
+              - { label: "Precio (ej. Desde 1.000 €)", name: price, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+
+      - label: "Método 360"
+        name: process
+        file: "misterred360/src/content/process.json"
+        fields:
+          - label: "Fases (5, en orden)"
+            name: steps
+            widget: list
+            summary: "{{fields.title.es}}"
+            fields:
+              - { label: "Número (01-05, no tocar)", name: index, widget: string, hint: "No lo cambies" }
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "No lo cambies" }
+              - { label: "Verbo (OBSERVAR, PENSAR...)", name: verb, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción corta", name: description, widget: object, fields: *loc_text }
+              - { label: "Descripción extendida (página Método)", name: extended, widget: object, fields: *loc_text }
+              - { label: "Imagen", name: image, widget: image }
+              - label: "Etiquetas de la ficha (home)"
+                name: tags
+                widget: object
+                fields:
+                  - { label: Español, name: es, widget: list, field: { label: Etiqueta, name: tag, widget: string } }
+                  - { label: English, name: en, widget: list, field: { label: Tag, name: tag, widget: string } }
+              - label: "Entregables (página Método)"
+                name: deliverables
+                widget: object
+                fields:
+                  - { label: Español, name: es, widget: list, field: { label: Entregable, name: item, widget: string } }
+                  - { label: English, name: en, widget: list, field: { label: Deliverable, name: item, widget: string } }
+
+      - label: "Equipo (El Elenco)"
+        name: team
+        file: "misterred360/src/content/team.json"
+        fields:
+          - label: "Miembros (8)"
+            name: members
+            widget: list
+            summary: "{{fields.role.es}}"
+            fields:
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "No lo cambies" }
+              - { label: "Foto", name: image, widget: image }
+              - { label: "Género (para el icono ♀/♂)", name: gender, widget: select, options: ["m", "f"] }
+              - { label: "Rol", name: role, widget: object, fields: *loc_string }
+              - { label: "Área", name: area, widget: object, fields: *loc_string }
+              - { label: "Frase", name: quote, widget: object, fields: *loc_string }
+
+      - label: "Testimonios"
+        name: testimonials
+        file: "misterred360/src/content/testimonials.json"
+        fields:
+          - label: "Testimonios (solo español)"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Cita", name: quote, widget: text }
+              - { label: "Nombre", name: name, widget: string }
+              - { label: "Cargo y empresa", name: role, widget: string }
+
+      - label: "Marca, footer y contacto"
+        name: site
+        file: "misterred360/src/content/site.json"
+        fields:
+          - { label: "Eslogan de marca (junto al logo)", name: brandTagline, widget: object, fields: *loc_string }
+          - { label: "Eslogan del footer", name: footerSlogan, widget: object, fields: *loc_string }
+          - label: "Contacto"
+            name: contact
+            widget: object
+            fields:
+              - { label: Email, name: email, widget: string }
+              - { label: "Teléfono (con espacios, para mostrar)", name: phone, widget: string }
+              - { label: "Teléfono (para el enlace tel:, sin espacios)", name: phoneHref, widget: string }
+              - { label: Dirección, name: address, widget: string }
+              - { label: "Horario", name: hours, widget: string }
+              - { label: "Días de horario", name: hoursDays, widget: string }
+          - label: "Datos legales"
+            name: legal
+            widget: object
+            fields:
+              - { label: "Razón social", name: companyName, widget: string }
+              - { label: CIF, name: cif, widget: string }
