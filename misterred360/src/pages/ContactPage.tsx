@@ -7,9 +7,10 @@ import BookingBlock from "../components/BookingBlock";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 import { buildWhatsAppUrl } from "../lib/whatsapp";
+import { getSeo, siteContact, siteLegal } from "../lib/data";
 
 /* ───────────────────────────────────────────────────────────
-   Página · CONTACTO (#/contacto)
+   Página · CONTACTO (/contacto)
    Sistema de dos pestañas visibles a la vez:
    · Por escrito (formulario largo)
    · Pedir llamada (día + franja)
@@ -25,15 +26,16 @@ export default function ContactPage({
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [tab, setTab] = useState<Tab>("form");
+  const seo = getSeo(locale, "contacto");
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "@id": `${SITE}/contacto#contact`,
-    name: t("page.cont.seo.title"),
-    description: t("page.cont.seo.desc"),
+    name: seo.title,
+    description: seo.description,
     url: `${SITE}/contacto`,
     mainEntity: {
       "@type": "Organization",
@@ -42,8 +44,8 @@ export default function ContactPage({
         {
           "@type": "ContactPoint",
           contactType: "customer service",
-          email: "misterred@misterred360.es",
-          telephone: "+34910360360",
+          email: siteContact.email,
+          telephone: siteContact.phoneHref,
           areaServed: "ES",
           availableLanguage: ["es", "en"],
         },
@@ -60,8 +62,8 @@ export default function ContactPage({
       meta="page.cont.meta"
       figure="/images/chimp-cta.jpg"
       figureAlt="page.cont.figure_alt"
-      seoTitle="page.cont.seo.title"
-      seoDesc="page.cont.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/contacto"
       ogImage={`${SITE}/images/chimp-cta.jpg`}
       breadcrumbs={[
@@ -298,34 +300,34 @@ function CompanyInfo() {
           <InfoCard
             icon={<Mail className="w-5 h-5" strokeWidth={1.7} />}
             label={t("form.email")}
-            value="misterred@misterred360.es"
-            href="mailto:misterred@misterred360.es"
+            value={siteContact.email}
+            href={`mailto:${siteContact.email}`}
           />
           <InfoCard
             icon={<Phone className="w-5 h-5" strokeWidth={1.7} />}
             label={t("form.phone")}
-            value="+34 910 360 360"
-            href="tel:+34910360360"
+            value={siteContact.phone}
+            href={`tel:${siteContact.phoneHref}`}
           />
           <InfoCard
             icon={<MapPin className="w-5 h-5" strokeWidth={1.7} />}
             label={t("form.address")}
-            value="Las Rozas de Madrid"
+            value={siteContact.address}
             hint="España"
           />
           <InfoCard
             icon={<Clock className="w-5 h-5" strokeWidth={1.7} />}
             label={t("contact.company.hours")}
-            value="09:00 – 18:00"
-            hint="Lun – Vie"
+            value={siteContact.hours}
+            hint={siteContact.hoursDays}
           />
         </div>
 
         {/* Datos fiscales legales · pequeña línea al pie */}
         <div className="mt-10 pt-8 border-t border-ink/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-ink/55">
           <p>
-            <span className="font-semibold text-ink/80">MR. RED S.L.</span>{" "}
-            · CIF B56916133 · {t("contact.company.legal")}
+            <span className="font-semibold text-ink/80">{siteLegal.companyName}</span>{" "}
+            · CIF {siteLegal.cif} · {t("contact.company.legal")}
           </p>
           <p className="uppercase tracking-[0.18em] font-semibold text-ink/60">
             {t("contact.company.reply")}

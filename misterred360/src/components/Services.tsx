@@ -228,7 +228,7 @@ export default function Services() {
                                 {s.long}
                               </p>
                               <button
-                                onClick={() => navigateTo("#/contacto")}
+                                onClick={() => navigateTo("/contacto")}
                                 className="group/link mt-6 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand hover:text-flame transition-colors"
                               >
                                 {t("services.cta")}

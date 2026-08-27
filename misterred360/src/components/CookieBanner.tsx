@@ -48,7 +48,7 @@ export default function CookieBanner() {
                     id="cookie-banner-desc"
                     className="mt-2 text-sm leading-relaxed text-smoke"
                   >
-                    <CookieDesc onLink={() => navigateTo("#/politica-de-cookies")} />
+                    <CookieDesc onLink={() => navigateTo("/politica-de-cookies")} />
                   </p>
                 </div>
               </div>

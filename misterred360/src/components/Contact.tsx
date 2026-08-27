@@ -1,5 +1,5 @@
 import { ArrowUp } from "lucide-react";
-import { navLinks, getAllServices, getBrandTagline, socialLinks } from "../lib/data";
+import { navLinks, getAllServices, getBrandTagline, socialLinks, siteContact } from "../lib/data";
 import { navigateTo, scrollToHash } from "../lib/scroll";
 import { useCookies } from "../lib/cookies";
 import { useA11y } from "../lib/accessibility";
@@ -111,11 +111,11 @@ export default function Contact({
                 {allServices.map((s) => (
                   <li key={s.id}>
                     <a
-                      href="#/servicios"
+                      href="/servicios"
                       onClick={(e) => {
                         e.preventDefault();
-                        if (onNavigate) onNavigate("#/servicios");
-                        else scrollToHash("#/servicios");
+                        if (onNavigate) onNavigate("/servicios");
+                        else scrollToHash("/servicios");
                       }}
                       className="text-sm text-smoke hover:text-brand transition-colors"
                     >
@@ -131,18 +131,18 @@ export default function Contact({
                 {t("footer.den")}
               </p>
               <address className="not-italic text-sm text-smoke space-y-3">
-                <p>Las Rozas de Madrid · España</p>
+                <p>{siteContact.address} · España</p>
                 <p>
                   <a
-                    href="mailto:misterred@misterred360.es"
+                    href={`mailto:${siteContact.email}`}
                     className="hover:text-brand transition-colors"
                   >
-                    misterred@misterred360.es
+                    {siteContact.email}
                   </a>
                 </p>
                 <p>
-                  <a href="tel:+34910360360" className="hover:text-brand transition-colors">
-                    +34 910 360 360
+                  <a href={`tel:${siteContact.phoneHref}`} className="hover:text-brand transition-colors">
+                    {siteContact.phone}
                   </a>
                 </p>
               </address>
@@ -160,19 +160,19 @@ export default function Contact({
             <p>{t("footer.rights")}</p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <button
-                onClick={() => go("#/politica-de-privacidad")}
+                onClick={() => go("/politica-de-privacidad")}
                 className="hover:text-paper transition-colors"
               >
                 {t("footer.privacy")}
               </button>
               <button
-                onClick={() => go("#/politica-de-cookies")}
+                onClick={() => go("/politica-de-cookies")}
                 className="hover:text-paper transition-colors"
               >
                 {t("footer.cookies")}
               </button>
               <button
-                onClick={() => go("#/politica-de-ia")}
+                onClick={() => go("/politica-de-ia")}
                 className="hover:text-paper transition-colors"
               >
                 {t("footer.ia")}

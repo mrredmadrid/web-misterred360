@@ -1,3 +1,5 @@
+import { siteContact } from "./data";
+
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Configuración de WhatsApp
    Centraliza el número, mensaje por defecto y ajustes de la
@@ -30,7 +32,9 @@ export interface WhatsAppConfig {
 }
 
 export const whatsappConfig: WhatsAppConfig = {
-  phone: "34910360360",
+  /* Se toma del teléfono editable en /admin ("Marca, footer y contacto")
+     para que WhatsApp nunca quede desincronizado con el resto de la web. */
+  phone: siteContact.phoneHref.replace(/^\+/, ""),
   defaultMessage:
     "Hola MISTERRED360, me gustaría hablar sobre un proyecto de comunicación.",
   agentName: "MISTERRED360",

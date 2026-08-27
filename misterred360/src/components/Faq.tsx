@@ -80,7 +80,7 @@ export default function Faq() {
             {t("faq.desc")}
           </p>
           <button
-            onClick={() => navigateTo("#/contacto")}
+            onClick={() => navigateTo("/contacto")}
             className="group mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-brand hover:text-flame transition-colors"
           >
             {t("faq.cta")}

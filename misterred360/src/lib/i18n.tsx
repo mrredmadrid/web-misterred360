@@ -547,7 +547,7 @@ const es: Dict = {
   "call.perk.3": "Si no lo coges, reintentamos y te escribimos.",
   "call.perk.4": "Cero venta agresiva. Palabra.",
 
-  /* ═══ Página Agendar (#/agendar) ═══ */
+  /* ═══ Página Agendar (/agendar) ═══ */
   "agendar.kicker": "Pedir llamada",
   "agendar.title": "Elige día y franja.\n*Te llamamos nosotros.*",
   "agendar.intro":
@@ -1168,7 +1168,7 @@ const en: Dict = {
   "call.perk.3": "If you miss it, we retry and email you.",
   "call.perk.4": "Zero pushy sales. Promise.",
 
-  /* ═══ Book a call page (#/agendar) ═══ */
+  /* ═══ Book a call page (/agendar) ═══ */
   "agendar.kicker": "Request a call",
   "agendar.title": "Pick day and slot.\n*We call you.*",
   "agendar.intro":

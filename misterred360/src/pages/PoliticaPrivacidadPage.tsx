@@ -307,7 +307,7 @@ export default function PoliticaPrivacidadPage({
               {t("legal.updated")}: {t("legal.updated.value")}.{" "}
               <button
                 className="text-brand underline"
-                onClick={() => onNavigate("#/politica-de-cookies")}
+                onClick={() => onNavigate("/politica-de-cookies")}
               >
                 {t("footer.cookies")}
               </button>

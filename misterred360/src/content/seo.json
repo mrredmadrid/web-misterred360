@@ -1,0 +1,82 @@
+{
+  "home": {
+    "title": {
+      "es": "Agencia de Comunicación y Marketing 360 en Madrid | MISTERRED360",
+      "en": "360 Communication and Marketing Agency in Madrid | MISTERRED360"
+    },
+    "description": {
+      "es": "MISTERRED360, agencia de comunicación estratégica en Madrid: gabinete de prensa, imagen corporativa, audiovisual, publicidad, RRPP y estudios de mercado.",
+      "en": "MISTERRED360, strategic communication agency in Madrid: press office, corporate identity, video, advertising, PR and market research."
+    }
+  },
+  "manifiesto": {
+    "title": {
+      "es": "Manifiesto — Agencia de Comunicación Estratégica | MISTERRED360",
+      "en": "Manifesto — Strategic Communication Agency | MISTERRED360"
+    },
+    "description": {
+      "es": "La declaración de intenciones de MISTERRED360: comunicación estratégica, reputación y crecimiento en 360 grados. Los cinco principios de nuestra agencia de comunicación en Madrid.",
+      "en": "MISTERRED360's declaration of intent: strategic communication, reputation and 360-degree growth. The five principles of our communication agency in Madrid."
+    }
+  },
+  "servicios": {
+    "title": {
+      "es": "Servicios de Agencia de Comunicación 360: Prensa, Branding y Marketing | MISTERRED360",
+      "en": "360 Communication Agency Services: Press, Branding and Marketing | MISTERRED360"
+    },
+    "description": {
+      "es": "Servicios de comunicación 360 en Madrid: gabinete de prensa, planificación estratégica, comunicación 2.0, RRPP y eventos, imagen corporativa, audiovisual, publicidad y estudios de mercado.",
+      "en": "360 communication services in Madrid: press office, strategic planning, digital communication, PR and events, corporate identity, video, advertising and market research."
+    }
+  },
+  "metodo": {
+    "title": {
+      "es": "Método 360: Plan de Comunicación en 4 Fases | MISTERRED360",
+      "en": "360 Method: Communication Plan in 4 Phases | MISTERRED360"
+    },
+    "description": {
+      "es": "Cómo trabaja MISTERRED360, agencia de comunicación en Madrid: observar, pensar, crear, amplificar y visionar. Un plan de comunicación completo en cinco fases medibles.",
+      "en": "How MISTERRED360, a communication agency in Madrid, works: observe, think, create, amplify and envision. A complete communication plan in five measurable phases."
+    }
+  },
+  "elenco": {
+    "title": {
+      "es": "El Elenco — Branding con Carácter | MISTERRED360",
+      "en": "The Cast — Branding with Character | MISTERRED360"
+    },
+    "description": {
+      "es": "El chimpancé de MISTERRED360: ocho versiones de un embajador de marca premium. Portavoz, estratega, anfitrión, diseñador, director, publicista y analista.",
+      "en": "MISTERRED360's chimp: eight versions of a premium brand ambassador. Spokesperson, strategist, host, designer, director, publicist and analyst."
+    }
+  },
+  "contacto": {
+    "title": {
+      "es": "Contacto — Agencia de Comunicación en Madrid | MISTERRED360",
+      "en": "Contact — Communication Agency in Madrid | MISTERRED360"
+    },
+    "description": {
+      "es": "Contacta con MISTERRED360, agencia de comunicación estratégica en Madrid. Solicita tu propuesta de gabinete de prensa, identidad corporativa, audiovisual, publicidad o plan 360 completo.",
+      "en": "Contact MISTERRED360, strategic communication agency in Madrid. Request your proposal for press office, corporate identity, video, advertising or a full 360 plan."
+    }
+  },
+  "agendar": {
+    "title": {
+      "es": "Pedir llamada — Agencia de Comunicación | MISTERRED360",
+      "en": "Request a Call — Communication Agency | MISTERRED360"
+    },
+    "description": {
+      "es": "Pide una llamada rápida con MISTERRED360, agencia de comunicación en Madrid. Elige día y franja, te llamamos nosotros. Sin apps, sin videollamadas.",
+      "en": "Request a quick call with MISTERRED360, a communication agency in Madrid. Pick day and slot, we call you. No apps, no video meetings."
+    }
+  },
+  "insights": {
+    "title": {
+      "es": "Insights y Noticias de Comunicación y Marketing | MISTERRED360",
+      "en": "Insights and News on Communication and Marketing | MISTERRED360"
+    },
+    "description": {
+      "es": "Blog de MISTERRED360: noticias, análisis e insights sobre comunicación estratégica, gabinete de prensa, reputación de marca, branding, audiovisual y marketing.",
+      "en": "MISTERRED360's blog: news, analysis and insights on strategic communication, press office, brand reputation, branding, video and marketing."
+    }
+  }
+}

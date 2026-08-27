@@ -41,9 +41,9 @@ import HomeSeo from "./components/HomeSeo";
 import { bootstrapNative } from "./lib/native";
 
 /* ───────────────────────────────────────────────────────────
-   MISTERRED360 · Enrutado por hash
+   MISTERRED360 · Enrutado por ruta real (History API)
    Home (landing intacta) + páginas interiores:
-   #/manifiesto · #/servicios · #/metodo · #/elenco · #/insights
+   /manifiesto · /servicios · /metodo · /elenco · /insights
    ─────────────────────────────────────────────────────────── */
 
 type Page = "manifiesto" | "servicios" | "metodo" | "elenco";
@@ -67,23 +67,22 @@ const PAGES: Page[] = ["manifiesto", "servicios", "metodo", "elenco"];
 
 function parseRoute(): Route {
   if (typeof window === "undefined") return { name: "home" };
-  /* Admite anclas dobles: "#/contacto#agendar" → ruta "#/contacto",
-     y el ancla interna se maneja aparte tras la navegación. */
-  const raw = window.location.hash;
-  const secondHash = raw.indexOf("#", 1);
-  const h = secondHash > 0 ? raw.slice(0, secondHash) : raw;
-  if (h.startsWith("#/insights/")) {
-    return { name: "post", slug: decodeURIComponent(h.slice("#/insights/".length)) };
+  /* Ruta real (History API); el ancla interna ("/contacto#agendar")
+     se maneja aparte tras la navegación, no forma parte de la ruta. */
+  const raw = window.location.pathname;
+  const path = raw.length > 1 && raw.endsWith("/") ? raw.slice(0, -1) : raw;
+  if (path.startsWith("/insights/")) {
+    return { name: "post", slug: decodeURIComponent(path.slice("/insights/".length)) };
   }
-  if (h === "#/insights") return { name: "blog" };
-  if (h === "#/contacto") return { name: "contact" };
-  if (h === "#/agendar") return { name: "agendar" };
-  for (const p of PAGES) if (h === `#/${p}`) return { name: "page", page: p };
-  for (const p of LEGAL_PAGES) if (h === `#/${p}`) return { name: "legal", page: p };
+  if (path === "/insights") return { name: "blog" };
+  if (path === "/contacto") return { name: "contact" };
+  if (path === "/agendar") return { name: "agendar" };
+  for (const p of PAGES) if (path === `/${p}`) return { name: "page", page: p };
+  for (const p of LEGAL_PAGES) if (path === `/${p}`) return { name: "legal", page: p };
   return { name: "home" };
 }
 
-/* Extrae el ancla interna de un href tipo "#/contacto#agendar" */
+/* Extrae el ancla interna de un href tipo "/contacto#agendar" */
 function extractInnerAnchor(href: string): string | null {
   const secondHash = href.indexOf("#", 1);
   if (secondHash <= 0) return null;
@@ -129,11 +128,11 @@ export default function App() {
     });
   }, []);
 
-  /* Sincroniza la ruta con el hash (flechas atrás/adelante del navegador) */
+  /* Sincroniza la ruta con la URL (flechas atrás/adelante del navegador) */
   useEffect(() => {
     const sync = () => setRoute(parseRoute());
-    window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    return () => window.removeEventListener("popstate", sync);
   }, []);
 
   /* Bloquea el scroll durante la intro */
@@ -152,9 +151,9 @@ export default function App() {
     }, 0);
   };
 
-  /* Navegación única: rutas interiores (#/...) o secciones de la home (#...) */
+  /* Navegación única: rutas interiores (/...) o secciones de la home (#...) */
   const navigate = useCallback((href: string) => {
-    if (href.startsWith("#/")) {
+    if (href.startsWith("/")) {
       window.history.pushState(null, "", href);
       setRoute(parseRoute());
       const inner = extractInnerAnchor(href);
@@ -168,7 +167,9 @@ export default function App() {
         jumpTop();
       }
     } else {
-      window.history.pushState(null, "", href);
+      /* Ancla de la home (p.ej. "#top"): no es una ruta propia, así
+         que la URL vuelve a "/" en vez de arrastrar el fragmento. */
+      window.history.pushState(null, "", "/");
       setRoute({ name: "home" });
       setTimeout(() => scrollToHash(href), 90);
     }
@@ -191,8 +192,8 @@ export default function App() {
       <Blog
         route={blogRoute}
         onBackHome={(href = "#top") => navigate(href)}
-        onOpenIndex={() => navigate("#/insights")}
-        onOpenPost={(slug) => navigate(`#/insights/${encodeURIComponent(slug)}`)}
+        onOpenIndex={() => navigate("/insights")}
+        onOpenPost={(slug) => navigate(`/insights/${encodeURIComponent(slug)}`)}
       />
     );
   } else if (route.name === "contact") {
@@ -257,8 +258,8 @@ export default function App() {
 
         {/* 07 · Insights */}
         <Insights
-          onOpenBlog={() => navigate("#/insights")}
-          onOpenPost={(slug) => navigate(`#/insights/${encodeURIComponent(slug)}`)}
+          onOpenBlog={() => navigate("/insights")}
+          onOpenPost={(slug) => navigate(`/insights/${encodeURIComponent(slug)}`)}
         />
 
         {/* Cinta inversa hacia el cierre */}

@@ -2,9 +2,10 @@ import PageShell from "../components/PageShell";
 import BookingBlock from "../components/BookingBlock";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
+import { getSeo } from "../lib/data";
 
 /* ───────────────────────────────────────────────────────────
-   Página · AGENDAR LLAMADA (#/agendar)
+   Página · AGENDAR LLAMADA (/agendar)
    Pedir llamada = día + franja aproximada. Te llamamos nosotros.
    ─────────────────────────────────────────────────────────── */
 
@@ -13,7 +14,8 @@ export default function AgendarPage({
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const seo = getSeo(locale, "agendar");
 
   return (
     <PageShell
@@ -24,8 +26,8 @@ export default function AgendarPage({
       meta="agendar.meta"
       figure="/images/chimp-strategy.jpg"
       figureAlt="agendar.figure_alt"
-      seoTitle="agendar.seo.title"
-      seoDesc="agendar.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/agendar"
       ogImage={`${SITE}/images/chimp-strategy.jpg`}
       breadcrumbs={[
@@ -36,15 +38,15 @@ export default function AgendarPage({
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": `${SITE}/agendar#page`,
-        name: t("agendar.seo.title"),
-        description: t("agendar.seo.desc"),
+        name: seo.title,
+        description: seo.description,
         url: `${SITE}/agendar`,
         inLanguage: "es-ES",
         publisher: { "@id": `${SITE}/#organizacion` },
         potentialAction: {
           "@type": "ReserveAction",
           name: "Pedir llamada",
-          target: `${SITE}/#/agendar`,
+          target: `${SITE}/agendar`,
         },
       }}
       onNavigate={onNavigate}
@@ -97,7 +99,7 @@ export default function AgendarPage({
                   {t("agendar.alt.desc")}
                 </p>
                 <button
-                  onClick={() => onNavigate("#/contacto")}
+                  onClick={() => onNavigate("/contacto")}
                   className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand hover:text-flame transition-colors"
                 >
                   {t("agendar.alt.cta")} →

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
 import { Counter } from "../components/ui";
-import { stats } from "../lib/data";
+import { stats, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -41,13 +41,14 @@ export default function ManifiestoPage({
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const seo = getSeo(locale, "manifiesto");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "@id": `${SITE}/manifiesto#about`,
-    name: t("page.man.seo.title"),
-    description: t("page.man.seo.desc"),
+    name: seo.title,
+    description: seo.description,
     url: `${SITE}/manifiesto`,
     mainEntity: { "@id": `${SITE}/#organizacion` },
   };
@@ -60,8 +61,8 @@ export default function ManifiestoPage({
       meta="page.man.meta"
       figure="/images/chimp-bw.jpg"
       figureAlt="page.ele.figure_alt"
-      seoTitle="page.man.seo.title"
-      seoDesc="page.man.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/manifiesto"
       ogImage={`${SITE}/images/chimp-bw.jpg`}
       breadcrumbs={[
@@ -208,7 +209,7 @@ export default function ManifiestoPage({
               {t("page.man.socio.q")}
             </p>
             <button
-              onClick={() => onNavigate("#/elenco")}
+              onClick={() => onNavigate("/elenco")}
               className="group mt-10 inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-paper transition-all duration-300 hover:gap-4"
             >
               {t("page.man.socio.cta")}

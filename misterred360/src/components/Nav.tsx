@@ -14,15 +14,15 @@ import LanguageSwitcher from "./LanguageSwitcher";
 /* "Servicios" despliega un mega-menú en fondo blanco con los
    tres bloques de servicios + Método 360 + Precios. */
 const NAV_ROUTES = [
-  { key: "nav.manifiesto", href: "#/manifiesto" },
-  { key: "nav.servicios", href: "#/servicios", dropdown: true },
-  { key: "nav.elenco", href: "#/elenco" },
-  { key: "nav.insights", href: "#/insights" },
+  { key: "nav.manifiesto", href: "/manifiesto" },
+  { key: "nav.servicios", href: "/servicios", dropdown: true },
+  { key: "nav.elenco", href: "/elenco" },
+  { key: "nav.insights", href: "/insights" },
 ] as const;
 
 const SERVICES_DROPDOWN_EXTRA = [
-  { key: "nav.metodo", href: "#/metodo" },
-  { key: "nav.precios", href: "#/servicios#precios" },
+  { key: "nav.metodo", href: "/metodo" },
+  { key: "nav.precios", href: "/servicios#precios" },
 ] as const;
 
 export default function Nav({
@@ -64,13 +64,13 @@ export default function Nav({
 
   const mobileLinks = [
     { key: "nav.inicio", href: "#top" },
-    { key: "nav.manifiesto", href: "#/manifiesto" },
-    { key: "nav.servicios", href: "#/servicios" },
-    { key: "nav.metodo", href: "#/metodo" },
-    { key: "nav.precios", href: "#/servicios#precios" },
-    { key: "nav.elenco", href: "#/elenco" },
-    { key: "nav.insights", href: "#/insights" },
-    { key: "nav.talk", href: "#/contacto" },
+    { key: "nav.manifiesto", href: "/manifiesto" },
+    { key: "nav.servicios", href: "/servicios" },
+    { key: "nav.metodo", href: "/metodo" },
+    { key: "nav.precios", href: "/servicios#precios" },
+    { key: "nav.elenco", href: "/elenco" },
+    { key: "nav.insights", href: "/insights" },
+    { key: "nav.talk", href: "/contacto" },
   ];
 
   return (
@@ -129,8 +129,8 @@ export default function Nav({
                           {serviceBlocks.map((b) => (
                             <a
                               key={b.id}
-                              href={`#/servicios#${b.id}`}
-                              onClick={(e) => go(e, `#/servicios#${b.id}`)}
+                              href={`/servicios#${b.id}`}
+                              onClick={(e) => go(e, `/servicios#${b.id}`)}
                               className="flex items-baseline gap-3 rounded-xl px-4 py-3 text-[13px] font-medium hover:bg-ink/5 transition-colors"
                             >
                               <span className="font-display text-brand text-xs font-semibold">
@@ -171,8 +171,8 @@ export default function Nav({
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <a
-              href="#/contacto"
-              onClick={(e) => go(e, "#/contacto")}
+              href="/contacto"
+              onClick={(e) => go(e, "/contacto")}
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
               {t("nav.talk")}

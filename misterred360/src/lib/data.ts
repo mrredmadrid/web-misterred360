@@ -23,6 +23,7 @@ import heroContent from "../content/hero.json";
 import manifestoContent from "../content/manifesto.json";
 import siteContent from "../content/site.json";
 import designContent from "../content/design.json";
+import seoContent from "../content/seo.json";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Capa de resolución de contenido
@@ -229,6 +230,16 @@ export const siteLegal = siteContent.legal;
    valor es solo el punto de partida. */
 export const siteFontScale = designContent.fontScale;
 
+/* ── SEO por página, editable desde el panel /admin ────────── */
+export type SeoPage = keyof typeof seoContent;
+export function getSeo(locale: Locale, page: SeoPage): { title: string; description: string } {
+  const entry = seoContent[page];
+  return {
+    title: loc(entry.title, locale),
+    description: loc(entry.description, locale),
+  };
+}
+
 /* ── Marquee ────────────────────────────────────────────── */
 export const marqueeItems = [
   "Identidad",
@@ -248,11 +259,11 @@ export const marqueeItems = [
 
 /* Rutas de las páginas interiores (hash routing) */
 export const navLinks = [
-  { label: "Manifiesto", href: "#/manifiesto" },
-  { label: "Servicios", href: "#/servicios" },
-  { label: "Método 360", href: "#/metodo" },
-  { label: "Elenco", href: "#/elenco" },
-  { label: "Insights", href: "#/insights" },
+  { label: "Manifiesto", href: "/manifiesto" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Método 360", href: "/metodo" },
+  { label: "Elenco", href: "/elenco" },
+  { label: "Insights", href: "/insights" },
 ];
 
 /* Iconos sociales editoriales (lucide ya no incluye marcas) */
