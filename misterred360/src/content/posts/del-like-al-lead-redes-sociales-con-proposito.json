@@ -1,0 +1,89 @@
+{
+  "slug": "del-like-al-lead-redes-sociales-con-proposito",
+  "date": "18 mar 2026",
+  "dateEn": "Mar 18, 2026",
+  "author": "MISTERRED360",
+  "image": "/images/chimp-hero.jpg",
+  "es": {
+    "category": "Social",
+    "title": "Del like al lead: redes sociales con propósito",
+    "excerpt": "Métricas de vanidad fuera. Cómo integrar la conversación social dentro de una estrategia que de verdad mueve el negocio.",
+    "readTime": "5 min",
+    "meta": "5 min · Mar 2026",
+    "authorRole": "Equipo digital",
+    "imageAlt": "Chimpancé de MISTERRED360 con gafas rojas como embajador digital",
+    "tags": [
+      "Comunicación 2.0",
+      "Redes sociales",
+      "Conversión"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Las redes sociales no deberían vivir separadas del plan de comunicación. Cuando se gestionan como un calendario de publicaciones aislado, se llenan de contenido correcto pero irrelevante. La pregunta no es qué publicamos hoy, sino qué conversación queremos liderar este trimestre."
+      },
+      {
+        "type": "heading",
+        "text": "El objetivo no es publicar más, es publicar con intención"
+      },
+      {
+        "type": "paragraph",
+        "text": "Un buen sistema social traduce objetivos de marca en líneas editoriales, formatos, ritmos y llamadas a la acción. Algunas piezas construyen autoridad, otras explican valor, otras captan demanda y otras sostienen comunidad."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Define territorios editoriales antes de diseñar formatos.",
+          "Usa cada red para una función concreta dentro del embudo.",
+          "Equilibra autoridad, prueba social, contenido útil y activación comercial.",
+          "Mide señales de negocio, no solo interacciones visibles."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "El like puede ser una señal, pero no es el destino. El destino es una audiencia que entiende qué haces, por qué importa y qué paso puede dar después."
+      }
+    ]
+  },
+  "en": {
+    "category": "Social",
+    "title": "From like to lead: social media with purpose",
+    "excerpt": "Vanity metrics out. How to integrate social conversation inside a strategy that actually moves the business.",
+    "readTime": "5 min read",
+    "meta": "5 min · Mar 2026",
+    "authorRole": "Digital team",
+    "imageAlt": "MISTERRED360's chimp with red glasses as a digital ambassador",
+    "tags": [
+      "Digital communication",
+      "Social media",
+      "Conversion"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Social media shouldn't live apart from the communication plan. When it's managed as an isolated posting calendar, it fills up with content that's correct but irrelevant. The question isn't what we post today, it's what conversation we want to lead this quarter."
+      },
+      {
+        "type": "heading",
+        "text": "The goal isn't to post more, it's to post with intent"
+      },
+      {
+        "type": "paragraph",
+        "text": "A good social system translates brand objectives into editorial lines, formats, cadences and calls to action. Some pieces build authority, others explain value, others capture demand and others sustain community."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Define editorial territories before designing formats.",
+          "Use each network for a specific role within the funnel.",
+          "Balance authority, social proof, useful content and commercial activation.",
+          "Measure business signals, not only visible interactions."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "A like can be a signal, but it's not the destination. The destination is an audience that understands what you do, why it matters and what step they can take next."
+      }
+    ]
+  }
+}

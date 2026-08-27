@@ -1,0 +1,41 @@
+{
+  "kicker": { "es": "Precios", "en": "Pricing" },
+  "title": { "es": "Precios claros.\nSin letra pequeña.", "en": "Clear pricing.\nNo small print." },
+  "description": {
+    "es": "Tres franjas de entrada según lo que necesita tu marca. Presupuesto cerrado antes de empezar, siempre.",
+    "en": "Three entry tiers depending on what your brand needs. A closed budget before we start, always."
+  },
+  "note": {
+    "es": "Precios orientativos de entrada. Cada propuesta se cierra tras una primera lectura de tu marca, sin compromiso.",
+    "en": "Indicative starting prices. Every proposal is closed after a first read of your brand, with no strings attached."
+  },
+  "tiers": [
+    {
+      "id": "web",
+      "name": { "es": "Servicios Web", "en": "Web Services" },
+      "price": { "es": "Desde 1.000 €", "en": "From €1,000" },
+      "description": {
+        "es": "Diseño y desarrollo de tu espacio web, con identidad, contenidos y estructura pensados para convertir.",
+        "en": "Design and development of your web presence, with identity, content and structure built to convert."
+      }
+    },
+    {
+      "id": "estrategia",
+      "name": { "es": "Estrategia y Planes de Comunicación", "en": "Strategy & Communication Plans" },
+      "price": { "es": "Desde 1.500 €", "en": "From €1,500" },
+      "description": {
+        "es": "Plan de comunicación completo: mensajes, canales, calendario y objetivos alineados con una visión 360.",
+        "en": "A full communication plan: messages, channels, calendar and objectives aligned with a 360 vision."
+      }
+    },
+    {
+      "id": "gabinete",
+      "name": { "es": "Gabinete de Prensa y Presencia en Medios", "en": "Press Office & Media Presence" },
+      "price": { "es": "Según proyecto", "en": "Project-based" },
+      "description": {
+        "es": "Gestión de contenidos, gabinete de prensa y presencia en medios en función del proyecto y su continuidad, con planes personalizados adaptados a las necesidades del cliente.",
+        "en": "Content management, press office and media presence based on the project and its continuity, with custom plans tailored to your needs."
+      }
+    }
+  ]
+}

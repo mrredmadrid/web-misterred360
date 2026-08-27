@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "value": 77, "suffix": "%", "label": "Marcando la diferencia" },
+    { "value": 87, "suffix": "%", "label": "Marcas con relato" },
+    { "value": 100, "suffix": "%", "label": "Alma en cada proyecto" },
+    { "value": 90, "suffix": "%", "label": "Clientes que repiten" }
+  ]
+}

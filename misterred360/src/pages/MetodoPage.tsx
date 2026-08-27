@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { processSteps } from "../lib/data";
+import { getProcessSteps } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -22,31 +22,24 @@ function Rich({ text }: { text: string }) {
    con el arco de grados como motivo narrativo
    ─────────────────────────────────────────────────────────── */
 
-const phaseMap: Record<string, { deg: string; accent: "brand" | "ocean"; verbKey: string }> = {
-  "01": { deg: "72°", accent: "brand", verbKey: "page.met.verb.observar" },
-  "02": { deg: "144°", accent: "ocean", verbKey: "page.met.verb.pensar" },
-  "03": { deg: "216°", accent: "brand", verbKey: "page.met.verb.crear" },
-  "04": { deg: "288°", accent: "ocean", verbKey: "page.met.verb.amplificar" },
-  "05": { deg: "360°", accent: "brand", verbKey: "page.met.verb.visionar" },
+const phaseMap: Record<string, { deg: string; accent: "brand" | "ocean" }> = {
+  "01": { deg: "72°", accent: "brand" },
+  "02": { deg: "144°", accent: "ocean" },
+  "03": { deg: "216°", accent: "brand" },
+  "04": { deg: "288°", accent: "ocean" },
+  "05": { deg: "360°", accent: "brand" },
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-function phaseVerbId(index: string) {
-  return (
-    { "01": "observar", "02": "pensar", "03": "crear", "04": "amplificar", "05": "visionar" }[
-      index
-    ] ?? "observar"
-  );
-}
 
 export default function MetodoPage({
   onNavigate,
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
-  /* HowTo con las 4 fases */
+  const { t, locale } = useI18n();
+  const processSteps = getProcessSteps(locale);
+  /* HowTo con las 5 fases */
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -58,8 +51,8 @@ export default function MetodoPage({
     step: processSteps.map((s) => ({
       "@type": "HowToStep",
       position: parseInt(s.index, 10),
-      name: t(`page.met.verb.${phaseVerbId(s.index)}`),
-      text: t(`page.met.p${s.index}.desc`),
+      name: s.verb,
+      text: s.description,
       image: `${SITE}${s.image}`,
       url: `${SITE}/metodo#${s.index}`,
     })),
@@ -136,7 +129,7 @@ export default function MetodoPage({
                         isBrand ? "bg-brand" : "bg-ocean"
                       }`}
                     >
-                      {t(extra.verbKey)}
+                      {step.verb}
                     </span>
                     <span className="font-display font-semibold text-2xl text-smoke">
                       {extra.deg}
@@ -154,19 +147,19 @@ export default function MetodoPage({
                 className={`lg:col-span-8 ${reversed ? "lg:order-1" : ""}`}
               >
                 <h2 className="font-display font-semibold leading-tight text-[clamp(1.9rem,3.8vw,3.2rem)] text-paper">
-                  {t(`page.met.p${step.index}.title`)}
+                  {step.title}
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-paper/85 max-w-2xl">
-                  {t(`page.met.p${step.index}.desc`)}
+                  {step.description}
                 </p>
                 <p className="mt-4 text-[15px] leading-relaxed text-smoke max-w-2xl">
-                  {t(`page.met.p${step.index}.ext`)}
+                  {step.extended}
                 </p>
 
                 <div className="mt-8 rounded-[2rem] overflow-hidden border border-white/10 aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/10] group">
                   <img
                     src={step.image}
-                    alt={t(extra.verbKey)}
+                    alt={step.verb}
                     className="w-full h-full object-cover object-[center_22%] duotone-red transition-transform duration-700 group-hover:scale-[1.03]"
                     loading="lazy"
                   />
@@ -176,12 +169,12 @@ export default function MetodoPage({
                   {t("page.met.deliverables")}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  {["d1", "d2", "d3"].map((key) => (
+                  {step.deliverables.map((d) => (
                     <span
-                      key={key}
+                      key={d}
                       className="rounded-full border border-white/15 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-smoke transition-colors hover:border-brand hover:text-paper"
                     >
-                      {t(`page.met.p${step.index}.${key}`)}
+                      {d}
                     </span>
                   ))}
                 </div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Eye, Antenna, BrainCircuit, Handshake } from "lucide-react";
-import { differentials, stats } from "../lib/data";
+import { differentials, stats, getWhyUs } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { Kicker, LineReveal, Counter } from "./ui";
 
@@ -12,22 +12,23 @@ import { Kicker, LineReveal, Counter } from "./ui";
 const icons = [Eye, Antenna, BrainCircuit, Handshake];
 
 export default function WhyUs() {
-  const { t } = useI18n();
+  const { locale } = useI18n();
+  const w = getWhyUs(locale);
   return (
     <section id="porque" className="relative bg-ink overflow-hidden">
       <div className="absolute inset-0 glow-brand pointer-events-none" aria-hidden="true" />
       <div className="relative px-5 md:px-10 xl:px-16 py-24 md:py-36 max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-14 md:mb-20">
           <div className="lg:col-span-7">
-            <Kicker index="04">{t("whyus.kicker")}</Kicker>
+            <Kicker index="04">{w.kicker}</Kicker>
             <LineReveal
               as="h2"
               className="mt-10 font-display font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-[clamp(2.4rem,5.6vw,5.4rem)]"
-              text={t("whyus.title")}
+              text={w.title}
             />
           </div>
           <p className="lg:col-span-5 text-smoke text-base md:text-lg leading-relaxed max-w-md lg:ml-auto">
-            {t("whyus.desc")}
+            {w.description}
           </p>
         </div>
 
@@ -95,10 +96,10 @@ export default function WhyUs() {
           className="mt-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 rounded-2xl border border-white/[0.07] bg-coal/60 px-8 py-6"
         >
           <span className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand">
-            {t("whyus.partners.kicker")}
+            {w.partnersKicker}
           </span>
           <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
-            {t("whyus.partners.desc")}
+            {w.partnersDescription}
           </p>
         </motion.div>
       </div>

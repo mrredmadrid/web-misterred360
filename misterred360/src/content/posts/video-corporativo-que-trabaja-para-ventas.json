@@ -1,0 +1,89 @@
+{
+  "slug": "video-corporativo-que-trabaja-para-ventas",
+  "date": "21 may 2026",
+  "dateEn": "May 21, 2026",
+  "author": "MISTERRED360",
+  "image": "/images/chimp-av.jpg",
+  "es": {
+    "category": "Audiovisual",
+    "title": "El vídeo corporativo que sí trabaja para ventas",
+    "excerpt": "No todos los vídeos explican valor. La pieza correcta reduce dudas, acelera decisión y convierte una promesa en algo visible.",
+    "readTime": "6 min",
+    "meta": "6 min · May 2026",
+    "authorRole": "Creación audiovisual",
+    "imageAlt": "Chimpancé de MISTERRED360 dirigiendo una cámara de cine",
+    "tags": [
+      "Vídeo",
+      "Contenido",
+      "Ventas"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "El vídeo corporativo falla cuando intenta contarlo todo. Una buena pieza no es un catálogo en movimiento: es una decisión narrativa que ordena el valor de una marca y lo vuelve comprensible en segundos."
+      },
+      {
+        "type": "heading",
+        "text": "Antes de grabar, decide qué debe cambiar en quien lo ve"
+      },
+      {
+        "type": "paragraph",
+        "text": "Hay vídeos para presentar, para vender, para reclutar, para educar y para posicionar. Cada objetivo necesita estructura, ritmo, tono y llamada a la acción diferentes."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Arranca con el problema o deseo de la audiencia, no con la historia interna.",
+          "Muestra evidencias: procesos, personas, resultados y contexto real.",
+          "Usa una duración que respete el canal donde se consumirá.",
+          "Termina con una acción clara y medible."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "Un vídeo no debe verse bonito: debe hacer que la propuesta de valor se entienda mejor."
+      }
+    ]
+  },
+  "en": {
+    "category": "Video",
+    "title": "The corporate video that actually works for sales",
+    "excerpt": "Not every video explains value. The right piece reduces doubt, speeds up decisions and turns a promise into something visible.",
+    "readTime": "6 min read",
+    "meta": "6 min · May 2026",
+    "authorRole": "Video production",
+    "imageAlt": "MISTERRED360's chimp directing a cinema camera",
+    "tags": [
+      "Video",
+      "Content",
+      "Sales"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Corporate video fails when it tries to say everything. A good piece isn't a catalogue in motion: it's a narrative decision that orders a brand's value and makes it understandable in seconds."
+      },
+      {
+        "type": "heading",
+        "text": "Before shooting, decide what should change in the viewer"
+      },
+      {
+        "type": "paragraph",
+        "text": "There are videos to introduce, to sell, to recruit, to educate and to position. Each goal needs a different structure, pace, tone and call to action."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Open with the audience's problem or desire, not with your internal story.",
+          "Show evidence: processes, people, results and real context.",
+          "Use a length that respects the channel where it will be watched.",
+          "End with a clear, measurable action."
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "A video shouldn't just look pretty: it should make the value proposition easier to understand."
+      }
+    ]
+  }
+}

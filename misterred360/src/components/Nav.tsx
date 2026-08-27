@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { serviceBlocks, socialLinks } from "../lib/data";
+import { getServiceBlocks, socialLinks } from "../lib/data";
 import { navigateTo } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { Wordmark } from "./ui";
@@ -36,7 +36,8 @@ export default function Nav({
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const serviceBlocks = getServiceBlocks(locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -135,7 +136,7 @@ export default function Nav({
                               <span className="font-display text-brand text-xs font-semibold">
                                 {b.index}
                               </span>
-                              {t(`sblock.${b.id}.title`)}
+                              {b.title}
                             </a>
                           ))}
                           <div className="my-1.5 h-px bg-ink/10" />

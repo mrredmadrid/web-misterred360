@@ -1,0 +1,32 @@
+{
+  "kicker": { "es": "El manifiesto", "en": "The manifesto" },
+  "title": { "es": "Ponemos el *alma.*\nMedimos al milímetro.", "en": "Soul and *precision.*\nEvery millimetre." },
+  "eco": {
+    "es": "Somos la agencia que no cabe en un briefing.",
+    "en": "We're the agency that doesn't fit in a brief."
+  },
+  "p1": {
+    "es": "Una agencia convencional te asigna un ejecutivo de cuentas. Nosotros te asignamos una obsesión. Una agencia convencional tiene un método y te mete dentro; nosotros medimos tu negocio al milímetro y construimos el método alrededor.",
+    "en": "A regular agency assigns you an account manager. We assign you an obsession. A regular agency has a method and fits you into it; we measure your business to the millimetre and build the method around it."
+  },
+  "p2": {
+    "es": "Hacemos comunicación como se hacía antes —hablando contigo, escuchándote, entendiéndote— con las herramientas de ahora. 360 grados de cobertura. Cero grados de distancia.",
+    "en": "We do communication the way it used to be done —talking to you, listening to you, understanding you— with the tools of today. 360 degrees of coverage. Zero degrees of distance."
+  },
+  "quote": {
+    "es": "«Vemos lo que otros\npasan por *alto*.»",
+    "en": "\"We see what\neveryone else *misses*.\""
+  },
+  "fig": {
+    "es": "Fig. 01 — Instinto para la idea. Método para ejecutarla.",
+    "en": "Fig. 01 — Instinct for the idea. Method for the execution."
+  },
+  "badge": { "es": "Nombre, cara y teléfono", "en": "Name, face and phone" },
+  "ceoQuote": {
+    "es": "«La esencia de una compañía debe emanar de una gran estrategia de comunicación que la haga diferente y única.»",
+    "en": "\"The essence of a company must come from a great communication strategy that makes it different and unique.\""
+  },
+  "ceoRole": { "es": "CEO · MISTERRED360", "en": "CEO · MISTERRED360" },
+  "image": "/images/team-manifesto.jpg",
+  "imageFallback": "/images/chimp-bw.jpg"
+}

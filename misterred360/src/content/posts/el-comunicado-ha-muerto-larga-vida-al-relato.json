@@ -1,0 +1,99 @@
+{
+  "slug": "el-comunicado-ha-muerto-larga-vida-al-relato",
+  "date": "12 ene 2026",
+  "dateEn": "Jan 12, 2026",
+  "author": "MISTERRED360",
+  "image": "/images/chimp-press.jpg",
+  "es": {
+    "category": "Estrategia",
+    "title": "El comunicado ha muerto. Larga vida al relato.",
+    "excerpt": "Los medios ya no publican notas de prensa: publican historias. Cómo reescribir tu mensaje para que los periodistas quieran contarlo.",
+    "readTime": "6 min",
+    "meta": "6 min · Ene 2026",
+    "authorRole": "Equipo de comunicación estratégica",
+    "imageAlt": "Chimpancé corporativo de MISTERRED360 en una rueda de prensa",
+    "tags": [
+      "Gabinete de prensa",
+      "Relato",
+      "Medios"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Durante años, muchas marcas han entendido la comunicación como una secuencia de comunicados enviados a una base de datos. Pero el contexto cambió: los periodistas no necesitan más ruido, necesitan historias con foco, datos, contexto y valor para su audiencia."
+      },
+      {
+        "type": "heading",
+        "text": "La noticia no es lo que haces, es por qué importa"
+      },
+      {
+        "type": "paragraph",
+        "text": "Un lanzamiento, una apertura o una campaña pueden ser relevantes, pero solo si se traducen en un ángulo informativo. El trabajo estratégico consiste en detectar el conflicto, la tendencia, el dato o la utilidad pública que convierte una actividad de marca en un relato publicable."
+      },
+      {
+        "type": "quote",
+        "text": "Una marca gana presencia cuando deja de pedir atención y empieza a aportar conversación.",
+        "cite": "MISTERRED360"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Define un titular antes de escribir el texto completo.",
+          "Sustituye la autopromoción por contexto, datos y consecuencias.",
+          "Adapta el ángulo al tipo de medio, sección y audiencia.",
+          "Incluye portavoces, recursos visuales y una lectura clara para el periodista."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "La nota de prensa no desaparece, pero deja de ser el centro. Se convierte en una pieza dentro de un sistema más amplio: posicionamiento, relación con medios, contenido experto y seguimiento continuo."
+      }
+    ]
+  },
+  "en": {
+    "category": "Strategy",
+    "title": "The press release is dead. Long live the story.",
+    "excerpt": "Media outlets no longer publish press releases: they publish stories. How to rewrite your message so journalists actually want to tell it.",
+    "readTime": "6 min read",
+    "meta": "6 min · Jan 2026",
+    "authorRole": "Strategic communication team",
+    "imageAlt": "MISTERRED360's corporate chimp at a press conference",
+    "tags": [
+      "Press office",
+      "Storytelling",
+      "Media"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "For years, many brands have understood communication as a sequence of press releases sent to a database. But the context has shifted: journalists don't need more noise, they need stories with focus, data, context and value for their audience."
+      },
+      {
+        "type": "heading",
+        "text": "The news isn't what you do, it's why it matters"
+      },
+      {
+        "type": "paragraph",
+        "text": "A launch, an opening or a campaign can be relevant, but only if it translates into a news angle. Strategic work consists of finding the tension, the trend, the data point or the public utility that turns brand activity into a publishable story."
+      },
+      {
+        "type": "quote",
+        "text": "A brand gains presence when it stops asking for attention and starts contributing to the conversation.",
+        "cite": "MISTERRED360"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Define a headline before writing the full text.",
+          "Replace self-promotion with context, data and consequences.",
+          "Adapt the angle to the type of outlet, section and audience.",
+          "Include spokespeople, visual assets and a clear read for the journalist."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The press release doesn't disappear, but it stops being the center. It becomes one piece within a wider system: positioning, media relations, expert content and continuous follow-up."
+      }
+    ]
+  }
+}

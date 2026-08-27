@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { ArrowUpRight } from "lucide-react";
 import { navigateTo, scrollToHash } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
+import { getHero } from "../lib/data";
 import { LineReveal, OrbitBadge } from "./ui";
 
 /* ───────────────────────────────────────────────────────────
@@ -11,13 +12,14 @@ import { LineReveal, OrbitBadge } from "./ui";
    ─────────────────────────────────────────────────────────── */
 
 export default function Hero({ start }: { start: boolean }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const hero = getHero(locale);
   const chips = [
-    { label: t("hero.chip.prensa"), dot: "bg-brand", pos: "top-[16%] -right-4 md:-right-10", anim: "animate-float" },
-    { label: t("hero.chip.branding"), dot: "bg-ocean", pos: "bottom-[30%] -left-4 md:-left-12", anim: "animate-float-delay" },
-    { label: t("hero.chip.av"), dot: "bg-brand", pos: "bottom-[8%] right-[12%]", anim: "animate-float" },
-    { label: t("hero.chip.estrategia"), dot: "bg-ocean", pos: "top-[44%] -left-6 md:-left-16", anim: "animate-float" },
-    { label: t("hero.chip.impacto"), dot: "bg-brand", pos: "top-[2%] left-[14%]", anim: "animate-float-delay" },
+    { label: hero.chips.prensa, dot: "bg-brand", pos: "top-[16%] -right-4 md:-right-10", anim: "animate-float" },
+    { label: hero.chips.branding, dot: "bg-ocean", pos: "bottom-[30%] -left-4 md:-left-12", anim: "animate-float-delay" },
+    { label: hero.chips.av, dot: "bg-brand", pos: "bottom-[8%] right-[12%]", anim: "animate-float" },
+    { label: hero.chips.estrategia, dot: "bg-ocean", pos: "top-[44%] -left-6 md:-left-16", anim: "animate-float" },
+    { label: hero.chips.impacto, dot: "bg-brand", pos: "top-[2%] left-[14%]", anim: "animate-float-delay" },
   ];
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -67,7 +69,7 @@ export default function Hero({ start }: { start: boolean }) {
               <path d="M10 0l2 7 7 3-7 3-2 7-2-7-7-3 7-3 2-7z" />
             </svg>
             <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-smoke">
-              {t("hero.kicker")}
+              {hero.kicker}
             </span>
             <span className="hidden sm:block h-px w-20 bg-white/15" />
           </motion.div>
@@ -78,7 +80,7 @@ export default function Hero({ start }: { start: boolean }) {
               start={start}
               delay={0.45}
               className="font-display font-semibold uppercase leading-[0.94] tracking-[-0.02em] text-[clamp(1.9rem,5.8vw,5.9rem)]"
-              text={t("hero.title")}
+              text={hero.title}
             />
             {/* Badge rotatorio solapado sobre el titular */}
             <motion.div
@@ -93,7 +95,7 @@ export default function Hero({ start }: { start: boolean }) {
             {...fade(0.95)}
             className="mt-8 max-w-xl text-base md:text-lg leading-relaxed text-smoke"
           >
-            <TranslatedRich k="hero.desc" />
+            <TranslatedRich text={hero.description} />
           </motion.p>
 
           <motion.div {...fade(1.1)} className="mt-10 flex flex-wrap items-center gap-4">
@@ -105,7 +107,7 @@ export default function Hero({ start }: { start: boolean }) {
               }}
               className="group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-flame hover:gap-4 shadow-[0_0_40px_-8px_rgba(232,38,43,0.5)]"
             >
-              {t("hero.cta.primary")}
+              {hero.ctaPrimary}
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
             </a>
             <a
@@ -116,7 +118,7 @@ export default function Hero({ start }: { start: boolean }) {
               }}
               className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink"
             >
-              {t("hero.cta.secondary")}
+              {hero.ctaSecondary}
             </a>
           </motion.div>
 
@@ -124,7 +126,7 @@ export default function Hero({ start }: { start: boolean }) {
             {...fade(1.3)}
             className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-[0.25em] text-ash"
           >
-            {t("hero.audience").split(" / ").map((piece, idx, arr) => (
+            {hero.audience.split(" / ").map((piece, idx, arr) => (
               <span key={piece} className="flex items-center gap-x-6">
                 <span>{piece}</span>
                 {idx < arr.length - 1 && <span className="text-brand">/</span>}
@@ -196,7 +198,7 @@ export default function Hero({ start }: { start: boolean }) {
               className="absolute -bottom-5 left-1/2 -translate-x-1/2 max-w-[90%] rounded-full bg-ink border border-white/15 px-5 py-3 shadow-2xl text-center"
             >
               <p className="text-[10px] uppercase tracking-[0.28em] text-smoke">
-                {t("hero.badge")}
+                {hero.badge}
               </p>
             </motion.div>
           </motion.div>
@@ -218,11 +220,9 @@ export default function Hero({ start }: { start: boolean }) {
   );
 }
 
-/* Renderiza un texto traducido con marcadores {b}...{/b} en negrita */
-function TranslatedRich({ k }: { k: string }) {
-  const { t } = useI18n();
-  const raw = t(k);
-  const parts = raw.split(/(\{b\}[^{]+\{\/b\})/g);
+/* Renderiza un texto con marcadores {b}...{/b} en negrita */
+function TranslatedRich({ text }: { text: string }) {
+  const parts = text.split(/(\{b\}[^{]+\{\/b\})/g);
   return (
     <>
       {parts.map((p, i) => {

@@ -1,5 +1,5 @@
 import { ArrowUp } from "lucide-react";
-import { navLinks, serviceBlocks, socialLinks } from "../lib/data";
+import { navLinks, getAllServices, getBrandTagline, socialLinks } from "../lib/data";
 import { navigateTo, scrollToHash } from "../lib/scroll";
 import { useCookies } from "../lib/cookies";
 import { useA11y } from "../lib/accessibility";
@@ -19,7 +19,9 @@ export default function Contact({
 }) {
   const { openPanel } = useCookies();
   const { openPanel: openA11y } = useA11y();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const allServices = getAllServices(locale);
+  const brandTagline = getBrandTagline(locale);
   const go = (href: string) => (onNavigate ? onNavigate(href) : navigateTo(href));
 
   return (
@@ -58,7 +60,7 @@ export default function Contact({
             <div className="md:col-span-4">
               <Wordmark className="text-xl" />
               <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand">
-                {t("brand.tagline")}
+                {brandTagline}
               </p>
               <p className="mt-5 text-sm leading-relaxed text-smoke max-w-xs">
                 {t("shell.footer.short")}
@@ -106,7 +108,7 @@ export default function Contact({
                 {t("footer.services")}
               </p>
               <ul className="grid grid-cols-1 gap-3">
-                {serviceBlocks.flatMap((b) => b.services).map((s) => (
+                {allServices.map((s) => (
                   <li key={s.id}>
                     <a
                       href="#/servicios"

@@ -1,0 +1,16 @@
+{
+  "brandTagline": { "es": "La evolución de la comunicación", "en": "The evolution of communication" },
+  "footerSlogan": { "es": "Comunicación que da la vuelta a tu marca", "en": "Communication that turns your brand around" },
+  "contact": {
+    "email": "misterred@misterred360.es",
+    "phone": "+34 910 360 360",
+    "phoneHref": "+34910360360",
+    "address": "Ciudadela 12, Las Rozas de Madrid",
+    "hours": "09:00 – 18:00",
+    "hoursDays": "Lun – Vie"
+  },
+  "legal": {
+    "companyName": "MR. RED S.L.",
+    "cif": "B56916133"
+  }
+}

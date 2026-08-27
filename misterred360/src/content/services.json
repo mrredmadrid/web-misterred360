@@ -1,0 +1,180 @@
+{
+  "blocks": [
+    {
+      "id": "comunicacion",
+      "index": "01",
+      "accent": "brand",
+      "title": { "es": "Reputación", "en": "Reputation" },
+      "claim": {
+        "es": "Que hablen bien de ti. Y en el lugar correcto.",
+        "en": "Get people talking about you. In the right room."
+      },
+      "description": {
+        "es": "La credibilidad no se compra en anuncios. Se construye en prensa, en instituciones y en los diez minutos antes de la entrevista. Aquí empieza todo.",
+        "en": "Credibility isn't bought in ads. It's built in press, in institutions and in the ten minutes before the interview. Everything starts here."
+      },
+      "services": [
+        {
+          "id": "gabinete-de-prensa",
+          "icon": "newspaper",
+          "image": "/images/chimp-press.jpg",
+          "imageAlt": "El Portavoz: el chimpancé de MISTERRED360 en un atril de rueda de prensa",
+          "name": { "es": "Gabinete de Prensa", "en": "Press Office" },
+          "tagline": { "es": "Del hecho al titular.", "en": "From fact to headline." },
+          "brief": {
+            "es": "Transformamos tu actividad en noticias, contenidos y oportunidades de visibilidad para que tu marca gane presencia, credibilidad e impacto público.",
+            "en": "We turn your activity into news, content and visibility opportunities so your brand gains presence, credibility and public impact."
+          },
+          "long": {
+            "es": "Convertimos la actividad de tu empresa, institución o proyecto en mensajes con valor informativo para que tu trabajo gane visibilidad, reputación y presencia pública. Diseñamos acciones de comunicación, elaboramos contenidos periodísticos y trabajamos la relación con medios para transformar tu actividad en noticia y posicionarte donde de verdad importa.",
+            "en": "We turn the activity of your company, institution or project into messages with news value so your work gains visibility, reputation and public presence. We design communication actions, produce editorial content and manage media relations to turn your activity into news and position you where it really matters."
+          }
+        },
+        {
+          "id": "planificacion-estrategica",
+          "icon": "compass",
+          "image": "/images/chimp-strategy.jpg",
+          "imageAlt": "El Estratega: el chimpancé de MISTERRED360 analizando planes en su despacho",
+          "name": { "es": "Planificación Estratégica", "en": "Strategic Planning" },
+          "tagline": { "es": "La hoja de ruta.", "en": "The roadmap." },
+          "brief": {
+            "es": "Diseñamos planes de comunicación claros y eficaces para alinear mensajes, canales y objetivos con una visión global.",
+            "en": "We design clear, effective communication plans that align messages, channels and objectives with a global vision."
+          },
+          "long": {
+            "es": "Toda comunicación eficaz necesita una hoja de ruta clara. Diseñamos planes de comunicación estructurados, realistas y alineados con tus objetivos para ordenar mensajes, priorizar canales y coordinar cada acción con una visión global de marca.",
+            "en": "Every effective communication needs a clear roadmap. We design structured, realistic communication plans aligned with your objectives to order messages, prioritize channels and coordinate every action within a global brand vision."
+          }
+        },
+        {
+          "id": "comunicacion-2-0",
+          "icon": "radio-tower",
+          "image": "/images/chimp-hero.jpg",
+          "imageAlt": "El rostro de MISTERRED360: el chimpancé corporativo con gafas rojas",
+          "name": { "es": "Comunicación 2.0", "en": "Digital Communication" },
+          "tagline": { "es": "La conversación nunca duerme.", "en": "The conversation never sleeps." },
+          "brief": {
+            "es": "Integramos redes sociales y comunicación digital dentro de una estrategia coherente que amplifica tu mensaje y fortalece tu marca.",
+            "en": "We integrate social media and digital communication into a coherent strategy that amplifies your message and strengthens your brand."
+          },
+          "long": {
+            "es": "Las redes sociales no son un canal aislado, sino una extensión natural de la estrategia de comunicación. Integramos la comunicación digital en el plan global de marca para amplificar mensajes, fortalecer la conversación con la audiencia y generar una presencia coherente en todos los entornos online.",
+            "en": "Social media isn't an isolated channel but a natural extension of the communication strategy. We integrate digital communication into the global brand plan to amplify messages, strengthen the conversation with the audience and generate a coherent presence across all online environments."
+          }
+        },
+        {
+          "id": "rrpp-eventos",
+          "icon": "users",
+          "image": "/images/chimp-events.jpg",
+          "imageAlt": "El Anfitrión: el chimpancé de MISTERRED360 hablando sobre un escenario",
+          "name": { "es": "RRPP y Eventos", "en": "PR and Events" },
+          "tagline": { "es": "Presencia que se recuerda.", "en": "Presence people remember." },
+          "brief": {
+            "es": "Diseñamos acciones y eventos que refuerzan relaciones, multiplican la difusión y proyectan tu mensaje con más fuerza.",
+            "en": "We design actions and events that reinforce relationships, multiply distribution and project your message more powerfully."
+          },
+          "long": {
+            "es": "Las relaciones públicas amplían el alcance del mensaje y refuerzan la reputación de la marca en entornos clave. Diseñamos acciones de relación institucional, networking y organización de eventos con una coordinación personalizada para multiplicar la difusión, generar conexiones de valor y dar relevancia a cada iniciativa.",
+            "en": "Public relations extend the reach of the message and reinforce brand reputation in key environments. We design institutional relations actions, networking and event organization with personalized coordination to multiply distribution, generate valuable connections and give relevance to every initiative."
+          }
+        }
+      ]
+    },
+    {
+      "id": "identidad",
+      "index": "02",
+      "accent": "ocean",
+      "title": { "es": "Identidad", "en": "Identity" },
+      "claim": {
+        "es": "Cómo te reconocen antes de que te presentes.",
+        "en": "How people know you before you introduce yourself."
+      },
+      "description": {
+        "es": "Tu marca ya dice algo de ti. La pregunta es si dice lo que tú quieres. Identidad, naming y posicionamiento sin plantillas ni degradados.",
+        "en": "Your brand already says something about you. The question is whether it says what you want it to say. Identity, naming and positioning with no templates and no gradients."
+      },
+      "services": [
+        {
+          "id": "imagen-corporativa",
+          "icon": "fingerprint",
+          "image": "/images/chimp-brand.jpg",
+          "imageAlt": "El Diseñador: el chimpancé de MISTERRED360 ante un muro de identidad de marca",
+          "name": { "es": "Imagen Corporativa", "en": "Corporate Identity" },
+          "tagline": { "es": "Identidad con carácter.", "en": "Identity with character." },
+          "brief": {
+            "es": "Creamos o redefinimos tu identidad visual para que refleje con claridad la esencia y el valor de tu actividad.",
+            "en": "We create or redefine your visual identity so it clearly reflects the essence and value of your activity."
+          },
+          "long": {
+            "es": "La imagen de una marca debe expresar con claridad quién es, qué ofrece y por qué es diferente. Desarrollamos o renovamos identidades corporativas para que reflejen la esencia de tu actividad y proyecten una imagen sólida, coherente y profesional en todos tus puntos de contacto.",
+            "en": "A brand's image must clearly express who it is, what it offers and why it's different. We develop or renew corporate identities so they reflect the essence of your activity and project a solid, coherent and professional image across every touchpoint."
+          }
+        },
+        {
+          "id": "creacion-audiovisual",
+          "icon": "clapperboard",
+          "image": "/images/chimp-av.jpg",
+          "imageAlt": "El Director: el chimpancé de MISTERRED360 tras una cámara de cine",
+          "name": { "es": "Creación Audiovisual", "en": "Video Production" },
+          "tagline": { "es": "Historias que se ven.", "en": "Stories you can see." },
+          "brief": {
+            "es": "Producimos contenidos audiovisuales que conectan, explican y potencian tus campañas, productos y canales digitales.",
+            "en": "We produce audiovisual content that connects, explains and boosts your campaigns, products and digital channels."
+          },
+          "long": {
+            "es": "El contenido audiovisual es una de las herramientas más eficaces para captar atención, explicar valor y conectar con nuevas audiencias. Creamos piezas de vídeo personalizadas para empresas, instituciones y negocios, orientadas a reforzar campañas, presentar servicios, impulsar redes sociales y mejorar el impacto de la comunicación digital.",
+            "en": "Audiovisual content is one of the most effective tools to capture attention, explain value and connect with new audiences. We create custom video pieces for companies, institutions and businesses, aimed at reinforcing campaigns, presenting services, powering social media and improving the impact of digital communication."
+          }
+        }
+      ]
+    },
+    {
+      "id": "difusion",
+      "index": "03",
+      "accent": "brand",
+      "title": { "es": "Creación y Difusión", "en": "Creation and Distribution" },
+      "claim": {
+        "es": "Lo que la gente ve, comparte y recuerda.",
+        "en": "What people see, share and remember."
+      },
+      "description": {
+        "es": "Audiovisual, publicidad, eventos y digital que no se olvidan. Un anuncio que no se recuerda es un gasto. Uno que se recuerda es una inversión.",
+        "en": "Video, advertising, events and digital that stick. An ad no one remembers is an expense. One that gets remembered is an investment."
+      },
+      "services": [
+        {
+          "id": "publicidad-marketing",
+          "icon": "megaphone",
+          "image": "/images/chimp-ads.jpg",
+          "imageAlt": "El Publicista: el chimpancé de MISTERRED360 con un megáfono rojo",
+          "name": { "es": "Publicidad y Marketing", "en": "Advertising and Marketing" },
+          "tagline": { "es": "Impacto que convierte.", "en": "Impact that converts." },
+          "brief": {
+            "es": "Desarrollamos campañas y mensajes orientados a maximizar visibilidad, notoriedad e impacto comercial.",
+            "en": "We develop campaigns and messages aimed at maximizing visibility, awareness and commercial impact."
+          },
+          "long": {
+            "es": "Diseñamos acciones publicitarias y campañas de marketing enfocadas a mejorar el alcance, la notoriedad y la respuesta del público. Definimos mensajes, creatividad y soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
+            "en": "We design advertising actions and marketing campaigns focused on improving reach, awareness and audience response. We define messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
+          }
+        },
+        {
+          "id": "estudios-de-mercado",
+          "icon": "bar-chart-3",
+          "image": "/images/chimp-meeting.jpg",
+          "imageAlt": "El equipo de MISTERRED360 en la mesa de reuniones estudiando datos de mercado",
+          "name": { "es": "Estudios de Mercado", "en": "Market Research" },
+          "tagline": { "es": "Decidir con datos.", "en": "Decide with data." },
+          "brief": {
+            "es": "Generamos información útil para entender mejor tu entorno y tomar decisiones estratégicas con mayor seguridad.",
+            "en": "We generate useful information so you understand your environment better and make strategic decisions with more certainty."
+          },
+          "long": {
+            "es": "Tomar decisiones sin información es asumir riesgos innecesarios. Desarrollamos estudios e investigaciones de mercado para obtener datos relevantes sobre tu actividad, tu entorno y tus oportunidades, facilitando decisiones más precisas, estrategias mejor orientadas y una capacidad de reacción más ágil ante los cambios.",
+            "en": "Deciding without information is taking unnecessary risks. We develop market studies and research to obtain relevant data about your activity, your environment and your opportunities, enabling more precise decisions, better-oriented strategies and a faster reaction to change."
+          }
+        }
+      ]
+    }
+  ]
+}

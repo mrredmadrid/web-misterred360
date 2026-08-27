@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { processSteps } from "../lib/data";
+import { getProcessSteps, type ProcessStep } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { navigateTo } from "../lib/scroll";
 import { Kicker, OrbitBadge } from "./ui";
@@ -30,7 +30,8 @@ const STICKY_TOP = 96;
 const CARD_HEIGHT_VH = 78;
 
 export default function Process() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const processSteps = getProcessSteps(locale);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(headerRef, { once: true, margin: "-15% 0px" });
@@ -216,7 +217,7 @@ function CardBox({
   index,
   total,
 }: {
-  step: (typeof import("../lib/data").processSteps)[number];
+  step: ProcessStep;
   index: number;
   total: number;
 }) {
@@ -347,7 +348,7 @@ function StaticCard({
   index,
   total,
 }: {
-  step: (typeof import("../lib/data").processSteps)[number];
+  step: ProcessStep;
   index: number;
   total: number;
 }) {

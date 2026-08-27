@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { serviceBlocks } from "../lib/data";
+import { getServiceBlocks, getPricing } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -18,7 +18,9 @@ export default function ServiciosPage({
 }: {
   onNavigate: (href: string) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const serviceBlocks = getServiceBlocks(locale);
+  const pricing = getPricing(locale);
   const refs = useRef<Record<string, HTMLElement | null>>({});
 
   /* ── Datos estructurados: ItemList con los 8 servicios + Service por cada uno ── */
@@ -34,10 +36,10 @@ export default function ServiciosPage({
         item: {
           "@type": "Service",
           "@id": `${SITE}/servicios#${s.id}`,
-          name: t(`service.${s.id}.name`),
-          description: t(`service.${s.id}.brief`),
+          name: s.name,
+          description: s.brief,
           image: `${SITE}${s.image}`,
-          serviceType: t(`service.${s.id}.name`),
+          serviceType: s.name,
           areaServed: { "@type": "Country", name: "España" },
           provider: { "@id": `${SITE}/#organizacion` },
           url: `${SITE}/servicios#${s.id}`,
@@ -56,14 +58,14 @@ export default function ServiciosPage({
         name: "MISTERRED360 · Servicios 360",
         itemListElement: serviceBlocks.map((b) => ({
           "@type": "OfferCatalog",
-          name: t(`sblock.${b.id}.title`),
-          description: t(`sblock.${b.id}.desc`),
+          name: b.title,
+          description: b.description,
           itemListElement: b.services.map((s) => ({
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: t(`service.${s.id}.name`),
-              description: t(`service.${s.id}.long`),
+              name: s.name,
+              description: s.long,
             },
           })),
         })),
@@ -108,7 +110,7 @@ export default function ServiciosPage({
               className="flex items-center gap-3 px-5 md:px-7 py-4 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.16em] text-smoke transition-colors hover:text-paper"
             >
               <span className="font-display text-brand">{b.index}</span>
-              {t(`sblock.${b.id}.title`)}
+              {b.title}
             </button>
           ))}
         </div>
@@ -140,19 +142,19 @@ export default function ServiciosPage({
                   </span>
                   <div>
                     <h2 className="font-display font-semibold uppercase leading-[0.97] tracking-[-0.02em] text-[clamp(2rem,4.6vw,4.2rem)]">
-                      {t(`sblock.${block.id}.title`)}
+                      {block.title}
                     </h2>
                     <p
                       className={`mt-4 text-sm font-semibold uppercase tracking-[0.22em] ${
                         isBrand ? "text-brand" : "text-steel"
                       }`}
                     >
-                      {t(`sblock.${block.id}.claim`)}
+                      {block.claim}
                     </p>
                   </div>
                 </div>
                 <p className="lg:col-span-4 text-[15px] leading-relaxed text-smoke max-w-md lg:ml-auto">
-                  {t(`sblock.${block.id}.desc`)}
+                  {block.description}
                 </p>
               </div>
 
@@ -199,7 +201,7 @@ export default function ServiciosPage({
                               isBrand ? "bg-brand" : "bg-ocean"
                             }`}
                           >
-                            {t(`service.${s.id}.tag`)}
+                            {s.tagline}
                           </span>
                         </div>
                       </motion.div>
@@ -220,13 +222,13 @@ export default function ServiciosPage({
                           <Icon className="w-6 h-6" strokeWidth={1.6} />
                         </span>
                         <h3 className="font-display font-semibold leading-tight text-[clamp(1.8rem,3.4vw,3rem)] text-paper">
-                          {t(`service.${s.id}.name`)}
+                          {s.name}
                         </h3>
                         <p className="mt-5 text-lg md:text-xl font-medium leading-snug text-paper/90 max-w-2xl">
-                          {t(`service.${s.id}.brief`)}
+                          {s.brief}
                         </p>
                         <p className="mt-4 text-[15px] leading-relaxed text-smoke max-w-2xl">
-                          {t(`service.${s.id}.long`)}
+                          {s.long}
                         </p>
                         <button
                           onClick={() => onNavigate("#/contacto")}
@@ -253,20 +255,20 @@ export default function ServiciosPage({
         <div className="relative px-5 md:px-10 xl:px-16 py-20 md:py-28 max-w-[1600px] mx-auto">
           <div className="max-w-2xl mb-14 md:mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-5">
-              {t("page.srv.pricing.kicker")}
+              {pricing.kicker}
             </p>
             <h2 className="font-display font-semibold uppercase leading-[0.97] text-[clamp(2rem,4.4vw,3.8rem)]">
-              {t("page.srv.pricing.title")}
+              {pricing.title}
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-smoke max-w-xl">
-              {t("page.srv.pricing.desc")}
+              {pricing.description}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
-            {["web", "estrategia", "gabinete"].map((id, i) => (
+            {pricing.tiers.map((tier, i) => (
               <motion.div
-                key={id}
+                key={tier.id}
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10%" }}
@@ -275,20 +277,20 @@ export default function ServiciosPage({
               >
                 <span className="font-display text-sm text-ash">0{i + 1} —</span>
                 <h3 className="mt-5 font-display font-semibold text-2xl leading-tight text-paper">
-                  {t(`page.srv.pricing.${id}.name`)}
+                  {tier.name}
                 </h3>
                 <p className="mt-4 font-display font-semibold text-3xl md:text-4xl text-brand">
-                  {t(`page.srv.pricing.${id}.price`)}
+                  {tier.price}
                 </p>
                 <p className="mt-4 text-[15px] leading-relaxed text-smoke flex-1">
-                  {t(`page.srv.pricing.${id}.desc`)}
+                  {tier.description}
                 </p>
               </motion.div>
             ))}
           </div>
 
           <p className="mt-10 text-[13px] leading-relaxed text-ash max-w-2xl">
-            {t("page.srv.pricing.note")}
+            {pricing.note}
           </p>
         </div>
       </section>
