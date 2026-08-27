@@ -426,7 +426,7 @@ export default function PoliticaCookiesPage({
                   🌐 Política de privacidad:{" "}
                   <button
                     className="text-brand underline"
-                    onClick={() => onNavigate("#/politica-de-privacidad")}
+                    onClick={() => onNavigate("/politica-de-privacidad")}
                   >
                     misterred360.es/politica-de-privacidad
                   </button>

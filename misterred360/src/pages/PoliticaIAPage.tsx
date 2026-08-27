@@ -234,7 +234,7 @@ export default function PoliticaIAPage({
               El tratamiento de datos personales asociado al uso de IA se rige por nuestra{" "}
               <button
                 className="text-brand underline"
-                onClick={() => onNavigate("#/politica-de-privacidad")}
+                onClick={() => onNavigate("/politica-de-privacidad")}
               >
                 política de privacidad
               </button>{" "}

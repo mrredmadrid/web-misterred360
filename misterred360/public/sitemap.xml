@@ -5,7 +5,10 @@
 >
   <!-- ═════════════════════════════════════════════════════════
        MISTERRED360 · Sitemap principal
-       Todas las páginas de la web con alternates ES/EN.
+       Este archivo es solo de referencia: en cada `npm run build`
+       se SOBRESCRIBE automáticamente (scripts/prerender.mjs) con
+       las rutas reales + las noticias que haya en ese momento en
+       src/content/posts/. No hace falta editarlo a mano.
        ═════════════════════════════════════════════════════════ -->
 
   <!-- ═══ HOME ═══ -->

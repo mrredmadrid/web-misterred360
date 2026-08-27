@@ -70,7 +70,7 @@ export default function Insights({
             </p>
           </div>
           <button
-            onClick={() => navigateTo("#/contacto")}
+            onClick={() => navigateTo("/contacto")}
             className="relative group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-white hover:bg-flame transition-all duration-300 hover:gap-4 shrink-0"
           >
             {t("insights.hook.cta")}

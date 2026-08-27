@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { getProcessSteps } from "../lib/data";
+import { getProcessSteps, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -39,12 +39,13 @@ export default function MetodoPage({
 }) {
   const { t, locale } = useI18n();
   const processSteps = getProcessSteps(locale);
+  const seo = getSeo(locale, "metodo");
   /* HowTo con las 5 fases */
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "@id": `${SITE}/metodo#howto`,
-    name: t("page.met.seo.title"),
+    name: seo.title,
     description: t("page.met.intro"),
     inLanguage: "es-ES",
     totalTime: "PT12W",
@@ -66,8 +67,8 @@ export default function MetodoPage({
       meta="page.met.meta"
       figure="/images/chimp-strategy.jpg"
       figureAlt="page.met.figure_alt"
-      seoTitle="page.met.seo.title"
-      seoDesc="page.met.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/metodo"
       ogImage={`${SITE}/images/chimp-strategy.jpg`}
       breadcrumbs={[
@@ -197,7 +198,7 @@ export default function MetodoPage({
           </div>
           <div className="lg:col-span-4 flex lg:justify-end">
             <button
-              onClick={() => onNavigate("#/contacto")}
+              onClick={() => onNavigate("/contacto")}
               className="group inline-flex items-center gap-3 rounded-full bg-ink px-8 py-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-paper transition-all duration-300 hover:gap-4"
             >
               {t("page.met.close.cta")}

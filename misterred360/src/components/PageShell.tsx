@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Kicker, LineReveal, Wordmark } from "./ui";
-import { navLinks, getBrandTagline } from "../lib/data";
+import { navLinks, getBrandTagline, siteContact } from "../lib/data";
 import { usePageSeo } from "../lib/seo";
 import type { PageSeoOptions } from "../lib/seo";
 import { useCookies } from "../lib/cookies";
@@ -172,17 +172,17 @@ export default function PageShell({
           </div>
           <div className="flex flex-wrap items-center gap-5">
             <button
-              onClick={() => onNavigate("#/contacto")}
+              onClick={() => onNavigate("/contacto")}
               className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-paper transition-all duration-300 hover:gap-4"
             >
               {t("shell.cta.button")}
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
             </button>
             <a
-              href="mailto:misterred@misterred360.es"
+              href={`mailto:${siteContact.email}`}
               className="link-line font-display font-medium text-lg text-ink"
             >
-              misterred@misterred360.es
+              {siteContact.email}
             </a>
           </div>
         </div>
@@ -224,13 +224,13 @@ export default function PageShell({
               Contacto
             </p>
             <p className="text-sm text-smoke">
-              misterred@misterred360.es · +34 910 360 360
+              {siteContact.email} · {siteContact.phone}
             </p>
             <p className="mt-1 text-sm text-smoke">
-              Las Rozas de Madrid
+              {siteContact.address}
             </p>
             <button
-              onClick={() => onNavigate("#/contacto")}
+              onClick={() => onNavigate("/contacto")}
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] hover:border-brand hover:text-brand transition-colors"
             >
               {t("shell.footer.gocontact")}
@@ -242,19 +242,19 @@ export default function PageShell({
           <span>© 2026 MISTERRED360</span>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <button
-              onClick={() => onNavigate("#/politica-de-privacidad")}
+              onClick={() => onNavigate("/politica-de-privacidad")}
               className="hover:text-paper transition-colors"
             >
               {t("footer.privacy_short")}
             </button>
             <button
-              onClick={() => onNavigate("#/politica-de-cookies")}
+              onClick={() => onNavigate("/politica-de-cookies")}
               className="hover:text-paper transition-colors"
             >
               {t("footer.cookies_short")}
             </button>
             <button
-              onClick={() => onNavigate("#/politica-de-ia")}
+              onClick={() => onNavigate("/politica-de-ia")}
               className="hover:text-paper transition-colors"
             >
               {t("footer.ia_short")}

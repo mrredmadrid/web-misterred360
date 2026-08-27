@@ -1,5 +1,5 @@
 import { faqs } from "./Faq";
-import { getAllServices } from "../lib/data";
+import { getAllServices, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE, usePageSeo } from "../lib/seo";
 
@@ -9,13 +9,14 @@ import { SITE, usePageSeo } from "../lib/seo";
    ─────────────────────────────────────────────────────────── */
 
 export default function HomeSeo() {
-  const { t, locale } = useI18n();
+  const { locale } = useI18n();
 
   const allServices = getAllServices(locale);
+  const seo = getSeo(locale, "home");
 
   usePageSeo({
-    title: t("seo.title"),
-    description: t("seo.desc"),
+    title: seo.title,
+    description: seo.description,
     path: "/",
     ogImage: `${SITE}/images/chimp-hero.jpg`,
     breadcrumbs: [{ name: "Inicio", path: "/" }],

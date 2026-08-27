@@ -2,7 +2,7 @@ backend:
   name: github
   repo: mrredmadrid/web-misterred360
   branch: main
-  base_url: https://misterred360-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://misterred360-cms-auth.misterred360.workers.dev
   auth_endpoint: auth
 
 # Los archivos de contenido viven en misterred360/src/content/ dentro del repo
@@ -317,6 +317,24 @@ collections:
               - { label: "Grande", value: 115 }
               - { label: "Muy grande", value: 130 }
               - { label: "Máximo", value: 150 }
+
+      - label: "SEO por página"
+        name: seo
+        file: "misterred360/src/content/seo.json"
+        fields:
+          - label: "Portada (Inicio)"
+            name: home
+            widget: object
+            fields: &seo_page
+              - { label: "Título (aparece en Google y en la pestaña del navegador; ideal 50-60 caracteres)", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción (aparece bajo el título en Google; ideal 140-155 caracteres)", name: description, widget: object, fields: *loc_text }
+          - { label: "Manifiesto", name: manifiesto, widget: object, fields: *seo_page }
+          - { label: "Servicios", name: servicios, widget: object, fields: *seo_page }
+          - { label: "Método 360", name: metodo, widget: object, fields: *seo_page }
+          - { label: "Equipo (El Elenco)", name: elenco, widget: object, fields: *seo_page }
+          - { label: "Contacto", name: contacto, widget: object, fields: *seo_page }
+          - { label: "Agendar llamada", name: agendar, widget: object, fields: *seo_page }
+          - { label: "Perspectivas (blog)", name: insights, widget: object, fields: *seo_page }
 
       - label: "Marca, footer y contacto"
         name: site

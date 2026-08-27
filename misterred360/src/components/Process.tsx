@@ -329,7 +329,7 @@ function ClosingBox() {
         </p>
 
         <button
-          onClick={() => navigateTo("#/contacto")}
+          onClick={() => navigateTo("/contacto")}
           className="group mt-8 inline-flex items-center gap-3 rounded-full bg-brand hover:bg-flame px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:gap-4 shadow-[0_0_36px_-10px_rgba(232,38,43,0.55)]"
         >
           Empezar mi primera vuelta
@@ -440,7 +440,7 @@ function StaticClosingPanel() {
         </p>
 
         <button
-          onClick={() => navigateTo("#/contacto")}
+          onClick={() => navigateTo("/contacto")}
           className="group mt-6 inline-flex items-center gap-3 rounded-full bg-brand hover:bg-flame px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:gap-4"
         >
           Empezar mi primera vuelta

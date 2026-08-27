@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { getServiceBlocks, getPricing } from "../lib/data";
+import { getServiceBlocks, getPricing, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -21,6 +21,7 @@ export default function ServiciosPage({
   const { t, locale } = useI18n();
   const serviceBlocks = getServiceBlocks(locale);
   const pricing = getPricing(locale);
+  const seo = getSeo(locale, "servicios");
   const refs = useRef<Record<string, HTMLElement | null>>({});
 
   /* ── Datos estructurados: ItemList con los 8 servicios + Service por cada uno ── */
@@ -89,8 +90,8 @@ export default function ServiciosPage({
       meta="page.srv.meta"
       figure="/images/chimp-ads.jpg"
       figureAlt="page.srv.figure_alt"
-      seoTitle="page.srv.seo.title"
-      seoDesc="page.srv.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/servicios"
       ogImage={`${SITE}/images/chimp-ads.jpg`}
       breadcrumbs={[
@@ -231,7 +232,7 @@ export default function ServiciosPage({
                           {s.long}
                         </p>
                         <button
-                          onClick={() => onNavigate("#/contacto")}
+                          onClick={() => onNavigate("/contacto")}
                           className={`group/link mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors ${
                             isBrand ? "text-brand hover:text-flame" : "text-steel hover:text-paper"
                           }`}
@@ -310,7 +311,7 @@ export default function ServiciosPage({
             </p>
           </div>
           <button
-            onClick={() => onNavigate("#/contacto")}
+            onClick={() => onNavigate("/contacto")}
             className="group inline-flex items-center gap-3 rounded-full bg-ink px-8 py-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-paper transition-all duration-300 hover:gap-4 shrink-0"
           >
             {t("page.srv.close.cta")}

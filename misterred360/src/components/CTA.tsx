@@ -81,10 +81,10 @@ export default function CTA() {
           className="mt-12 flex flex-wrap items-center gap-6"
         >
           <a
-            href="#/contacto"
+            href="/contacto"
             onClick={(e) => {
               e.preventDefault();
-              navigateTo("#/contacto");
+              navigateTo("/contacto");
             }}
             className="group inline-flex items-center gap-3 rounded-full bg-brand px-8 py-5 text-[13px] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-flame hover:gap-4 shadow-[0_0_50px_-8px_rgba(232,38,43,0.55)]"
           >

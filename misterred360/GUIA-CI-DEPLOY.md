@@ -35,6 +35,12 @@ GitHub.
 4. Si termina en verde, entra en `https://misterred360.es` y comprueba
    que el cambio ya está.
 
+Desde que la web genera una versión "prerenderizada" de cada página
+(para que Google y las IA la lean bien, ver `GUIA-SEO.md`), el
+workflow tarda un poco más (instala un navegador sin cabeza para
+generar esas páginas) — un par de minutos en vez de unos segundos.
+Es normal.
+
 ## Si algo falla
 
 - El log de cada paso está en la propia ejecución dentro de Actions:

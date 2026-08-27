@@ -1,0 +1,49 @@
+# ═══════════════════════════════════════════════════════════
+#  MISTERRED360 · Rutas limpias + SPA fallback (Apache/OVH)
+#  ───────────────────────────────────────────────────────────
+#  El build genera una versión "prerenderizada" (HTML ya con el
+#  contenido real, no solo la cáscara) para cada ruta, guardada
+#  como archivo .html junto a index.html (p.ej. servicios.html,
+#  insights/mi-noticia.html). Estas reglas hacen que una URL
+#  limpia como /servicios sirva ese archivo directamente, sin
+#  redirección ni extensión visible.
+#
+#  Si alguna ruta no tiene versión prerenderizada (o es una ruta
+#  nueva no contemplada), se sirve index.html y la aplicación
+#  React se encarga de mostrar el contenido correcto en el
+#  cliente (comportamiento de SPA de toda la vida).
+# ═══════════════════════════════════════════════════════════
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # No tocar peticiones a archivos o carpetas que sí existen
+  # (imágenes, CSS/JS ya inlineados, /admin, etc.)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # /servicios → servicios.html (si existe la versión prerenderizada)
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+  # Cualquier otra ruta → index.html (fallback de SPA)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Cabeceras de caché razonables: HTML siempre revalidado (para que
+# los cambios guardados desde el panel /admin se vean al momento),
+# imágenes con caché larga (raramente cambian de nombre).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

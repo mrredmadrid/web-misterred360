@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { getCastMembers } from "../lib/data";
+import { getCastMembers, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 import CastImage from "../components/CastImage";
@@ -34,12 +34,13 @@ export default function ElencoPage({
 }) {
   const { t, locale } = useI18n();
   const castMembers = getCastMembers(locale);
+  const seo = getSeo(locale, "elenco");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": `${SITE}/elenco#collection`,
-    name: t("page.ele.seo.title"),
-    description: t("page.ele.seo.desc"),
+    name: seo.title,
+    description: seo.description,
     url: `${SITE}/elenco`,
     hasPart: castMembers.map((m) => ({
       "@type": "ImageObject",
@@ -58,8 +59,8 @@ export default function ElencoPage({
       meta="page.ele.meta"
       figure="/images/chimp-hero.jpg"
       figureAlt="page.ele.figure_alt"
-      seoTitle="page.ele.seo.title"
-      seoDesc="page.ele.seo.desc"
+      seoTitle={seo.title}
+      seoDesc={seo.description}
       path="/elenco"
       ogImage={`${SITE}/images/chimp-hero.jpg`}
       breadcrumbs={[
@@ -212,7 +213,7 @@ export default function ElencoPage({
             </p>
           </div>
           <button
-            onClick={() => onNavigate("#/contacto")}
+            onClick={() => onNavigate("/contacto")}
             className="group inline-flex items-center gap-3 rounded-full bg-ink px-8 py-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-paper transition-all duration-300 hover:gap-4 shrink-0"
           >
             {t("page.ele.close.cta")}

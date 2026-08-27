@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { scrollToHash } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
+import { siteContact, siteLegal } from "../lib/data";
 
 /* ───────────────────────────────────────────────────────────
    ContactBlock · Formulario ágil por pasos
@@ -135,10 +136,10 @@ export default function ContactBlock() {
               {t("form.email")}
             </p>
             <a
-              href="mailto:misterred@misterred360.es"
+              href={`mailto:${siteContact.email}`}
               className="link-line font-display font-semibold text-2xl md:text-3xl text-paper"
             >
-              misterred@misterred360.es
+              {siteContact.email}
             </a>
           </div>
           <div>
@@ -146,10 +147,10 @@ export default function ContactBlock() {
               {t("form.phone")}
             </p>
             <a
-              href="tel:+34910360360"
+              href={`tel:${siteContact.phoneHref}`}
               className="link-line font-display font-semibold text-2xl md:text-3xl text-paper"
             >
-              +34 910 360 360
+              {siteContact.phone}
             </a>
           </div>
           <div>
@@ -162,9 +163,9 @@ export default function ContactBlock() {
               itemProp para reforzar la señal semántica.
             */}
             <address className="not-italic text-paper text-lg">
-              MR. RED S.L.
+              {siteLegal.companyName}
               <br />
-              Las Rozas de Madrid · España
+              {siteContact.address} · España
             </address>
             <a
               href="https://www.google.com/maps/search/?api=1&query=MISTERRED360+Las+Rozas+de+Madrid"

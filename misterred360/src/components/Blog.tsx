@@ -4,6 +4,7 @@ import { type InsightBlock, type InsightPost } from "../lib/insights";
 import { useInsights } from "../lib/useInsights";
 import { useI18n } from "../lib/i18n";
 import { SITE, usePageSeo } from "../lib/seo";
+import { getSeo } from "../lib/data";
 import { Kicker, Wordmark } from "./ui";
 
 /* Helpers de SEO para el blog */
@@ -63,8 +64,9 @@ interface BlogProps {
 }
 
 export default function Blog({ route, onBackHome, onOpenIndex, onOpenPost }: BlogProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const insightPosts = useInsights();
+  const blogSeo = getSeo(locale, "insights");
 
   /* SEO enriquecido según la vista (índice o noticia individual) */
   const activePost =
@@ -75,8 +77,8 @@ export default function Blog({ route, onBackHome, onOpenIndex, onOpenPost }: Blo
   const seoOpts =
     route.type === "index"
       ? {
-          title: t("page.blog.seo.title"),
-          description: t("page.blog.seo.desc"),
+          title: blogSeo.title,
+          description: blogSeo.description,
           path: "/insights",
           ogImage: `${SITE}${insightPosts[0]?.image ?? "/images/chimp-hero.jpg"}`,
           breadcrumbs: [
@@ -87,8 +89,8 @@ export default function Blog({ route, onBackHome, onOpenIndex, onOpenPost }: Blo
             "@context": "https://schema.org",
             "@type": "Blog",
             "@id": `${SITE}/insights#blog`,
-            name: t("page.blog.seo.title"),
-            description: t("page.blog.seo.desc"),
+            name: blogSeo.title,
+            description: blogSeo.description,
             url: `${SITE}/insights`,
             inLanguage: "es-ES",
             publisher: { "@id": `${SITE}/#organizacion` },
@@ -139,7 +141,7 @@ export default function Blog({ route, onBackHome, onOpenIndex, onOpenPost }: Blo
           }
         : {
             title: t("post.404.title"),
-            description: t("page.blog.seo.desc"),
+            description: blogSeo.description,
             path: `/insights/${route.type === "article" ? route.slug : ""}`,
             noindex: true,
           };
@@ -406,7 +408,7 @@ function BlogArticle({
                 {t("post.cta.title")}
               </p>
               <button
-                onClick={() => onBackHome("#/contacto")}
+                onClick={() => onBackHome("/contacto")}
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white hover:bg-flame transition-colors"
               >
                 {t("post.cta.button")}
@@ -585,13 +587,13 @@ function BlogMiniFooter({ onBackHome }: { onBackHome: (href?: string) => void })
         </button>
         <div className="flex flex-wrap gap-3">
           <button
-            onClick={() => onBackHome("#/servicios")}
+            onClick={() => onBackHome("/servicios")}
             className="rounded-full border border-white/15 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] hover:border-brand hover:text-brand transition-colors"
           >
             {t("page.blog.mini.services")}
           </button>
           <button
-            onClick={() => onBackHome("#/contacto")}
+            onClick={() => onBackHome("/contacto")}
             className="rounded-full bg-brand px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-flame transition-colors"
           >
             {t("page.blog.mini.contact")}

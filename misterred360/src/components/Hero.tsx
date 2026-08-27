@@ -100,10 +100,10 @@ export default function Hero({ start }: { start: boolean }) {
 
           <motion.div {...fade(1.1)} className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#/contacto"
+              href="/contacto"
               onClick={(e) => {
                 e.preventDefault();
-                navigateTo("#/contacto");
+                navigateTo("/contacto");
               }}
               className="group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-[13px] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-flame hover:gap-4 shadow-[0_0_40px_-8px_rgba(232,38,43,0.5)]"
             >

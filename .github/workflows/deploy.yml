@@ -28,7 +28,11 @@ jobs:
         working-directory: misterred360
         run: npm ci
 
-      - name: Compilar la web
+      - name: Instalar navegador para el prerenderizado SEO
+        working-directory: misterred360
+        run: npx playwright install --with-deps chromium
+
+      - name: Compilar la web y prerenderizar cada página (SEO)
         working-directory: misterred360
         run: npm run build
 
