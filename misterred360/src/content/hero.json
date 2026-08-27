@@ -1,25 +1,52 @@
 {
-  "kicker": { "es": "Agencia de comunicación 360 · Madrid", "en": "360 communication agency · Madrid" },
+  "kicker": {
+    "es": "Agencia de comunicación 360 · Madrid",
+    "en": "360 communication agency · Madrid"
+  },
   "title": {
-    "es": "Déjate de\nmonerías y\nmarca la\n*diferencia.*",
-    "en": "Stop clowning\naround and\nmake the\n*difference.*"
+    "es": "Déjate de monerías y marca la *diferencia.*",
+    "en": "Stop clowning around and make the *difference.*"
   },
   "description": {
     "es": "Agencia de Comunicación 360 en Madrid especializada en estrategia de marca y comunicación, aportando valor e incrementando el retorno con {b}un mayor grado de conocimiento y presencia{/b} en medios de comunicación locales, regionales, nacionales e internacionales.",
     "en": "360 Communication Agency in Madrid specialised in brand strategy and communication, adding value and increasing return with {b}a greater degree of insight and presence{/b} in local, regional, national and international media."
   },
-  "ctaPrimary": { "es": "Cuéntanos tu reto", "en": "Tell us your challenge" },
-  "ctaSecondary": { "es": "Ver una idea gratis →", "en": "Get a free idea →" },
+  "ctaPrimary": {
+    "es": "Cuéntanos tu reto",
+    "en": "Tell us your challenge"
+  },
+  "ctaSecondary": {
+    "es": "Ver una idea gratis →",
+    "en": "Get a free idea →"
+  },
   "audience": {
     "es": "Empresas / Instituciones / Marcas con algo que decir",
     "en": "Companies / Institutions / Brands with something to say"
   },
-  "badge": { "es": "Contesta una persona. Con nombre.", "en": "A real person replies. By name." },
+  "badge": {
+    "es": "Contesta una persona. Con nombre.",
+    "en": "A real person replies. By name."
+  },
   "chips": {
-    "prensa": { "es": "Reputación", "en": "Reputation" },
-    "branding": { "es": "Identidad", "en": "Identity" },
-    "av": { "es": "Creación", "en": "Creation" },
-    "estrategia": { "es": "Estrategia", "en": "Strategy" },
-    "impacto": { "es": "Impacto", "en": "Impact" }
+    "prensa": {
+      "es": "Reputación",
+      "en": "Reputation"
+    },
+    "branding": {
+      "es": "Identidad",
+      "en": "Identity"
+    },
+    "av": {
+      "es": "Creación",
+      "en": "Creation"
+    },
+    "estrategia": {
+      "es": "Estrategia",
+      "en": "Strategy"
+    },
+    "impacto": {
+      "es": "Impacto",
+      "en": "Impact"
+    }
   }
 }
