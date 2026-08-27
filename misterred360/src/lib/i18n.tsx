@@ -34,14 +34,16 @@ const es: Dict = {
   "nav.manifiesto": "Manifiesto",
   "nav.servicios": "Servicios",
   "nav.metodo": "Método 360",
-  "nav.elenco": "Elenco",
-  "nav.insights": "Insights",
+  "nav.precios": "Precios",
+  "nav.elenco": "Equipo",
+  "nav.insights": "Perspectivas",
   "nav.inicio": "Inicio",
   "nav.contacto": "Contacto",
   "nav.cta": "Cuéntanos tu reto",
   "nav.book": "Pedir llamada",
+  "nav.talk": "¿Hablamos?",
   "nav.status": "Contestamos en 24h. Contesta una persona.",
-  "brand.tagline": "Ponemos el alma. Medimos al milímetro.",
+  "brand.tagline": "La evolución de la comunicación",
   "nav.language": "Idioma",
   "nav.follow": "Síguenos",
   "nav.open": "Abrir menú",
@@ -51,9 +53,9 @@ const es: Dict = {
 
   /* Hero */
   "hero.kicker": "Agencia de comunicación 360 · Madrid",
-  "hero.title": "No hacemos\ncampañas.\nHacemos que\n*pasen cosas.*",
+  "hero.title": "Déjate de\nmonerías y\nmarca la\n*diferencia.*",
   "hero.desc":
-    "Agencia de comunicación 360 en Madrid. Nos medimos {b}al milímetro{/b} y trabajamos con el alma. Sin plantillas, sin becarios, sin «ya te llamaremos».",
+    "Agencia de Comunicación 360 en Madrid especializada en estrategia de marca y comunicación, aportando valor e incrementando el retorno con {b}un mayor grado de conocimiento y presencia{/b} en medios de comunicación locales, regionales, nacionales e internacionales.",
   "hero.cta.primary": "Cuéntanos tu reto",
   "hero.cta.secondary": "Ver una idea gratis →",
   "hero.audience": "Empresas / Instituciones / Marcas con algo que decir",
@@ -62,6 +64,8 @@ const es: Dict = {
   "hero.chip.prensa": "Reputación",
   "hero.chip.branding": "Identidad",
   "hero.chip.av": "Creación",
+  "hero.chip.estrategia": "Estrategia",
+  "hero.chip.impacto": "Impacto",
 
   /* Manifiesto (sección landing) */
   "manifesto.kicker": "El manifiesto",
@@ -74,6 +78,8 @@ const es: Dict = {
   "manifesto.quote": "«Vemos lo que otros\npasan por *alto*.»",
   "manifesto.fig": "Fig. 01 — Instinto para la idea. Método para ejecutarla.",
   "manifesto.badge": "Nombre, cara y teléfono",
+  "manifesto.ceo.quote": "«La esencia de una compañía debe emanar de una gran estrategia de comunicación que la haga diferente y única.»",
+  "manifesto.ceo.role": "CEO · MISTERRED360",
 
   /* Servicios (landing) */
   "services.kicker": "Qué hacemos",
@@ -104,13 +110,17 @@ const es: Dict = {
 
   /* WhyUs */
   "whyus.kicker": "Por qué nosotros",
-  "whyus.title": "Aquí nadie te va a\npasar a un *becario.*",
+  "whyus.title": "Piensa diferente.\nActúa *diferente.*",
   "whyus.desc":
     "Trabajamos con pocos clientes. Por eso trabajamos bien. Un interlocutor. El mismo siempre. Localizable el día 3, no el día 30. 360 grados de cobertura. Cero grados de distancia.",
+  "whyus.partners.kicker": "Alianzas",
+  "whyus.partners.desc":
+    "Partners internacionales para proyectos de alcance en grabación, edición, postproducción y eventos.",
 
   /* Elenco */
   "cast.kicker": "El personaje",
   "cast.title": "Vemos lo que otros\npasan por *alto.*",
+  "cast.subtitle": "No somos versiones, somos profesionales con experiencia y un mismo instinto: marcar la diferencia y hacer que tu marca crezca.",
   "cast.drag": "Arrastra para conocer al embajador",
 
   /* Testimonios */
@@ -388,6 +398,20 @@ const es: Dict = {
   "page.srv.close.p": "Auditamos tu comunicación actual, detectamos las fugas de reputación y te proponemos un plan 360 con prioridades claras. Sin humo y con presupuesto cerrado.",
   "page.srv.close.cta": "Pedir auditoría 360",
 
+  "page.srv.pricing.kicker": "Precios",
+  "page.srv.pricing.title": "Precios claros.\nSin letra pequeña.",
+  "page.srv.pricing.desc": "Tres franjas de entrada según lo que necesita tu marca. Presupuesto cerrado antes de empezar, siempre.",
+  "page.srv.pricing.web.name": "Servicios Web",
+  "page.srv.pricing.web.price": "Desde 1.000 €",
+  "page.srv.pricing.web.desc": "Diseño y desarrollo de tu espacio web, con identidad, contenidos y estructura pensados para convertir.",
+  "page.srv.pricing.estrategia.name": "Estrategia y Planes de Comunicación",
+  "page.srv.pricing.estrategia.price": "Desde 1.500 €",
+  "page.srv.pricing.estrategia.desc": "Plan de comunicación completo: mensajes, canales, calendario y objetivos alineados con una visión 360.",
+  "page.srv.pricing.gabinete.name": "Gabinete de Prensa y Presencia en Medios",
+  "page.srv.pricing.gabinete.price": "Según proyecto",
+  "page.srv.pricing.gabinete.desc": "Gestión de contenidos, gabinete de prensa y presencia en medios en función del proyecto y su continuidad, con planes personalizados adaptados a las necesidades del cliente.",
+  "page.srv.pricing.note": "Precios orientativos de entrada. Cada propuesta se cierra tras una primera lectura de tu marca, sin compromiso.",
+
   "service.gabinete-de-prensa.name": "Gabinete de Prensa",
   "service.gabinete-de-prensa.tag": "Del hecho al titular.",
   "service.gabinete-de-prensa.brief": "Transformamos tu actividad en noticias, contenidos y oportunidades de visibilidad para que tu marca gane presencia, credibilidad e impacto público.",
@@ -422,17 +446,18 @@ const es: Dict = {
   "service.estudios-de-mercado.long": "Tomar decisiones sin información es asumir riesgos innecesarios. Desarrollamos estudios e investigaciones de mercado para obtener datos relevantes sobre tu actividad, tu entorno y tus oportunidades, facilitando decisiones más precisas, estrategias mejor orientadas y una capacidad de reacción más ágil ante los cambios.",
 
   "page.met.seo.title": "Método 360: Plan de Comunicación en 4 Fases | MISTERRED360",
-  "page.met.seo.desc": "Cómo trabaja MISTERRED360, agencia de comunicación en Madrid: observar, pensar, crear y amplificar. Un plan de comunicación completo en cuatro fases medibles.",
+  "page.met.seo.desc": "Cómo trabaja MISTERRED360, agencia de comunicación en Madrid: observar, pensar, crear, amplificar y visionar. Un plan de comunicación completo en cinco fases medibles.",
   "page.met.kicker": "Método 360",
-  "page.met.meta": "4 fases · 360 grados · 0 improvisación",
-  "page.met.title": "Observar, pensar, crear,\namplificar. *Repetir.*",
-  "page.met.intro": "Nuestro método no es un proceso lineal: es un círculo. Cuatro fases que giran alrededor de tu marca, cada vez con más información, más criterio y más impacto.",
+  "page.met.meta": "5 fases · 360 grados · 0 improvisación",
+  "page.met.title": "Observar, pensar, crear,\namplificar, visionar. *Repetir.*",
+  "page.met.intro": "Nuestro método no es un proceso lineal: es un círculo. Cinco fases que giran alrededor de tu marca, cada vez con más información, más criterio y más impacto.",
   "page.met.figure_alt": "El Estratega: el chimpancé de MISTERRED360 analizando su hoja de ruta",
   "page.met.deliverables": "Entregables de la fase",
   "page.met.verb.observar": "OBSERVAR",
   "page.met.verb.pensar": "PENSAR",
   "page.met.verb.crear": "CREAR",
   "page.met.verb.amplificar": "AMPLIFICAR",
+  "page.met.verb.visionar": "VISIONAR",
   "page.met.p01.title": "Primero escuchamos. Siempre.",
   "page.met.p01.desc": "Auditoría de marca, estudios de mercado y escucha activa. Antes de decir una palabra en tu nombre, entendemos tu entorno, tu audiencia y tus oportunidades reales.",
   "page.met.p01.ext": "Auditamos tu marca, tu entorno y la conversación que ya existe sobre ti. Entrevistas, estudios de mercado y escucha social para saber exactamente dónde estás antes de decidir a dónde vamos.",
@@ -457,6 +482,12 @@ const es: Dict = {
   "page.met.p04.d1": "Difusión en medios y redes",
   "page.met.p04.d2": "Campañas y activaciones",
   "page.met.p04.d3": "Informe de resultados y learning",
+  "page.met.p05.title": "El círculo se cierra. Y crece.",
+  "page.met.p05.desc": "Crecimiento de marca y retorno garantizado para afrontar un nuevo ejercicio con nuevos retos desde un escenario óptimo: marcas con potencial se consolidan, se diferencian y se convierten en referentes de su sector.",
+  "page.met.p05.ext": "El círculo se cierra con crecimiento de marca y retorno garantizado para afrontar un nuevo ejercicio con nuevos retos y objetivos desde un escenario óptimo y propicio. Marcas con potencial se consolidan y se diferencian en un mercado cada vez más competitivo, y consiguen ser referentes del sector con acciones y planteamientos novedosos, frescos y diferentes.",
+  "page.met.p05.d1": "Informe de crecimiento",
+  "page.met.p05.d2": "Plan del nuevo ejercicio",
+  "page.met.p05.d3": "Nuevos retos y objetivos",
   "page.met.close.title": "El círculo nunca\nse {red}cierra.{/red}",
   "page.met.close.p": "Cada medición alimenta la siguiente vuelta. Marcas que empiezan con un gabinete de prensa terminan girando el círculo completo: esa es la trayectoria natural cuando la comunicación se toma en serio.",
   "page.met.close.cta": "Empezar mi primera vuelta",
@@ -669,6 +700,7 @@ const es: Dict = {
   "contact.tab.call.title": "Que te llamemos nosotros",
   "contact.tab.call.desc":
     "Sin agendas complicadas ni enlaces de videollamada: elige un día y una franja aproximada, deja el teléfono y te llamamos.",
+  "contact.whatsapp.cta": "O habla ahora mismo por WhatsApp",
 
   /* ═══ Contacto · info de la empresa ═══ */
   "contact.company.aria": "Información de la empresa",
@@ -734,14 +766,16 @@ const en: Dict = {
   "nav.manifiesto": "Manifesto",
   "nav.servicios": "Services",
   "nav.metodo": "360 Method",
-  "nav.elenco": "Cast",
-  "nav.insights": "Insights",
+  "nav.precios": "Pricing",
+  "nav.elenco": "Team",
+  "nav.insights": "Perspectives",
   "nav.inicio": "Home",
   "nav.contacto": "Contact",
   "nav.cta": "Tell us your challenge",
   "nav.book": "Request a call",
+  "nav.talk": "Let's talk?",
   "nav.status": "We reply within 24h. A real person answers.",
-  "brand.tagline": "Soul and precision. Every project.",
+  "brand.tagline": "The evolution of communication",
   "nav.language": "Language",
   "nav.follow": "Follow us",
   "nav.open": "Open menu",
@@ -750,9 +784,9 @@ const en: Dict = {
   "nav.skip": "Skip to content",
 
   "hero.kicker": "360 communication agency · Madrid",
-  "hero.title": "We don't run\ncampaigns.\nWe make\n*things happen.*",
+  "hero.title": "Stop clowning\naround and\nmake the\n*difference.*",
   "hero.desc":
-    "A 360 communication agency in Madrid. We measure {b}every millimetre{/b} and work with soul. No templates, no juniors, no «we'll get back to you».",
+    "360 Communication Agency in Madrid specialised in brand strategy and communication, adding value and increasing return with {b}a greater degree of insight and presence{/b} in local, regional, national and international media.",
   "hero.cta.primary": "Tell us your challenge",
   "hero.cta.secondary": "Get a free idea →",
   "hero.audience": "Companies / Institutions / Brands with something to say",
@@ -761,6 +795,8 @@ const en: Dict = {
   "hero.chip.prensa": "Reputation",
   "hero.chip.branding": "Identity",
   "hero.chip.av": "Creation",
+  "hero.chip.estrategia": "Strategy",
+  "hero.chip.impacto": "Impact",
 
   "manifesto.kicker": "The manifesto",
   "manifesto.title": "Soul and *precision.*\nEvery millimetre.",
@@ -772,6 +808,8 @@ const en: Dict = {
   "manifesto.quote": "\"We see what\neveryone else *misses*.\"",
   "manifesto.fig": "Fig. 01 — Instinct for the idea. Method for the execution.",
   "manifesto.badge": "Name, face and phone",
+  "manifesto.ceo.quote": "\"The essence of a company must come from a great communication strategy that makes it different and unique.\"",
+  "manifesto.ceo.role": "CEO · MISTERRED360",
 
   "services.kicker": "What we do",
   "services.title": "360 degrees.\n*No filler.*",
@@ -798,12 +836,16 @@ const en: Dict = {
   "method.title.b": "Build. Show up.",
 
   "whyus.kicker": "Why us",
-  "whyus.title": "Nobody here is\ngoing to hand you\noff to a *junior.*",
+  "whyus.title": "Think different.\nAct *different.*",
   "whyus.desc":
     "We work with few clients. That's why we work well. One point of contact. Always the same. Reachable on day 3, not day 30. 360 degrees of coverage. Zero degrees of distance.",
+  "whyus.partners.kicker": "Partnerships",
+  "whyus.partners.desc":
+    "International partners for large-scale projects in recording, editing, post-production and events.",
 
   "cast.kicker": "The character",
   "cast.title": "We see what everyone\nelse *misses.*",
+  "cast.subtitle": "We're not versions, we're experienced professionals with one same instinct: make the difference and help your brand grow.",
   "cast.drag": "Drag to meet the ambassador",
 
   "testi.kicker": "Cases",
@@ -1069,6 +1111,20 @@ const en: Dict = {
   "page.srv.close.p": "We audit your current communication, spot reputation leaks and propose a 360 plan with clear priorities. No smoke, and a closed budget.",
   "page.srv.close.cta": "Request 360 audit",
 
+  "page.srv.pricing.kicker": "Pricing",
+  "page.srv.pricing.title": "Clear pricing.\nNo small print.",
+  "page.srv.pricing.desc": "Three entry tiers depending on what your brand needs. A closed budget before we start, always.",
+  "page.srv.pricing.web.name": "Web Services",
+  "page.srv.pricing.web.price": "From €1,000",
+  "page.srv.pricing.web.desc": "Design and development of your web presence, with identity, content and structure built to convert.",
+  "page.srv.pricing.estrategia.name": "Strategy & Communication Plans",
+  "page.srv.pricing.estrategia.price": "From €1,500",
+  "page.srv.pricing.estrategia.desc": "A full communication plan: messages, channels, calendar and objectives aligned with a 360 vision.",
+  "page.srv.pricing.gabinete.name": "Press Office & Media Presence",
+  "page.srv.pricing.gabinete.price": "Project-based",
+  "page.srv.pricing.gabinete.desc": "Content management, press office and media presence based on the project and its continuity, with custom plans tailored to your needs.",
+  "page.srv.pricing.note": "Indicative starting prices. Every proposal is closed after a first read of your brand, with no strings attached.",
+
   "service.gabinete-de-prensa.name": "Press Office",
   "service.gabinete-de-prensa.tag": "From fact to headline.",
   "service.gabinete-de-prensa.brief": "We turn your activity into news, content and visibility opportunities so your brand gains presence, credibility and public impact.",
@@ -1103,17 +1159,18 @@ const en: Dict = {
   "service.estudios-de-mercado.long": "Deciding without information is taking unnecessary risks. We develop market studies and research to obtain relevant data about your activity, your environment and your opportunities, enabling more precise decisions, better-oriented strategies and a faster reaction to change.",
 
   "page.met.seo.title": "360 Method: Communication Plan in 4 Phases | MISTERRED360",
-  "page.met.seo.desc": "How MISTERRED360, a communication agency in Madrid, works: observe, think, create and amplify. A complete communication plan in four measurable phases.",
+  "page.met.seo.desc": "How MISTERRED360, a communication agency in Madrid, works: observe, think, create, amplify and envision. A complete communication plan in five measurable phases.",
   "page.met.kicker": "360 Method",
-  "page.met.meta": "4 phases · 360 degrees · 0 improvisation",
-  "page.met.title": "Observe, think, create,\namplify. *Repeat.*",
-  "page.met.intro": "Our method isn't a linear process: it's a circle. Four phases that spin around your brand, each time with more information, more judgment and more impact.",
+  "page.met.meta": "5 phases · 360 degrees · 0 improvisation",
+  "page.met.title": "Observe, think, create,\namplify, envision. *Repeat.*",
+  "page.met.intro": "Our method isn't a linear process: it's a circle. Five phases that spin around your brand, each time with more information, more judgment and more impact.",
   "page.met.figure_alt": "The Strategist: MISTERRED360's chimp analyzing his roadmap",
   "page.met.deliverables": "Phase deliverables",
   "page.met.verb.observar": "OBSERVE",
   "page.met.verb.pensar": "THINK",
   "page.met.verb.crear": "CREATE",
   "page.met.verb.amplificar": "AMPLIFY",
+  "page.met.verb.visionar": "ENVISION",
   "page.met.p01.title": "First we listen. Always.",
   "page.met.p01.desc": "Brand audit, market research and active listening. Before saying a word on your behalf, we understand your environment, your audience and your real opportunities.",
   "page.met.p01.ext": "We audit your brand, your environment and the conversation that already exists about you. Interviews, market research and social listening to know exactly where you are before deciding where we go.",
@@ -1138,6 +1195,12 @@ const en: Dict = {
   "page.met.p04.d1": "Media and social distribution",
   "page.met.p04.d2": "Campaigns and activations",
   "page.met.p04.d3": "Results report and learning",
+  "page.met.p05.title": "The circle closes. And grows.",
+  "page.met.p05.desc": "Brand growth and guaranteed return to face a new cycle with new challenges from an optimal position: brands with potential consolidate, stand out and become benchmarks in their sector.",
+  "page.met.p05.ext": "The circle closes with brand growth and guaranteed return to face a new cycle with new challenges and goals from an optimal, favourable position. Brands with potential consolidate and stand out in an increasingly competitive market, becoming sector benchmarks with fresh, different approaches.",
+  "page.met.p05.d1": "Growth report",
+  "page.met.p05.d2": "New cycle plan",
+  "page.met.p05.d3": "New challenges and goals",
   "page.met.close.title": "The circle never\nfully {red}closes.{/red}",
   "page.met.close.p": "Every measurement feeds the next turn. Brands that start with a press office end up spinning the full circle: that's the natural trajectory when communication is taken seriously.",
   "page.met.close.cta": "Start my first turn",
@@ -1350,6 +1413,7 @@ const en: Dict = {
   "contact.tab.call.title": "Ask us to call you",
   "contact.tab.call.desc":
     "No shared calendars, no video links: pick a day and a rough time slot, leave your phone and we'll call you.",
+  "contact.whatsapp.cta": "Or talk right now on WhatsApp",
 
   /* ═══ Contact · company info ═══ */
   "contact.company.aria": "Company information",

@@ -85,6 +85,22 @@ export default function WhyUs() {
             ))}
           </div>
         </motion.div>
+
+        {/* Alianzas */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-8 rounded-2xl border border-white/[0.07] bg-coal/60 px-8 py-6"
+        >
+          <span className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.28em] text-brand">
+            {t("whyus.partners.kicker")}
+          </span>
+          <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
+            {t("whyus.partners.desc")}
+          </p>
+        </motion.div>
       </div>
     </section>
   );

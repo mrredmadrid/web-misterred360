@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, PenLine, Phone as PhoneIcon } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, PenLine, Phone as PhoneIcon, MessageCircle } from "lucide-react";
 import PageShell from "../components/PageShell";
 import ContactBlock from "../components/ContactBlock";
 import BookingBlock from "../components/BookingBlock";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
+import { buildWhatsAppUrl } from "../lib/whatsapp";
 
 /* ───────────────────────────────────────────────────────────
    Página · CONTACTO (#/contacto)
@@ -105,6 +106,19 @@ export default function ContactPage({
               id="tab-call"
               controls="panel-call"
             />
+          </div>
+
+          {/* ─── Vía directa: WhatsApp ─── */}
+          <div className="mx-auto max-w-2xl mb-10 -mt-4 flex justify-center">
+            <a
+              href={buildWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/15 px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-smoke hover:text-brand hover:border-brand/50 transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" strokeWidth={1.9} />
+              {t("contact.whatsapp.cta")}
+            </a>
           </div>
 
           {/* ─── Contenedor del panel activo ─── */}

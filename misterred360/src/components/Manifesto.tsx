@@ -65,6 +65,18 @@ export default function Manifesto() {
                 {t("manifesto.quote")}
               </p>
             </motion.div>
+
+            <motion.blockquote
+              {...rise(0.66)}
+              className="border-l-2 border-brand pl-6"
+            >
+              <p className="font-quote italic text-lg md:text-xl text-ink/75 leading-snug">
+                {t("manifesto.ceo.quote")}
+              </p>
+              <cite className="mt-3 block not-italic text-[11px] font-semibold uppercase tracking-[0.24em] text-ink/45">
+                {t("manifesto.ceo.role")}
+              </cite>
+            </motion.blockquote>
           </div>
 
           {/* Retrato con parallax */}
@@ -78,10 +90,17 @@ export default function Manifesto() {
             >
               <motion.img
                 style={{ y: imgY, scale: 1.12 }}
-                src="/images/chimp-bw.jpg"
-                alt="El chimpancé de MISTERRED360 en retrato editorial monocromo"
-                className="w-full h-full object-cover object-[center_20%] duotone-red"
+                src="/images/team-manifesto.jpg"
+                alt="El equipo de MISTERRED360: la manada al completo, en color"
+                className="w-full h-full object-cover object-[center_20%]"
                 loading="lazy"
+                onError={(e) => {
+                  const img = e.currentTarget;
+                  img.onerror = null;
+                  img.src = "/images/chimp-bw.jpg";
+                  img.alt = "El chimpancé de MISTERRED360 en retrato editorial monocromo";
+                  img.className = "w-full h-full object-cover object-[center_20%] duotone-red";
+                }}
               />
               <div className="absolute top-4 right-4 rounded-full bg-ink text-paper px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em]">
                 {t("manifesto.badge")}

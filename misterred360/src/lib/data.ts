@@ -152,8 +152,10 @@ export const serviceBlocks: ServiceBlock[] = [
         brief:
           "Generamos información útil para entender mejor tu entorno y tomar decisiones estratégicas con mayor seguridad.",
         long: "Tomar decisiones sin información es asumir riesgos innecesarios. Desarrollamos estudios e investigaciones de mercado para obtener datos relevantes sobre tu actividad, tu entorno y tus oportunidades, facilitando decisiones más precisas, estrategias mejor orientadas y una capacidad de reacción más ágil ante los cambios.",
-        image: "/images/chimp-data.jpg",
-        imageAlt: "El Analista: el chimpancé de MISTERRED360 estudiando datos de mercado",
+        /* Fallback automático a chimp-data.jpg si chimp-meeting.jpg
+           todavía no se ha subido (ver GUIA-IMAGENES-EQUIPO.md) */
+        image: "/images/chimp-meeting.jpg",
+        imageAlt: "El equipo de MISTERRED360 en la mesa de reuniones estudiando datos de mercado",
         icon: BarChart3,
       },
     ],
@@ -207,12 +209,21 @@ export const processSteps: ProcessStep[] = [
     image: "/images/chimp-ads.jpg",
     tags: ["Difusión", "Medición", "Optimización"],
   },
+  {
+    index: "05",
+    verb: "VISIONAR",
+    title: "El círculo se cierra. Y crece.",
+    description:
+      "Crecimiento de marca y retorno garantizado para afrontar un nuevo ejercicio con nuevos retos desde un escenario óptimo: marcas con potencial se consolidan, se diferencian y se convierten en referentes de su sector.",
+    image: "/images/chimp-cta.jpg",
+    tags: ["Crecimiento", "Retorno", "Nuevo ciclo"],
+  },
 ];
 
 /* ── Diferenciales ──────────────────────────────────────── */
 export const differentials = [
   {
-    title: "Aquí nadie te pasa a un becario",
+    title: "Aquí nadie te pasa de mano",
     description:
       "Un interlocutor. El mismo siempre. Localizable el día 3, no el día 30. Trabajamos con pocos clientes para poder trabajar bien.",
   },
@@ -234,10 +245,10 @@ export const differentials = [
 ];
 
 export const stats = [
-  { value: 15, suffix: "+", label: "Años puliendo el método" },
-  { value: 120, suffix: "+", label: "Marcas con nombre y apellidos" },
-  { value: 24, suffix: "h", label: "Para contestar. Siempre." },
-  { value: 98, suffix: "%", label: "Clientes que repiten" },
+  { value: 77, suffix: "%", label: "Marcando la diferencia" },
+  { value: 87, suffix: "%", label: "Marcas con relato" },
+  { value: 100, suffix: "%", label: "Alma en cada proyecto" },
+  { value: 90, suffix: "%", label: "Clientes que repiten" },
 ];
 
 /* ── El Elenco: las caras del personaje ─────────────────── */
@@ -292,6 +303,11 @@ export { insightPosts as insights } from "./insights";
 
 /* ── Marquee ────────────────────────────────────────────── */
 export const marqueeItems = [
+  "Identidad",
+  "Reputación",
+  "Creación",
+  "Estrategia",
+  "Impacto",
   "Gabinete de Prensa",
   "Imagen Corporativa",
   "Planificación Estratégica",

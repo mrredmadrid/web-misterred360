@@ -10,6 +10,17 @@ import { Kicker } from "./ui";
    y retrato monocromo del personaje
    ─────────────────────────────────────────────────────────── */
 
+/* Iniciales del nombre para el avatar circular (sin fotos reales aún) */
+function initials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
+}
+
 export default function Testimonials() {
   const { t } = useI18n();
   const [idx, setIdx] = useState(0);
@@ -87,7 +98,12 @@ export default function Testimonials() {
                   “{item.quote}”
                 </p>
                 <footer className="mt-10 flex items-center gap-4">
-                  <span className="w-10 h-px bg-brand" aria-hidden="true" />
+                  <span
+                    className="w-12 h-12 rounded-full bg-brand/15 border border-brand/40 text-brand flex items-center justify-center font-display font-semibold text-sm shrink-0"
+                    aria-hidden="true"
+                  >
+                    {initials(item.name)}
+                  </span>
                   <div>
                     <p className="font-display font-semibold text-lg text-paper">{item.name}</p>
                     <p className="text-sm text-smoke">{item.role}</p>
