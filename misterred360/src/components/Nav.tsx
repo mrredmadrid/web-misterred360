@@ -85,15 +85,24 @@ export default function Nav({
           scrolled ? "bg-ink/80 backdrop-blur-md border-b border-white/[0.07]" : ""
         }`}
       >
-        <div className="flex items-center justify-between h-[72px] px-5 md:px-10 gap-4">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:flex items-center lg:justify-between h-[72px] px-5 md:px-10 gap-3">
           <a
             href="#top"
             onClick={(e) => go(e, "#top")}
-            className="text-[17px] leading-none"
+            className="justify-self-start text-[15px] sm:text-[17px] leading-none truncate"
             aria-label={t("nav.home_aria")}
           >
             <Wordmark />
           </a>
+
+          {/* Hamburguesa · centrada en móvil, oculta desde lg (la barra completa ya está visible) */}
+          <button
+            onClick={() => setOpen(true)}
+            className="lg:hidden justify-self-center shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-paper"
+            aria-label={t("nav.open")}
+          >
+            <Menu className="w-5 h-5" />
+          </button>
 
           <nav
             className="hidden lg:flex items-center gap-8"
@@ -170,23 +179,18 @@ export default function Nav({
             )}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3">
-            <LanguageSwitcher />
+          <div className="justify-self-end flex flex-col lg:flex-row items-end lg:items-center gap-1.5 lg:gap-3">
             <a
               href="/contacto"
               onClick={(e) => go(e, "/contacto")}
-              className="hidden sm:inline-flex group items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-flame"
+              className="lg:order-2 group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand px-3.5 sm:px-5 py-1.5 sm:py-2.5 text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
               {t("nav.talk")}
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <button
-              onClick={() => setOpen(true)}
-              className="lg:hidden shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-paper"
-              aria-label={t("nav.open")}
-            >
-              <Menu className="w-5 h-5" />
-            </button>
+            <div className="lg:order-1">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </motion.header>
