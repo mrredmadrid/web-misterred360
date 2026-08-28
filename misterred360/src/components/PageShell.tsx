@@ -137,14 +137,12 @@ export default function PageShell({
                     className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-full rounded-b-[2.5rem] border border-brand/50"
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-0 rounded-t-full rounded-b-[2.5rem] overflow-hidden border border-white/10">
-                    <img
-                      src={figure}
-                      alt={figureAltT}
-                      className="w-full h-full object-cover object-[center_20%]"
-                      fetchPriority="high"
-                    />
-                  </div>
+                  <div
+                    role="img"
+                    aria-label={figureAltT}
+                    className="absolute inset-0 rounded-t-full rounded-b-[2.5rem] overflow-hidden border border-white/10 bg-cover bg-[center_20%]"
+                    style={{ backgroundImage: `url(${figure})` }}
+                  />
                 </motion.div>
               </div>
             )}
