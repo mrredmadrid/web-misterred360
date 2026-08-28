@@ -5,13 +5,12 @@
   "author": "MISTERRED360",
   "image": "/images/chimp-events.jpg",
   "es": {
-    "category": "Eventos",
-    "title": "Cómo convertir un evento en una noticia",
+    "authorRole": "RRPP y eventos",
     "excerpt": "Un evento no termina cuando se apagan las luces. Si se diseña con estrategia, puede generar agenda, relaciones y contenido durante semanas.",
     "readTime": "7 min",
     "meta": "7 min · Abr 2026",
-    "authorRole": "RRPP y eventos",
     "imageAlt": "Chimpancé de MISTERRED360 hablando en un escenario de evento corporativo",
+    "title": "Cómo convertir un acto en una noticia",
     "tags": [
       "RRPP",
       "Eventos",
@@ -43,16 +42,16 @@
         "type": "paragraph",
         "text": "La diferencia entre un acto y una acción de comunicación está en la intención. Lo que no se planifica, normalmente no se cuenta."
       }
-    ]
+    ],
+    "category": "Eventos"
   },
   "en": {
-    "category": "Events",
-    "title": "How to turn an event into a news story",
+    "authorRole": "PR and events",
     "excerpt": "An event doesn't end when the lights go down. When it's designed strategically, it can generate agenda, relationships and content for weeks.",
     "readTime": "7 min read",
     "meta": "7 min · Apr 2026",
-    "authorRole": "PR and events",
     "imageAlt": "MISTERRED360's chimp speaking on a corporate event stage",
+    "title": "How to turn an event into a news story",
     "tags": [
       "PR",
       "Events",
@@ -84,6 +83,7 @@
         "type": "paragraph",
         "text": "The difference between hosting a gathering and running a communication action is intent. What isn't planned usually isn't told."
       }
-    ]
+    ],
+    "category": "Events"
   }
 }
