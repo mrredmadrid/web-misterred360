@@ -6,7 +6,7 @@ automáticamente** a los mensajes que lleguen al número corporativo,
 manteniendo el tono editorial de la marca y el patrón "alma y milímetro".
 
 **Todo el widget del sitio web ya está listo** para funcionar sin
-backend: al pulsar el botón flotante se abre `wa.me/34910360360` con el
+backend: al pulsar el botón flotante se abre `wa.me/34609904063` con el
 mensaje pre-rellenado. Este backend opcional se activa cuando queráis
 que la primera respuesta sea automática con IA.
 
@@ -17,7 +17,7 @@ que la primera respuesta sea automática con IA.
 ```
 Usuario web → botón WhatsApp de misterred360.es → wa.me → WhatsApp del usuario
                                                                  ↓
-                                                    Escribe al +34 910 360 360
+                                                    Escribe al +34 609 90 40 63
                                                                  ↓
                                        WhatsApp Business Cloud API (Meta)
                                                                  ↓
@@ -37,7 +37,7 @@ Usuario web → botón WhatsApp de misterred360.es → wa.me → WhatsApp del us
 
 - **Cuenta de Meta Business** con acceso a WhatsApp Business Platform (gratis
   hasta 1000 conversaciones/mes iniciadas por usuario).
-- **Número de teléfono** verificado (idealmente el corporativo +34 910 360 360).
+- **Número de teléfono** verificado (idealmente el corporativo +34 609 90 40 63).
 - **Cuenta de OpenAI** con acceso a GPT-4o (5–15 € al mes para volumen medio).
 - Servidor Node 20+ (Vercel Functions, Railway, Render, o VPS Ubuntu).
 
@@ -64,7 +64,7 @@ ESCALATE_EMAIL=misterred@misterred360.es
 
 1. Ve a [business.facebook.com](https://business.facebook.com) → crea la
    cuenta si aún no la tienes.
-2. En **WhatsApp Manager** añade el número +34 910 360 360 (te enviarán un
+2. En **WhatsApp Manager** añade el número +34 609 90 40 63 (te enviarán un
    SMS de verificación).
 3. Copia el **Phone Number ID** y el **WhatsApp Business Account ID**.
 4. Crea un **System User** con permisos de WhatsApp y genera un **token

@@ -8,7 +8,7 @@ import { siteContact } from "./data";
    ─────────────────────────────────────────────────────────── */
 
 export interface WhatsAppConfig {
-  /* Número en formato internacional SIN + ni espacios (ej: 34910360360) */
+  /* Número en formato internacional SIN + ni espacios (ej: 34609904063) */
   phone: string;
   /* Texto pre-rellenado en el chat cuando el usuario abre WhatsApp */
   defaultMessage: string;
