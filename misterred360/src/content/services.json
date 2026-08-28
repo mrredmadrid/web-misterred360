@@ -175,6 +175,38 @@
           }
         }
       ]
+    },
+    {
+      "id": "ia",
+      "index": "04",
+      "accent": "ocean",
+      "title": { "es": "Inteligencia Artificial", "en": "Artificial Intelligence" },
+      "claim": {
+        "es": "Que trabaje mientras tú piensas.",
+        "en": "Let it work while you think."
+      },
+      "description": {
+        "es": "Automatización con criterio, no con plantillas. Agentes de IA que responden, cualifican y acompañan sin perder el tono de tu marca.",
+        "en": "Automation with judgment, not templates. AI agents that respond, qualify and support without losing your brand's voice."
+      },
+      "services": [
+        {
+          "id": "agentes-ia",
+          "icon": "bot",
+          "image": "/images/chimp-strategy.jpg",
+          "imageAlt": "El Ingeniero: el chimpancé de MISTERRED360 revisando el panel de control de un agente de inteligencia artificial",
+          "name": { "es": "Agentes IA Personalizados", "en": "Custom AI Agents" },
+          "tagline": { "es": "Un empleado que nunca descansa.", "en": "An employee that never clocks out." },
+          "brief": {
+            "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para atender, cualificar y acompañar a tus clientes las 24 horas, con el tono exacto de tu marca.",
+            "en": "We design and train custom AI agents to attend, qualify and support your customers around the clock, in your brand's exact tone."
+          },
+          "long": {
+            "es": "Un agente de IA no es un chatbot genérico: es una extensión de tu equipo, entrenada con tu conocimiento, tu tono y tus procesos. Diseñamos, entrenamos e integramos agentes personalizados en WhatsApp, tu web o tus herramientas internas para responder al instante, cualificar leads, resolver dudas frecuentes y escalar a una persona cuando de verdad hace falta, sin perder ni un ápice de la voz de tu marca.",
+            "en": "An AI agent isn't a generic chatbot: it's an extension of your team, trained on your knowledge, your tone and your processes. We design, train and integrate custom agents into WhatsApp, your website or your internal tools to respond instantly, qualify leads, answer frequent questions and escalate to a person when it truly matters, without losing an ounce of your brand's voice."
+          }
+        }
+      ]
     }
   ]
 }

@@ -203,7 +203,7 @@ collections:
         name: services
         file: "misterred360/src/content/services.json"
         fields:
-          - label: "Bloques de servicios (3)"
+          - label: "Bloques de servicios (4)"
             name: blocks
             widget: list
             summary: "{{fields.title.es}}"
@@ -220,7 +220,7 @@ collections:
                 summary: "{{fields.name.es}}"
                 fields:
                   - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
-                  - { label: "Icono", name: icon, widget: select, options: ["newspaper", "compass", "radio-tower", "users", "fingerprint", "clapperboard", "megaphone", "bar-chart-3"] }
+                  - { label: "Icono", name: icon, widget: select, options: ["newspaper", "compass", "radio-tower", "users", "fingerprint", "clapperboard", "megaphone", "bar-chart-3", "bot"] }
                   - { label: "Imagen", name: image, widget: image }
                   - { label: "Alt de la imagen (accesibilidad)", name: imageAlt, widget: string }
                   - { label: "Nombre del servicio", name: name, widget: object, fields: *loc_string }

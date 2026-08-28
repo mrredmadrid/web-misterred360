@@ -7,6 +7,7 @@ import {
   Clapperboard,
   Megaphone,
   BarChart3,
+  Bot,
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -43,6 +44,7 @@ const ICONS: Record<string, LucideIcon> = {
   clapperboard: Clapperboard,
   megaphone: Megaphone,
   "bar-chart-3": BarChart3,
+  bot: Bot,
 };
 
 /* ── Servicios ──────────────────────────────────────────── */
