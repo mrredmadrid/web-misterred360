@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Bot } from "lucide-react";
 import { navigateTo } from "../lib/scroll";
+import { getAgentesIA } from "../lib/data";
+import { useI18n } from "../lib/i18n";
 
 /* ───────────────────────────────────────────────────────────
    Franja compacta · avance del servicio de Agentes IA en la
@@ -9,6 +11,8 @@ import { navigateTo } from "../lib/scroll";
    ─────────────────────────────────────────────────────────── */
 
 export default function AgentesIAPromo() {
+  const { locale } = useI18n();
+  const { promo } = getAgentesIA(locale);
   return (
     <section className="relative bg-ink border-t border-white/[0.07] overflow-hidden">
       <div className="absolute inset-0 glow-brand pointer-events-none" aria-hidden="true" />
@@ -24,21 +28,20 @@ export default function AgentesIAPromo() {
         </span>
         <div className="flex-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-brand">
-            Nuevo · Inteligencia Artificial
+            {promo.badge}
           </p>
           <h2 className="mt-2 font-display font-semibold text-2xl md:text-3xl leading-tight text-paper">
-            Agentes IA personalizados, entrenados con el tono de tu marca
+            {promo.title}
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-smoke max-w-xl">
-            Un empleado que atiende, cualifica y responde 24 horas al día,
-            sin perder ni un ápice de tu voz.
+            {promo.description}
           </p>
         </div>
         <button
           onClick={() => navigateTo("/agentes-ia")}
           className="group shrink-0 inline-flex items-center gap-3 rounded-full bg-brand px-7 py-4 text-[12px] font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:gap-4 hover:bg-flame"
         >
-          Descubrir agentes IA
+          {promo.cta}
           <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45" />
         </button>
       </motion.div>

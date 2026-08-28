@@ -312,6 +312,12 @@ export function getAgentesIA(locale: Locale) {
       meta: loc(agentesIAContent.hero.meta, locale),
     },
     statement: loc(agentesIAContent.statement, locale),
+    promo: {
+      badge: loc(agentesIAContent.promo.badge, locale),
+      title: loc(agentesIAContent.promo.title, locale),
+      description: loc(agentesIAContent.promo.description, locale),
+      cta: loc(agentesIAContent.promo.cta, locale),
+    },
     capabilities: agentesIAContent.capabilities.map((c): AgentCapability => ({
       id: c.id,
       icon: ICONS[c.icon] ?? Bot,

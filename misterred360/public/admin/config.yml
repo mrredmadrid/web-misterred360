@@ -241,6 +241,15 @@ collections:
               - { label: "Introducción", name: intro, widget: object, fields: *loc_text }
               - { label: "Nota lateral (ej. Disponible 24/7)", name: meta, widget: object, fields: *loc_string }
           - { label: "Frase destacada (acepta {red}texto{/red} para resaltar en rojo)", name: statement, widget: object, fields: *loc_text }
+          - label: "Franja de aviso en la home"
+            name: promo
+            widget: object
+            hint: "El bloque corto que promociona esta página desde la portada"
+            fields:
+              - { label: "Etiqueta (ej. Nuevo · Inteligencia Artificial)", name: badge, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - { label: "Texto del botón", name: cta, widget: object, fields: *loc_string }
           - label: "Capacidades (tarjetas de \"qué hace\")"
             name: capabilities
             widget: list

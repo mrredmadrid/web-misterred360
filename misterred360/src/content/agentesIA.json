@@ -12,6 +12,18 @@
     "es": "{red}No es un chatbot genérico.{/red} Es una extensión de tu equipo, entrenada con tu conocimiento, tu tono y tus procesos.",
     "en": "{red}It's not a generic chatbot.{/red} It's an extension of your team, trained on your knowledge, your tone and your processes."
   },
+  "promo": {
+    "badge": { "es": "Nuevo · Inteligencia Artificial", "en": "New · Artificial Intelligence" },
+    "title": {
+      "es": "Agentes IA personalizados, entrenados con el tono de tu marca",
+      "en": "Custom AI agents, trained in your brand's tone"
+    },
+    "description": {
+      "es": "Un empleado que atiende, cualifica y responde 24 horas al día, sin perder ni un ápice de tu voz.",
+      "en": "An employee that attends, qualifies and responds 24 hours a day, without losing an ounce of your voice."
+    },
+    "cta": { "es": "Descubrir agentes IA", "en": "Discover AI agents" }
+  },
   "capabilities": [
     {
       "id": "24-7",
