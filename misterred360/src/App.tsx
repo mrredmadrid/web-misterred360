@@ -11,9 +11,8 @@ import Manifesto from "./components/Manifesto";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import WhyUs from "./components/WhyUs";
-import ChimpGallery from "./components/ChimpGallery";
+import AgentesIAPromo from "./components/AgentesIAPromo";
 import Testimonials from "./components/Testimonials";
-import Insights from "./components/Insights";
 import Faq from "./components/Faq";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
@@ -253,22 +252,11 @@ export default function App() {
         {/* 04 · Diferenciales + resultados */}
         <WhyUs />
 
-        {/* 05 · El elenco: las caras del personaje */}
-        <ChimpGallery />
+        {/* 05 · Avance de Agentes IA (detalle completo en /agentes-ia) */}
+        <AgentesIAPromo />
 
         {/* 06 · Reputación */}
         <Testimonials />
-
-        {/* 07 · Insights */}
-        <Insights
-          onOpenBlog={() => navigate("/insights")}
-          onOpenPost={(slug) => navigate(`/insights/${encodeURIComponent(slug)}`)}
-        />
-
-        {/* Cinta inversa hacia el cierre */}
-        <div className="relative z-30 -my-7">
-          <Marquee reverse />
-        </div>
 
         {/* Preguntas frecuentes · rich snippets FAQPage */}
         <Faq />

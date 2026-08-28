@@ -204,7 +204,7 @@ function BlogIndex({
         <div className="relative px-5 md:px-10 xl:px-16 py-16 md:py-24 max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-7">
             <button
-              onClick={() => onBackHome("#insights")}
+              onClick={() => onBackHome()}
               className="mb-10 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-smoke hover:text-paper transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -316,7 +316,7 @@ function BlogArticle({
                 {t("post.back.index")}
               </button>
               <button
-                onClick={() => onBackHome("#insights")}
+                onClick={() => onBackHome()}
                 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-smoke hover:text-paper transition-colors"
               >
                 {t("post.back.home")}
