@@ -387,7 +387,7 @@ El círculo no se cierra: cada medición alimenta la siguiente vuelta.
 
 **Datos directos:**
 - Email: misterred@misterred360.es
-- Teléfono: +34 910 360 360
+- Teléfono: +34 609 90 40 63
 - La guarida: Las Rozas de Madrid · España
 - Estado: Respondemos en menos de 24h laborables.
 
@@ -915,7 +915,7 @@ Kicker superior: Paso {n} de 4.
 
 ### Panel lateral (siempre visible)
 - Email directo: misterred@misterred360.es
-- Teléfono: +34 910 360 360
+- Teléfono: +34 609 90 40 63
 - La guarida: Las Rozas de Madrid · España
 - Estado: Respondemos en menos de 24h laborables.
 - **Micro-cifras:** 60 s · 48 h · 0 € · 1 sola.

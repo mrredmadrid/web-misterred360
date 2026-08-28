@@ -69,7 +69,7 @@ VÍAS DE CONTACTO QUE PUEDES OFRECER:
 - Formulario detallado: https://misterred360.es/#/contacto (idea gratis en 72h).
 - Agendar llamada rápida: https://misterred360.es/#/agendar (día + franja).
 - Email directo: misterred@misterred360.es
-- Teléfono: +34 910 360 360 (L–V 9-18).
+- Teléfono: +34 609 90 40 63 (L–V 9-18).
 
 CUÁNDO ESCALAR A HUMANO INMEDIATO:
 - Si aparecen palabras: "crisis", "urgente", "medio", "prensa", "juicio",

@@ -59,12 +59,12 @@ local, fundaciones y tercer sector.
 
 ## Vías de contacto que puedes ofrecer
 
-- **Formulario detallado**: https://misterred360.es/#/contacto
+- **Formulario detallado**: https://misterred360.es/contacto
   (para contar el reto por escrito y recibir la idea gratis en 72h).
-- **Pedir llamada rápida**: https://misterred360.es/#/agendar
+- **Pedir llamada rápida**: https://misterred360.es/agendar
   (elige día + franja aproximada, os llamamos nosotros).
 - **Email directo**: misterred@misterred360.es
-- **Teléfono**: +34 910 360 360 (L–V 9-18).
+- **Teléfono**: +34 609 90 40 63 (L–V 9-18).
 - **WhatsApp**: mismo número (botón verde en la esquina inferior derecha).
 
 ## Casos frecuentes · cómo responder
@@ -84,7 +84,7 @@ historia que contar, seguimos siendo válidos. Ofrece llamada de descubrimiento.
 → Responde inmediatamente: "Es exactamente para lo que existe nuestro
 protocolo Crisis 72h: comité activo en 3 horas, portavoz preparado y
 respuesta coordinada. Escríbenos ahora a misterred@misterred360.es o
-llama al +34 910 360 360. Alguien del equipo se pone contigo en menos
+llama al +34 609 90 40 63. Alguien del equipo se pone contigo en menos
 de 15 minutos."
 
 **"Quiero agendar una llamada"** o "cita" o "reunión":

@@ -29,7 +29,7 @@ verificación de Meta tarda entre 5 minutos y 24 horas).
 
 ## <a id="1"></a>1 · Antes de empezar · qué necesitas tener a mano
 
-- 📱 **Número de teléfono** (idealmente el corporativo **+34 910 360 360**).
+- 📱 **Número de teléfono** (idealmente el corporativo **+34 609 90 40 63**).
       Importante: **no debe estar usándose en la app normal de WhatsApp**.
       Si lo está, primero borra la cuenta desde la app.
 - 💳 **Tarjeta de crédito** para pagar OpenAI (~5 € al mes para
@@ -81,7 +81,7 @@ conversaciones/mes).
    - Categoría: **Servicios profesionales**.
    - Descripción breve: "Agencia de comunicación 360. Ponemos el
      alma. Medimos al milímetro."
-5. Introduce el número **+34 910 360 360**.
+5. Introduce el número **+34 609 90 40 63**.
 6. Meta te llamará o enviará un SMS con un código de 6 dígitos.
    Introdúcelo para verificar.
 
@@ -337,7 +337,7 @@ quita palabras según lo que os importa detectar en primera instancia.
 
 ### 9.1 Prueba básica
 
-Desde tu WhatsApp personal, envía al **+34 910 360 360**:
+Desde tu WhatsApp personal, envía al **+34 609 90 40 63**:
 
 ```
 Hola, ¿qué servicios ofrecéis?
@@ -453,7 +453,7 @@ segundos.
 ## ✅ Checklist final antes de dar por bueno el sistema
 
 - [ ] Business Manager verificado (o en proceso).
-- [ ] Número +34 910 360 360 dado de alta como WhatsApp Business Platform.
+- [ ] Número +34 609 90 40 63 dado de alta como WhatsApp Business Platform.
 - [ ] Phone Number ID copiado.
 - [ ] System User con token permanente generado y guardado.
 - [ ] App Secret copiado.
