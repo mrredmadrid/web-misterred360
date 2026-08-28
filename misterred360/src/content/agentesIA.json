@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "kicker": { "es": "Inteligencia Artificial", "en": "Artificial Intelligence" },
+    "title": { "es": "Agentes IA", "en": "AI Agents" },
+    "intro": {
+      "es": "Un empleado que nunca se toma un café, nunca se pone enfermo y nunca pierde la paciencia. Diseñamos y entrenamos agentes de inteligencia artificial a medida, con el tono exacto de tu marca.",
+      "en": "An employee that never takes a coffee break, never calls in sick and never loses patience. We design and train custom AI agents, in your brand's exact tone."
+    },
+    "meta": { "es": "Disponible 24/7", "en": "Available 24/7" }
+  },
+  "statement": {
+    "es": "{red}No es un chatbot genérico.{/red} Es una extensión de tu equipo, entrenada con tu conocimiento, tu tono y tus procesos.",
+    "en": "{red}It's not a generic chatbot.{/red} It's an extension of your team, trained on your knowledge, your tone and your processes."
+  },
+  "capabilities": [
+    {
+      "id": "24-7",
+      "icon": "clock",
+      "title": { "es": "Atención 24 horas", "en": "24-hour support" },
+      "description": {
+        "es": "Responde al instante, también a las tres de la mañana. Tu marca nunca deja a nadie esperando.",
+        "en": "Responds instantly, even at three in the morning. Your brand never leaves anyone waiting."
+      }
+    },
+    {
+      "id": "cualifica",
+      "icon": "target",
+      "title": { "es": "Cualifica antes de molestar", "en": "Qualifies before it bothers" },
+      "description": {
+        "es": "Distingue una consulta curiosa de una oportunidad real, y solo escala lo que de verdad importa.",
+        "en": "Tells a casual query apart from a real opportunity, and only escalates what truly matters."
+      }
+    },
+    {
+      "id": "tono",
+      "icon": "message-circle",
+      "title": { "es": "Habla como tú", "en": "Speaks like you" },
+      "description": {
+        "es": "Entrenado con tu tono, tu vocabulario y tus argumentos. Nada de respuestas genéricas de manual.",
+        "en": "Trained with your tone, your vocabulary and your arguments. No generic textbook answers."
+      }
+    },
+    {
+      "id": "canales",
+      "icon": "radio-tower",
+      "title": { "es": "Vive donde está tu cliente", "en": "Lives where your customer is" },
+      "description": {
+        "es": "WhatsApp, tu web, tus formularios o tus herramientas internas. Un solo cerebro, todos los canales.",
+        "en": "WhatsApp, your website, your forms or your internal tools. One brain, every channel."
+      }
+    },
+    {
+      "id": "escala",
+      "icon": "users",
+      "title": { "es": "Sabe cuándo callar", "en": "Knows when to step back" },
+      "description": {
+        "es": "Detecta el momento de pasar la conversación a una persona, sin que el cliente lo note.",
+        "en": "Detects the right moment to hand the conversation to a person, without the customer noticing."
+      }
+    },
+    {
+      "id": "mejora",
+      "icon": "bar-chart-3",
+      "title": { "es": "Aprende y mejora", "en": "Learns and improves" },
+      "description": {
+        "es": "Cada conversación es una lección. Revisamos, ajustamos y afinamos el criterio con datos reales.",
+        "en": "Every conversation is a lesson. We review, adjust and refine its judgment with real data."
+      }
+    }
+  ],
+  "process": [
+    {
+      "index": "01",
+      "title": { "es": "Diagnóstico", "en": "Diagnosis" },
+      "description": {
+        "es": "Entendemos tu negocio, tus preguntas frecuentes y dónde se te escapan oportunidades.",
+        "en": "We understand your business, your frequent questions and where opportunities slip away."
+      }
+    },
+    {
+      "index": "02",
+      "title": { "es": "Entrenamiento", "en": "Training" },
+      "description": {
+        "es": "Construimos el agente con tu conocimiento real: tarifas, argumentario, casos y límites.",
+        "en": "We build the agent with your real knowledge: pricing, talking points, cases and limits."
+      }
+    },
+    {
+      "index": "03",
+      "title": { "es": "Integración", "en": "Integration" },
+      "description": {
+        "es": "Lo conectamos donde ya está tu cliente: WhatsApp, web, redes o tus propias herramientas.",
+        "en": "We connect it where your customer already is: WhatsApp, web, social or your own tools."
+      }
+    },
+    {
+      "index": "04",
+      "title": { "es": "Medición y mejora", "en": "Measurement and improvement" },
+      "description": {
+        "es": "Revisamos conversaciones reales y afinamos el criterio semana a semana.",
+        "en": "We review real conversations and refine its judgment week by week."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "q": { "es": "¿Un agente de IA sustituye a mi equipo?", "en": "Does an AI agent replace my team?" },
+      "a": {
+        "es": "No. Sustituye la espera, no a las personas. Se encarga de lo repetitivo y de responder al instante; tu equipo se queda con las conversaciones que de verdad requieren criterio humano.",
+        "en": "No. It replaces the wait, not the people. It handles the repetitive work and instant replies; your team keeps the conversations that truly need human judgment."
+      }
+    },
+    {
+      "q": { "es": "¿Puede sonar como mi marca y no como un robot genérico?", "en": "Can it sound like my brand instead of a generic robot?" },
+      "a": {
+        "es": "Es justo el punto de partida: lo entrenamos con tu tono, tu vocabulario y tus argumentos reales, no con una plantilla genérica.",
+        "en": "That's exactly the starting point: we train it with your real tone, vocabulary and arguments, not a generic template."
+      }
+    },
+    {
+      "q": { "es": "¿Dónde puede funcionar?", "en": "Where can it work?" },
+      "a": {
+        "es": "En WhatsApp, en tu web, en formularios o integrado en tus propias herramientas internas. Un único agente, todos los canales que necesites.",
+        "en": "On WhatsApp, on your website, in forms, or integrated into your own internal tools. One single agent, every channel you need."
+      }
+    },
+    {
+      "q": { "es": "¿Cuánto tarda en estar listo?", "en": "How long until it's ready?" },
+      "a": {
+        "es": "Depende del alcance, pero un primer agente funcional suele estar operativo en pocas semanas, desde el diagnóstico hasta la integración.",
+        "en": "It depends on the scope, but a first working agent is usually operational within a few weeks, from diagnosis to integration."
+      }
+    },
+    {
+      "q": { "es": "¿Qué pasa si el agente no sabe responder algo?", "en": "What happens if the agent doesn't know how to answer something?" },
+      "a": {
+        "es": "Escala la conversación a una persona del equipo, sin fricción y sin que el cliente lo note. Nunca inventa respuestas ni promete lo que no puede cumplir.",
+        "en": "It escalates the conversation to a team member, smoothly and without the customer noticing. It never makes up answers or promises what it can't deliver."
+      }
+    }
+  ]
+}

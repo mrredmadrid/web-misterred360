@@ -8,6 +8,9 @@ import {
   Megaphone,
   BarChart3,
   Bot,
+  Clock,
+  Target,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -25,6 +28,7 @@ import manifestoContent from "../content/manifesto.json";
 import siteContent from "../content/site.json";
 import designContent from "../content/design.json";
 import seoContent from "../content/seo.json";
+import agentesIAContent from "../content/agentesIA.json";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Capa de resolución de contenido
@@ -45,6 +49,9 @@ const ICONS: Record<string, LucideIcon> = {
   megaphone: Megaphone,
   "bar-chart-3": BarChart3,
   bot: Bot,
+  clock: Clock,
+  target: Target,
+  "message-circle": MessageCircle,
 };
 
 /* ── Servicios ──────────────────────────────────────────── */
@@ -264,6 +271,7 @@ export const navLinks = [
   { label: "Manifiesto", href: "/manifiesto" },
   { label: "Servicios", href: "/servicios" },
   { label: "Método 360", href: "/metodo" },
+  { label: "Agentes IA", href: "/agentes-ia" },
   { label: "Elenco", href: "/elenco" },
   { label: "Insights", href: "/insights" },
 ];
@@ -275,3 +283,49 @@ export const socialLinks = [
   { short: "X", label: "X / Twitter" },
   { short: "YT", label: "YouTube" },
 ];
+
+/* ── Página Agentes IA ─────────────────────────────────── */
+export interface AgentCapability {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface AgentProcessStep {
+  index: string;
+  title: string;
+  description: string;
+}
+
+export interface AgentFaqItem {
+  q: string;
+  a: string;
+}
+
+export function getAgentesIA(locale: Locale) {
+  return {
+    hero: {
+      kicker: loc(agentesIAContent.hero.kicker, locale),
+      title: loc(agentesIAContent.hero.title, locale),
+      intro: loc(agentesIAContent.hero.intro, locale),
+      meta: loc(agentesIAContent.hero.meta, locale),
+    },
+    statement: loc(agentesIAContent.statement, locale),
+    capabilities: agentesIAContent.capabilities.map((c): AgentCapability => ({
+      id: c.id,
+      icon: ICONS[c.icon] ?? Bot,
+      title: loc(c.title, locale),
+      description: loc(c.description, locale),
+    })),
+    process: agentesIAContent.process.map((p): AgentProcessStep => ({
+      index: p.index,
+      title: loc(p.title, locale),
+      description: loc(p.description, locale),
+    })),
+    faq: agentesIAContent.faq.map((f): AgentFaqItem => ({
+      q: loc(f.q, locale),
+      a: loc(f.a, locale),
+    })),
+  };
+}

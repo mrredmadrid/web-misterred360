@@ -78,5 +78,15 @@
       "es": "Blog de MISTERRED360: noticias, análisis e insights sobre comunicación estratégica, gabinete de prensa, reputación de marca, branding, audiovisual y marketing.",
       "en": "MISTERRED360's blog: news, analysis and insights on strategic communication, press office, brand reputation, branding, video and marketing."
     }
+  },
+  "agentesIA": {
+    "title": {
+      "es": "Agentes IA Personalizados: Automatización con Criterio | MISTERRED360",
+      "en": "Custom AI Agents: Automation with Judgment | MISTERRED360"
+    },
+    "description": {
+      "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para WhatsApp, tu web y tus herramientas internas: atención 24/7, cualificación de leads y el tono exacto de tu marca.",
+      "en": "We design and train custom AI agents for WhatsApp, your website and your internal tools: 24/7 support, lead qualification and your brand's exact tone."
+    }
   }
 }

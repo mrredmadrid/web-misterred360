@@ -51,6 +51,7 @@ const STATIC_ROUTES = [
   { path: "/manifiesto", changefreq: "monthly", priority: "0.8" },
   { path: "/servicios", changefreq: "monthly", priority: "0.9" },
   { path: "/metodo", changefreq: "monthly", priority: "0.7" },
+  { path: "/agentes-ia", changefreq: "monthly", priority: "0.9" },
   { path: "/elenco", changefreq: "monthly", priority: "0.6" },
   { path: "/contacto", changefreq: "monthly", priority: "0.9" },
   { path: "/agendar", changefreq: "monthly", priority: "0.9" },

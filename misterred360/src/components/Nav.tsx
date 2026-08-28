@@ -16,6 +16,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const NAV_ROUTES = [
   { key: "nav.manifiesto", href: "/manifiesto" },
   { key: "nav.servicios", href: "/servicios", dropdown: true },
+  { key: "nav.agentesIA", href: "/agentes-ia" },
   { key: "nav.elenco", href: "/elenco" },
   { key: "nav.insights", href: "/insights" },
 ] as const;
@@ -68,6 +69,7 @@ export default function Nav({
     { key: "nav.servicios", href: "/servicios" },
     { key: "nav.metodo", href: "/metodo" },
     { key: "nav.precios", href: "/servicios#precios" },
+    { key: "nav.agentesIA", href: "/agentes-ia" },
     { key: "nav.elenco", href: "/elenco" },
     { key: "nav.insights", href: "/insights" },
     { key: "nav.talk", href: "/contacto" },
