@@ -73,6 +73,8 @@ export interface ServiceBlock {
   claim: string;
   description: string;
   accent: "brand" | "ocean";
+  image?: string;
+  imageAlt?: string;
   services: Service[];
 }
 
@@ -84,6 +86,8 @@ export function getServiceBlocks(locale: Locale): ServiceBlock[] {
     claim: loc(b.claim, locale),
     description: loc(b.description, locale),
     accent: b.accent as "brand" | "ocean",
+    image: (b as { image?: string }).image,
+    imageAlt: (b as { imageAlt?: string }).imageAlt,
     services: b.services.map((s) => ({
       id: s.id,
       name: loc(s.name, locale),

@@ -221,6 +221,8 @@ collections:
               - { label: "Título del bloque", name: title, widget: object, fields: *loc_string }
               - { label: "Frase (claim)", name: claim, widget: object, fields: *loc_string }
               - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - { label: "Imagen grande del bloque (opcional)", name: image, widget: image, required: false }
+              - { label: "Alt de la imagen del bloque", name: imageAlt, widget: string, required: false }
               - label: "Servicios de este bloque"
                 name: services
                 widget: list

@@ -159,6 +159,21 @@ export default function ServiciosPage({
                 </p>
               </div>
 
+              {block.image && (
+                <div className="mb-16 rounded-[2rem] overflow-hidden border border-white/10 aspect-[21/9]">
+                  <img
+                    src={block.image}
+                    alt={block.imageAlt}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                    onError={(e) => {
+                      const wrapper = e.currentTarget.parentElement;
+                      if (wrapper) wrapper.style.display = "none";
+                    }}
+                  />
+                </div>
+              )}
+
               {/* Servicios del bloque */}
               <div className="space-y-20 md:space-y-24">
                 {block.services.map((s, si) => {

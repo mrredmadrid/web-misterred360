@@ -135,6 +135,40 @@
         "es": "Nada se le escapa.",
         "en": "Nothing escapes him."
       }
+    },
+    {
+      "id": "contable",
+      "image": "/images/chimp-contable.jpg",
+      "gender": "f",
+      "role": {
+        "es": "La Contable",
+        "en": "The Accountant"
+      },
+      "area": {
+        "es": "Finanzas",
+        "en": "Finance"
+      },
+      "quote": {
+        "es": "Siempre atenta para que nada se escape.",
+        "en": "Always watching so nothing slips through."
+      }
+    },
+    {
+      "id": "arte-ia",
+      "image": "/images/chimp-arte-ia.jpg",
+      "gender": "m",
+      "role": {
+        "es": "El Arte de la IA",
+        "en": "The Art of AI"
+      },
+      "area": {
+        "es": "Inteligencia Artificial",
+        "en": "Artificial Intelligence"
+      },
+      "quote": {
+        "es": "Siempre abriendo nuevos caminos con las mejores herramientas.",
+        "en": "Always opening new paths with the best tools."
+      }
     }
   ]
 }
