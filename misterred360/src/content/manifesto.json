@@ -1,17 +1,17 @@
 {
   "kicker": { "es": "El manifiesto", "en": "The manifesto" },
-  "title": { "es": "Ponemos el *alma.*\nMedimos al milímetro.", "en": "Soul and *precision.*\nEvery millimetre." },
+  "title": { "es": "Ponemos el *alma*\nen cada proyecto.", "en": "We put our *soul*\ninto every project." },
   "eco": {
     "es": "Somos la agencia que no cabe en un briefing.",
     "en": "We're the agency that doesn't fit in a brief."
   },
   "p1": {
-    "es": "Una agencia convencional te asigna un ejecutivo de cuentas. Nosotros te asignamos una obsesión. Una agencia convencional tiene un método y te mete dentro; nosotros medimos tu negocio al milímetro y construimos el método alrededor.",
-    "en": "A regular agency assigns you an account manager. We assign you an obsession. A regular agency has a method and fits you into it; we measure your business to the millimetre and build the method around it."
+    "es": "Una agencia convencional te asigna un ejecutivo de cuentas. Nosotros te asignamos unas personas que se implican y dejan el alma en cada proyecto.",
+    "en": "A regular agency assigns you an account manager. We assign you people who get involved and put their soul into every project."
   },
   "p2": {
-    "es": "Hacemos comunicación como se hacía antes —hablando contigo, escuchándote, entendiéndote— con las herramientas de ahora. 360 grados de cobertura. Cero grados de distancia.",
-    "en": "We do communication the way it used to be done —talking to you, listening to you, understanding you— with the tools of today. 360 degrees of coverage. Zero degrees of distance."
+    "es": "Hacemos comunicación como se hacía antes —conversando en profundidad contigo, escuchándote, entendiéndote— con la magia de las herramientas de ahora. 360 grados de cobertura a cero grados de distancia.",
+    "en": "We do communication the way it used to be done —talking to you in depth, listening to you, understanding you— with the magic of today's tools. 360 degrees of coverage at zero degrees of distance."
   },
   "quote": {
     "es": "«Vemos lo que otros\npasan por *alto*.»",

@@ -195,6 +195,25 @@ export default function ElencoPage({
               </motion.figure>
             ))}
           </div>
+
+          <div className="mt-6 grid sm:grid-cols-2 gap-6">
+            <div className="rounded-[1.5rem] border border-white/10 bg-coal/60 px-8 py-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-3">
+                {t("page.ele.collab.title")}
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
+                {t("page.ele.collab.desc")}
+              </p>
+            </div>
+            <div className="rounded-[1.5rem] border border-white/10 bg-coal/60 px-8 py-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-3">
+                {t("page.ele.allies.title")}
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
+                {t("page.ele.allies.desc")}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -51,9 +51,17 @@ export default function WhyUs() {
                   {d.title}
                 </h3>
                 <p className="mt-4 text-[15px] leading-relaxed text-smoke">{d.description}</p>
-                <span className="mt-8 block font-display text-sm text-ash group-hover:text-brand transition-colors">
-                  0{i + 1} —
-                </span>
+                <div className="mt-8 flex items-center justify-between">
+                  <span className="font-display text-sm text-ash group-hover:text-brand transition-colors">
+                    0{i + 1} —
+                  </span>
+                  {d.stat && (
+                    <span className="font-display font-semibold text-3xl text-brand">
+                      {d.stat.value}
+                      {d.stat.suffix}
+                    </span>
+                  )}
+                </div>
               </motion.article>
             );
           })}

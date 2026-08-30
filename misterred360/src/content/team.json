@@ -4,65 +4,137 @@
       "id": "icono",
       "image": "/images/chimp-hero.jpg",
       "gender": "m",
-      "role": { "es": "El Icono", "en": "The Icon" },
-      "area": { "es": "Marca", "en": "Brand" },
-      "quote": { "es": "La cara visible.", "en": "The face of it all." }
+      "role": {
+        "es": "El Icono / La Estrategia",
+        "en": "The Icon / The Strategy"
+      },
+      "area": {
+        "es": "Dirección",
+        "en": "Management"
+      },
+      "quote": {
+        "es": "La cara visible y la mente que marca la diferencia.",
+        "en": "The face and the mind that makes the difference."
+      }
     },
     {
       "id": "portavoz",
       "image": "/images/chimp-press-f.jpg",
       "gender": "f",
-      "role": { "es": "La Portavoz", "en": "The Spokeswoman" },
-      "area": { "es": "Prensa", "en": "Press" },
-      "quote": { "es": "Da la cara por ti.", "en": "Speaks up for you." }
+      "role": {
+        "es": "La Portavoz",
+        "en": "The Spokeswoman"
+      },
+      "area": {
+        "es": "Contenidos",
+        "en": "Content"
+      },
+      "quote": {
+        "es": "Convierte el mensaje y los contenidos en un punto de inflexión.",
+        "en": "Turns the message and content into a turning point."
+      }
     },
     {
       "id": "estratega",
       "image": "/images/chimp-strategy-f.jpg",
       "gender": "f",
-      "role": { "es": "La Estratega", "en": "The Strategist" },
-      "area": { "es": "Planificación", "en": "Planning" },
-      "quote": { "es": "Piensa tres jugadas por delante.", "en": "Thinks three moves ahead." }
+      "role": {
+        "es": "Project Manager",
+        "en": "Project Manager"
+      },
+      "area": {
+        "es": "Gestión de proyectos",
+        "en": "Project management"
+      },
+      "quote": {
+        "es": "La magia que convierte los proyectos en una realidad.",
+        "en": "The magic that turns projects into reality."
+      }
     },
     {
       "id": "anfitrion",
       "image": "/images/chimp-events.jpg",
       "gender": "m",
-      "role": { "es": "El Anfitrión", "en": "The Host" },
-      "area": { "es": "Eventos", "en": "Events" },
-      "quote": { "es": "Domina cualquier escenario.", "en": "Owns any stage." }
+      "role": {
+        "es": "El Anfitrión",
+        "en": "The Host"
+      },
+      "area": {
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "quote": {
+        "es": "Domina cualquier escenario.",
+        "en": "Owns any stage."
+      }
     },
     {
       "id": "disenador",
       "image": "/images/chimp-brand-f.jpg",
       "gender": "f",
-      "role": { "es": "La Diseñadora", "en": "The Designer" },
-      "area": { "es": "Identidad", "en": "Identity" },
-      "quote": { "es": "Detalle a detalle.", "en": "Detail by detail." }
+      "role": {
+        "es": "La Diseñadora",
+        "en": "The Designer"
+      },
+      "area": {
+        "es": "Identidad",
+        "en": "Identity"
+      },
+      "quote": {
+        "es": "Creando piezas únicas y atenta siempre a cada detalle.",
+        "en": "Creating unique pieces, always attentive to every detail."
+      }
     },
     {
       "id": "director",
       "image": "/images/chimp-av.jpg",
       "gender": "m",
-      "role": { "es": "El Director", "en": "The Director" },
-      "area": { "es": "Audiovisual", "en": "Video" },
-      "quote": { "es": "Cuenta historias en 24 fps.", "en": "Tells stories at 24 fps." }
+      "role": {
+        "es": "El Mago del Vídeo",
+        "en": "The Video Wizard"
+      },
+      "area": {
+        "es": "Audiovisual",
+        "en": "Video"
+      },
+      "quote": {
+        "es": "Dominando el mundo audiovisual para proyectar tu marca.",
+        "en": "Mastering the audiovisual world to project your brand."
+      }
     },
     {
       "id": "publicista",
       "image": "/images/chimp-ads-f.png",
       "gender": "f",
-      "role": { "es": "La Publicista", "en": "The Publicist" },
-      "area": { "es": "Marketing", "en": "Marketing" },
-      "quote": { "es": "Se hace oír.", "en": "Makes herself heard." }
+      "role": {
+        "es": "La Publicista",
+        "en": "The Publicist"
+      },
+      "area": {
+        "es": "Marketing",
+        "en": "Marketing"
+      },
+      "quote": {
+        "es": "Se hace oír.",
+        "en": "Makes herself heard."
+      }
     },
     {
       "id": "analista",
       "image": "/images/chimp-data.jpg",
       "gender": "m",
-      "role": { "es": "El Analista", "en": "The Analyst" },
-      "area": { "es": "Datos", "en": "Data" },
-      "quote": { "es": "Nada se le escapa.", "en": "Nothing escapes him." }
+      "role": {
+        "es": "El Analista",
+        "en": "The Analyst"
+      },
+      "area": {
+        "es": "Datos",
+        "en": "Data"
+      },
+      "quote": {
+        "es": "Nada se le escapa.",
+        "en": "Nothing escapes him."
+      }
     }
   ]
 }

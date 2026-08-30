@@ -20,14 +20,14 @@
           "image": "/images/chimp-press.jpg",
           "imageAlt": "El Portavoz: el chimpancé de MISTERRED360 en un atril de rueda de prensa",
           "name": { "es": "Gabinete de Prensa", "en": "Press Office" },
-          "tagline": { "es": "Del hecho al titular.", "en": "From fact to headline." },
+          "tagline": { "es": "Ya nunca volverás a ser uno más.", "en": "You'll never be just one more again." },
           "brief": {
             "es": "Transformamos tu actividad en noticias, contenidos y oportunidades de visibilidad para que tu marca gane presencia, credibilidad e impacto público.",
             "en": "We turn your activity into news, content and visibility opportunities so your brand gains presence, credibility and public impact."
           },
           "long": {
-            "es": "Convertimos la actividad de tu empresa, institución o proyecto en mensajes con valor informativo para que tu trabajo gane visibilidad, reputación y presencia pública. Diseñamos acciones de comunicación, elaboramos contenidos periodísticos y trabajamos la relación con medios para transformar tu actividad en noticia y posicionarte donde de verdad importa.",
-            "en": "We turn the activity of your company, institution or project into messages with news value so your work gains visibility, reputation and public presence. We design communication actions, produce editorial content and manage media relations to turn your activity into news and position you where it really matters."
+            "es": "Convertimos la actividad de tu empresa, institución o proyecto en mensajes con valor informativo para que tu trabajo gane visibilidad, reputación y presencia pública. Diseñamos acciones de comunicación, elaboramos contenidos periodísticos personalizados y trabajamos la relación con medios para transformar tu actividad en noticia y posicionarte donde de verdad importa.",
+            "en": "We turn the activity of your company, institution or project into messages with news value so your work gains visibility, reputation and public presence. We design communication actions, produce personalized editorial content and manage media relations to turn your activity into news and position you where it really matters."
           }
         },
         {
@@ -100,10 +100,13 @@
           "image": "/images/chimp-brand.jpg",
           "imageAlt": "El Diseñador: el chimpancé de MISTERRED360 ante un muro de identidad de marca",
           "name": { "es": "Imagen Corporativa", "en": "Corporate Identity" },
-          "tagline": { "es": "Identidad con carácter.", "en": "Identity with character." },
+          "tagline": {
+            "es": "Carácter y personalidad que te elevan a otro nivel.",
+            "en": "Character and personality that take you to another level."
+          },
           "brief": {
-            "es": "Creamos o redefinimos tu identidad visual para que refleje con claridad la esencia y el valor de tu actividad.",
-            "en": "We create or redefine your visual identity so it clearly reflects the essence and value of your activity."
+            "es": "Creamos o redefinimos tu identidad visual corporativa para que refleje con claridad la esencia y el valor de tu actividad. Desde una web impactante con asistente virtual y línea de atención 24/7/365 a presentaciones de alto impacto o publicaciones digitales o impresas temáticas que te elevarán a otro nivel.",
+            "en": "We create or redefine your corporate visual identity so it clearly reflects the essence and value of your activity. From a striking website with a virtual assistant and 24/7/365 support to high-impact presentations or themed digital and print publications that take you to another level."
           },
           "long": {
             "es": "La imagen de una marca debe expresar con claridad quién es, qué ofrece y por qué es diferente. Desarrollamos o renovamos identidades corporativas para que reflejen la esencia de tu actividad y proyecten una imagen sólida, coherente y profesional en todos tus puntos de contacto.",
@@ -134,8 +137,8 @@
       "accent": "brand",
       "title": { "es": "Creación y Difusión", "en": "Creation and Distribution" },
       "claim": {
-        "es": "Lo que la gente ve, comparte y recuerda.",
-        "en": "What people see, share and remember."
+        "es": "Creamos para que crean en ti.",
+        "en": "We create so they believe in you."
       },
       "description": {
         "es": "Audiovisual, publicidad, eventos y digital que no se olvidan. Un anuncio que no se recuerda es un gasto. Uno que se recuerda es una inversión.",
@@ -150,28 +153,12 @@
           "name": { "es": "Publicidad y Marketing", "en": "Advertising and Marketing" },
           "tagline": { "es": "Impacto que convierte.", "en": "Impact that converts." },
           "brief": {
-            "es": "Desarrollamos campañas y mensajes orientados a maximizar visibilidad, notoriedad e impacto comercial.",
-            "en": "We develop campaigns and messages aimed at maximizing visibility, awareness and commercial impact."
+            "es": "Desarrollamos campañas, presentaciones y eventos con un relato nítido y mensajes orientados a maximizar visibilidad, notoriedad e impacto comercial y empresarial.",
+            "en": "We develop campaigns, presentations and events with a clear narrative and messages aimed at maximizing visibility, awareness and commercial and business impact."
           },
           "long": {
-            "es": "Diseñamos acciones publicitarias y campañas de marketing enfocadas a mejorar el alcance, la notoriedad y la respuesta del público. Definimos mensajes, creatividad y soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
-            "en": "We design advertising actions and marketing campaigns focused on improving reach, awareness and audience response. We define messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
-          }
-        },
-        {
-          "id": "estudios-de-mercado",
-          "icon": "bar-chart-3",
-          "image": "/images/chimp-meeting.jpg",
-          "imageAlt": "El equipo de MISTERRED360 en la mesa de reuniones estudiando datos de mercado",
-          "name": { "es": "Estudios de Mercado", "en": "Market Research" },
-          "tagline": { "es": "Decidir con datos.", "en": "Decide with data." },
-          "brief": {
-            "es": "Generamos información útil para entender mejor tu entorno y tomar decisiones estratégicas con mayor seguridad.",
-            "en": "We generate useful information so you understand your environment better and make strategic decisions with more certainty."
-          },
-          "long": {
-            "es": "Tomar decisiones sin información es asumir riesgos innecesarios. Desarrollamos estudios e investigaciones de mercado para obtener datos relevantes sobre tu actividad, tu entorno y tus oportunidades, facilitando decisiones más precisas, estrategias mejor orientadas y una capacidad de reacción más ágil ante los cambios.",
-            "en": "Deciding without information is taking unnecessary risks. We develop market studies and research to obtain relevant data about your activity, your environment and your opportunities, enabling more precise decisions, better-oriented strategies and a faster reaction to change."
+            "es": "Diseñamos acciones publicitarias y campañas de marketing enfocadas a mejorar el alcance, la notoriedad y la respuesta del público. Definimos la estrategia, los mensajes, la creatividad y los soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
+            "en": "We design advertising actions and marketing campaigns focused on improving reach, awareness and audience response. We define the strategy, messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
           }
         }
       ]

@@ -1,5 +1,8 @@
 {
-  "kicker": { "es": "Por qué nosotros", "en": "Why us" },
+  "kicker": {
+    "es": "Por qué nosotros",
+    "en": "Why us"
+  },
   "title": {
     "es": "Piensa diferente.\nActúa *diferente.*",
     "en": "Think different.\nAct *different.*"
@@ -11,23 +14,42 @@
   "differentials": [
     {
       "title": "Aquí nadie te pasa de mano",
-      "description": "Un interlocutor. El mismo siempre. Localizable el día 3, no el día 30. Trabajamos con pocos clientes para poder trabajar bien."
+      "description": "Un interlocutor. El mismo siempre. Localizable el día 3, no el día 30. Trabajamos con pocos clientes para poder trabajar bien.",
+      "stat": {
+        "value": 100,
+        "suffix": "%"
+      }
     },
     {
       "title": "Trajes a medida. Nunca tallas.",
-      "description": "Nada de lo que hacemos para ti se parece a lo de otro. Nos adaptamos al milímetro: primero medimos tu negocio, después construimos el método."
+      "description": "Nada de lo que hacemos para ti se parece a lo de otro. Nos adaptamos al milímetro: primero medimos tu negocio, después construimos el método.",
+      "stat": {
+        "value": 100,
+        "suffix": "%"
+      }
     },
     {
       "title": "Instinto para la idea. Método para ejecutarla.",
-      "description": "Vemos lo que otros pasan por alto. Y después lo demostramos con números. Alma y milímetro no son alternativas: son el mismo trabajo."
+      "description": "Vemos lo que otros pasan por alto. Y después lo demostramos con números. Alma. Eficacia y precisión no son opciones: son el ADN de MISTERRED360.",
+      "stat": {
+        "value": 95,
+        "suffix": "%"
+      }
     },
     {
-      "title": "Contestamos en 24 horas. Con nombre.",
-      "description": "Y una persona. Siempre. Es el ADN convertido en promesa verificable: si alguna vez tardamos más, tienes derecho a decirlo."
+      "title": "Alta eficacia, profesionalidad y responsabilidad 24/7/365.",
+      "description": "Y una persona. Siempre. Es el ADN convertido en promesa verificable: si alguna vez tardamos más, te garantizamos que la espera merecerá la pena, aunque el compromiso es ser ágiles siempre para darte el mejor asesoramiento.",
+      "stat": {
+        "value": 24,
+        "suffix": "h"
+      }
     }
   ],
   "partners": {
-    "kicker": { "es": "Alianzas", "en": "Partnerships" },
+    "kicker": {
+      "es": "Alianzas",
+      "en": "Partnerships"
+    },
     "description": {
       "es": "Partners internacionales para proyectos de alcance en grabación, edición, postproducción y eventos.",
       "en": "International partners for large-scale projects in recording, editing, post-production and events."
