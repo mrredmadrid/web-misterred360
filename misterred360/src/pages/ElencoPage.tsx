@@ -73,7 +73,7 @@ export default function ElencoPage({
       {/* ── El personaje como sistema ── */}
       <section className="bg-paper text-ink">
         <div className="px-5 md:px-10 xl:px-16 py-20 md:py-28 max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-5">
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,22 +114,22 @@ export default function ElencoPage({
             whileInView={{ clipPath: "inset(0% 0 0 0)" }}
             viewport={{ once: true, margin: "-12%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-7 relative"
             data-cursor="view"
           >
             <div
               className="absolute inset-0 translate-x-4 -translate-y-3 rounded-[2rem] bg-ink"
               aria-hidden="true"
             />
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-w-[420px] lg:ml-auto group">
+            <div className="relative rounded-[2rem] overflow-hidden aspect-video group">
               <img
-                src="/images/chimp-bw.jpg"
-                alt={t("page.ele.figure_alt")}
-                className="w-full h-full object-cover object-[center_20%] duotone-red"
+                src="/images/oficina.png"
+                alt="El elenco al completo de MISTERRED360 reunido en la sala de juntas"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
             </div>
-            <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-ink/45 max-w-[420px] lg:ml-auto">
+            <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-ink/45">
               {t("page.ele.h.fig")}
             </p>
           </motion.div>

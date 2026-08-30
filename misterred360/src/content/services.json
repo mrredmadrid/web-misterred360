@@ -145,8 +145,8 @@
         {
           "id": "publicidad-marketing",
           "icon": "megaphone",
-          "image": "/images/chimp-ads.jpg",
-          "imageAlt": "El Publicista: el chimpancé de MISTERRED360 con un megáfono rojo",
+          "image": "/images/chimp-ads-f.png",
+          "imageAlt": "La Publicista: la chimpancé de MISTERRED360 revisando la estrategia de marketing",
           "name": { "es": "Publicidad y Marketing", "en": "Advertising and Marketing" },
           "tagline": { "es": "Impacto que convierte.", "en": "Impact that converts." },
           "brief": {

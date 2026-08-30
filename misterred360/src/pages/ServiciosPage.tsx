@@ -88,12 +88,12 @@ export default function ServiciosPage({
       title="page.srv.title"
       intro="page.srv.intro"
       meta="page.srv.meta"
-      figure="/images/chimp-ads.jpg"
+      figure="/images/chimp-ads-f.png"
       figureAlt="page.srv.figure_alt"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/servicios"
-      ogImage={`${SITE}/images/chimp-ads.jpg`}
+      ogImage={`${SITE}/images/chimp-ads-f.png`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: t("page.srv.kicker"), path: "/servicios" },

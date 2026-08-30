@@ -11,6 +11,8 @@ import {
   Sunset,
 } from "lucide-react";
 import { useI18n } from "../lib/i18n";
+import { sendLead } from "../lib/leadmail";
+import { siteContact } from "../lib/data";
 
 /* ───────────────────────────────────────────────────────────
    BookingBlock · Pedir una llamada
@@ -76,7 +78,7 @@ export default function BookingBlock() {
   const { t, locale } = useI18n();
   const [week, setWeek] = useState(0);
   const [form, setForm] = useState<Form>(initialForm);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const days = useBusinessDays(week);
 
   const canSubmit =
@@ -86,11 +88,24 @@ export default function BookingBlock() {
     /^[+\d\s()-]{7,}$/.test(form.telefono) &&
     form.privacidad;
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!canSubmit || status !== "idle") return;
+    if (!canSubmit || (status !== "idle" && status !== "error")) return;
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1300);
+    const dateLabel = new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "es-ES", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    }).format(new Date(form.date));
+    const ok = await sendLead(`Solicitud de llamada — ${form.nombre}`, {
+      Nombre: form.nombre,
+      Teléfono: form.telefono,
+      Email: form.email || "—",
+      Día: dateLabel,
+      Franja: t(`call.slot.${form.slot}`),
+      Tema: form.tema || "—",
+    });
+    setStatus(ok ? "sent" : "error");
   };
 
   const dayFmt = new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "es-ES", {
@@ -286,6 +301,16 @@ export default function BookingBlock() {
           </motion.section>
         )}
       </AnimatePresence>
+
+      {status === "error" && (
+        <p className="text-sm text-brand">
+          No se ha podido enviar. Vuelve a intentarlo, o escríbenos directamente a{" "}
+          <a href={`mailto:${siteContact.email}`} className="underline">
+            {siteContact.email}
+          </a>
+          .
+        </p>
+      )}
 
       {/* ── Confirmación ── */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">

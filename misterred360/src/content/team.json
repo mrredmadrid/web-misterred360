@@ -50,7 +50,7 @@
     },
     {
       "id": "publicista",
-      "image": "/images/chimp-ads-f.jpg",
+      "image": "/images/chimp-ads-f.png",
       "gender": "f",
       "role": { "es": "La Publicista", "en": "The Publicist" },
       "area": { "es": "Marketing", "en": "Marketing" },
