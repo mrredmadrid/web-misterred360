@@ -159,9 +159,9 @@ export default function Hero({ start }: { start: boolean }) {
               transition={{ duration: 1.15, delay: 0.65, ease: [0.76, 0, 0.24, 1] }}
             >
               <motion.img
-                src="/images/chimp-hero.jpg"
-                alt="El chimpancé de MISTERRED360: traje negro, gafas rojas y mirada estratégica"
-                className="w-full h-full object-cover object-[center_18%]"
+                src="/images/gioconda-chimp.png"
+                alt="La Gioconda reinterpretada con el chimpancé de MISTERRED360"
+                className="w-full h-full object-cover object-center"
                 initial={{ scale: 1.28 }}
                 animate={start ? { scale: 1.04 } : {}}
                 transition={{ duration: 1.6, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
