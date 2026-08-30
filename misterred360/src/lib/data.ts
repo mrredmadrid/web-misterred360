@@ -11,6 +11,10 @@ import {
   Clock,
   Target,
   MessageCircle,
+  Video,
+  Scissors,
+  Wand2,
+  CalendarCheck,
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -29,6 +33,7 @@ import siteContent from "../content/site.json";
 import designContent from "../content/design.json";
 import seoContent from "../content/seo.json";
 import agentesIAContent from "../content/agentesIA.json";
+import partnersContent from "../content/partners.json";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Capa de resolución de contenido
@@ -52,6 +57,10 @@ const ICONS: Record<string, LucideIcon> = {
   clock: Clock,
   target: Target,
   "message-circle": MessageCircle,
+  video: Video,
+  scissors: Scissors,
+  "wand-2": Wand2,
+  "calendar-check": CalendarCheck,
 };
 
 /* ── Servicios ──────────────────────────────────────────── */
@@ -277,6 +286,7 @@ export const navLinks = [
   { label: "Método 360", href: "/metodo" },
   { label: "Agentes IA", href: "/agentes-ia" },
   { label: "Elenco", href: "/elenco" },
+  { label: "Partners", href: "/partners" },
   { label: "Insights", href: "/insights" },
 ];
 
@@ -337,5 +347,37 @@ export function getAgentesIA(locale: Locale) {
       q: loc(f.q, locale),
       a: loc(f.a, locale),
     })),
+  };
+}
+
+/* ── Página Partners ────────────────────────────────────── */
+export interface PartnerPillar {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export function getPartners(locale: Locale) {
+  return {
+    hero: {
+      kicker: loc(partnersContent.hero.kicker, locale),
+      title: loc(partnersContent.hero.title, locale),
+      intro: loc(partnersContent.hero.intro, locale),
+      meta: loc(partnersContent.hero.meta, locale),
+    },
+    statement: loc(partnersContent.statement, locale),
+    pillars: partnersContent.pillars.map((p): PartnerPillar => ({
+      id: p.id,
+      icon: ICONS[p.icon] ?? Users,
+      title: loc(p.title, locale),
+      description: loc(p.description, locale),
+    })),
+    close: {
+      kicker: loc(partnersContent.close.kicker, locale),
+      title: loc(partnersContent.close.title, locale),
+      description: loc(partnersContent.close.description, locale),
+      cta: loc(partnersContent.close.cta, locale),
+    },
   };
 }

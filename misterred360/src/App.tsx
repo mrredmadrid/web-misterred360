@@ -23,6 +23,7 @@ import ServiciosPage from "./pages/ServiciosPage";
 import MetodoPage from "./pages/MetodoPage";
 import AgentesIAPage from "./pages/AgentesIAPage";
 import ElencoPage from "./pages/ElencoPage";
+import PartnersPage from "./pages/PartnersPage";
 import ContactPage from "./pages/ContactPage";
 import PoliticaCookiesPage from "./pages/PoliticaCookiesPage";
 import PoliticaPrivacidadPage from "./pages/PoliticaPrivacidadPage";
@@ -46,7 +47,7 @@ import { bootstrapNative } from "./lib/native";
    /manifiesto · /servicios · /metodo · /elenco · /insights
    ─────────────────────────────────────────────────────────── */
 
-type Page = "manifiesto" | "servicios" | "metodo" | "agentes-ia" | "elenco";
+type Page = "manifiesto" | "servicios" | "metodo" | "agentes-ia" | "elenco" | "partners";
 type LegalPage = "politica-de-cookies" | "politica-de-privacidad" | "politica-de-ia";
 type Route =
   | { name: "home" }
@@ -63,7 +64,7 @@ const LEGAL_PAGES: LegalPage[] = [
   "politica-de-ia",
 ];
 
-const PAGES: Page[] = ["manifiesto", "servicios", "metodo", "agentes-ia", "elenco"];
+const PAGES: Page[] = ["manifiesto", "servicios", "metodo", "agentes-ia", "elenco", "partners"];
 
 function parseRoute(): Route {
   if (typeof window === "undefined") return { name: "home" };
@@ -224,6 +225,8 @@ export default function App() {
         <MetodoPage {...pageProps} />
       ) : route.page === "agentes-ia" ? (
         <AgentesIAPage {...pageProps} />
+      ) : route.page === "partners" ? (
+        <PartnersPage {...pageProps} />
       ) : (
         <ElencoPage {...pageProps} />
       );

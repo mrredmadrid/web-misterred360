@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "kicker": { "es": "Alianzas", "en": "Partnerships" },
+    "title": { "es": "Partners\ninternacionales.", "en": "International\npartners." },
+    "intro": {
+      "es": "Partners internacionales para proyectos top en grabación, edición, postproducción y eventos de alcance.",
+      "en": "International partners for top-tier projects in recording, editing, post-production and large-scale events."
+    },
+    "meta": { "es": "4 disciplinas · alcance global", "en": "4 disciplines · global reach" }
+  },
+  "statement": {
+    "es": "{red}Si quieres ser el mejor,{/red} rodéate de los mejores. Y en eso estamos.",
+    "en": "{red}If you want to be the best,{/red} surround yourself with the best. And that's exactly what we're doing."
+  },
+  "pillars": [
+    {
+      "id": "grabacion",
+      "icon": "video",
+      "title": { "es": "Grabación", "en": "Recording" },
+      "description": {
+        "es": "Equipos y localizaciones de primer nivel para captar cada proyecto con la calidad que merece, esté donde esté.",
+        "en": "Top-tier equipment and locations to capture every project with the quality it deserves, wherever it happens."
+      }
+    },
+    {
+      "id": "edicion",
+      "icon": "scissors",
+      "title": { "es": "Edición", "en": "Editing" },
+      "description": {
+        "es": "Montaje y narrativa audiovisual afinados por especialistas que entienden el ritmo y el tono de una marca.",
+        "en": "Editing and visual storytelling refined by specialists who understand a brand's pace and tone."
+      }
+    },
+    {
+      "id": "postproduccion",
+      "icon": "wand-2",
+      "title": { "es": "Postproducción", "en": "Post-production" },
+      "description": {
+        "es": "Color, sonido y acabado final con el mismo criterio exigente en cada entrega, sin atajos.",
+        "en": "Color, sound and final finishing with the same demanding standard on every delivery, no shortcuts."
+      }
+    },
+    {
+      "id": "eventos",
+      "icon": "calendar-check",
+      "title": { "es": "Eventos de alcance", "en": "Large-scale events" },
+      "description": {
+        "es": "Producción y cobertura de eventos que proyectan tu marca allí donde de verdad importa.",
+        "en": "Production and coverage of events that project your brand exactly where it matters."
+      }
+    }
+  ],
+  "close": {
+    "kicker": { "es": "Hablemos de tu proyecto", "en": "Let's talk about your project" },
+    "title": {
+      "es": "¿Tienes un proyecto\nde gran formato?",
+      "en": "Got a large-format\nproject?"
+    },
+    "description": {
+      "es": "Cuéntanos el alcance que necesitas y activamos la alianza internacional adecuada para tu proyecto.",
+      "en": "Tell us the scope you need and we'll activate the right international partnership for your project."
+    },
+    "cta": { "es": "Hablar de mi proyecto", "en": "Talk about my project" }
+  }
+}

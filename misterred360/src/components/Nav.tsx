@@ -18,6 +18,7 @@ const NAV_ROUTES = [
   { key: "nav.servicios", href: "/servicios", dropdown: true },
   { key: "nav.agentesIA", href: "/agentes-ia" },
   { key: "nav.elenco", href: "/elenco" },
+  { key: "nav.partners", href: "/partners" },
   { key: "nav.insights", href: "/insights" },
 ] as const;
 
@@ -71,6 +72,7 @@ export default function Nav({
     { key: "nav.precios", href: "/servicios#precios" },
     { key: "nav.agentesIA", href: "/agentes-ia" },
     { key: "nav.elenco", href: "/elenco" },
+    { key: "nav.partners", href: "/partners" },
     { key: "nav.insights", href: "/insights" },
     { key: "nav.talk", href: "/contacto" },
   ];

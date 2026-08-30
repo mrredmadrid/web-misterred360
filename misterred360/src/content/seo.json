@@ -88,5 +88,15 @@
       "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para WhatsApp, tu web y tus herramientas internas: atención 24/7, cualificación de leads y el tono exacto de tu marca.",
       "en": "We design and train custom AI agents for WhatsApp, your website and your internal tools: 24/7 support, lead qualification and your brand's exact tone."
     }
+  },
+  "partners": {
+    "title": {
+      "es": "Partners Internacionales: Grabación, Edición y Postproducción | MISTERRED360",
+      "en": "International Partners: Recording, Editing and Post-production | MISTERRED360"
+    },
+    "description": {
+      "es": "Partners internacionales para proyectos top en grabación, edición, postproducción y eventos de alcance. Rodéate de los mejores para tu próximo proyecto de gran formato.",
+      "en": "International partners for top-tier projects in recording, editing, post-production and large-scale events. Surround yourself with the best for your next large-format project."
+    }
   }
 }
