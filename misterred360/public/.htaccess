@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════
-#  MISTERRED360 · Rutas limpias + SPA fallback (Apache/OVH)
+#  MISTERRED360 · Apache (hosting compartido OVHcloud)
 #  ───────────────────────────────────────────────────────────
 #  El build genera una versión "prerenderizada" (HTML ya con el
 #  contenido real, no solo la cáscara) para cada ruta, guardada
@@ -12,11 +12,27 @@
 #  nueva no contemplada), se sirve index.html y la aplicación
 #  React se encarga de mostrar el contenido correcto en el
 #  cliente (comportamiento de SPA de toda la vida).
+#
+#  IMPORTANTE: NO usar ErrorDocument 404 /index.html en su lugar
+#  — eso devuelve un 404 real en cada URL limpia (/servicios,
+#  /metodo...) y Google no indexa páginas que responden 404,
+#  además de perder todo el contenido prerenderizado.
 # ═══════════════════════════════════════════════════════════
+
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Forzar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Forzar sin www (misterred360.es canónico)
+  RewriteCond %{HTTP_HOST} ^www\.misterred360\.es$ [NC]
+  RewriteRule ^(.*)$ https://misterred360.es/$1 [L,R=301]
 
   # No tocar peticiones a archivos o carpetas que sí existen
   # (imágenes, CSS/JS ya inlineados, /admin, etc.)
@@ -30,6 +46,11 @@
 
   # Cualquier otra ruta → index.html (fallback de SPA)
   RewriteRule ^ index.html [L]
+</IfModule>
+
+# ── Compresión ──
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
 
 # Cabeceras de caché razonables: HTML siempre revalidado (para que
@@ -46,6 +67,7 @@
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 <IfModule mod_headers.c>
   <FilesMatch "\.html$">
@@ -54,4 +76,8 @@
   <FilesMatch "\.(jpe?g|png|svg)$">
     Header set Cache-Control "public, max-age=2592000, must-revalidate"
   </FilesMatch>
+  # Cabeceras de seguridad
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
 </IfModule>
