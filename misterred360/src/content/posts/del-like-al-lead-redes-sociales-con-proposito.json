@@ -3,15 +3,14 @@
   "date": "18 mar 2026",
   "dateEn": "Mar 18, 2026",
   "author": "MISTERRED360",
-  "image": "/images/chimp-hero.jpg",
+  "image": "misterred360/public/images/blog-2.png",
   "es": {
-    "category": "Social",
-    "title": "Del like al lead: redes sociales con propósito",
+    "authorRole": "Equipo digital",
     "excerpt": "Métricas de vanidad fuera. Cómo integrar la conversación social dentro de una estrategia que de verdad mueve el negocio.",
     "readTime": "5 min",
     "meta": "5 min · Mar 2026",
-    "authorRole": "Equipo digital",
     "imageAlt": "Chimpancé de MISTERRED360 con gafas rojas como embajador digital",
+    "title": "Del like al lead: redes sociales con propósito",
     "tags": [
       "Comunicación 2.0",
       "Redes sociales",
@@ -43,16 +42,16 @@
         "type": "paragraph",
         "text": "El like puede ser una señal, pero no es el destino. El destino es una audiencia que entiende qué haces, por qué importa y qué paso puede dar después."
       }
-    ]
+    ],
+    "category": "Social"
   },
   "en": {
-    "category": "Social",
-    "title": "From like to lead: social media with purpose",
+    "authorRole": "Digital team",
     "excerpt": "Vanity metrics out. How to integrate social conversation inside a strategy that actually moves the business.",
     "readTime": "5 min read",
     "meta": "5 min · Mar 2026",
-    "authorRole": "Digital team",
     "imageAlt": "MISTERRED360's chimp with red glasses as a digital ambassador",
+    "title": "From like to lead: social media with purpose",
     "tags": [
       "Digital communication",
       "Social media",
@@ -84,6 +83,7 @@
         "type": "paragraph",
         "text": "A like can be a signal, but it's not the destination. The destination is an audience that understands what you do, why it matters and what step they can take next."
       }
-    ]
+    ],
+    "category": "Social"
   }
 }
