@@ -3,15 +3,14 @@
   "date": "9 jun 2026",
   "dateEn": "Jun 9, 2026",
   "author": "MISTERRED360",
-  "image": "/images/chimp-data.jpg",
+  "image": "misterred360/public/images/blog-6.png",
   "es": {
-    "category": "Datos",
-    "title": "Estudios de mercado antes de decidir campaña",
+    "authorRole": "Investigación y estrategia",
     "excerpt": "Investigar antes de comunicar no ralentiza la estrategia: evita invertir en mensajes que el mercado no necesita escuchar.",
     "readTime": "7 min",
     "meta": "7 min · Jun 2026",
-    "authorRole": "Investigación y estrategia",
     "imageAlt": "Chimpancé de MISTERRED360 analizando gráficos de mercado",
+    "title": "Estudios de mercado antes de decidir campaña",
     "tags": [
       "Estudios de mercado",
       "Datos",
@@ -43,16 +42,16 @@
         "type": "paragraph",
         "text": "El mercado siempre habla. La ventaja está en escucharlo antes de que lo haga la competencia."
       }
-    ]
+    ],
+    "category": "Datos"
   },
   "en": {
-    "category": "Data",
-    "title": "Market research before deciding the campaign",
+    "authorRole": "Research and strategy",
     "excerpt": "Researching before communicating doesn't slow the strategy down: it stops you from investing in messages the market doesn't need to hear.",
     "readTime": "7 min read",
     "meta": "7 min · Jun 2026",
-    "authorRole": "Research and strategy",
     "imageAlt": "MISTERRED360's chimp analyzing market charts",
+    "title": "Market research before deciding the campaign",
     "tags": [
       "Market research",
       "Data",
@@ -84,6 +83,7 @@
         "type": "paragraph",
         "text": "The market is always talking. The advantage lies in listening to it before your competition does."
       }
-    ]
+    ],
+    "category": "Data"
   }
 }

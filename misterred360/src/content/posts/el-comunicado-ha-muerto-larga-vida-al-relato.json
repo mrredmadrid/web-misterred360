@@ -3,15 +3,14 @@
   "date": "12 ene 2026",
   "dateEn": "Jan 12, 2026",
   "author": "MISTERRED360",
-  "image": "/images/chimp-press.jpg",
+  "image": "misterred360/public/images/blog-4.png",
   "es": {
-    "category": "Estrategia",
-    "title": "El comunicado ha muerto. Larga vida al relato.",
+    "authorRole": "Equipo de comunicación estratégica",
     "excerpt": "Los medios ya no publican notas de prensa: publican historias. Cómo reescribir tu mensaje para que los periodistas quieran contarlo.",
     "readTime": "6 min",
     "meta": "6 min · Ene 2026",
-    "authorRole": "Equipo de comunicación estratégica",
     "imageAlt": "Chimpancé corporativo de MISTERRED360 en una rueda de prensa",
+    "title": "El comunicado ha muerto. Larga vida al relato.",
     "tags": [
       "Gabinete de prensa",
       "Relato",
@@ -48,16 +47,16 @@
         "type": "paragraph",
         "text": "La nota de prensa no desaparece, pero deja de ser el centro. Se convierte en una pieza dentro de un sistema más amplio: posicionamiento, relación con medios, contenido experto y seguimiento continuo."
       }
-    ]
+    ],
+    "category": "Estrategia"
   },
   "en": {
-    "category": "Strategy",
-    "title": "The press release is dead. Long live the story.",
+    "authorRole": "Strategic communication team",
     "excerpt": "Media outlets no longer publish press releases: they publish stories. How to rewrite your message so journalists actually want to tell it.",
     "readTime": "6 min read",
     "meta": "6 min · Jan 2026",
-    "authorRole": "Strategic communication team",
     "imageAlt": "MISTERRED360's corporate chimp at a press conference",
+    "title": "The press release is dead. Long live the story.",
     "tags": [
       "Press office",
       "Storytelling",
@@ -94,6 +93,7 @@
         "type": "paragraph",
         "text": "The press release doesn't disappear, but it stops being the center. It becomes one piece within a wider system: positioning, media relations, expert content and continuous follow-up."
       }
-    ]
+    ],
+    "category": "Strategy"
   }
 }

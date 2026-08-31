@@ -3,15 +3,14 @@
   "date": "21 may 2026",
   "dateEn": "May 21, 2026",
   "author": "MISTERRED360",
-  "image": "/images/chimp-av.jpg",
+  "image": "misterred360/public/images/blog-3.png",
   "es": {
-    "category": "Audiovisual",
-    "title": "El vídeo corporativo que sí trabaja para ventas",
+    "authorRole": "Creación audiovisual",
     "excerpt": "No todos los vídeos explican valor. La pieza correcta reduce dudas, acelera decisión y convierte una promesa en algo visible.",
     "readTime": "6 min",
     "meta": "6 min · May 2026",
-    "authorRole": "Creación audiovisual",
     "imageAlt": "Chimpancé de MISTERRED360 dirigiendo una cámara de cine",
+    "title": "El vídeo corporativo que sí trabaja para ventas",
     "tags": [
       "Vídeo",
       "Contenido",
@@ -43,16 +42,16 @@
         "type": "quote",
         "text": "Un vídeo no debe verse bonito: debe hacer que la propuesta de valor se entienda mejor."
       }
-    ]
+    ],
+    "category": "Audiovisual"
   },
   "en": {
-    "category": "Video",
-    "title": "The corporate video that actually works for sales",
+    "authorRole": "Video production",
     "excerpt": "Not every video explains value. The right piece reduces doubt, speeds up decisions and turns a promise into something visible.",
     "readTime": "6 min read",
     "meta": "6 min · May 2026",
-    "authorRole": "Video production",
     "imageAlt": "MISTERRED360's chimp directing a cinema camera",
+    "title": "The corporate video that actually works for sales",
     "tags": [
       "Video",
       "Content",
@@ -84,6 +83,7 @@
         "type": "quote",
         "text": "A video shouldn't just look pretty: it should make the value proposition easier to understand."
       }
-    ]
+    ],
+    "category": "Video"
   }
 }
