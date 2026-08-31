@@ -19,6 +19,9 @@ interface PageShellProps {
   /* Todos los textos aceptan una cadena literal o una clave i18n */
   kicker: string;
   title: string;
+  /* Tamaño del titular; por defecto pensado para 2-4 palabras.
+     Usa "sm" para titulares largos que si no ocupan media pantalla. */
+  titleSize?: "default" | "sm";
   intro: string;
   meta?: string;
   figure?: string;
@@ -40,6 +43,7 @@ export default function PageShell({
   index,
   kicker,
   title,
+  titleSize = "default",
   intro,
   meta,
   figure,
@@ -112,7 +116,11 @@ export default function PageShell({
               <Kicker index={index}>{kickerT}</Kicker>
               <LineReveal
                 as="h1"
-                className="mt-6 font-display font-semibold uppercase leading-[0.93] tracking-[-0.02em] text-[clamp(1.9rem,6.4vw,6.4rem)]"
+                className={`mt-6 font-display font-semibold uppercase leading-[0.95] tracking-[-0.02em] ${
+                  titleSize === "sm"
+                    ? "text-[clamp(1.6rem,3.6vw,3.4rem)]"
+                    : "text-[clamp(1.9rem,6.4vw,6.4rem)]"
+                }`}
                 text={titleT}
               />
               <motion.p

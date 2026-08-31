@@ -420,6 +420,7 @@ collections:
           - { label: "Método 360", name: metodo, widget: object, fields: *seo_page }
           - { label: "Agentes IA", name: agentesIA, widget: object, fields: *seo_page }
           - { label: "Partners", name: partners, widget: object, fields: *seo_page }
+          - { label: "Por qué nosotros", name: whyus, widget: object, fields: *seo_page }
           - { label: "Equipo (El Elenco)", name: elenco, widget: object, fields: *seo_page }
           - { label: "Contacto", name: contacto, widget: object, fields: *seo_page }
           - { label: "Agendar llamada", name: agendar, widget: object, fields: *seo_page }

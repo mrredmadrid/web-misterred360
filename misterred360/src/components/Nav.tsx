@@ -19,6 +19,7 @@ const NAV_ROUTES = [
   { key: "nav.agentesIA", href: "/agentes-ia" },
   { key: "nav.elenco", href: "/elenco" },
   { key: "nav.partners", href: "/partners" },
+  { key: "nav.whyus", href: "/por-que-nosotros" },
   { key: "nav.insights", href: "/insights" },
 ] as const;
 
@@ -73,6 +74,7 @@ export default function Nav({
     { key: "nav.agentesIA", href: "/agentes-ia" },
     { key: "nav.elenco", href: "/elenco" },
     { key: "nav.partners", href: "/partners" },
+    { key: "nav.whyus", href: "/por-que-nosotros" },
     { key: "nav.insights", href: "/insights" },
     { key: "nav.talk", href: "/contacto" },
   ];
@@ -107,7 +109,7 @@ export default function Nav({
           </button>
 
           <nav
-            className="hidden lg:flex items-center gap-8"
+            className="hidden lg:flex items-center gap-4 xl:gap-6"
             aria-label={t("nav.manifiesto")}
           >
             {NAV_ROUTES.map((l) =>
@@ -122,7 +124,7 @@ export default function Nav({
                     href={l.href}
                     onClick={(e) => go(e, l.href)}
                     aria-expanded={dropdown}
-                    className="link-line inline-flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                    className="link-line inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-[0.12em] text-paper/80 hover:text-paper transition-colors"
                   >
                     {t(l.key)}
                     <ChevronDown
@@ -173,7 +175,7 @@ export default function Nav({
                   key={l.href}
                   href={l.href}
                   onClick={(e) => go(e, l.href)}
-                  className="link-line text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                  className="link-line whitespace-nowrap text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-[0.12em] text-paper/80 hover:text-paper transition-colors"
                 >
                   {t(l.key)}
                 </a>

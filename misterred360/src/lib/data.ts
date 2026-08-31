@@ -286,6 +286,7 @@ export const navLinks = [
   { label: "Agentes IA", href: "/agentes-ia" },
   { label: "Elenco", href: "/elenco" },
   { label: "Partners", href: "/partners" },
+  { label: "Por qué nosotros", href: "/por-que-nosotros" },
   { label: "Insights", href: "/insights" },
 ];
 

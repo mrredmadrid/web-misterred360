@@ -55,6 +55,7 @@ export default function ElencoPage({
       index="05"
       kicker="page.ele.kicker"
       title="page.ele.title"
+      titleSize="sm"
       intro="page.ele.intro"
       meta="page.ele.meta"
       figure="/images/chimp-hero.jpg"
