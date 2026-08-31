@@ -33,7 +33,7 @@
         {
           "id": "planificacion-estrategica",
           "icon": "compass",
-          "image": "/images/chimp-strategy.jpg",
+          "image": "/images/chimp-data.jpg",
           "imageAlt": "El Estratega: el chimpancé de MISTERRED360 analizando planes en su despacho",
           "name": { "es": "Planificación Estratégica", "en": "Strategic Planning" },
           "tagline": { "es": "La hoja de ruta.", "en": "The roadmap." },
@@ -150,7 +150,7 @@
         {
           "id": "publicidad-marketing",
           "icon": "megaphone",
-          "image": "/images/chimp-ads-f.png",
+          "image": "/images/chimp-ads-f.jpg",
           "imageAlt": "La Publicista: la chimpancé de MISTERRED360 revisando la estrategia de marketing",
           "name": { "es": "Publicidad y Marketing", "en": "Advertising and Marketing" },
           "tagline": { "es": "Impacto que convierte.", "en": "Impact that converts." },
@@ -182,7 +182,7 @@
         {
           "id": "agentes-ia",
           "icon": "bot",
-          "image": "/images/chimp-strategy.jpg",
+          "image": "/images/chimp-data.jpg",
           "imageAlt": "El Ingeniero: el chimpancé de MISTERRED360 revisando el panel de control de un agente de inteligencia artificial",
           "name": { "es": "Agentes IA Personalizados", "en": "Custom AI Agents" },
           "tagline": { "es": "Un empleado que nunca descansa.", "en": "An employee that never clocks out." },

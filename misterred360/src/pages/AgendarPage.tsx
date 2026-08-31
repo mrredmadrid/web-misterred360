@@ -24,12 +24,12 @@ export default function AgendarPage({
       title="agendar.title"
       intro="agendar.intro"
       meta="agendar.meta"
-      figure="/images/chimp-strategy.jpg"
+      figure="/images/chimp-data.jpg"
       figureAlt="agendar.figure_alt"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/agendar"
-      ogImage={`${SITE}/images/chimp-strategy.jpg`}
+      ogImage={`${SITE}/images/chimp-data.jpg`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: t("agendar.kicker"), path: "/agendar" },

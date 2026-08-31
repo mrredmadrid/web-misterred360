@@ -69,12 +69,12 @@ export default function AgentesIAPage({
       title={a.hero.title}
       intro={a.hero.intro}
       meta={a.hero.meta}
-      figure="/images/chimp-strategy.jpg"
+      figure="/images/chimp-data.jpg"
       figureAlt="El Ingeniero: el chimpancé de MISTERRED360 revisando el panel de control de un agente de inteligencia artificial"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/agentes-ia"
-      ogImage={`${SITE}/images/chimp-strategy.jpg`}
+      ogImage={`${SITE}/images/chimp-data.jpg`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: a.hero.title, path: "/agentes-ia" },

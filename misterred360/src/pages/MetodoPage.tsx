@@ -65,12 +65,12 @@ export default function MetodoPage({
       title="page.met.title"
       intro="page.met.intro"
       meta="page.met.meta"
-      figure="/images/chimp-strategy.jpg"
+      figure="/images/chimp-data.jpg"
       figureAlt="page.met.figure_alt"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/metodo"
-      ogImage={`${SITE}/images/chimp-strategy.jpg`}
+      ogImage={`${SITE}/images/chimp-data.jpg`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: t("page.met.kicker"), path: "/metodo" },
