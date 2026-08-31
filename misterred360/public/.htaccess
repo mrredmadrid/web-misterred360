@@ -33,8 +33,13 @@
 </IfModule>
 
 # Cabeceras de caché razonables: HTML siempre revalidado (para que
-# los cambios guardados desde el panel /admin se vean al momento),
-# imágenes con caché larga (raramente cambian de nombre).
+# los cambios guardados desde el panel /admin se vean al momento).
+# Las imágenes se pueden reemplazar desde el CMS conservando el
+# mismo nombre de archivo, así que también llevan "must-revalidate":
+# el navegador sigue guardando la copia en caché (visitas repetidas
+# son igual de rápidas), pero pregunta al servidor en cada carga si
+# ha cambiado en vez de asumir que sigue siendo la misma durante 30
+# días. Si no ha cambiado, el servidor responde 304 al instante.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/html "access plus 0 seconds"
@@ -45,5 +50,8 @@
 <IfModule mod_headers.c>
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|svg)$">
+    Header set Cache-Control "public, max-age=2592000, must-revalidate"
   </FilesMatch>
 </IfModule>
