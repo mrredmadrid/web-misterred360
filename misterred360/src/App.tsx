@@ -356,7 +356,7 @@ function AppShell({
   );
 }
 
-/* Un solo FAB · dos panels controlados */
+/* Dos FAB siempre visibles · dos panels controlados */
 function ChatDock() {
   const [wa, setWa] = useState(false);
   const [ai, setAi] = useState(false);
@@ -364,16 +364,16 @@ function ChatDock() {
   const pick = (choice: LauncherChoice) => {
     if (choice === "assistant") {
       setWa(false);
-      setAi(true);
+      setAi((v) => !v);
     } else {
       setAi(false);
-      setWa(true);
+      setWa((v) => !v);
     }
   };
 
   return (
     <>
-      <ChatLauncher onPick={pick} panelOpen={wa || ai} />
+      <ChatLauncher onPick={pick} active={ai ? "assistant" : wa ? "whatsapp" : null} />
       <WhatsAppButton open={wa} onClose={() => setWa(false)} />
       <AIAssistant open={ai} onClose={() => setAi(false)} />
     </>

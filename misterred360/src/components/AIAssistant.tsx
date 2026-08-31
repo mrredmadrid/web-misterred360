@@ -148,7 +148,7 @@ export default function AIAssistant({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.95 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed z-[94] bottom-24 right-5 md:bottom-28 md:right-7 w-[min(94vw,400px)] h-[min(78vh,600px)] flex flex-col rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]"
+          className="fixed z-[94] bottom-36 right-5 md:bottom-40 md:right-7 w-[min(94vw,400px)] h-[min(78vh,600px)] flex flex-col rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]"
         >
             {/* Cabecera */}
             <header className="relative px-5 py-4 border-b border-white/10 bg-ink flex items-center gap-3">
