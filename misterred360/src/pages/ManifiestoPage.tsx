@@ -59,12 +59,12 @@ export default function ManifiestoPage({
       title="page.man.title"
       intro="page.man.intro"
       meta="page.man.meta"
-      figure="/images/chimp-bw.jpg"
-      figureAlt="page.ele.figure_alt"
+      figure="/images/team-manifesto.jpg"
+      figureAlt="El equipo de MISTERRED360 al completo, en color"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/manifiesto"
-      ogImage={`${SITE}/images/chimp-bw.jpg`}
+      ogImage={`${SITE}/images/team-manifesto.jpg`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: t("page.man.kicker"), path: "/manifiesto" },
@@ -217,65 +217,7 @@ export default function ManifiestoPage({
             </button>
           </div>
         </div>
-
-        {/* ── Plano final: la página se cierra con fotografía ── */}
-        <div className="px-5 md:px-10 xl:px-16 pb-20 md:pb-28 max-w-[1600px] mx-auto">
-          <motion.figure
-            initial={{ opacity: 0, y: 48 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-6%" }}
-            transition={{ duration: 0.95, ease }}
-            className="relative"
-            data-cursor="view"
-          >
-            <div className="group relative overflow-hidden rounded-[2rem] border border-ink/15 aspect-[4/5] sm:aspect-[16/10] md:aspect-[21/9]">
-              <img
-                src="/images/chimp-events.jpg"
-                alt={t("cast.anfitrion.role")}
-                className="w-full h-full object-cover object-[center_25%] duotone-red transition-transform duration-[1400ms] ease-out group-hover:scale-[1.045]"
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(120% 95% at 10% 105%, rgba(8,8,10,0.82), transparent 58%)",
-                }}
-                aria-hidden="true"
-              />
-              <span className="absolute top-5 right-5 rounded-full bg-ink/80 backdrop-blur px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-paper">
-                {t("page.man.final.badge")}
-              </span>
-              <blockquote className="absolute bottom-0 left-0 p-6 md:p-10 max-w-3xl">
-                <p className="font-quote italic leading-[1.12] text-2xl md:text-4xl text-paper">
-                  <FinalQuote text={t("page.man.final.quote")} />
-                </p>
-              </blockquote>
-            </div>
-            <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.26em] text-ink/45">
-              <span>{t("page.man.final.fig")}</span>
-              <span>MISTERRED360 · Madrid</span>
-            </figcaption>
-          </motion.figure>
-        </div>
       </section>
     </PageShell>
-  );
-}
-
-/* Cita final con la parte roja en tono "flame" */
-function FinalQuote({ text }: { text: string }) {
-  const parts = text.split(/(\{red\}[^{]+\{\/red\})/g);
-  return (
-    <>
-      {parts.map((p, i) => {
-        const m = p.match(/^\{red\}(.+)\{\/red\}$/);
-        return m ? (
-          <span key={i} className="text-flame"> {m[1]}</span>
-        ) : (
-          <span key={i}>{p}</span>
-        );
-      })}
-    </>
   );
 }
