@@ -18,7 +18,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "./i18n";
-import { loc, type Localized } from "./content";
+import { loc, img, type Localized } from "./content";
 
 import servicesContent from "../content/services.json";
 import processContent from "../content/process.json";
@@ -95,7 +95,7 @@ export function getServiceBlocks(locale: Locale): ServiceBlock[] {
     claim: loc(b.claim, locale),
     description: loc(b.description, locale),
     accent: b.accent as "brand" | "ocean",
-    image: (b as { image?: string }).image,
+    image: img((b as { image?: string }).image),
     imageAlt: (b as { imageAlt?: string }).imageAlt,
     services: b.services.map((s) => ({
       id: s.id,
@@ -103,7 +103,7 @@ export function getServiceBlocks(locale: Locale): ServiceBlock[] {
       tagline: loc(s.tagline, locale),
       brief: loc(s.brief, locale),
       long: loc(s.long, locale),
-      image: s.image,
+      image: img(s.image),
       imageAlt: s.imageAlt,
       icon: ICONS[s.icon] ?? Newspaper,
     })),
@@ -136,7 +136,7 @@ export function getProcessSteps(locale: Locale): ProcessStep[] {
     title: loc(s.title, locale),
     description: loc(s.description, locale),
     extended: loc(s.extended, locale),
-    image: s.image,
+    image: img(s.image),
     tags: loc(s.tags as unknown as Localized<string[]>, locale),
     deliverables: loc(s.deliverables as unknown as Localized<string[]>, locale),
   }));
@@ -171,7 +171,7 @@ export interface CastMember {
 export function getCastMembers(locale: Locale): CastMember[] {
   return teamContent.members.map((m) => ({
     id: m.id,
-    image: m.image,
+    image: img(m.image),
     gender: m.gender as "m" | "f",
     role: loc(m.role, locale),
     area: loc(m.area, locale),
@@ -231,8 +231,8 @@ export function getManifesto(locale: Locale) {
     badge: loc(manifestoContent.badge, locale),
     ceoQuote: loc(manifestoContent.ceoQuote, locale),
     ceoRole: loc(manifestoContent.ceoRole, locale),
-    image: manifestoContent.image,
-    imageFallback: manifestoContent.imageFallback,
+    image: img(manifestoContent.image),
+    imageFallback: img(manifestoContent.imageFallback),
   };
 }
 

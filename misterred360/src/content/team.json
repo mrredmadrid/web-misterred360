@@ -1,6 +1,23 @@
 {
   "members": [
     {
+      "id": "presi",
+      "image": "/images/chimp-presi.jpg",
+      "gender": "m",
+      "role": {
+        "es": "El Presi",
+        "en": "The Chairman"
+      },
+      "area": {
+        "es": "Operaciones",
+        "en": "Operations"
+      },
+      "quote": {
+        "es": "Atento a cada movimiento para que el engranaje gire a la perfección.",
+        "en": "Watching every move so the whole machine runs perfectly."
+      }
+    },
+    {
       "id": "icono",
       "image": "/images/chimp-hero.jpg",
       "gender": "m",
@@ -49,23 +66,6 @@
       "quote": {
         "es": "La magia que convierte los proyectos en una realidad.",
         "en": "The magic that turns projects into reality."
-      }
-    },
-    {
-      "id": "anfitrion",
-      "image": "/images/chimp-events.jpg",
-      "gender": "m",
-      "role": {
-        "es": "El Anfitrión",
-        "en": "The Host"
-      },
-      "area": {
-        "es": "Eventos",
-        "en": "Events"
-      },
-      "quote": {
-        "es": "Domina cualquier escenario.",
-        "en": "Owns any stage."
       }
     },
     {
@@ -168,23 +168,6 @@
       "quote": {
         "es": "Siempre abriendo nuevos caminos con herramientas que nos ayudan a mejorar e implementar las mejores soluciones.",
         "en": "Always opening new paths with tools that help us improve and implement the best solutions."
-      }
-    },
-    {
-      "id": "presi",
-      "image": "/images/chimp-presi.jpg",
-      "gender": "m",
-      "role": {
-        "es": "El Presi",
-        "en": "The Chairman"
-      },
-      "area": {
-        "es": "Operaciones",
-        "en": "Operations"
-      },
-      "quote": {
-        "es": "Atento a cada movimiento para que el engranaje gire a la perfección.",
-        "en": "Watching every move so the whole machine runs perfectly."
       }
     }
   ]
