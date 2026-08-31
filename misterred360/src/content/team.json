@@ -53,7 +53,7 @@
     },
     {
       "id": "estratega",
-      "image": "/images/chimp-strategy.jpg",
+      "image": "misterred360/public/images/chimp-strategy.jpg",
       "gender": "f",
       "role": {
         "es": "Project Manager",
@@ -70,7 +70,7 @@
     },
     {
       "id": "disenador",
-      "image": "/images/chimp-brand-f.jpg",
+      "image": "misterred360/public/images/chimp-brand.jpg",
       "gender": "f",
       "role": {
         "es": "La Diseñadora",
@@ -87,7 +87,7 @@
     },
     {
       "id": "director",
-      "image": "/images/chimp-av.jpg",
+      "image": "misterred360/public/images/chimp-av.jpg",
       "gender": "m",
       "role": {
         "es": "El Mago del Vídeo",
@@ -121,7 +121,7 @@
     },
     {
       "id": "analista",
-      "image": "/images/chimp-data.jpg",
+      "image": "misterred360/public/images/chimp-data.jpg",
       "gender": "m",
       "role": {
         "es": "El Analista",
@@ -138,7 +138,7 @@
     },
     {
       "id": "contable",
-      "image": "/images/chimp-contable.jpg",
+      "image": "misterred360/public/images/chimp-ads-f.jpg",
       "gender": "f",
       "role": {
         "es": "La Contable",
@@ -155,7 +155,7 @@
     },
     {
       "id": "arte-ia",
-      "image": "/images/chimp-arte-ia.jpg",
+      "image": "misterred360/public/images/chimp-cta.jpg",
       "gender": "m",
       "role": {
         "es": "El Arte de la IA",
