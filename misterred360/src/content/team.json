@@ -2,7 +2,7 @@
   "members": [
     {
       "id": "presi",
-      "image": "misterred360/public/images/chimp-hero.jpg",
+      "image": "misterred360/public/images/chimp-press.jpg",
       "gender": "m",
       "role": {
         "es": "El Presi",
@@ -53,7 +53,7 @@
     },
     {
       "id": "estratega",
-      "image": "/images/chimp-strategy-f.jpg",
+      "image": "/images/chimp-strategy.jpg",
       "gender": "f",
       "role": {
         "es": "Project Manager",
