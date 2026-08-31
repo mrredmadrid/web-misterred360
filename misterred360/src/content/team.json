@@ -2,7 +2,7 @@
   "members": [
     {
       "id": "presi",
-      "image": "/images/chimp-presi.jpg",
+      "image": "misterred360/public/images/chimp-hero.jpg",
       "gender": "m",
       "role": {
         "es": "El Presi",
@@ -19,7 +19,7 @@
     },
     {
       "id": "icono",
-      "image": "/images/chimp-hero.jpg",
+      "image": "misterred360/public/images/chimp-bw.jpg",
       "gender": "m",
       "role": {
         "es": "El Icono / La Estrategia",
