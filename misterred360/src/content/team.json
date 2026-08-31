@@ -9,8 +9,8 @@
         "en": "The Icon / The Strategy"
       },
       "area": {
-        "es": "Dirección",
-        "en": "Management"
+        "es": "CEO",
+        "en": "CEO"
       },
       "quote": {
         "es": "La cara visible y la mente que marca la diferencia.",
@@ -26,12 +26,12 @@
         "en": "The Spokeswoman"
       },
       "area": {
-        "es": "Contenidos",
-        "en": "Content"
+        "es": "Jefa de Contenidos",
+        "en": "Head of Content"
       },
       "quote": {
-        "es": "Convierte el mensaje y los contenidos en un punto de inflexión.",
-        "en": "Turns the message and content into a turning point."
+        "es": "Experta en convertir el mensaje y los contenidos en un punto de inflexión.",
+        "en": "An expert at turning the message and content into a turning point."
       }
     },
     {
@@ -166,8 +166,25 @@
         "en": "Artificial Intelligence"
       },
       "quote": {
-        "es": "Siempre abriendo nuevos caminos con las mejores herramientas.",
-        "en": "Always opening new paths with the best tools."
+        "es": "Siempre abriendo nuevos caminos con herramientas que nos ayudan a mejorar e implementar las mejores soluciones.",
+        "en": "Always opening new paths with tools that help us improve and implement the best solutions."
+      }
+    },
+    {
+      "id": "presi",
+      "image": "/images/chimp-presi.jpg",
+      "gender": "m",
+      "role": {
+        "es": "El Presi",
+        "en": "The Chairman"
+      },
+      "area": {
+        "es": "Operaciones",
+        "en": "Operations"
+      },
+      "quote": {
+        "es": "Atento a cada movimiento para que el engranaje gire a la perfección.",
+        "en": "Watching every move so the whole machine runs perfectly."
       }
     }
   ]
