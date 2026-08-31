@@ -255,7 +255,7 @@ function BlogIndex({
             className="lg:col-span-5 group text-left"
             data-cursor="view"
           >
-            <span className="block overflow-hidden rounded-[2rem] aspect-[4/5] border border-white/10">
+            <span className="block overflow-hidden rounded-[2rem] aspect-[4/3] border border-white/10">
               <img
                 src={featured.image}
                 alt={featured.imageAlt}
