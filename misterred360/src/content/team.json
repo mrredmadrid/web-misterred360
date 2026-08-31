@@ -36,7 +36,7 @@
     },
     {
       "id": "portavoz",
-      "image": "/images/chimp-press-f.jpg",
+      "image": "misterred360/public/images/chimp-press-f.jpg",
       "gender": "f",
       "role": {
         "es": "La Portavoz",
