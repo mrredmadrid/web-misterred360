@@ -2,14 +2,8 @@ import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowUpRight,
-  BarChart3,
   CalendarDays,
-  Clapperboard,
   Clock,
-  Compass,
-  PartyPopper,
-  Share2,
-  ShieldCheck,
   UserRound,
 } from "lucide-react";
 import { type InsightBlock, type InsightPost } from "../lib/insights";
@@ -19,36 +13,15 @@ import { SITE, usePageSeo } from "../lib/seo";
 import { getSeo } from "../lib/data";
 import { Kicker, Wordmark } from "./ui";
 
-/* Panel de color por categoría — sustituye la foto del chimpancé en las
-   tarjetas del listado para que el grid no sature con el mismo retrato
-   repetido; cada categoría tiene su propio color e icono. */
-const CATEGORY_STYLE: Record<string, { from: string; to: string; icon: typeof Compass }> = {
-  Eventos: { from: "#e8262b", to: "#7a0f13", icon: PartyPopper },
-  Social: { from: "#2e55e8", to: "#0f2680", icon: Share2 },
-  Estrategia: { from: "#0f172a", to: "#334155", icon: Compass },
-  Datos: { from: "#0d9488", to: "#134e4a", icon: BarChart3 },
-  Reputación: { from: "#b45309", to: "#78350f", icon: ShieldCheck },
-  Audiovisual: { from: "#7c3aed", to: "#3b0764", icon: Clapperboard },
-};
-const DEFAULT_CATEGORY_STYLE = { from: "#e8262b", to: "#2e55e8", icon: Compass };
-
-function CategoryPanel({ category, className = "" }: { category: string; className?: string }) {
-  const style = CATEGORY_STYLE[category] ?? DEFAULT_CATEGORY_STYLE;
-  const Icon = style.icon;
+function TileImage({ post, className = "" }: { post: InsightPost; className?: string }) {
   return (
-    <span
-      role="img"
-      aria-label={category}
-      className={`relative flex items-center justify-center overflow-hidden ${className}`}
-      style={{ background: `linear-gradient(135deg, ${style.from}, ${style.to})` }}
-    >
-      <span
-        className="absolute -right-4 -bottom-6 font-display font-semibold text-[7rem] leading-none text-white/10 select-none"
-        aria-hidden="true"
-      >
-        {category.slice(0, 2).toUpperCase()}
-      </span>
-      <Icon className="relative w-11 h-11 text-white/90" strokeWidth={1.5} />
+    <span className={`block overflow-hidden ${className}`}>
+      <img
+        src={post.image}
+        alt={post.imageAlt}
+        className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.05]"
+        loading="lazy"
+      />
     </span>
   );
 }
@@ -550,10 +523,7 @@ function InsightTile({
       className="group bg-white rounded-[1.75rem] border border-ink/10 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(8,8,10,0.35)]"
     >
       <button onClick={() => onOpenPost(post.slug)} className="w-full text-left" data-cursor="view">
-        <CategoryPanel
-          category={post.category}
-          className="aspect-[4/3] w-full transition-transform duration-700 group-hover:scale-[1.05]"
-        />
+        <TileImage post={post} className="aspect-[4/3] w-full" />
         <span className="block p-5 md:p-6">
           <span className="flex items-center justify-between gap-3 mb-4 flex-wrap">
             <span className="rounded-full bg-ink text-paper px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
@@ -595,10 +565,7 @@ function DarkInsightTile({
       className="group rounded-[1.75rem] border border-white/10 bg-coal overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:border-brand/50"
     >
       <button onClick={() => onOpenPost(post.slug)} className="w-full text-left" data-cursor="view">
-        <CategoryPanel
-          category={post.category}
-          className="aspect-[4/3] w-full transition-transform duration-700 group-hover:scale-[1.05]"
-        />
+        <TileImage post={post} className="aspect-[4/3] w-full" />
         <span className="block p-5 md:p-6">
           <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand">
             {post.category} · {post.readTime}
