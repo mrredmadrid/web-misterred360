@@ -237,7 +237,10 @@ export default function ServiciosPage({
                           <Icon className="w-6 h-6" strokeWidth={1.6} />
                         </span>
                         <h3 className={`font-display font-semibold leading-tight text-[clamp(1.8rem,3.4vw,3rem)] ${txtPrimary}`}>
-                          {s.name}
+                          {s.name}.{" "}
+                          <span className={isBrand ? "text-brand" : "text-steel"}>
+                            {s.tagline.toUpperCase()}
+                          </span>
                         </h3>
                         <p className={`mt-5 text-lg md:text-xl font-medium leading-snug max-w-2xl ${isDark ? "text-paper/90" : "text-ink/90"}`}>
                           {s.brief}

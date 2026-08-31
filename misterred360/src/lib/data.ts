@@ -265,7 +265,7 @@ export function getSeo(locale: Locale, page: SeoPage): { title: string; descript
 /* ── Marquee ────────────────────────────────────────────── */
 export const marqueeItems = [
   "Identidad",
-  "Reputación",
+  "Comunicación",
   "Creación",
   "Estrategia",
   "Impacto",
@@ -276,7 +276,6 @@ export const marqueeItems = [
   "Creación Audiovisual",
   "RRPP y Eventos",
   "Publicidad y Marketing",
-  "Estudios de Mercado",
 ];
 
 /* Rutas de las páginas interiores (hash routing) */

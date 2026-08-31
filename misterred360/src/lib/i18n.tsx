@@ -60,7 +60,7 @@ const es: Dict = {
   "services.kicker": "Qué hacemos",
   "services.title": "360 grados.\n*Ni uno de relleno.*",
   "services.desc":
-    "Cinco territorios con nombre propio. Reputación, estrategia, identidad, creación y digital. Ni uno solo lo vas a recibir estandarizado: trajes a medida, nunca tallas.",
+    "Cinco territorios con nombre propio. Comunicación, estrategia, identidad, creación y digital. Ni uno solo lo vas a recibir estandarizado: trajes a medida, nunca tallas.",
   "services.cta": "Quiero este servicio",
   "services.note.cast": "El chimpancé cambia de rol según la misión.",
 

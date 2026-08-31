@@ -303,7 +303,7 @@ export default function AIAssistant({
 function localFallback(userMsg: string): string {
   const q = userMsg.toLowerCase();
   if (q.includes("servicio") || q.includes("hacéis") || q.includes("hacéis")) {
-    return "Trabajamos cinco territorios: Reputación (prensa, RRPP, crisis), Estrategia (plan 360, DIRCOM externo, auditoría), Identidad (branding, naming), Creación (audiovisual, publicidad, eventos) y Digital (redes, formación en IA). Puedes ver el detalle en la sección Servicios de la web.";
+    return "Trabajamos cinco territorios: Comunicación (prensa, RRPP, crisis), Estrategia (plan 360, DIRCOM externo, auditoría), Identidad (branding, naming), Creación (audiovisual, publicidad, eventos) y Digital (redes, formación en IA). Puedes ver el detalle en la sección Servicios de la web.";
   }
   if (q.includes("cómo trabaj") || q.includes("método") || q.includes("proceso")) {
     return "Aplicamos el Método Milímetro: escuchar hasta que duela, medir antes de opinar, construir a tu medida y estar cuando haga falta. Un interlocutor único, respuesta en 24h y una idea gratis ejecutable en 72h antes de contratar.";
