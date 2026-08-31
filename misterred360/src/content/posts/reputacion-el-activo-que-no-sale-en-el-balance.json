@@ -3,15 +3,14 @@
   "date": "4 feb 2026",
   "dateEn": "Feb 4, 2026",
   "author": "MISTERRED360",
-  "image": "/images/chimp-bw.jpg",
+  "image": "misterred360/public/images/blog-5.png",
   "es": {
-    "category": "Reputación",
-    "title": "Reputación: el activo que no sale en el balance",
+    "authorRole": "Dirección de estrategia",
     "excerpt": "Se construye durante años y se juega en un titular. Por qué la gestión de reputación es la inversión más rentable de tu marca.",
     "readTime": "8 min",
     "meta": "8 min · Feb 2026",
-    "authorRole": "Dirección de estrategia",
     "imageAlt": "Retrato editorial en blanco y negro del chimpancé de MISTERRED360",
+    "title": "Reputación: el activo que no sale en el balance",
     "tags": [
       "Reputación",
       "Marca",
@@ -47,16 +46,16 @@
         "type": "paragraph",
         "text": "Trabajar reputación no es blindarse: es ser coherente, visible y reconocible. Las marcas fuertes no controlan cada conversación, pero sí saben qué lugar quieren ocupar en ella."
       }
-    ]
+    ],
+    "category": "Reputación"
   },
   "en": {
-    "category": "Reputation",
-    "title": "Reputation: the asset that doesn't show up on the balance sheet",
+    "authorRole": "Strategy direction",
     "excerpt": "It's built over years and gambled on a single headline. Why reputation management is the most profitable investment your brand can make.",
     "readTime": "8 min read",
     "meta": "8 min · Feb 2026",
-    "authorRole": "Strategy direction",
     "imageAlt": "Editorial black and white portrait of MISTERRED360's chimp",
+    "title": "Reputation: the asset that doesn't show up on the balance sheet",
     "tags": [
       "Reputation",
       "Brand",
@@ -92,6 +91,7 @@
         "type": "paragraph",
         "text": "Working on reputation isn't about building a wall: it's about being coherent, visible and recognizable. Strong brands don't control every conversation, but they know exactly what place they want to hold in it."
       }
-    ]
+    ],
+    "category": "Reputation"
   }
 }
