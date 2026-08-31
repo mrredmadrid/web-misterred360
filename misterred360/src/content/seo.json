@@ -5,8 +5,8 @@
       "en": "360 Communication and Marketing Agency in Madrid | MISTERRED360"
     },
     "description": {
-      "es": "MISTERRED360, agencia de comunicación estratégica en Madrid: gabinete de prensa, imagen corporativa, audiovisual, publicidad, RRPP y estudios de mercado.",
-      "en": "MISTERRED360, strategic communication agency in Madrid: press office, corporate identity, video, advertising, PR and market research."
+      "es": "MISTERRED360, agencia de comunicación estratégica en Madrid: gabinete de prensa, imagen corporativa, audiovisual, publicidad y RRPP.",
+      "en": "MISTERRED360, strategic communication agency in Madrid: press office, corporate identity, video, advertising and PR."
     }
   },
   "manifiesto": {
@@ -25,8 +25,8 @@
       "en": "360 Communication Agency Services: Press, Branding and Marketing | MISTERRED360"
     },
     "description": {
-      "es": "Servicios de comunicación 360 en Madrid: gabinete de prensa, planificación estratégica, comunicación 2.0, RRPP y eventos, imagen corporativa, audiovisual, publicidad y estudios de mercado.",
-      "en": "360 communication services in Madrid: press office, strategic planning, digital communication, PR and events, corporate identity, video, advertising and market research."
+      "es": "Servicios de comunicación 360 en Madrid: gabinete de prensa, planificación estratégica, comunicación 2.0, RRPP y eventos, imagen corporativa, audiovisual, publicidad y agentes de IA a medida.",
+      "en": "360 communication services in Madrid: press office, strategic planning, digital communication, PR and events, corporate identity, video, advertising and custom AI agents."
     }
   },
   "metodo": {
@@ -77,6 +77,36 @@
     "description": {
       "es": "Blog de MISTERRED360: noticias, análisis e insights sobre comunicación estratégica, gabinete de prensa, reputación de marca, branding, audiovisual y marketing.",
       "en": "MISTERRED360's blog: news, analysis and insights on strategic communication, press office, brand reputation, branding, video and marketing."
+    }
+  },
+  "agentesIA": {
+    "title": {
+      "es": "Agentes IA Personalizados: Automatización con Criterio | MISTERRED360",
+      "en": "Custom AI Agents: Automation with Judgment | MISTERRED360"
+    },
+    "description": {
+      "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para WhatsApp, tu web y tus herramientas internas: atención 24/7, cualificación de leads y el tono exacto de tu marca.",
+      "en": "We design and train custom AI agents for WhatsApp, your website and your internal tools: 24/7 support, lead qualification and your brand's exact tone."
+    }
+  },
+  "partners": {
+    "title": {
+      "es": "Partners Internacionales: Grabación, Edición y Postproducción | MISTERRED360",
+      "en": "International Partners: Recording, Editing and Post-production | MISTERRED360"
+    },
+    "description": {
+      "es": "Partners internacionales para proyectos top en grabación, edición, postproducción y eventos de alcance. Rodéate de los mejores para tu próximo proyecto de gran formato.",
+      "en": "International partners for top-tier projects in recording, editing, post-production and large-scale events. Surround yourself with the best for your next large-format project."
+    }
+  },
+  "whyus": {
+    "title": {
+      "es": "Por Qué Nosotros — Agencia de Comunicación 360 | MISTERRED360",
+      "en": "Why Us — 360 Communication Agency | MISTERRED360"
+    },
+    "description": {
+      "es": "Piensa diferente, actúa diferente, redescubre tu camino. Por qué trabajar con MISTERRED360: un interlocutor único, trajes a medida, instinto con método y alta eficacia 24/7/365.",
+      "en": "Think different, act different, rediscover your path. Why work with MISTERRED360: a single point of contact, made to measure, instinct with method and high efficiency 24/7/365."
     }
   }
 }

@@ -36,9 +36,6 @@ export default function Contact({
               <br />
               {t("contact.title.b")} <span className="text-brand">{t("contact.title.c")}</span>
             </h2>
-            <p className="mt-8 text-base md:text-lg leading-relaxed text-smoke max-w-xl">
-              {t("contact.desc")}
-            </p>
           </div>
 
           <ContactBlock />

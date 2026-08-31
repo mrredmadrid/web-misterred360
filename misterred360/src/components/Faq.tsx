@@ -21,7 +21,7 @@ export const faqs = [
   },
   {
     q: "¿Qué incluye vuestro 360?",
-    a: "Cinco territorios con nombre propio: reputación (prensa, RRPP, crisis), estrategia (plan, estudios, DIRCOM externo), identidad (branding, naming), creación (audiovisual, publicidad, eventos) y digital (redes, web, IA aplicada). Contratas el círculo entero o solo las piezas que necesitas.",
+    a: "Cinco territorios con nombre propio: comunicación (prensa, RRPP, crisis), estrategia (plan, estudios, DIRCOM externo), identidad (branding, naming), creación (audiovisual, publicidad, eventos) y digital (redes, web, IA aplicada). Contratas el círculo entero o solo las piezas que necesitas.",
   },
   {
     q: "¿Con quién NO trabajáis?",

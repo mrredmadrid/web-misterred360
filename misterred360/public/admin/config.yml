@@ -180,6 +180,13 @@ collections:
             fields:
               - { label: Título, name: title, widget: string }
               - { label: Descripción, name: description, widget: text }
+              - label: "Porcentaje de la tarjeta (opcional)"
+                name: stat
+                widget: object
+                required: false
+                fields:
+                  - { label: "Número", name: value, widget: number, value_type: int }
+                  - { label: "Sufijo (%, h...)", name: suffix, widget: string }
           - label: "Alianzas"
             name: partners
             widget: object
@@ -203,7 +210,7 @@ collections:
         name: services
         file: "misterred360/src/content/services.json"
         fields:
-          - label: "Bloques de servicios (3)"
+          - label: "Bloques de servicios (4)"
             name: blocks
             widget: list
             summary: "{{fields.title.es}}"
@@ -214,19 +221,99 @@ collections:
               - { label: "Título del bloque", name: title, widget: object, fields: *loc_string }
               - { label: "Frase (claim)", name: claim, widget: object, fields: *loc_string }
               - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - { label: "Imagen grande del bloque (opcional)", name: image, widget: image, required: false }
+              - { label: "Alt de la imagen del bloque", name: imageAlt, widget: string, required: false }
               - label: "Servicios de este bloque"
                 name: services
                 widget: list
                 summary: "{{fields.name.es}}"
                 fields:
                   - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
-                  - { label: "Icono", name: icon, widget: select, options: ["newspaper", "compass", "radio-tower", "users", "fingerprint", "clapperboard", "megaphone", "bar-chart-3"] }
+                  - { label: "Icono", name: icon, widget: select, options: ["newspaper", "compass", "radio-tower", "users", "fingerprint", "clapperboard", "megaphone", "bar-chart-3", "bot"] }
                   - { label: "Imagen", name: image, widget: image }
                   - { label: "Alt de la imagen (accesibilidad)", name: imageAlt, widget: string }
                   - { label: "Nombre del servicio", name: name, widget: object, fields: *loc_string }
                   - { label: "Frase corta (tagline)", name: tagline, widget: object, fields: *loc_string }
                   - { label: "Descripción breve", name: brief, widget: object, fields: *loc_text }
                   - { label: "Descripción larga", name: long, widget: object, fields: *loc_text }
+
+      - label: "Página: Agentes IA"
+        name: agentesIA
+        file: "misterred360/src/content/agentesIA.json"
+        fields:
+          - label: "Cabecera"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Kicker (etiqueta pequeña)", name: kicker, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Introducción", name: intro, widget: object, fields: *loc_text }
+              - { label: "Nota lateral (ej. Disponible 24/7)", name: meta, widget: object, fields: *loc_string }
+          - { label: "Frase destacada (acepta {red}texto{/red} para resaltar en rojo)", name: statement, widget: object, fields: *loc_text }
+          - label: "Franja de aviso en la home"
+            name: promo
+            widget: object
+            hint: "El bloque corto que promociona esta página desde la portada"
+            fields:
+              - { label: "Etiqueta (ej. Nuevo · Inteligencia Artificial)", name: badge, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - { label: "Texto del botón", name: cta, widget: object, fields: *loc_string }
+          - label: "Capacidades (tarjetas de \"qué hace\")"
+            name: capabilities
+            widget: list
+            summary: "{{fields.title.es}}"
+            fields:
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
+              - { label: "Icono", name: icon, widget: select, options: ["clock", "target", "message-circle", "radio-tower", "users", "bar-chart-3", "bot"] }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - label: "Proceso (pasos de \"cómo lo hacemos\")"
+            name: process
+            widget: list
+            summary: "{{fields.title.es}}"
+            fields:
+              - { label: "Número (01, 02...)", name: index, widget: string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - label: "Preguntas frecuentes"
+            name: faq
+            widget: list
+            summary: "{{fields.q.es}}"
+            fields:
+              - { label: "Pregunta", name: q, widget: object, fields: *loc_string }
+              - { label: "Respuesta", name: a, widget: object, fields: *loc_text }
+
+      - label: "Página: Partners"
+        name: partners
+        file: "misterred360/src/content/partners.json"
+        fields:
+          - label: "Cabecera"
+            name: hero
+            widget: object
+            fields:
+              - { label: "Kicker (etiqueta pequeña)", name: kicker, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Introducción", name: intro, widget: object, fields: *loc_text }
+              - { label: "Nota lateral (ej. 4 disciplinas · alcance global)", name: meta, widget: object, fields: *loc_string }
+          - { label: "Frase destacada (acepta {red}texto{/red} para resaltar en rojo)", name: statement, widget: object, fields: *loc_text }
+          - label: "Disciplinas (tarjetas)"
+            name: pillars
+            widget: list
+            summary: "{{fields.title.es}}"
+            fields:
+              - { label: "ID (no tocar)", name: id, widget: string, hint: "Identificador interno, no lo cambies" }
+              - { label: "Icono", name: icon, widget: select, options: ["video", "scissors", "wand-2", "calendar-check", "users", "compass"] }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - label: "Cierre"
+            name: close
+            widget: object
+            fields:
+              - { label: "Frase pequeña (kicker)", name: kicker, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+              - { label: "Texto del botón", name: cta, widget: object, fields: *loc_string }
 
       - label: "Precios"
         name: pricing
@@ -331,6 +418,9 @@ collections:
           - { label: "Manifiesto", name: manifiesto, widget: object, fields: *seo_page }
           - { label: "Servicios", name: servicios, widget: object, fields: *seo_page }
           - { label: "Método 360", name: metodo, widget: object, fields: *seo_page }
+          - { label: "Agentes IA", name: agentesIA, widget: object, fields: *seo_page }
+          - { label: "Partners", name: partners, widget: object, fields: *seo_page }
+          - { label: "Por qué nosotros", name: whyus, widget: object, fields: *seo_page }
           - { label: "Equipo (El Elenco)", name: elenco, widget: object, fields: *seo_page }
           - { label: "Contacto", name: contacto, widget: object, fields: *seo_page }
           - { label: "Agendar llamada", name: agendar, widget: object, fields: *seo_page }

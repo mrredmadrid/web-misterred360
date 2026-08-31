@@ -3,100 +3,194 @@
     {
       "index": "01",
       "id": "observar",
-      "verb": { "es": "OBSERVAR", "en": "OBSERVE" },
-      "title": { "es": "Primero escuchamos. Siempre.", "en": "First we listen. Always." },
+      "verb": {
+        "es": "OBSERVADOR",
+        "en": "OBSERVER"
+      },
+      "title": {
+        "es": "Primero escuchamos. Siempre.",
+        "en": "First we listen. Always."
+      },
       "description": {
-        "es": "Auditoría de marca, estudios de mercado y escucha activa. Antes de decir una palabra en tu nombre, entendemos tu entorno, tu audiencia y tus oportunidades reales.",
-        "en": "Brand audit, market research and active listening. Before saying a word on your behalf, we understand your environment, your audience and your real opportunities."
+        "es": "Auditoría de marca, estudios de mercado y escucha activa. Antes de decir una palabra en tu nombre, entendemos tu entorno, tu audiencia y tus oportunidades reales para coordinar las mejores decisiones.",
+        "en": "Brand audit, market research and active listening. Before saying a word on your behalf, we understand your environment, your audience and your real opportunities to coordinate the best decisions."
       },
       "extended": {
-        "es": "Auditamos tu marca, tu entorno y la conversación que ya existe sobre ti. Entrevistas, estudios de mercado y escucha social para saber exactamente dónde estás antes de decidir a dónde vamos.",
-        "en": "We audit your brand, your environment and the conversation that already exists about you. Interviews, market research and social listening to know exactly where you are before deciding where we go."
+        "es": "Auditamos tu marca, tu entorno y la conversación que ya existe sobre ti. Entrevistas, estudios de mercado y escucha social para saber exactamente dónde estás antes de decidir a dónde vamos, y coordinar desde el primer día las mejores decisiones.",
+        "en": "We audit your brand, your environment and the conversation that already exists about you. Interviews, market research and social listening to know exactly where you are before deciding where we go, coordinating the best decisions from day one."
       },
-      "image": "/images/chimp-data.jpg",
+      "image": "/images/chimp-strategy.jpg",
       "tags": {
-        "es": ["Auditoría", "Estudios de mercado", "Escucha social"],
-        "en": ["Audit", "Market research", "Social listening"]
+        "es": [
+          "Auditoría",
+          "Estudios de mercado",
+          "Escucha social"
+        ],
+        "en": [
+          "Audit",
+          "Market research",
+          "Social listening"
+        ]
       },
       "deliverables": {
-        "es": ["Auditoría de comunicación", "Estudio de mercado", "Mapa de audiencias y medios"],
-        "en": ["Communication audit", "Market study", "Audience and media map"]
+        "es": [
+          "Auditoría de comunicación",
+          "Estudio de mercado",
+          "Mapa de audiencias y medios"
+        ],
+        "en": [
+          "Communication audit",
+          "Market study",
+          "Audience and media map"
+        ]
       }
     },
     {
       "index": "02",
       "id": "pensar",
-      "verb": { "es": "PENSAR", "en": "THINK" },
-      "title": { "es": "La estrategia marca el ritmo.", "en": "Strategy sets the pace." },
+      "verb": {
+        "es": "PENSADOR",
+        "en": "THINKER"
+      },
+      "title": {
+        "es": "La estrategia marca el ritmo, el relato y los resultados.",
+        "en": "Strategy sets the pace, the story and the results."
+      },
       "description": {
-        "es": "Convertimos hallazgos en una hoja de ruta: mensajes ordenados, canales priorizados y objetivos alineados con una visión global de 360 grados.",
-        "en": "We turn findings into a roadmap: ordered messages, prioritized channels and goals aligned with a 360-degree global vision."
+        "es": "Convertimos hallazgos e ideas en una hoja de ruta trazable y medible: mensajes ordenados con un cronograma, canales priorizados y objetivos alineados con una visión global 360 para garantizar resultados.",
+        "en": "We turn findings and ideas into a trackable, measurable roadmap: ordered messages with a timeline, prioritized channels and goals aligned with a global 360 vision to guarantee results."
       },
       "extended": {
-        "es": "Convertimos los hallazgos en decisiones: qué decir, a quién, cómo y dónde. Un plan de comunicación realista y medible que ordena mensajes, prioriza canales y marca el ritmo de todo lo que viene después.",
-        "en": "We turn findings into decisions: what to say, to whom, how and where. A realistic, measurable communication plan that orders messages, prioritizes channels and sets the pace for everything that follows."
+        "es": "Convertimos los hallazgos en decisiones: qué decir, a quién, cómo y dónde. Un plan de comunicación realista, trazable y medible que ordena mensajes con un cronograma claro, prioriza canales y marca el ritmo de todo lo que viene después, alineado con una visión global de 360 grados.",
+        "en": "We turn findings into decisions: what to say, to whom, how and where. A realistic, trackable and measurable communication plan that orders messages with a clear timeline, prioritizes channels and sets the pace for everything that follows, aligned with a global 360-degree vision."
       },
       "image": "/images/chimp-strategy.jpg",
       "tags": {
-        "es": ["Plan de comunicación", "Mensajes", "Canales"],
-        "en": ["Communication plan", "Messages", "Channels"]
+        "es": [
+          "Plan de comunicación",
+          "Mensajes",
+          "Canales"
+        ],
+        "en": [
+          "Communication plan",
+          "Messages",
+          "Channels"
+        ]
       },
       "deliverables": {
-        "es": ["Plan de comunicación", "Arquitectura de mensajes", "Plan de canales y calendario"],
-        "en": ["Communication plan", "Message architecture", "Channel plan and calendar"]
+        "es": [
+          "Plan de comunicación",
+          "Arquitectura de mensajes",
+          "Plan de canales y calendario"
+        ],
+        "en": [
+          "Communication plan",
+          "Message architecture",
+          "Channel plan and calendar"
+        ]
       }
     },
     {
       "index": "03",
       "id": "crear",
-      "verb": { "es": "CREAR", "en": "CREATE" },
-      "title": { "es": "Piezas que nadie ignora.", "en": "Pieces nobody ignores." },
+      "verb": {
+        "es": "CREADOR",
+        "en": "CREATOR"
+      },
+      "title": {
+        "es": "Piezas, mensajes e imagen que nadie ignora.",
+        "en": "Pieces, messages and image nobody ignores."
+      },
       "description": {
-        "es": "Identidad, prensa, audiovisual y campañas con carácter propio. La creatividad no decora la estrategia: la hace imposible de ignorar.",
-        "en": "Identity, press, video and campaigns with their own character. Creativity doesn't decorate the strategy: it makes it impossible to ignore."
+        "es": "Identidad visual y corporativa, impactos garantizados en medios de comunicación, materiales audiovisuales top, presentaciones de alto impacto, medios de comunicación digitales con contenidos propios y a medida del sector, y campañas exclusivas con carácter. La creatividad no decora la estrategia: la hace realidad e imposible de ignorar.",
+        "en": "Visual and corporate identity, guaranteed media impact, top-tier audiovisual materials, high-impact presentations, digital media with original content tailored to your sector, and exclusive campaigns with character. Creativity doesn't decorate the strategy: it makes it real and impossible to ignore."
       },
       "extended": {
-        "es": "Identidad, contenidos, piezas de prensa, vídeo y campañas con carácter propio. La creatividad no decora la estrategia: la hace imposible de ignorar. Cada pieza nace del plan, nunca del capricho.",
-        "en": "Identity, content, press pieces, video and campaigns with their own character. Creativity doesn't decorate the strategy: it makes it impossible to ignore. Every piece is born from the plan, never from whim."
+        "es": "Identidad, contenidos, piezas de prensa, vídeo, presentaciones de alto impacto y campañas con carácter propio, siempre a medida de tu sector. La creatividad no decora la estrategia: la hace realidad e imposible de ignorar. Cada pieza nace del plan, nunca del capricho.",
+        "en": "Identity, content, press pieces, video, high-impact presentations and campaigns with their own character, always tailored to your sector. Creativity doesn't decorate the strategy: it makes it real and impossible to ignore. Every piece is born from the plan, never from whim."
       },
       "image": "/images/chimp-brand.jpg",
       "tags": {
-        "es": ["Identidad", "Contenidos", "Campañas"],
-        "en": ["Identity", "Content", "Campaigns"]
+        "es": [
+          "Identidad",
+          "Contenidos",
+          "Campañas"
+        ],
+        "en": [
+          "Identity",
+          "Content",
+          "Campaigns"
+        ]
       },
       "deliverables": {
-        "es": ["Identidad y piezas de marca", "Contenidos editoriales y prensa", "Vídeo y piezas de campaña"],
-        "en": ["Identity and brand pieces", "Editorial and press content", "Video and campaign pieces"]
+        "es": [
+          "Identidad y piezas de marca",
+          "Contenidos editoriales y prensa",
+          "Vídeo y presentaciones de alto impacto"
+        ],
+        "en": [
+          "Identity and brand pieces",
+          "Editorial and press content",
+          "Video and high-impact presentations"
+        ]
       }
     },
     {
       "index": "04",
       "id": "amplificar",
-      "verb": { "es": "AMPLIFICAR", "en": "AMPLIFY" },
-      "title": { "es": "Vuelta completa. Y otra más.", "en": "Full turn. And another." },
+      "verb": {
+        "es": "CONSTRUCTOR",
+        "en": "BUILDER"
+      },
+      "title": {
+        "es": "La constancia construye el relato.",
+        "en": "Consistency builds the story."
+      },
       "description": {
-        "es": "Difusión en medios, redes, publicidad y eventos. Medimos, aprendemos y optimizamos: el círculo de 360° nunca se cierra del todo.",
-        "en": "Media distribution, social, advertising and events. We measure, learn and optimize: the 360° circle never fully closes."
+        "es": "La estrategia y el cronograma de acciones mantenidos en el tiempo construyen un relato que permite amplificar nuestros mensajes y conseguir nuestros objetivos: difusión en medios, medios de comunicación propios a medida, redes, publicidad y eventos.",
+        "en": "The strategy and the action timeline, sustained over time, build a story that lets us amplify our messages and reach our goals: media distribution, tailored owned media, social, advertising and events."
       },
       "extended": {
-        "es": "Difusión en medios, redes, publicidad y eventos. Medimos impacto, aprendemos y optimizamos. Y cuando el círculo se completa, empieza otra vez: cada vuelta alimenta la siguiente.",
-        "en": "Distribution in media, social, advertising and events. We measure impact, learn and optimize. And when the circle completes, it starts over: every turn feeds the next."
+        "es": "Medimos, aprendemos y optimizamos para seguir mejorando resultados. Difusión en medios, redes, publicidad y eventos, con medios de comunicación propios a medida: el círculo de 360° nunca se cierra del todo, cada vuelta alimenta la siguiente.",
+        "en": "We measure, learn and optimize to keep improving results. Media distribution, social, advertising and events, with tailored owned media: the 360° circle never fully closes, every turn feeds the next."
       },
-      "image": "/images/chimp-ads.jpg",
+      "image": "/images/chimp-ads-f.jpg",
       "tags": {
-        "es": ["Difusión", "Medición", "Optimización"],
-        "en": ["Distribution", "Measurement", "Optimization"]
+        "es": [
+          "Difusión",
+          "Medios propios",
+          "Optimización"
+        ],
+        "en": [
+          "Distribution",
+          "Owned media",
+          "Optimization"
+        ]
       },
       "deliverables": {
-        "es": ["Difusión en medios y redes", "Campañas y activaciones", "Informe de resultados y learning"],
-        "en": ["Media and social distribution", "Campaigns and activations", "Results report and learning"]
+        "es": [
+          "Difusión en medios y redes",
+          "Campañas y activaciones",
+          "Informe de resultados y learning"
+        ],
+        "en": [
+          "Media and social distribution",
+          "Campaigns and activations",
+          "Results report and learning"
+        ]
       }
     },
     {
       "index": "05",
       "id": "visionar",
-      "verb": { "es": "VISIONAR", "en": "ENVISION" },
-      "title": { "es": "El círculo se cierra. Y crece.", "en": "The circle closes. And grows." },
+      "verb": {
+        "es": "VISIONARIO",
+        "en": "VISIONARY"
+      },
+      "title": {
+        "es": "El círculo se cierra. Y crece.",
+        "en": "The circle closes. And grows."
+      },
       "description": {
         "es": "Crecimiento de marca y retorno garantizado para afrontar un nuevo ejercicio con nuevos retos desde un escenario óptimo: marcas con potencial se consolidan, se diferencian y se convierten en referentes de su sector.",
         "en": "Brand growth and guaranteed return to face a new cycle with new challenges from an optimal position: brands with potential consolidate, stand out and become benchmarks in their sector."
@@ -107,12 +201,28 @@
       },
       "image": "/images/chimp-cta.jpg",
       "tags": {
-        "es": ["Crecimiento", "Retorno", "Nuevo ciclo"],
-        "en": ["Growth", "Return", "New cycle"]
+        "es": [
+          "Crecimiento",
+          "Retorno",
+          "Nuevo ciclo"
+        ],
+        "en": [
+          "Growth",
+          "Return",
+          "New cycle"
+        ]
       },
       "deliverables": {
-        "es": ["Informe de crecimiento", "Plan del nuevo ejercicio", "Nuevos retos y objetivos"],
-        "en": ["Growth report", "New cycle plan", "New challenges and goals"]
+        "es": [
+          "Informe de crecimiento",
+          "Plan del nuevo ejercicio",
+          "Nuevos retos y objetivos"
+        ],
+        "en": [
+          "Growth report",
+          "New cycle plan",
+          "New challenges and goals"
+        ]
       }
     }
   ]

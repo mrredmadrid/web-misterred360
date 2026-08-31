@@ -12,6 +12,7 @@ import {
 import { scrollToHash } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { siteContact, siteLegal } from "../lib/data";
+import { sendLead } from "../lib/leadmail";
 
 /* ───────────────────────────────────────────────────────────
    ContactBlock · Formulario ágil por pasos
@@ -78,7 +79,7 @@ const initialState: FormState = {
 export default function ContactBlock() {
   const { t } = useI18n();
   const [step, setStep] = useState(0);
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState<FormState>(initialState);
 
   const needs = NEEDS.map((n) => ({ ...n, label: t(`need.${n.id}`) }));
@@ -113,11 +114,23 @@ export default function ContactBlock() {
   };
   const back = () => setStep((s) => Math.max(0, s - 1));
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!stepValid || status !== "idle") return;
+    if (!stepValid || (status !== "idle" && status !== "error")) return;
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1400);
+    const ok = await sendLead(`Nuevo contacto desde la web — ${form.nombre}`, {
+      Nombre: form.nombre,
+      Empresa: form.empresa || "—",
+      Email: form.email,
+      Teléfono: form.telefono || "—",
+      Necesita: needs.filter((n) => form.needs.includes(n.id)).map((n) => n.label).join(", ") || "—",
+      Perfil: profiles.find((p) => p.id === form.profile)?.label || "—",
+      Momento: stages.find((s) => s.id === form.stage)?.label || "—",
+      "Cuándo empezar": timings.find((t2) => t2.id === form.timing)?.label || "—",
+      "Cómo nos ha encontrado": sources.find((s) => s.id === form.source)?.label || "—",
+      Mensaje: form.mensaje || "—",
+    });
+    setStatus(ok ? "sent" : "error");
   };
 
   const resetAll = () => {
@@ -387,6 +400,16 @@ export default function ContactBlock() {
                     </StepShell>
                   )}
                 </AnimatePresence>
+
+                {status === "error" && (
+                  <p className="mt-6 text-sm text-brand">
+                    No se ha podido enviar. Vuelve a intentarlo, o escríbenos directamente a{" "}
+                    <a href={`mailto:${siteContact.email}`} className="underline">
+                      {siteContact.email}
+                    </a>
+                    .
+                  </p>
+                )}
 
                 {/* Controles */}
                 <div className="mt-8 flex items-center justify-between gap-4">

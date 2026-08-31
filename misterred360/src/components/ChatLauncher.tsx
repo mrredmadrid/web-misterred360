@@ -1,155 +1,95 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Bot, MessageCircle, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Bot, X } from "lucide-react";
 import { useI18n } from "../lib/i18n";
 
 /* ───────────────────────────────────────────────────────────
-   ChatLauncher · botón único que despliega un menú con
-   las dos vías de conversación (Asistente IA + WhatsApp).
-   Reemplaza a los dos FAB independientes anteriores.
+   ChatLauncher · dos FAB siempre visibles (Asistente IA +
+   WhatsApp), sin menú intermedio: cada botón abre/cierra su
+   propio panel directamente al pulsarlo.
    ─────────────────────────────────────────────────────────── */
 
 export type LauncherChoice = "assistant" | "whatsapp";
 
 interface Props {
   onPick: (choice: LauncherChoice) => void;
-  /* Estados externos para saber si algún panel está abierto */
-  panelOpen: boolean;
+  /* Qué panel está abierto ahora mismo, si alguno */
+  active: LauncherChoice | null;
 }
 
-export default function ChatLauncher({ onPick, panelOpen }: Props) {
+export default function ChatLauncher({ onPick, active }: Props) {
   const { t } = useI18n();
-  const [menu, setMenu] = useState(false);
-
-  const pick = (choice: LauncherChoice) => {
-    setMenu(false);
-    onPick(choice);
-  };
 
   return (
     <div className="fixed z-[92] bottom-5 right-5 md:bottom-7 md:right-7 flex flex-col items-end gap-3">
-      {/* Menú de opciones */}
-      <AnimatePresence>
-        {menu && !panelOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.94 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.94 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-end gap-2.5"
-            role="menu"
-            aria-label={t("launcher.aria")}
-          >
-            {/* Opción 1 · Asistente IA */}
-            <MenuOption
-              icon={<Bot className="w-5 h-5" strokeWidth={1.9} />}
-              label={t("launcher.assistant.title")}
-              hint={t("launcher.assistant.hint")}
-              accent="rojo"
-              onClick={() => pick("assistant")}
-            />
-
-            {/* Opción 2 · WhatsApp */}
-            <MenuOption
-              icon={<WhatsAppIcon className="w-5 h-5" />}
-              label={t("launcher.wa.title")}
-              hint={t("launcher.wa.hint")}
-              accent="verde"
-              onClick={() => pick("whatsapp")}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Botón principal */}
-      <button
-        onClick={() => setMenu((v) => !v)}
-        aria-label={
-          menu ? t("launcher.close") : t("launcher.open")
-        }
-        aria-expanded={menu}
-        aria-haspopup="menu"
-        data-cursor="button"
-        className="relative w-[3.4rem] h-[3.4rem] rounded-full bg-brand hover:bg-flame text-white shadow-[0_10px_30px_-8px_rgba(232,38,43,0.6)] flex items-center justify-center transition-transform hover:scale-105 focus-visible:scale-105"
-      >
-        <AnimatePresence mode="wait" initial={false}>
-          {menu ? (
-            <motion.span
-              key="close"
-              initial={{ scale: 0, rotate: -90 }}
-              animate={{ scale: 1, rotate: 0 }}
-              exit={{ scale: 0, rotate: 90 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center justify-center"
-            >
-              <X className="w-6 h-6" strokeWidth={2.2} />
-            </motion.span>
+      <Fab
+        icon={
+          active === "assistant" ? (
+            <X className="w-6 h-6" strokeWidth={2.2} />
           ) : (
-            <motion.span
-              key="chat"
-              initial={{ scale: 0, rotate: 90 }}
-              animate={{ scale: 1, rotate: 0 }}
-              exit={{ scale: 0, rotate: -90 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center justify-center"
-            >
-              <MessageCircle className="w-6 h-6" strokeWidth={1.9} />
-            </motion.span>
-          )}
-        </AnimatePresence>
-
-        {/* Punto rojo pulsante cuando el menú está cerrado */}
-        {!menu && !panelOpen && (
-          <span
-            className="absolute -top-1 -right-1 flex h-3 w-3"
-            aria-hidden="true"
-          >
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-70" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
-          </span>
-        )}
-      </button>
+            <Bot className="w-6 h-6" strokeWidth={1.9} />
+          )
+        }
+        label={active === "assistant" ? t("launcher.close") : t("launcher.assistant.title")}
+        accent="rojo"
+        pulsing={active === null}
+        onClick={() => onPick("assistant")}
+      />
+      <Fab
+        icon={
+          active === "whatsapp" ? (
+            <X className="w-6 h-6" strokeWidth={2.2} />
+          ) : (
+            <WhatsAppIcon className="w-6 h-6" />
+          )
+        }
+        label={active === "whatsapp" ? t("launcher.close") : t("launcher.wa.title")}
+        accent="verde"
+        pulsing={false}
+        onClick={() => onPick("whatsapp")}
+      />
     </div>
   );
 }
 
 /* ─────────────────────────────────────────── */
 
-function MenuOption({
+function Fab({
   icon,
   label,
-  hint,
   accent,
+  pulsing,
   onClick,
 }: {
   icon: React.ReactNode;
   label: string;
-  hint: string;
   accent: "rojo" | "verde";
+  pulsing: boolean;
   onClick: () => void;
 }) {
   const bg = accent === "verde" ? "bg-[#25D366]" : "bg-brand";
   const hover = accent === "verde" ? "hover:bg-[#1FBE59]" : "hover:bg-flame";
+  const shadow =
+    accent === "verde"
+      ? "shadow-[0_10px_30px_-8px_rgba(37,211,102,0.55)]"
+      : "shadow-[0_10px_30px_-8px_rgba(232,38,43,0.6)]";
   return (
-    <button
-      role="menuitem"
+    <motion.button
+      initial={{ opacity: 0, scale: 0.7 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       onClick={onClick}
-      className="group flex items-center gap-3 pl-3 pr-4 py-2.5 rounded-full bg-coal border border-white/12 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] hover:border-white/25 transition-colors"
+      aria-label={label}
+      data-cursor="button"
+      className={`relative w-[3.4rem] h-[3.4rem] rounded-full text-white flex items-center justify-center transition-transform hover:scale-105 focus-visible:scale-105 ${bg} ${hover} ${shadow}`}
     >
-      <span className="text-right leading-tight">
-        <span className="block text-[13px] font-semibold text-paper">
-          {label}
+      {icon}
+      {pulsing && (
+        <span className="absolute -top-1 -right-1 flex h-3 w-3" aria-hidden="true">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-70" />
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
         </span>
-        <span className="block text-[10px] uppercase tracking-[0.14em] text-smoke mt-0.5">
-          {hint}
-        </span>
-      </span>
-      <span
-        className={`w-10 h-10 rounded-full text-white flex items-center justify-center shrink-0 transition-colors ${bg} ${hover}`}
-      >
-        {icon}
-      </span>
-    </button>
+      )}
+    </motion.button>
   );
 }
 

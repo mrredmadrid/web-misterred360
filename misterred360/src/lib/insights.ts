@@ -1,4 +1,5 @@
 import type { Locale } from "./i18n";
+import { img } from "./content";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Blog / Insights bilingüe
@@ -166,7 +167,7 @@ export function resolvePost(p: LocalizedInsightPost, locale: Locale): InsightPos
   return {
     slug: p.slug,
     author: p.author,
-    image: p.image,
+    image: img(p.image),
     date: locale === "en" ? p.dateEn : p.date,
     category: src.category,
     title: src.title,

@@ -1,68 +1,174 @@
 {
   "members": [
     {
+      "id": "presi",
+      "image": "/images/chimp-presi.jpg",
+      "gender": "m",
+      "role": {
+        "es": "El Presi",
+        "en": "The Chairman"
+      },
+      "area": {
+        "es": "Operaciones",
+        "en": "Operations"
+      },
+      "quote": {
+        "es": "Atento a cada movimiento para que el engranaje gire a la perfección.",
+        "en": "Watching every move so the whole machine runs perfectly."
+      }
+    },
+    {
       "id": "icono",
       "image": "/images/chimp-hero.jpg",
       "gender": "m",
-      "role": { "es": "El Icono", "en": "The Icon" },
-      "area": { "es": "Marca", "en": "Brand" },
-      "quote": { "es": "La cara visible.", "en": "The face of it all." }
+      "role": {
+        "es": "El Icono / La Estrategia",
+        "en": "The Icon / The Strategy"
+      },
+      "area": {
+        "es": "CEO",
+        "en": "CEO"
+      },
+      "quote": {
+        "es": "La cara visible y la mente que marca la diferencia.",
+        "en": "The face and the mind that makes the difference."
+      }
     },
     {
       "id": "portavoz",
       "image": "/images/chimp-press-f.jpg",
       "gender": "f",
-      "role": { "es": "La Portavoz", "en": "The Spokeswoman" },
-      "area": { "es": "Prensa", "en": "Press" },
-      "quote": { "es": "Da la cara por ti.", "en": "Speaks up for you." }
+      "role": {
+        "es": "La Portavoz",
+        "en": "The Spokeswoman"
+      },
+      "area": {
+        "es": "Jefa de Contenidos",
+        "en": "Head of Content"
+      },
+      "quote": {
+        "es": "Experta en convertir el mensaje y los contenidos en un punto de inflexión.",
+        "en": "An expert at turning the message and content into a turning point."
+      }
     },
     {
       "id": "estratega",
       "image": "/images/chimp-strategy-f.jpg",
       "gender": "f",
-      "role": { "es": "La Estratega", "en": "The Strategist" },
-      "area": { "es": "Planificación", "en": "Planning" },
-      "quote": { "es": "Piensa tres jugadas por delante.", "en": "Thinks three moves ahead." }
-    },
-    {
-      "id": "anfitrion",
-      "image": "/images/chimp-events.jpg",
-      "gender": "m",
-      "role": { "es": "El Anfitrión", "en": "The Host" },
-      "area": { "es": "Eventos", "en": "Events" },
-      "quote": { "es": "Domina cualquier escenario.", "en": "Owns any stage." }
+      "role": {
+        "es": "Project Manager",
+        "en": "Project Manager"
+      },
+      "area": {
+        "es": "Gestión de proyectos",
+        "en": "Project management"
+      },
+      "quote": {
+        "es": "La magia que convierte los proyectos en una realidad.",
+        "en": "The magic that turns projects into reality."
+      }
     },
     {
       "id": "disenador",
       "image": "/images/chimp-brand-f.jpg",
       "gender": "f",
-      "role": { "es": "La Diseñadora", "en": "The Designer" },
-      "area": { "es": "Identidad", "en": "Identity" },
-      "quote": { "es": "Detalle a detalle.", "en": "Detail by detail." }
+      "role": {
+        "es": "La Diseñadora",
+        "en": "The Designer"
+      },
+      "area": {
+        "es": "Identidad",
+        "en": "Identity"
+      },
+      "quote": {
+        "es": "Creando piezas únicas y atenta siempre a cada detalle.",
+        "en": "Creating unique pieces, always attentive to every detail."
+      }
     },
     {
       "id": "director",
       "image": "/images/chimp-av.jpg",
       "gender": "m",
-      "role": { "es": "El Director", "en": "The Director" },
-      "area": { "es": "Audiovisual", "en": "Video" },
-      "quote": { "es": "Cuenta historias en 24 fps.", "en": "Tells stories at 24 fps." }
+      "role": {
+        "es": "El Mago del Vídeo",
+        "en": "The Video Wizard"
+      },
+      "area": {
+        "es": "Audiovisual",
+        "en": "Video"
+      },
+      "quote": {
+        "es": "Dominando el mundo audiovisual para proyectar tu marca.",
+        "en": "Mastering the audiovisual world to project your brand."
+      }
     },
     {
       "id": "publicista",
       "image": "/images/chimp-ads-f.jpg",
       "gender": "f",
-      "role": { "es": "La Publicista", "en": "The Publicist" },
-      "area": { "es": "Marketing", "en": "Marketing" },
-      "quote": { "es": "Se hace oír.", "en": "Makes herself heard." }
+      "role": {
+        "es": "La Publicista",
+        "en": "The Publicist"
+      },
+      "area": {
+        "es": "Marketing",
+        "en": "Marketing"
+      },
+      "quote": {
+        "es": "Se hace oír.",
+        "en": "Makes herself heard."
+      }
     },
     {
       "id": "analista",
       "image": "/images/chimp-data.jpg",
       "gender": "m",
-      "role": { "es": "El Analista", "en": "The Analyst" },
-      "area": { "es": "Datos", "en": "Data" },
-      "quote": { "es": "Nada se le escapa.", "en": "Nothing escapes him." }
+      "role": {
+        "es": "El Analista",
+        "en": "The Analyst"
+      },
+      "area": {
+        "es": "Datos",
+        "en": "Data"
+      },
+      "quote": {
+        "es": "Nada se le escapa.",
+        "en": "Nothing escapes him."
+      }
+    },
+    {
+      "id": "contable",
+      "image": "/images/chimp-contable.jpg",
+      "gender": "f",
+      "role": {
+        "es": "La Contable",
+        "en": "The Accountant"
+      },
+      "area": {
+        "es": "Finanzas",
+        "en": "Finance"
+      },
+      "quote": {
+        "es": "Siempre atenta para que nada se escape.",
+        "en": "Always watching so nothing slips through."
+      }
+    },
+    {
+      "id": "arte-ia",
+      "image": "/images/chimp-arte-ia.jpg",
+      "gender": "m",
+      "role": {
+        "es": "El Arte de la IA",
+        "en": "The Art of AI"
+      },
+      "area": {
+        "es": "Inteligencia Artificial",
+        "en": "Artificial Intelligence"
+      },
+      "quote": {
+        "es": "Siempre abriendo nuevos caminos con herramientas que nos ayudan a mejorar e implementar las mejores soluciones.",
+        "en": "Always opening new paths with tools that help us improve and implement the best solutions."
+      }
     }
   ]
 }

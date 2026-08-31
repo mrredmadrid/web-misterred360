@@ -7,10 +7,18 @@ import {
   Clapperboard,
   Megaphone,
   BarChart3,
+  Bot,
+  Clock,
+  Target,
+  MessageCircle,
+  Video,
+  Scissors,
+  Wand2,
+  CalendarCheck,
   type LucideIcon,
 } from "lucide-react";
 import type { Locale } from "./i18n";
-import { loc, type Localized } from "./content";
+import { loc, img, type Localized } from "./content";
 
 import servicesContent from "../content/services.json";
 import processContent from "../content/process.json";
@@ -24,6 +32,8 @@ import manifestoContent from "../content/manifesto.json";
 import siteContent from "../content/site.json";
 import designContent from "../content/design.json";
 import seoContent from "../content/seo.json";
+import agentesIAContent from "../content/agentesIA.json";
+import partnersContent from "../content/partners.json";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Capa de resolución de contenido
@@ -43,6 +53,14 @@ const ICONS: Record<string, LucideIcon> = {
   clapperboard: Clapperboard,
   megaphone: Megaphone,
   "bar-chart-3": BarChart3,
+  bot: Bot,
+  clock: Clock,
+  target: Target,
+  "message-circle": MessageCircle,
+  video: Video,
+  scissors: Scissors,
+  "wand-2": Wand2,
+  "calendar-check": CalendarCheck,
 };
 
 /* ── Servicios ──────────────────────────────────────────── */
@@ -64,6 +82,8 @@ export interface ServiceBlock {
   claim: string;
   description: string;
   accent: "brand" | "ocean";
+  image?: string;
+  imageAlt?: string;
   services: Service[];
 }
 
@@ -75,13 +95,15 @@ export function getServiceBlocks(locale: Locale): ServiceBlock[] {
     claim: loc(b.claim, locale),
     description: loc(b.description, locale),
     accent: b.accent as "brand" | "ocean",
+    image: img((b as { image?: string }).image),
+    imageAlt: (b as { imageAlt?: string }).imageAlt,
     services: b.services.map((s) => ({
       id: s.id,
       name: loc(s.name, locale),
       tagline: loc(s.tagline, locale),
       brief: loc(s.brief, locale),
       long: loc(s.long, locale),
-      image: s.image,
+      image: img(s.image),
       imageAlt: s.imageAlt,
       icon: ICONS[s.icon] ?? Newspaper,
     })),
@@ -114,7 +136,7 @@ export function getProcessSteps(locale: Locale): ProcessStep[] {
     title: loc(s.title, locale),
     description: loc(s.description, locale),
     extended: loc(s.extended, locale),
-    image: s.image,
+    image: img(s.image),
     tags: loc(s.tags as unknown as Localized<string[]>, locale),
     deliverables: loc(s.deliverables as unknown as Localized<string[]>, locale),
   }));
@@ -149,7 +171,7 @@ export interface CastMember {
 export function getCastMembers(locale: Locale): CastMember[] {
   return teamContent.members.map((m) => ({
     id: m.id,
-    image: m.image,
+    image: img(m.image),
     gender: m.gender as "m" | "f",
     role: loc(m.role, locale),
     area: loc(m.area, locale),
@@ -209,8 +231,8 @@ export function getManifesto(locale: Locale) {
     badge: loc(manifestoContent.badge, locale),
     ceoQuote: loc(manifestoContent.ceoQuote, locale),
     ceoRole: loc(manifestoContent.ceoRole, locale),
-    image: manifestoContent.image,
-    imageFallback: manifestoContent.imageFallback,
+    image: img(manifestoContent.image),
+    imageFallback: img(manifestoContent.imageFallback),
   };
 }
 
@@ -243,7 +265,7 @@ export function getSeo(locale: Locale, page: SeoPage): { title: string; descript
 /* ── Marquee ────────────────────────────────────────────── */
 export const marqueeItems = [
   "Identidad",
-  "Reputación",
+  "Comunicación",
   "Creación",
   "Estrategia",
   "Impacto",
@@ -254,7 +276,6 @@ export const marqueeItems = [
   "Creación Audiovisual",
   "RRPP y Eventos",
   "Publicidad y Marketing",
-  "Estudios de Mercado",
 ];
 
 /* Rutas de las páginas interiores (hash routing) */
@@ -262,7 +283,10 @@ export const navLinks = [
   { label: "Manifiesto", href: "/manifiesto" },
   { label: "Servicios", href: "/servicios" },
   { label: "Método 360", href: "/metodo" },
+  { label: "Agentes IA", href: "/agentes-ia" },
   { label: "Elenco", href: "/elenco" },
+  { label: "Partners", href: "/partners" },
+  { label: "Por qué nosotros", href: "/por-que-nosotros" },
   { label: "Insights", href: "/insights" },
 ];
 
@@ -273,3 +297,87 @@ export const socialLinks = [
   { short: "X", label: "X / Twitter" },
   { short: "YT", label: "YouTube" },
 ];
+
+/* ── Página Agentes IA ─────────────────────────────────── */
+export interface AgentCapability {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface AgentProcessStep {
+  index: string;
+  title: string;
+  description: string;
+}
+
+export interface AgentFaqItem {
+  q: string;
+  a: string;
+}
+
+export function getAgentesIA(locale: Locale) {
+  return {
+    hero: {
+      kicker: loc(agentesIAContent.hero.kicker, locale),
+      title: loc(agentesIAContent.hero.title, locale),
+      intro: loc(agentesIAContent.hero.intro, locale),
+      meta: loc(agentesIAContent.hero.meta, locale),
+    },
+    statement: loc(agentesIAContent.statement, locale),
+    promo: {
+      badge: loc(agentesIAContent.promo.badge, locale),
+      title: loc(agentesIAContent.promo.title, locale),
+      description: loc(agentesIAContent.promo.description, locale),
+      cta: loc(agentesIAContent.promo.cta, locale),
+    },
+    capabilities: agentesIAContent.capabilities.map((c): AgentCapability => ({
+      id: c.id,
+      icon: ICONS[c.icon] ?? Bot,
+      title: loc(c.title, locale),
+      description: loc(c.description, locale),
+    })),
+    process: agentesIAContent.process.map((p): AgentProcessStep => ({
+      index: p.index,
+      title: loc(p.title, locale),
+      description: loc(p.description, locale),
+    })),
+    faq: agentesIAContent.faq.map((f): AgentFaqItem => ({
+      q: loc(f.q, locale),
+      a: loc(f.a, locale),
+    })),
+  };
+}
+
+/* ── Página Partners ────────────────────────────────────── */
+export interface PartnerPillar {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export function getPartners(locale: Locale) {
+  return {
+    hero: {
+      kicker: loc(partnersContent.hero.kicker, locale),
+      title: loc(partnersContent.hero.title, locale),
+      intro: loc(partnersContent.hero.intro, locale),
+      meta: loc(partnersContent.hero.meta, locale),
+    },
+    statement: loc(partnersContent.statement, locale),
+    pillars: partnersContent.pillars.map((p): PartnerPillar => ({
+      id: p.id,
+      icon: ICONS[p.icon] ?? Users,
+      title: loc(p.title, locale),
+      description: loc(p.description, locale),
+    })),
+    close: {
+      kicker: loc(partnersContent.close.kicker, locale),
+      title: loc(partnersContent.close.title, locale),
+      description: loc(partnersContent.close.description, locale),
+      cta: loc(partnersContent.close.cta, locale),
+    },
+  };
+}

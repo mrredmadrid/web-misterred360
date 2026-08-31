@@ -88,12 +88,12 @@ export default function ServiciosPage({
       title="page.srv.title"
       intro="page.srv.intro"
       meta="page.srv.meta"
-      figure="/images/chimp-ads.jpg"
+      figure="/images/chimp-ads-f.jpg"
       figureAlt="page.srv.figure_alt"
       seoTitle={seo.title}
       seoDesc={seo.description}
       path="/servicios"
-      ogImage={`${SITE}/images/chimp-ads.jpg`}
+      ogImage={`${SITE}/images/chimp-ads-f.jpg`}
       breadcrumbs={[
         { name: "Inicio", path: "/" },
         { name: t("page.srv.kicker"), path: "/servicios" },
@@ -120,6 +120,11 @@ export default function ServiciosPage({
       {/* ── Bloques de servicios ── */}
       {serviceBlocks.map((block, bi) => {
         const isBrand = block.accent === "brand";
+        const isDark = bi % 2 === 0;
+        const txtPrimary = isDark ? "text-paper" : "text-ink";
+        const txtSecondary = isDark ? "text-smoke" : "text-ink/65";
+        const borderCol = isDark ? "border-white/10" : "border-ink/15";
+        const numOutline = isBrand ? "text-outline-brand" : isDark ? "text-outline" : "text-outline-ink";
         return (
           <section
             key={block.id}
@@ -127,22 +132,22 @@ export default function ServiciosPage({
             ref={(el) => {
               refs.current[block.id] = el;
             }}
-            className={`px-5 md:px-10 xl:px-16 py-20 md:py-28 scroll-mt-32 ${bi % 2 ? "bg-coal/50" : "bg-ink"}`}
+            className={`px-5 md:px-10 xl:px-16 py-20 md:py-28 scroll-mt-32 ${isDark ? "bg-ink" : "bg-paper"}`}
           >
             <div className="max-w-[1600px] mx-auto">
               {/* Cabecera del bloque */}
               <div className="grid lg:grid-cols-12 gap-8 items-end mb-16">
                 <div className="lg:col-span-8 flex items-start gap-6 md:gap-10">
                   <span
-                    className={`font-display font-semibold leading-none text-7xl md:text-8xl shrink-0 ${
-                      isBrand ? "text-outline-brand" : "text-outline"
-                    }`}
+                    className={`font-display font-semibold leading-none text-7xl md:text-8xl shrink-0 ${numOutline}`}
                     aria-hidden="true"
                   >
                     {block.index}
                   </span>
                   <div>
-                    <h2 className="font-display font-semibold uppercase leading-[0.97] tracking-[-0.02em] text-[clamp(2rem,4.6vw,4.2rem)]">
+                    <h2
+                      className={`font-display font-semibold uppercase leading-[0.97] tracking-[-0.02em] text-[clamp(2rem,4.6vw,4.2rem)] ${txtPrimary}`}
+                    >
                       {block.title}
                     </h2>
                     <p
@@ -154,10 +159,25 @@ export default function ServiciosPage({
                     </p>
                   </div>
                 </div>
-                <p className="lg:col-span-4 text-[15px] leading-relaxed text-smoke max-w-md lg:ml-auto">
+                <p className={`lg:col-span-4 text-[15px] leading-relaxed max-w-md lg:ml-auto ${txtSecondary}`}>
                   {block.description}
                 </p>
               </div>
+
+              {block.image && (
+                <div className={`mb-16 rounded-[2rem] overflow-hidden border ${borderCol} aspect-[21/9]`}>
+                  <img
+                    src={block.image}
+                    alt={block.imageAlt}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                    onError={(e) => {
+                      const wrapper = e.currentTarget.parentElement;
+                      if (wrapper) wrapper.style.display = "none";
+                    }}
+                  />
+                </div>
+              )}
 
               {/* Servicios del bloque */}
               <div className="space-y-20 md:space-y-24">
@@ -178,13 +198,7 @@ export default function ServiciosPage({
                         className={`lg:col-span-5 relative ${reversed ? "lg:order-2" : ""}`}
                         data-cursor="view"
                       >
-                        <span
-                          className="absolute -top-9 -left-2 font-display font-semibold text-7xl text-outline select-none"
-                          aria-hidden="true"
-                        >
-                          {block.index}.{si + 1}
-                        </span>
-                        <div className="relative rounded-[2rem] overflow-hidden border border-white/10 aspect-[4/5] sm:aspect-[4/3]">
+                        <div className={`relative rounded-[2rem] overflow-hidden border ${borderCol} aspect-[4/5] sm:aspect-[4/3]`}>
                           <img
                             src={s.image}
                             alt={s.imageAlt}
@@ -222,19 +236,26 @@ export default function ServiciosPage({
                         >
                           <Icon className="w-6 h-6" strokeWidth={1.6} />
                         </span>
-                        <h3 className="font-display font-semibold leading-tight text-[clamp(1.8rem,3.4vw,3rem)] text-paper">
-                          {s.name}
+                        <h3 className={`font-display font-semibold leading-tight text-[clamp(1.8rem,3.4vw,3rem)] ${txtPrimary}`}>
+                          {s.name}.{" "}
+                          <span className={isBrand ? "text-brand" : "text-steel"}>
+                            {s.tagline.toUpperCase()}
+                          </span>
                         </h3>
-                        <p className="mt-5 text-lg md:text-xl font-medium leading-snug text-paper/90 max-w-2xl">
+                        <p className={`mt-5 text-lg md:text-xl font-medium leading-snug max-w-2xl ${isDark ? "text-paper/90" : "text-ink/90"}`}>
                           {s.brief}
                         </p>
-                        <p className="mt-4 text-[15px] leading-relaxed text-smoke max-w-2xl">
+                        <p className={`mt-4 text-[15px] leading-relaxed max-w-2xl ${txtSecondary}`}>
                           {s.long}
                         </p>
                         <button
                           onClick={() => onNavigate("/contacto")}
                           className={`group/link mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors ${
-                            isBrand ? "text-brand hover:text-flame" : "text-steel hover:text-paper"
+                            isBrand
+                              ? "text-brand hover:text-flame"
+                              : isDark
+                              ? "text-steel hover:text-paper"
+                              : "text-steel hover:text-ink"
                           }`}
                         >
                           {t("page.srv.cta.service")}

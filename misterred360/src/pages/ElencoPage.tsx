@@ -55,6 +55,7 @@ export default function ElencoPage({
       index="05"
       kicker="page.ele.kicker"
       title="page.ele.title"
+      titleSize="sm"
       intro="page.ele.intro"
       meta="page.ele.meta"
       figure="/images/chimp-hero.jpg"
@@ -73,7 +74,7 @@ export default function ElencoPage({
       {/* ── El personaje como sistema ── */}
       <section className="bg-paper text-ink">
         <div className="px-5 md:px-10 xl:px-16 py-20 md:py-28 max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-5">
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,22 +115,22 @@ export default function ElencoPage({
             whileInView={{ clipPath: "inset(0% 0 0 0)" }}
             viewport={{ once: true, margin: "-12%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-7 relative"
             data-cursor="view"
           >
             <div
               className="absolute inset-0 translate-x-4 -translate-y-3 rounded-[2rem] bg-ink"
               aria-hidden="true"
             />
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-w-[420px] lg:ml-auto group">
+            <div className="relative rounded-[2rem] overflow-hidden aspect-video group">
               <img
-                src="/images/chimp-bw.jpg"
-                alt={t("page.ele.figure_alt")}
-                className="w-full h-full object-cover object-[center_20%] duotone-red"
+                src="/images/oficina.png"
+                alt="El elenco al completo de MISTERRED360 reunido en la sala de juntas"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
             </div>
-            <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-ink/45 max-w-[420px] lg:ml-auto">
+            <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-ink/45">
               {t("page.ele.h.fig")}
             </p>
           </motion.div>
@@ -194,6 +195,25 @@ export default function ElencoPage({
                 </figcaption>
               </motion.figure>
             ))}
+          </div>
+
+          <div className="mt-6 grid sm:grid-cols-2 gap-6">
+            <div className="rounded-[1.5rem] border border-white/10 bg-coal/60 px-8 py-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-3">
+                {t("page.ele.collab.title")}
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
+                {t("page.ele.collab.desc")}
+              </p>
+            </div>
+            <div className="rounded-[1.5rem] border border-white/10 bg-coal/60 px-8 py-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-3">
+                {t("page.ele.allies.title")}
+              </p>
+              <p className="text-sm md:text-[15px] leading-relaxed text-smoke">
+                {t("page.ele.allies.desc")}
+              </p>
+            </div>
           </div>
         </div>
       </section>

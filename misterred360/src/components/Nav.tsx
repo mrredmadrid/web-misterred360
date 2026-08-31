@@ -16,7 +16,10 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const NAV_ROUTES = [
   { key: "nav.manifiesto", href: "/manifiesto" },
   { key: "nav.servicios", href: "/servicios", dropdown: true },
+  { key: "nav.agentesIA", href: "/agentes-ia" },
   { key: "nav.elenco", href: "/elenco" },
+  { key: "nav.partners", href: "/partners" },
+  { key: "nav.whyus", href: "/por-que-nosotros" },
   { key: "nav.insights", href: "/insights" },
 ] as const;
 
@@ -68,7 +71,10 @@ export default function Nav({
     { key: "nav.servicios", href: "/servicios" },
     { key: "nav.metodo", href: "/metodo" },
     { key: "nav.precios", href: "/servicios#precios" },
+    { key: "nav.agentesIA", href: "/agentes-ia" },
     { key: "nav.elenco", href: "/elenco" },
+    { key: "nav.partners", href: "/partners" },
+    { key: "nav.whyus", href: "/por-que-nosotros" },
     { key: "nav.insights", href: "/insights" },
     { key: "nav.talk", href: "/contacto" },
   ];
@@ -83,18 +89,27 @@ export default function Nav({
           scrolled ? "bg-ink/80 backdrop-blur-md border-b border-white/[0.07]" : ""
         }`}
       >
-        <div className="flex items-center justify-between h-[72px] px-5 md:px-10 gap-4">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:flex items-center lg:justify-between h-[72px] px-5 md:px-10 gap-3">
           <a
             href="#top"
             onClick={(e) => go(e, "#top")}
-            className="text-[17px] leading-none"
+            className="justify-self-start text-[15px] sm:text-[17px] leading-none truncate"
             aria-label={t("nav.home_aria")}
           >
             <Wordmark />
           </a>
 
+          {/* Hamburguesa · centrada en móvil, oculta desde lg (la barra completa ya está visible) */}
+          <button
+            onClick={() => setOpen(true)}
+            className="lg:hidden justify-self-center shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-paper"
+            aria-label={t("nav.open")}
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
           <nav
-            className="hidden lg:flex items-center gap-8"
+            className="hidden lg:flex items-center gap-4 xl:gap-6"
             aria-label={t("nav.manifiesto")}
           >
             {NAV_ROUTES.map((l) =>
@@ -109,7 +124,7 @@ export default function Nav({
                     href={l.href}
                     onClick={(e) => go(e, l.href)}
                     aria-expanded={dropdown}
-                    className="link-line inline-flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                    className="link-line inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-[0.12em] text-paper/80 hover:text-paper transition-colors"
                   >
                     {t(l.key)}
                     <ChevronDown
@@ -160,7 +175,7 @@ export default function Nav({
                   key={l.href}
                   href={l.href}
                   onClick={(e) => go(e, l.href)}
-                  className="link-line text-[13px] font-medium uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors"
+                  className="link-line whitespace-nowrap text-[12px] xl:text-[13px] font-medium uppercase tracking-[0.08em] xl:tracking-[0.12em] text-paper/80 hover:text-paper transition-colors"
                 >
                   {t(l.key)}
                 </a>
@@ -168,23 +183,18 @@ export default function Nav({
             )}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
+          <div className="justify-self-end flex flex-col lg:flex-row items-end lg:items-center gap-1.5 lg:gap-3">
             <a
               href="/contacto"
               onClick={(e) => go(e, "/contacto")}
-              className="group inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-flame"
+              className="lg:order-2 group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand px-3.5 sm:px-5 py-1.5 sm:py-2.5 text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
               {t("nav.talk")}
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <button
-              onClick={() => setOpen(true)}
-              className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-paper"
-              aria-label={t("nav.open")}
-            >
-              <Menu className="w-5 h-5" />
-            </button>
+            <div className="lg:order-1">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </motion.header>
@@ -216,9 +226,9 @@ export default function Nav({
               </div>
             </div>
 
-            <div className="flex-1 grid lg:grid-cols-[1fr_360px] overflow-hidden">
+            <div className="flex-1 grid lg:grid-cols-[1fr_360px] overflow-y-auto overflow-x-hidden">
               <nav
-                className="flex flex-col justify-center gap-1 px-5 md:px-10"
+                className="flex flex-col justify-center gap-1 px-5 md:px-10 py-6"
                 aria-label={t("nav.open")}
               >
                 {mobileLinks.map((l, i) => (

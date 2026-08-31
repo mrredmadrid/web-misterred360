@@ -41,7 +41,7 @@ export default function WhatsAppButton({
           role="dialog"
           aria-modal="false"
           aria-labelledby="wa-panel-title"
-          className="fixed z-[94] bottom-24 right-5 md:bottom-28 md:right-7 w-[min(94vw,340px)] rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)]"
+          className="fixed z-[94] bottom-36 right-5 md:bottom-40 md:right-7 w-[min(94vw,340px)] rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)]"
         >
           {/* Cabecera verde WhatsApp */}
           <header className="relative bg-[#25D366] text-[#053e2c] px-5 py-4 flex items-start gap-3">

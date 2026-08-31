@@ -73,9 +73,9 @@ export default function Loader({ onDone }: { onDone: () => void }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
           <img
-            src="/images/chimp-hero.jpg"
+            src="/images/gioconda-chimp.png"
             alt=""
-            className="w-full h-full object-cover object-[center_18%] scale-110"
+            className="w-full h-full object-cover object-[center_20%] scale-110"
           />
         </motion.div>
       </div>

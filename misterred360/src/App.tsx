@@ -11,9 +11,8 @@ import Manifesto from "./components/Manifesto";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import WhyUs from "./components/WhyUs";
-import ChimpGallery from "./components/ChimpGallery";
+import AgentesIAPromo from "./components/AgentesIAPromo";
 import Testimonials from "./components/Testimonials";
-import Insights from "./components/Insights";
 import Faq from "./components/Faq";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
@@ -22,7 +21,10 @@ import Blog from "./components/Blog";
 import ManifiestoPage from "./pages/ManifiestoPage";
 import ServiciosPage from "./pages/ServiciosPage";
 import MetodoPage from "./pages/MetodoPage";
+import AgentesIAPage from "./pages/AgentesIAPage";
 import ElencoPage from "./pages/ElencoPage";
+import PartnersPage from "./pages/PartnersPage";
+import WhyUsPage from "./pages/WhyUsPage";
 import ContactPage from "./pages/ContactPage";
 import PoliticaCookiesPage from "./pages/PoliticaCookiesPage";
 import PoliticaPrivacidadPage from "./pages/PoliticaPrivacidadPage";
@@ -46,7 +48,14 @@ import { bootstrapNative } from "./lib/native";
    /manifiesto · /servicios · /metodo · /elenco · /insights
    ─────────────────────────────────────────────────────────── */
 
-type Page = "manifiesto" | "servicios" | "metodo" | "elenco";
+type Page =
+  | "manifiesto"
+  | "servicios"
+  | "metodo"
+  | "agentes-ia"
+  | "elenco"
+  | "partners"
+  | "por-que-nosotros";
 type LegalPage = "politica-de-cookies" | "politica-de-privacidad" | "politica-de-ia";
 type Route =
   | { name: "home" }
@@ -63,7 +72,15 @@ const LEGAL_PAGES: LegalPage[] = [
   "politica-de-ia",
 ];
 
-const PAGES: Page[] = ["manifiesto", "servicios", "metodo", "elenco"];
+const PAGES: Page[] = [
+  "manifiesto",
+  "servicios",
+  "metodo",
+  "agentes-ia",
+  "elenco",
+  "partners",
+  "por-que-nosotros",
+];
 
 function parseRoute(): Route {
   if (typeof window === "undefined") return { name: "home" };
@@ -222,6 +239,12 @@ export default function App() {
         <ServiciosPage {...pageProps} />
       ) : route.page === "metodo" ? (
         <MetodoPage {...pageProps} />
+      ) : route.page === "agentes-ia" ? (
+        <AgentesIAPage {...pageProps} />
+      ) : route.page === "partners" ? (
+        <PartnersPage {...pageProps} />
+      ) : route.page === "por-que-nosotros" ? (
+        <WhyUsPage {...pageProps} />
       ) : (
         <ElencoPage {...pageProps} />
       );
@@ -250,22 +273,11 @@ export default function App() {
         {/* 04 · Diferenciales + resultados */}
         <WhyUs />
 
-        {/* 05 · El elenco: las caras del personaje */}
-        <ChimpGallery />
+        {/* 05 · Avance de Agentes IA (detalle completo en /agentes-ia) */}
+        <AgentesIAPromo />
 
         {/* 06 · Reputación */}
         <Testimonials />
-
-        {/* 07 · Insights */}
-        <Insights
-          onOpenBlog={() => navigate("/insights")}
-          onOpenPost={(slug) => navigate(`/insights/${encodeURIComponent(slug)}`)}
-        />
-
-        {/* Cinta inversa hacia el cierre */}
-        <div className="relative z-30 -my-7">
-          <Marquee reverse />
-        </div>
 
         {/* Preguntas frecuentes · rich snippets FAQPage */}
         <Faq />
@@ -362,7 +374,7 @@ function AppShell({
   );
 }
 
-/* Un solo FAB · dos panels controlados */
+/* Dos FAB siempre visibles · dos panels controlados */
 function ChatDock() {
   const [wa, setWa] = useState(false);
   const [ai, setAi] = useState(false);
@@ -370,16 +382,16 @@ function ChatDock() {
   const pick = (choice: LauncherChoice) => {
     if (choice === "assistant") {
       setWa(false);
-      setAi(true);
+      setAi((v) => !v);
     } else {
       setAi(false);
-      setWa(true);
+      setWa((v) => !v);
     }
   };
 
   return (
     <>
-      <ChatLauncher onPick={pick} panelOpen={wa || ai} />
+      <ChatLauncher onPick={pick} active={ai ? "assistant" : wa ? "whatsapp" : null} />
       <WhatsAppButton open={wa} onClose={() => setWa(false)} />
       <AIAssistant open={ai} onClose={() => setAi(false)} />
     </>

@@ -4,14 +4,14 @@
       "id": "comunicacion",
       "index": "01",
       "accent": "brand",
-      "title": { "es": "Reputación", "en": "Reputation" },
+      "title": { "es": "Comunicación", "en": "Communication" },
       "claim": {
         "es": "Que hablen bien de ti. Y en el lugar correcto.",
         "en": "Get people talking about you. In the right room."
       },
       "description": {
-        "es": "La credibilidad no se compra en anuncios. Se construye en prensa, en instituciones y en los diez minutos antes de la entrevista. Aquí empieza todo.",
-        "en": "Credibility isn't bought in ads. It's built in press, in institutions and in the ten minutes before the interview. Everything starts here."
+        "es": "Con impactos garantizados en medios de comunicación internacionales, nacionales, regionales o locales. Analizamos tus necesidades y te damos visibilidad y reputación online para incrementar el retorno y la imagen de marca.",
+        "en": "With guaranteed impact in international, national, regional and local media. We analyze your needs and give you visibility and online reputation to increase return and brand image."
       },
       "services": [
         {
@@ -20,14 +20,14 @@
           "image": "/images/chimp-press.jpg",
           "imageAlt": "El Portavoz: el chimpancé de MISTERRED360 en un atril de rueda de prensa",
           "name": { "es": "Gabinete de Prensa", "en": "Press Office" },
-          "tagline": { "es": "Del hecho al titular.", "en": "From fact to headline." },
+          "tagline": { "es": "Ya nunca volverás a ser uno más.", "en": "You'll never be just one more again." },
           "brief": {
             "es": "Transformamos tu actividad en noticias, contenidos y oportunidades de visibilidad para que tu marca gane presencia, credibilidad e impacto público.",
             "en": "We turn your activity into news, content and visibility opportunities so your brand gains presence, credibility and public impact."
           },
           "long": {
-            "es": "Convertimos la actividad de tu empresa, institución o proyecto en mensajes con valor informativo para que tu trabajo gane visibilidad, reputación y presencia pública. Diseñamos acciones de comunicación, elaboramos contenidos periodísticos y trabajamos la relación con medios para transformar tu actividad en noticia y posicionarte donde de verdad importa.",
-            "en": "We turn the activity of your company, institution or project into messages with news value so your work gains visibility, reputation and public presence. We design communication actions, produce editorial content and manage media relations to turn your activity into news and position you where it really matters."
+            "es": "Convertimos la actividad de tu empresa, institución o proyecto en mensajes con valor informativo para que tu trabajo gane visibilidad, reputación y presencia pública. Diseñamos acciones de comunicación, elaboramos contenidos periodísticos personalizados y trabajamos la relación con medios para transformar tu actividad en noticia y posicionarte donde de verdad importa.",
+            "en": "We turn the activity of your company, institution or project into messages with news value so your work gains visibility, reputation and public presence. We design communication actions, produce personalized editorial content and manage media relations to turn your activity into news and position you where it really matters."
           }
         },
         {
@@ -86,8 +86,8 @@
       "accent": "ocean",
       "title": { "es": "Identidad", "en": "Identity" },
       "claim": {
-        "es": "Cómo te reconocen antes de que te presentes.",
-        "en": "How people know you before you introduce yourself."
+        "es": "Carácter y personalidad que te elevan a otro nivel.",
+        "en": "Character and personality that take you to another level."
       },
       "description": {
         "es": "Tu marca ya dice algo de ti. La pregunta es si dice lo que tú quieres. Identidad, naming y posicionamiento sin plantillas ni degradados.",
@@ -100,10 +100,13 @@
           "image": "/images/chimp-brand.jpg",
           "imageAlt": "El Diseñador: el chimpancé de MISTERRED360 ante un muro de identidad de marca",
           "name": { "es": "Imagen Corporativa", "en": "Corporate Identity" },
-          "tagline": { "es": "Identidad con carácter.", "en": "Identity with character." },
+          "tagline": {
+            "es": "Carácter y personalidad que te elevan a otro nivel.",
+            "en": "Character and personality that take you to another level."
+          },
           "brief": {
-            "es": "Creamos o redefinimos tu identidad visual para que refleje con claridad la esencia y el valor de tu actividad.",
-            "en": "We create or redefine your visual identity so it clearly reflects the essence and value of your activity."
+            "es": "Creamos o redefinimos tu identidad visual corporativa para que refleje con claridad la esencia y el valor de tu actividad. Desde una web impactante con asistente virtual y línea de atención 24/7/365 a presentaciones de alto impacto o publicaciones digitales o impresas temáticas que te elevarán a otro nivel.",
+            "en": "We create or redefine your corporate visual identity so it clearly reflects the essence and value of your activity. From a striking website with a virtual assistant and 24/7/365 support to high-impact presentations or themed digital and print publications that take you to another level."
           },
           "long": {
             "es": "La imagen de una marca debe expresar con claridad quién es, qué ofrece y por qué es diferente. Desarrollamos o renovamos identidades corporativas para que reflejen la esencia de tu actividad y proyecten una imagen sólida, coherente y profesional en todos tus puntos de contacto.",
@@ -132,46 +135,64 @@
       "id": "difusion",
       "index": "03",
       "accent": "brand",
+      "image": "/images/equipo-reunion.jpg",
+      "imageAlt": "El equipo de MISTERRED360 trabajando en la sala de reuniones",
       "title": { "es": "Creación y Difusión", "en": "Creation and Distribution" },
       "claim": {
-        "es": "Lo que la gente ve, comparte y recuerda.",
-        "en": "What people see, share and remember."
+        "es": "Creamos para que crean en ti.",
+        "en": "We create so they believe in you."
       },
       "description": {
-        "es": "Audiovisual, publicidad, eventos y digital que no se olvidan. Un anuncio que no se recuerda es un gasto. Uno que se recuerda es una inversión.",
-        "en": "Video, advertising, events and digital that stick. An ad no one remembers is an expense. One that gets remembered is an investment."
+        "es": "Creamos desde cero nuevos espacios web, blogs, newsletters, presentaciones de alto impacto o campañas publicitarias y de marketing enfocadas a generar un relato empresarial e imagen de marca que mejoren el alcance, la notoriedad y la percepción de marca.",
+        "en": "We create brand-new websites, blogs, newsletters, high-impact presentations and advertising and marketing campaigns from scratch, aimed at building a business narrative and brand image that improve reach, awareness and brand perception."
       },
       "services": [
         {
           "id": "publicidad-marketing",
           "icon": "megaphone",
-          "image": "/images/chimp-ads.jpg",
-          "imageAlt": "El Publicista: el chimpancé de MISTERRED360 con un megáfono rojo",
+          "image": "/images/chimp-ads-f.jpg",
+          "imageAlt": "La Publicista: la chimpancé de MISTERRED360 revisando la estrategia de marketing",
           "name": { "es": "Publicidad y Marketing", "en": "Advertising and Marketing" },
           "tagline": { "es": "Impacto que convierte.", "en": "Impact that converts." },
           "brief": {
-            "es": "Desarrollamos campañas y mensajes orientados a maximizar visibilidad, notoriedad e impacto comercial.",
-            "en": "We develop campaigns and messages aimed at maximizing visibility, awareness and commercial impact."
+            "es": "Nuestro equipo creativo define la estrategia, los mensajes, la creatividad y los soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
+            "en": "Our creative team defines the strategy, messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
           },
           "long": {
-            "es": "Diseñamos acciones publicitarias y campañas de marketing enfocadas a mejorar el alcance, la notoriedad y la respuesta del público. Definimos mensajes, creatividad y soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
-            "en": "We design advertising actions and marketing campaigns focused on improving reach, awareness and audience response. We define messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
+            "es": "Desarrollamos campañas, presentaciones y eventos con un relato nítido y mensajes orientados a maximizar visibilidad, notoriedad e impacto comercial y empresarial. Diseñamos acciones publicitarias y campañas de marketing enfocadas a mejorar el alcance, la notoriedad y la respuesta del público. Definimos mensajes, creatividad y soportes adecuados para que cada campaña tenga coherencia estratégica y genere un impacto real en tus objetivos comerciales y de comunicación.",
+            "en": "We develop campaigns, presentations and events with a clear narrative and messages aimed at maximizing visibility, awareness and commercial and business impact. We design advertising actions and marketing campaigns focused on improving reach, awareness and audience response. We define messages, creativity and channels so every campaign has strategic coherence and generates real impact on your commercial and communication goals."
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "index": "04",
+      "accent": "ocean",
+      "title": { "es": "Inteligencia Artificial", "en": "Artificial Intelligence" },
+      "claim": {
+        "es": "Que trabaje mientras tú piensas.",
+        "en": "Let it work while you think."
+      },
+      "description": {
+        "es": "Automatización con criterio, no con plantillas. Agentes de IA que responden, cualifican y acompañan sin perder el tono de tu marca.",
+        "en": "Automation with judgment, not templates. AI agents that respond, qualify and support without losing your brand's voice."
+      },
+      "services": [
         {
-          "id": "estudios-de-mercado",
-          "icon": "bar-chart-3",
-          "image": "/images/chimp-meeting.jpg",
-          "imageAlt": "El equipo de MISTERRED360 en la mesa de reuniones estudiando datos de mercado",
-          "name": { "es": "Estudios de Mercado", "en": "Market Research" },
-          "tagline": { "es": "Decidir con datos.", "en": "Decide with data." },
+          "id": "agentes-ia",
+          "icon": "bot",
+          "image": "/images/chimp-strategy.jpg",
+          "imageAlt": "El Ingeniero: el chimpancé de MISTERRED360 revisando el panel de control de un agente de inteligencia artificial",
+          "name": { "es": "Agentes IA Personalizados", "en": "Custom AI Agents" },
+          "tagline": { "es": "Un empleado que nunca descansa.", "en": "An employee that never clocks out." },
           "brief": {
-            "es": "Generamos información útil para entender mejor tu entorno y tomar decisiones estratégicas con mayor seguridad.",
-            "en": "We generate useful information so you understand your environment better and make strategic decisions with more certainty."
+            "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para atender, cualificar y acompañar a tus clientes las 24 horas, con el tono exacto de tu marca.",
+            "en": "We design and train custom AI agents to attend, qualify and support your customers around the clock, in your brand's exact tone."
           },
           "long": {
-            "es": "Tomar decisiones sin información es asumir riesgos innecesarios. Desarrollamos estudios e investigaciones de mercado para obtener datos relevantes sobre tu actividad, tu entorno y tus oportunidades, facilitando decisiones más precisas, estrategias mejor orientadas y una capacidad de reacción más ágil ante los cambios.",
-            "en": "Deciding without information is taking unnecessary risks. We develop market studies and research to obtain relevant data about your activity, your environment and your opportunities, enabling more precise decisions, better-oriented strategies and a faster reaction to change."
+            "es": "Un agente de IA no es un chatbot genérico: es una extensión de tu equipo, entrenada con tu conocimiento, tu tono y tus procesos. Diseñamos, entrenamos e integramos agentes personalizados en WhatsApp, tu web o tus herramientas internas para responder al instante, cualificar leads, resolver dudas frecuentes y escalar a una persona cuando de verdad hace falta, sin perder ni un ápice de la voz de tu marca.",
+            "en": "An AI agent isn't a generic chatbot: it's an extension of your team, trained on your knowledge, your tone and your processes. We design, train and integrate custom agents into WhatsApp, your website or your internal tools to respond instantly, qualify leads, answer frequent questions and escalate to a person when it truly matters, without losing an ounce of your brand's voice."
           }
         }
       ]

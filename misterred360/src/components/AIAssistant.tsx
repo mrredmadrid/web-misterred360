@@ -148,7 +148,7 @@ export default function AIAssistant({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 24, scale: 0.95 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed z-[94] bottom-24 right-5 md:bottom-28 md:right-7 w-[min(94vw,400px)] h-[min(78vh,600px)] flex flex-col rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]"
+          className="fixed z-[94] bottom-36 right-5 md:bottom-40 md:right-7 w-[min(94vw,400px)] h-[min(78vh,600px)] flex flex-col rounded-[1.25rem] overflow-hidden bg-coal border border-white/12 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]"
         >
             {/* Cabecera */}
             <header className="relative px-5 py-4 border-b border-white/10 bg-ink flex items-center gap-3">
@@ -303,7 +303,7 @@ export default function AIAssistant({
 function localFallback(userMsg: string): string {
   const q = userMsg.toLowerCase();
   if (q.includes("servicio") || q.includes("hacéis") || q.includes("hacéis")) {
-    return "Trabajamos cinco territorios: Reputación (prensa, RRPP, crisis), Estrategia (plan 360, DIRCOM externo, auditoría), Identidad (branding, naming), Creación (audiovisual, publicidad, eventos) y Digital (redes, formación en IA). Puedes ver el detalle en la sección Servicios de la web.";
+    return "Trabajamos cinco territorios: Comunicación (prensa, RRPP, crisis), Estrategia (plan 360, DIRCOM externo, auditoría), Identidad (branding, naming), Creación (audiovisual, publicidad, eventos) y Digital (redes, formación en IA). Puedes ver el detalle en la sección Servicios de la web.";
   }
   if (q.includes("cómo trabaj") || q.includes("método") || q.includes("proceso")) {
     return "Aplicamos el Método Milímetro: escuchar hasta que duela, medir antes de opinar, construir a tu medida y estar cuando haga falta. Un interlocutor único, respuesta en 24h y una idea gratis ejecutable en 72h antes de contratar.";
