@@ -366,7 +366,7 @@ collections:
         name: team
         file: "misterred360/src/content/team.json"
         fields:
-          - label: "Miembros (8)"
+          - label: "Miembros"
             name: members
             widget: list
             summary: "{{fields.role.es}}"
