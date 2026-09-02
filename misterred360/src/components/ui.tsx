@@ -120,76 +120,91 @@ export function LineReveal({
   );
 }
 
-/* Reveal de titulares palabra a palabra, con máscara y stagger.
-   Igual que LineReveal pero cada palabra entra por separado en vez
-   de la línea entera — pensado para el titular de portada. */
-export function WordReveal({
+/* Reveal de titulares "a máquina de escribir": las letras aparecen
+   una a una, con un cursor parpadeante que se detiene al final —
+   pensado para el titular de portada. */
+export function TypeReveal({
   text,
   delay = 0,
   className = "",
   start = true,
   as = "div",
+  charDelay = 0.032,
 }: {
   text: string;
   delay?: number;
   className?: string;
   start?: boolean;
   as?: "h1" | "h2" | "h3" | "p" | "div";
+  charDelay?: number;
 }) {
-  const lines = text.split("\n");
+  const lines = text.split("\n").map(splitAccentChars);
+  const totalChars = lines.reduce((sum, l) => sum + l.length, 0);
   const MotionTag =
     ((motion as unknown as Record<string, typeof motion.div>)[as] as typeof motion.div) ??
     motion.div;
+  const cursor = (
+    <motion.span
+      key="cursor"
+      aria-hidden="true"
+      className="inline-block w-[0.05em] h-[0.85em] -mb-[0.05em] ml-1 bg-brand"
+      initial={{ opacity: 0 }}
+      animate={
+        start
+          ? { opacity: [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0] }
+          : { opacity: 0 }
+      }
+      transition={
+        start
+          ? {
+              delay: delay + totalChars * charDelay,
+              duration: 2.4,
+              times: [0, 0.02, 0.25, 0.27, 0.5, 0.52, 0.75, 0.77, 0.9, 0.92, 0.98, 1],
+              repeat: Infinity,
+            }
+          : { duration: 0 }
+      }
+    />
+  );
+  let i = 0;
   return (
-    <MotionTag
-      className={className}
-      initial="hidden"
-      animate={start ? "visible" : "hidden"}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.07, delayChildren: delay } },
-      }}
-    >
-      {lines.map((line, li) => (
+    <MotionTag className={className}>
+      {lines.map((chars, li) => (
         <span key={li} className="block">
-          {splitAccentWords(line).map((w, wi) => (
-            <span
-              key={wi}
-              className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] mr-[0.26em] last:mr-0"
-            >
+          {chars.map((c, ci) => {
+            const charIndex = i++;
+            const node = c.char;
+            return (
               <motion.span
-                className="inline-block will-change-transform"
-                variants={{
-                  hidden: { y: "110%", rotate: 2.5 },
-                  visible: {
-                    y: "0%",
-                    rotate: 0,
-                    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
-                  },
-                }}
+                key={ci}
+                className={c.red ? "text-brand" : undefined}
+                initial={{ opacity: 0 }}
+                animate={start ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.01, delay: delay + charIndex * charDelay }}
               >
-                {w.red ? <em className="not-italic text-brand">{w.text}</em> : w.text}
+                {node}
               </motion.span>
-            </span>
-          ))}
+            );
+          })}
+          {li === lines.length - 1 && cursor}
         </span>
       ))}
     </MotionTag>
   );
 }
 
-/* Divide una línea en palabras conservando qué tramos van en *rojo* */
-function splitAccentWords(line: string): { text: string; red: boolean }[] {
+/* Divide un texto en caracteres conservando qué tramos van en *rojo* */
+function splitAccentChars(line: string): { char: string; red: boolean }[] {
   const parts = line.split(/(\*[^*]+\*)/g);
-  const words: { text: string; red: boolean }[] = [];
+  const chars: { char: string; red: boolean }[] = [];
   for (const part of parts) {
     const red = part.startsWith("*") && part.endsWith("*");
     const clean = red ? part.slice(1, -1) : part;
-    for (const w of clean.split(/\s+/).filter(Boolean)) {
-      words.push({ text: w, red });
+    for (const ch of clean) {
+      chars.push({ char: ch, red });
     }
   }
-  return words;
+  return chars;
 }
 
 /* Marcas de acento: *rojo* y ~outline~ */

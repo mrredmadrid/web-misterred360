@@ -171,8 +171,8 @@
       "accent": "ocean",
       "title": { "es": "Inteligencia Artificial", "en": "Artificial Intelligence" },
       "claim": {
-        "es": "Que trabaje mientras tú piensas.",
-        "en": "Let it work while you think."
+        "es": "Que te ayude en el día a día mientras tú piensas.",
+        "en": "Let it help you day to day while you think."
       },
       "description": {
         "es": "Automatización con criterio, no con plantillas. Agentes de IA que responden, cualifican y acompañan sin perder el tono de tu marca.",
@@ -184,8 +184,8 @@
           "icon": "bot",
           "image": "/images/chimp-strategy.jpg",
           "imageAlt": "El Ingeniero: el chimpancé de MISTERRED360 revisando el panel de control de un agente de inteligencia artificial",
-          "name": { "es": "Agentes IA Personalizados", "en": "Custom AI Agents" },
-          "tagline": { "es": "Un aliado que nunca descansa.", "en": "An ally that never clocks out." },
+          "name": { "es": "Agentes IA Personalizados y Autónomos", "en": "Custom, Autonomous AI Agents" },
+          "tagline": { "es": "Un aliado más que nunca descansa.", "en": "One more ally that never clocks out." },
           "brief": {
             "es": "Diseñamos y entrenamos agentes de inteligencia artificial a medida para atender, cualificar y acompañar a tus clientes las 24 horas, con el tono exacto de tu marca.",
             "en": "We design and train custom AI agents to attend, qualify and support your customers around the clock, in your brand's exact tone."

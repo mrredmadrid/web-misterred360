@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { navigateTo, scrollToHash } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { getHero } from "../lib/data";
-import { WordReveal, OrbitBadge } from "./ui";
+import { TypeReveal, OrbitBadge } from "./ui";
 
 /* ───────────────────────────────────────────────────────────
    Hero · reveal por capas: parrilla editorial + titular
@@ -75,7 +75,7 @@ export default function Hero({ start }: { start: boolean }) {
           </motion.div>
 
           <div className="relative">
-            <WordReveal
+            <TypeReveal
               as="h1"
               start={start}
               delay={0.45}

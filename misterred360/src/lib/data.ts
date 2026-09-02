@@ -378,6 +378,11 @@ export function getPartners(locale: Locale) {
       title: loc(p.title, locale),
       description: loc(p.description, locale),
     })),
+    logos: {
+      kicker: loc(partnersContent.logos.kicker, locale),
+      title: loc(partnersContent.logos.title, locale),
+      items: partnersContent.logos.items,
+    },
     close: {
       kicker: loc(partnersContent.close.kicker, locale),
       title: loc(partnersContent.close.title, locale),

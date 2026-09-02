@@ -3,6 +3,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Kicker, LineReveal, Counter } from "./ui";
 import { stats, getManifesto } from "../lib/data";
 import { useI18n } from "../lib/i18n";
+import { useLightbox } from "./Lightbox";
 
 /* ───────────────────────────────────────────────────────────
    Sección 01 · EL MANIFIESTO — declaración editorial en claro
@@ -11,6 +12,7 @@ import { useI18n } from "../lib/i18n";
 export default function Manifesto() {
   const { locale } = useI18n();
   const m = getManifesto(locale);
+  const openLightbox = useLightbox();
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-22% 0px" });
   const { scrollYProgress } = useScroll({
@@ -84,6 +86,10 @@ export default function Manifesto() {
               transition={{ duration: 1, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
               className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-w-[520px] lg:ml-auto group"
               data-cursor="view"
+              onClick={(e) => {
+                const img = e.currentTarget.querySelector("img");
+                if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+              }}
             >
               <motion.img
                 style={{ y: imgY, scale: 1.12 }}

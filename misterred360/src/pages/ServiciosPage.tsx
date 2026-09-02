@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
 import { getServiceBlocks, getPricing, getSeo, publications } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
+import { useLightbox } from "../components/Lightbox";
 
 /* ───────────────────────────────────────────────────────────
    Página · SERVICIOS 360 — los 8 servicios desarrollados
@@ -22,6 +23,7 @@ export default function ServiciosPage({
   const serviceBlocks = getServiceBlocks(locale);
   const pricing = getPricing(locale);
   const seo = getSeo(locale, "servicios");
+  const openLightbox = useLightbox();
   const refs = useRef<Record<string, HTMLElement | null>>({});
 
   /* ── Datos estructurados: ItemList con los 8 servicios + Service por cada uno ── */
@@ -193,6 +195,10 @@ export default function ServiciosPage({
                         transition={{ duration: 0.8, ease }}
                         className={`lg:col-span-5 relative ${reversed ? "lg:order-2" : ""}`}
                         data-cursor="view"
+                        onClick={(e) => {
+                          const img = e.currentTarget.querySelector("img");
+                          if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+                        }}
                       >
                         <div className={`relative rounded-[2rem] overflow-hidden border ${borderCol} aspect-[4/5] sm:aspect-[4/3]`}>
                           <img
@@ -245,6 +251,35 @@ export default function ServiciosPage({
                         <p className={`mt-4 text-[15px] leading-relaxed max-w-2xl ${txtSecondary}`}>
                           {s.long}
                         </p>
+                        {s.id === "gabinete-de-prensa" && (
+                          <div className="mt-8 max-w-2xl space-y-3">
+                            {publications.items.map((pub) => (
+                              <div
+                                key={pub.client}
+                                className={`flex flex-wrap items-center gap-4 rounded-2xl border p-4 ${
+                                  isDark ? "border-white/10 bg-white/[0.03]" : "border-ink/10 bg-ink/[0.02]"
+                                }`}
+                              >
+                                <LogoSlot src={pub.clientLogo} alt={pub.client} big dark={isDark} />
+                                <span
+                                  className={`hidden sm:block h-9 w-px shrink-0 ${isDark ? "bg-white/10" : "bg-ink/10"}`}
+                                  aria-hidden="true"
+                                />
+                                <div className="flex flex-wrap items-center gap-2.5">
+                                  {pub.outlets.map((o, i) => (
+                                    <LogoSlot
+                                      key={i}
+                                      src={o.logo}
+                                      alt={o.name || `Medio ${i + 1}`}
+                                      url={o.url}
+                                      dark={isDark}
+                                    />
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                         <button
                           onClick={() => onNavigate("/contacto")}
                           className={`group/link mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] transition-colors ${
@@ -301,14 +336,28 @@ export default function ServiciosPage({
                     {pub.client}
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {pub.outlets.map((outlet) => (
-                      <span
-                        key={outlet}
-                        className="rounded-full bg-ink text-paper px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]"
-                      >
-                        {outlet}
-                      </span>
-                    ))}
+                    {pub.outlets
+                      .filter((outlet) => outlet.name)
+                      .map((outlet) =>
+                        outlet.url ? (
+                          <a
+                            key={outlet.name}
+                            href={outlet.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full bg-ink text-paper px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors hover:bg-brand"
+                          >
+                            {outlet.name}
+                          </a>
+                        ) : (
+                          <span
+                            key={outlet.name}
+                            className="rounded-full bg-ink text-paper px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]"
+                          >
+                            {outlet.name}
+                          </span>
+                        )
+                      )}
                   </div>
                 </div>
               ))}
@@ -387,5 +436,61 @@ export default function ServiciosPage({
         </div>
       </section>
     </PageShell>
+  );
+}
+
+/* Hueco para un logotipo (cliente o medio): muestra la imagen si existe,
+   o un recuadro de espera con el nombre si aún no se ha subido */
+function LogoSlot({
+  src,
+  alt,
+  url,
+  big = false,
+  dark = false,
+}: {
+  src?: string;
+  alt: string;
+  url?: string;
+  big?: boolean;
+  dark?: boolean;
+}) {
+  const [failed, setFailed] = useState(false);
+  const showPlaceholder = !src || failed;
+  const className = `flex shrink-0 items-center justify-center rounded-xl ${
+    big ? "h-14 w-36 px-3" : "h-10 w-24 px-2"
+  } ${
+    showPlaceholder
+      ? `border border-dashed ${dark ? "border-white/20 bg-white/5" : "border-ink/20 bg-ink/[0.03]"}`
+      : `bg-white ${url ? "transition-opacity hover:opacity-80" : ""}`
+  }`;
+  const content = showPlaceholder ? (
+    <span
+      className={`text-center text-[9px] font-semibold uppercase leading-tight tracking-[0.1em] ${
+        dark ? "text-white/40" : "text-ink/35"
+      }`}
+    >
+      {alt}
+    </span>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      className="max-h-full max-w-full object-contain"
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
+  );
+
+  if (url && !showPlaceholder) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer" title={alt} className={className}>
+        {content}
+      </a>
+    );
+  }
+  return (
+    <div title={alt} className={className}>
+      {content}
+    </div>
   );
 }

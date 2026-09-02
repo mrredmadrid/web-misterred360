@@ -5,6 +5,7 @@ import { Counter } from "../components/ui";
 import { stats, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
+import { useLightbox } from "../components/Lightbox";
 
 /* Renderiza texto con marcadores {red}...{/red} y {b}...{/b} */
 function Rich({ text }: { text: string }) {
@@ -43,6 +44,7 @@ export default function ManifiestoPage({
 }) {
   const { t, locale } = useI18n();
   const seo = getSeo(locale, "manifiesto");
+  const openLightbox = useLightbox();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -165,6 +167,10 @@ export default function ManifiestoPage({
             transition={{ duration: 0.9, ease }}
             className="lg:col-span-5"
             data-cursor="view"
+            onClick={(e) => {
+              const img = e.currentTarget.querySelector("img");
+              if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+            }}
           >
             <div className="relative max-w-[420px] mx-auto lg:mx-0">
               <div

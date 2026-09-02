@@ -7,6 +7,7 @@ import { useI18n } from "../lib/i18n";
 import { Wordmark } from "./ui";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { buildWhatsAppUrl } from "../lib/whatsapp";
+import { WhatsAppIcon } from "./ChatLauncher";
 
 /* ───────────────────────────────────────────────────────────
    Nav · sticky con blur + menú full-screen de autor + i18n
@@ -195,13 +196,21 @@ export default function Nav({
               <span className="mt-1 text-[9px] uppercase tracking-[0.18em] text-smoke">Te escuchamos 24/7/365</span>
             </a>
             <a
-              href={buildWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="lg:order-2 group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand px-3.5 sm:px-5 py-1.5 sm:py-2.5 text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-white transition-colors hover:bg-flame"
+              href="/contacto"
+              onClick={(e) => go(e, "/contacto")}
+              className="lg:order-2 group hidden sm:inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand px-3.5 sm:px-5 py-1.5 sm:py-2.5 text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
               {t("nav.talk")}
               <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+            <a
+              href={buildWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="lg:order-2 inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#25D366] text-white transition-colors hover:bg-[#1ebe5b]"
+            >
+              <WhatsAppIcon className="w-[18px] h-[18px]" />
             </a>
             <div className="lg:order-1">
               <LanguageSwitcher />

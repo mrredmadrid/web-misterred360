@@ -15,12 +15,12 @@
   "promo": {
     "badge": { "es": "Nuevo · Inteligencia Artificial", "en": "New · Artificial Intelligence" },
     "title": {
-      "es": "Agentes IA personalizados, entrenados con el tono de tu marca",
-      "en": "Custom AI agents, trained in your brand's tone"
+      "es": "Agentes IA Personalizados y Autónomos",
+      "en": "Custom, Autonomous AI Agents"
     },
     "description": {
-      "es": "Un aliado que atiende, cualifica y responde 24 horas al día, sin perder ni un ápice de tu voz.",
-      "en": "An ally that attends, qualifies and responds 24 hours a day, without losing an ounce of your voice."
+      "es": "Un aliado más que nunca descansa: atiende, cualifica y responde 24 horas al día, sin perder ni un ápice de tu voz.",
+      "en": "One more ally that never clocks out: it attends, qualifies and responds 24 hours a day, without losing an ounce of your voice."
     },
     "cta": { "es": "Descubrir agentes IA", "en": "Discover AI agents" }
   },

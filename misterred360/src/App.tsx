@@ -32,6 +32,7 @@ import PoliticaIAPage from "./pages/PoliticaIAPage";
 import AgendarPage from "./pages/AgendarPage";
 
 import { CookiesProvider } from "./lib/cookies";
+import { LightboxProvider } from "./components/Lightbox";
 import CookieBanner from "./components/CookieBanner";
 import { A11yProvider } from "./lib/accessibility";
 import AccessibilityPanel from "./components/AccessibilityPanel";
@@ -295,6 +296,7 @@ export default function App() {
     <I18nProvider>
     <A11yProvider>
     <CookiesProvider>
+    <LightboxProvider>
       <AppShell
         loading={loading}
         setLoading={setLoading}
@@ -303,6 +305,7 @@ export default function App() {
         progress={progress}
         navigate={navigate}
       />
+    </LightboxProvider>
     </CookiesProvider>
     </A11yProvider>
     </I18nProvider>

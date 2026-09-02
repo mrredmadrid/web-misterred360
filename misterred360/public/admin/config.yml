@@ -305,6 +305,20 @@ collections:
               - { label: "Icono", name: icon, widget: select, options: ["video", "scissors", "wand-2", "calendar-check", "users", "compass"] }
               - { label: "Título", name: title, widget: object, fields: *loc_string }
               - { label: "Descripción", name: description, widget: object, fields: *loc_text }
+          - label: "Empresas con las que colaboramos (logos)"
+            name: logos
+            widget: object
+            fields:
+              - { label: "Frase pequeña (kicker)", name: kicker, widget: object, fields: *loc_string }
+              - { label: "Título", name: title, widget: object, fields: *loc_string }
+              - label: "Logos (6 huecos)"
+                name: items
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Nombre de la empresa", name: name, widget: string, required: false }
+                  - { label: "Logotipo", name: logo, widget: image, required: false }
+                  - { label: "Web de la empresa (se abre al hacer clic)", name: url, widget: string, required: false }
           - label: "Cierre"
             name: close
             widget: object
@@ -395,13 +409,21 @@ collections:
         file: "misterred360/src/content/publications.json"
         fields:
           - { label: "Título de la sección", name: title, widget: string }
-          - label: "Publicaciones (solo español)"
+          - label: "Filas (logo del cliente + logos de los medios que le dieron cobertura)"
             name: items
             widget: list
             summary: "{{fields.client}}"
             fields:
-              - { label: "Cliente", name: client, widget: string }
-              - { label: "Medios", name: outlets, widget: list, field: { label: Medio, name: outlet, widget: string } }
+              - { label: "Nombre del cliente", name: client, widget: string }
+              - { label: "Logotipo del cliente", name: clientLogo, widget: image, required: false }
+              - label: "Medios de comunicación (hasta 4 logos)"
+                name: outlets
+                widget: list
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Nombre del medio", name: name, widget: string, required: false }
+                  - { label: "Logotipo del medio", name: logo, widget: image, required: false }
+                  - { label: "Enlace a la noticia (se abre al hacer clic en el logo)", name: url, widget: string, required: false }
 
       - label: "Ajustes de diseño"
         name: design

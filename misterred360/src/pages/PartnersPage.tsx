@@ -57,6 +57,7 @@ export default function PartnersPage({
   return (
     <PageShell
       index="06"
+      titleSize="sm"
       kicker={p.hero.kicker}
       title={p.hero.title}
       intro={p.hero.intro}
@@ -119,6 +120,23 @@ export default function PartnersPage({
         </div>
       </section>
 
+      {/* ── B.5 · Empresas con las que colaboramos ── */}
+      <section className="relative bg-ink overflow-hidden border-t border-white/[0.07]">
+        <div className="relative px-5 md:px-10 xl:px-16 py-20 md:py-24 max-w-[1600px] mx-auto">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-5">
+            {p.logos.kicker}
+          </p>
+          <h2 className="font-display font-semibold uppercase leading-[0.97] text-[clamp(1.8rem,3.6vw,3rem)] max-w-3xl mb-12">
+            {p.logos.title}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+            {p.logos.items.map((l, i) => (
+              <CompanyLogo key={i} logo={l.logo} name={l.name} url={l.url} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── C · Cierre ── */}
       <section className="bg-paper text-ink">
         <div className="px-5 md:px-10 xl:px-16 py-20 md:py-24 max-w-[1600px] mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
@@ -142,4 +160,42 @@ export default function PartnersPage({
       </section>
     </PageShell>
   );
+}
+
+/* Hueco para el logo de una empresa: si hay web, es un enlace que
+   abre esa web; si aún no se ha subido el logo, muestra el nombre
+   a la espera de que se suba desde el panel de administración */
+function CompanyLogo({
+  logo,
+  name,
+  url,
+  index,
+}: {
+  logo?: string;
+  name?: string;
+  url?: string;
+  index: number;
+}) {
+  const label = name || `Logo ${index + 1}`;
+  const className = `flex aspect-[3/2] items-center justify-center rounded-2xl border p-6 transition-colors duration-300 ${
+    logo
+      ? "border-white/10 bg-white hover:border-brand/50"
+      : "border-dashed border-white/20 bg-white/5"
+  }`;
+  const content = logo ? (
+    <img src={logo} alt={label} className="max-h-full max-w-full object-contain" loading="lazy" />
+  ) : (
+    <span className="text-center text-[9px] font-semibold uppercase leading-tight tracking-[0.1em] text-white/40">
+      {label}
+    </span>
+  );
+
+  if (url) {
+    return (
+      <a href={url} target="_blank" rel="noopener noreferrer" className={className}>
+        {content}
+      </a>
+    );
+  }
+  return <div className={className}>{content}</div>;
 }

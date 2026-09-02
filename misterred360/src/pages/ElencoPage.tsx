@@ -5,6 +5,7 @@ import { getCastMembers, getSeo } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 import CastImage from "../components/CastImage";
+import { useLightbox } from "../components/Lightbox";
 
 function Rich({ text }: { text: string }) {
   const parts = text.split(/(\{red\}[^{]+\{\/red\})/g);
@@ -33,6 +34,7 @@ export default function ElencoPage({
   const { t, locale } = useI18n();
   const castMembers = getCastMembers(locale);
   const seo = getSeo(locale, "elenco");
+  const openLightbox = useLightbox();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -97,6 +99,10 @@ export default function ElencoPage({
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
             className="lg:col-span-7 relative"
             data-cursor="view"
+            onClick={(e) => {
+              const img = e.currentTarget.querySelector("img");
+              if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+            }}
           >
             <div
               className="absolute inset-0 translate-x-4 -translate-y-3 rounded-[2rem] bg-ink"
@@ -140,6 +146,10 @@ export default function ElencoPage({
                 transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease }}
                 className="group"
                 data-cursor="view"
+                onClick={(e) => {
+                  const img = e.currentTarget.querySelector("img");
+                  if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+                }}
               >
                 <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden border border-white/10">
                   <CastImage
