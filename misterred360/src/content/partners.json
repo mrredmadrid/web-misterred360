@@ -50,6 +50,18 @@
       }
     }
   ],
+  "logos": {
+    "kicker": { "es": "Con quién trabajamos", "en": "Who we work with" },
+    "title": { "es": "Empresas con las que colaboramos", "en": "Companies we work with" },
+    "items": [
+      { "name": "", "logo": "", "url": "" },
+      { "name": "", "logo": "", "url": "" },
+      { "name": "", "logo": "", "url": "" },
+      { "name": "", "logo": "", "url": "" },
+      { "name": "", "logo": "", "url": "" },
+      { "name": "", "logo": "", "url": "" }
+    ]
+  },
   "close": {
     "kicker": { "es": "Hablemos de tu proyecto", "en": "Let's talk about your project" },
     "title": {

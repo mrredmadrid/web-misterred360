@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { testimonials } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { Kicker } from "./ui";
+import { useLightbox } from "./Lightbox";
 
 /* ───────────────────────────────────────────────────────────
    Sección 06 · REPUTACIÓN — testimonios con avance automático
@@ -23,6 +24,7 @@ function initials(name: string) {
 
 export default function Testimonials() {
   const { t } = useI18n();
+  const openLightbox = useLightbox();
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
   const item = testimonials[idx];
@@ -52,6 +54,10 @@ export default function Testimonials() {
               transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
               className="relative rounded-[2rem] overflow-hidden aspect-[3/4] max-w-[380px] group"
               data-cursor="view"
+              onClick={(e) => {
+                const img = e.currentTarget.querySelector("img");
+                if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+              }}
             >
               <img
                 src="/images/chimp-bw.jpg"

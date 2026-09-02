@@ -1,8 +1,35 @@
 {
   "title": "Algunas publicaciones gestionadas por MISTERRED",
   "items": [
-    { "client": "Genivs", "outlets": ["Expansión", "Cinco Días"] },
-    { "client": "Renova", "outlets": ["Europa Press"] },
-    { "client": "Metropolitan House", "outlets": ["Metrópoli Abierta", "El Plural"] }
+    {
+      "client": "Genivs",
+      "clientLogo": "",
+      "outlets": [
+        { "name": "Expansión", "logo": "", "url": "" },
+        { "name": "Cinco Días", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" }
+      ]
+    },
+    {
+      "client": "Renova",
+      "clientLogo": "",
+      "outlets": [
+        { "name": "Europa Press", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" }
+      ]
+    },
+    {
+      "client": "Metropolitan House",
+      "clientLogo": "",
+      "outlets": [
+        { "name": "Metrópoli Abierta", "logo": "", "url": "" },
+        { "name": "El Plural", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" },
+        { "name": "", "logo": "", "url": "" }
+      ]
+    }
   ]
 }

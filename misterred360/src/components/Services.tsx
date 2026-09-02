@@ -5,6 +5,7 @@ import { getServiceBlocks } from "../lib/data";
 import { navigateTo } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { Kicker, LineReveal } from "./ui";
+import { useLightbox } from "./Lightbox";
 
 /* ───────────────────────────────────────────────────────────
    Sección 02 · SERVICIOS 360 — tres bloques, comunicación al centro.
@@ -15,6 +16,7 @@ import { Kicker, LineReveal } from "./ui";
 export default function Services() {
   const { t, locale } = useI18n();
   const serviceBlocks = getServiceBlocks(locale);
+  const openLightbox = useLightbox();
   const [blockIdx, setBlockIdx] = useState(0);
   const [openIdx, setOpenIdx] = useState(0);
 
@@ -106,6 +108,10 @@ export default function Services() {
               <div
                 className="relative rounded-[2rem] overflow-hidden border border-ink/10 aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] bg-white shadow-[0_30px_60px_-30px_rgba(8,8,10,0.25)]"
                 data-cursor="view"
+                onClick={(e) => {
+                  const img = e.currentTarget.querySelector("img");
+                  if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
+                }}
               >
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.img
@@ -196,7 +202,7 @@ export default function Services() {
                         >
                           {s.name}
                         </span>
-                        <span className="hidden md:block text-xs uppercase tracking-[0.22em] text-ink/40">
+                        <span className="hidden md:block max-w-[14rem] text-right text-sm lg:text-base font-bold uppercase tracking-[0.08em] leading-tight text-brand">
                           {s.tagline}
                         </span>
                         <span
