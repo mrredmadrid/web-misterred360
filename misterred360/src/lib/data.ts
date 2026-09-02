@@ -26,6 +26,7 @@ import whyusContent from "../content/whyus.json";
 import statsContent from "../content/stats.json";
 import teamContent from "../content/team.json";
 import testimonialsContent from "../content/testimonials.json";
+import publicationsContent from "../content/publications.json";
 import pricingContent from "../content/pricing.json";
 import heroContent from "../content/hero.json";
 import manifestoContent from "../content/manifesto.json";
@@ -182,6 +183,9 @@ export function getCastMembers(locale: Locale): CastMember[] {
 /* ── Testimonios ────────────────────────────────────────── */
 export const testimonials = testimonialsContent.items;
 
+/* ── Publicaciones gestionadas (Gabinete de Prensa) ────────── */
+export const publications = publicationsContent;
+
 /* ── Precios ────────────────────────────────────────────── */
 export function getPricing(locale: Locale) {
   return {
@@ -276,6 +280,7 @@ export const marqueeItems = [
   "Creación Audiovisual",
   "RRPP y Eventos",
   "Publicidad y Marketing",
+  "Medios de comunicación",
 ];
 
 /* Rutas de las páginas interiores (hash routing) */

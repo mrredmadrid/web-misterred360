@@ -35,12 +35,12 @@ import { CookiesProvider } from "./lib/cookies";
 import CookieBanner from "./components/CookieBanner";
 import { A11yProvider } from "./lib/accessibility";
 import AccessibilityPanel from "./components/AccessibilityPanel";
-import WhatsAppButton from "./components/WhatsAppButton";
 import AIAssistant from "./components/AIAssistant";
 import ChatLauncher, { type LauncherChoice } from "./components/ChatLauncher";
 import { I18nProvider, useI18n } from "./lib/i18n";
 import HomeSeo from "./components/HomeSeo";
 import { bootstrapNative } from "./lib/native";
+import { buildWhatsAppUrl } from "./lib/whatsapp";
 
 /* ───────────────────────────────────────────────────────────
    MISTERRED360 · Enrutado por ruta real (History API)
@@ -374,25 +374,22 @@ function AppShell({
   );
 }
 
-/* Dos FAB siempre visibles · dos panels controlados */
+/* Dos FAB siempre visibles. El de WhatsApp abre el chat directamente,
+   sin panel intermedio, para que contactar no lleve más de un clic. */
 function ChatDock() {
-  const [wa, setWa] = useState(false);
   const [ai, setAi] = useState(false);
 
   const pick = (choice: LauncherChoice) => {
     if (choice === "assistant") {
-      setWa(false);
       setAi((v) => !v);
     } else {
-      setAi(false);
-      setWa((v) => !v);
+      window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
     }
   };
 
   return (
     <>
-      <ChatLauncher onPick={pick} active={ai ? "assistant" : wa ? "whatsapp" : null} />
-      <WhatsAppButton open={wa} onClose={() => setWa(false)} />
+      <ChatLauncher onPick={pick} active={ai ? "assistant" : null} />
       <AIAssistant open={ai} onClose={() => setAi(false)} />
     </>
   );

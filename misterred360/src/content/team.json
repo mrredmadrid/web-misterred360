@@ -5,8 +5,8 @@
       "image": "misterred360/public/images/chimp-press.jpg",
       "gender": "m",
       "role": {
-        "es": "El Presi",
-        "en": "The Chairman"
+        "es": "Felipe A.R.",
+        "en": "Felipe A.R."
       },
       "area": {
         "es": "Operaciones",
@@ -22,8 +22,8 @@
       "image": "misterred360/public/images/chimp-bw.jpg",
       "gender": "m",
       "role": {
-        "es": "El Icono / La Estrategia",
-        "en": "The Icon / The Strategy"
+        "es": "David R.C.",
+        "en": "David R.C."
       },
       "area": {
         "es": "CEO",
@@ -39,8 +39,8 @@
       "image": "misterred360/public/images/chimp-press-f.jpg",
       "gender": "f",
       "role": {
-        "es": "La Portavoz",
-        "en": "The Spokeswoman"
+        "es": "Estrella T.",
+        "en": "Estrella T."
       },
       "area": {
         "es": "Jefa de Contenidos",
@@ -56,8 +56,8 @@
       "image": "misterred360/public/images/chimp-strategy.jpg",
       "gender": "f",
       "role": {
-        "es": "Project Manager",
-        "en": "Project Manager"
+        "es": "Aitor M.G.",
+        "en": "Aitor M.G."
       },
       "area": {
         "es": "Gestión de proyectos",
@@ -73,8 +73,8 @@
       "image": "misterred360/public/images/chimp-brand.jpg",
       "gender": "f",
       "role": {
-        "es": "La Diseñadora",
-        "en": "The Designer"
+        "es": "Xio P.",
+        "en": "Xio P."
       },
       "area": {
         "es": "Identidad",
@@ -90,8 +90,8 @@
       "image": "misterred360/public/images/chimp-av.jpg",
       "gender": "m",
       "role": {
-        "es": "El Mago del Vídeo",
-        "en": "The Video Wizard"
+        "es": "Nicolás G.",
+        "en": "Nicolás G."
       },
       "area": {
         "es": "Audiovisual",
@@ -107,8 +107,8 @@
       "image": "/images/chimp-ads-f.jpg",
       "gender": "f",
       "role": {
-        "es": "La Publicista",
-        "en": "The Publicist"
+        "es": "Laura F.G.",
+        "en": "Laura F.G."
       },
       "area": {
         "es": "Marketing",
@@ -124,8 +124,8 @@
       "image": "misterred360/public/images/chimp-data.jpg",
       "gender": "m",
       "role": {
-        "es": "El Analista",
-        "en": "The Analyst"
+        "es": "L.F. Román",
+        "en": "L.F. Román"
       },
       "area": {
         "es": "Datos",
@@ -141,8 +141,8 @@
       "image": "misterred360/public/images/chimp-ads-f.jpg",
       "gender": "f",
       "role": {
-        "es": "La Contable",
-        "en": "The Accountant"
+        "es": "Beatriz M.",
+        "en": "Beatriz M."
       },
       "area": {
         "es": "Finanzas",
@@ -158,8 +158,8 @@
       "image": "misterred360/public/images/chimp-cta.jpg",
       "gender": "m",
       "role": {
-        "es": "El Arte de la IA",
-        "en": "The Art of AI"
+        "es": "Cabrera Team",
+        "en": "Cabrera Team"
       },
       "area": {
         "es": "Inteligencia Artificial",
