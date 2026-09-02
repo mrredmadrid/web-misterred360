@@ -120,6 +120,78 @@ export function LineReveal({
   );
 }
 
+/* Reveal de titulares palabra a palabra, con máscara y stagger.
+   Igual que LineReveal pero cada palabra entra por separado en vez
+   de la línea entera — pensado para el titular de portada. */
+export function WordReveal({
+  text,
+  delay = 0,
+  className = "",
+  start = true,
+  as = "div",
+}: {
+  text: string;
+  delay?: number;
+  className?: string;
+  start?: boolean;
+  as?: "h1" | "h2" | "h3" | "p" | "div";
+}) {
+  const lines = text.split("\n");
+  const MotionTag =
+    ((motion as unknown as Record<string, typeof motion.div>)[as] as typeof motion.div) ??
+    motion.div;
+  return (
+    <MotionTag
+      className={className}
+      initial="hidden"
+      animate={start ? "visible" : "hidden"}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.07, delayChildren: delay } },
+      }}
+    >
+      {lines.map((line, li) => (
+        <span key={li} className="block">
+          {splitAccentWords(line).map((w, wi) => (
+            <span
+              key={wi}
+              className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] mr-[0.26em] last:mr-0"
+            >
+              <motion.span
+                className="inline-block will-change-transform"
+                variants={{
+                  hidden: { y: "110%", rotate: 2.5 },
+                  visible: {
+                    y: "0%",
+                    rotate: 0,
+                    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+              >
+                {w.red ? <em className="not-italic text-brand">{w.text}</em> : w.text}
+              </motion.span>
+            </span>
+          ))}
+        </span>
+      ))}
+    </MotionTag>
+  );
+}
+
+/* Divide una línea en palabras conservando qué tramos van en *rojo* */
+function splitAccentWords(line: string): { text: string; red: boolean }[] {
+  const parts = line.split(/(\*[^*]+\*)/g);
+  const words: { text: string; red: boolean }[] = [];
+  for (const part of parts) {
+    const red = part.startsWith("*") && part.endsWith("*");
+    const clean = red ? part.slice(1, -1) : part;
+    for (const w of clean.split(/\s+/).filter(Boolean)) {
+      words.push({ text: w, red });
+    }
+  }
+  return words;
+}
+
 /* Marcas de acento: *rojo* y ~outline~ */
 function renderAccent(line: string) {
   const parts = line.split(/(\*[^*]+\*|~[^~]+~)/g);

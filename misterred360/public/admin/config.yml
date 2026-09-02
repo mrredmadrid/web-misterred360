@@ -159,7 +159,6 @@ collections:
           - { label: "Frase de eco (en rojo)", name: eco, widget: object, fields: *loc_string }
           - { label: "Párrafo 1", name: p1, widget: object, fields: *loc_text }
           - { label: "Párrafo 2", name: p2, widget: object, fields: *loc_text }
-          - { label: "Cita del manifiesto", name: quote, widget: object, fields: *loc_text }
           - { label: "Pie de figura", name: fig, widget: object, fields: *loc_string }
           - { label: "Etiqueta sobre la foto", name: badge, widget: object, fields: *loc_string }
           - { label: "Cita del CEO", name: ceoQuote, widget: object, fields: *loc_text }
@@ -374,7 +373,7 @@ collections:
               - { label: "ID (no tocar)", name: id, widget: string, hint: "No lo cambies" }
               - { label: "Foto", name: image, widget: image }
               - { label: "Género (para el icono ♀/♂)", name: gender, widget: select, options: ["m", "f"] }
-              - { label: "Rol", name: role, widget: object, fields: *loc_string }
+              - { label: "Nombre", name: role, widget: object, fields: *loc_string }
               - { label: "Área", name: area, widget: object, fields: *loc_string }
               - { label: "Frase", name: quote, widget: object, fields: *loc_string }
 
@@ -390,6 +389,19 @@ collections:
               - { label: "Cita", name: quote, widget: text }
               - { label: "Nombre", name: name, widget: string }
               - { label: "Cargo y empresa", name: role, widget: string }
+
+      - label: "Publicaciones gestionadas (Gabinete de Prensa)"
+        name: publications
+        file: "misterred360/src/content/publications.json"
+        fields:
+          - { label: "Título de la sección", name: title, widget: string }
+          - label: "Publicaciones (solo español)"
+            name: items
+            widget: list
+            summary: "{{fields.client}}"
+            fields:
+              - { label: "Cliente", name: client, widget: string }
+              - { label: "Medios", name: outlets, widget: list, field: { label: Medio, name: outlet, widget: string } }
 
       - label: "Ajustes de diseño"
         name: design

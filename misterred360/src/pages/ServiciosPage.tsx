@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import PageShell from "../components/PageShell";
-import { getServiceBlocks, getPricing, getSeo } from "../lib/data";
+import { getServiceBlocks, getPricing, getSeo, publications } from "../lib/data";
 import { useI18n } from "../lib/i18n";
 import { SITE } from "../lib/seo";
 
@@ -75,7 +75,7 @@ export default function ServiciosPage({
   ];
 
   const goBlock = (id: string) => {
-    const el = refs.current[id];
+    const el = refs.current[id] ?? document.getElementById(id);
     if (!el) return;
     if (window.__lenis) window.__lenis.scrollTo(el, { offset: -132, duration: 1.2 });
     else el.scrollIntoView({ behavior: "smooth" });
@@ -150,11 +150,7 @@ export default function ServiciosPage({
                     >
                       {block.title}
                     </h2>
-                    <p
-                      className={`mt-4 text-sm font-semibold uppercase tracking-[0.22em] ${
-                        isBrand ? "text-brand" : "text-steel"
-                      }`}
-                    >
+                    <p className="mt-4 text-lg md:text-xl font-semibold uppercase tracking-[0.1em] text-brand">
                       {block.claim}
                     </p>
                   </div>
@@ -213,7 +209,7 @@ export default function ServiciosPage({
                           />
                           <span
                             className={`absolute top-4 right-4 rounded-full px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white ${
-                              isBrand ? "bg-brand" : "bg-ocean"
+                              s.id === "agentes-ia" ? "bg-[#7c3aed]" : isBrand ? "bg-brand" : "bg-ocean"
                             }`}
                           >
                             {s.tagline}
@@ -237,8 +233,9 @@ export default function ServiciosPage({
                           <Icon className="w-6 h-6" strokeWidth={1.6} />
                         </span>
                         <h3 className={`font-display font-semibold leading-tight text-[clamp(1.8rem,3.4vw,3rem)] ${txtPrimary}`}>
-                          {s.name}.{" "}
-                          <span className={isBrand ? "text-brand" : "text-steel"}>
+                          {s.name}.
+                          <br />
+                          <span className={s.id === "agentes-ia" ? "text-[#7c3aed]" : isBrand ? "text-brand" : "text-steel"}>
                             {s.tagline.toUpperCase()}
                           </span>
                         </h3>
@@ -261,6 +258,19 @@ export default function ServiciosPage({
                           {t("page.srv.cta.service")}
                           <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                         </button>
+                        {s.id === "gabinete-de-prensa" && (
+                          <button
+                            onClick={() => goBlock("publicaciones")}
+                            className={`group/link mt-4 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                              isDark
+                                ? "border-white/20 text-paper hover:border-brand hover:text-brand"
+                                : "border-ink/20 text-ink hover:border-brand hover:text-brand"
+                            }`}
+                          >
+                            Portfolio impactos en medios
+                            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                          </button>
+                        )}
                       </motion.div>
                     </article>
                   );
@@ -270,6 +280,42 @@ export default function ServiciosPage({
           </section>
         );
       })}
+
+      {/* ── Publicaciones gestionadas (Gabinete de Prensa) ── */}
+      {publications.items.length > 0 && (
+        <section id="publicaciones" className="bg-paper text-ink scroll-mt-32">
+          <div className="px-5 md:px-10 xl:px-16 py-20 md:py-24 max-w-[1600px] mx-auto">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand mb-5">
+              Impacto real
+            </p>
+            <h2 className="font-display font-semibold uppercase leading-[0.97] text-[clamp(1.8rem,3.6vw,3rem)] max-w-3xl">
+              {publications.title}
+            </h2>
+            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {publications.items.map((pub) => (
+                <div
+                  key={pub.client}
+                  className="group rounded-3xl border border-ink/10 bg-white p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-brand/40 hover:shadow-[0_30px_60px_-30px_rgba(8,8,10,0.2)]"
+                >
+                  <p className="font-display font-semibold text-2xl leading-tight text-ink">
+                    {pub.client}
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {pub.outlets.map((outlet) => (
+                      <span
+                        key={outlet}
+                        className="rounded-full bg-ink text-paper px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em]"
+                      >
+                        {outlet}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Precios ── */}
       <section id="precios" className="relative bg-ink overflow-hidden scroll-mt-32">

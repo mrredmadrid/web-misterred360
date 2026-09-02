@@ -128,15 +128,18 @@ img[width][height] {
 }
 
 /* Regla global: los textos dentro de tarjetas nunca se deben cortar.
-   Fuerza wrap y evita overflow horizontal en h3/h4/p dentro de <article>. */
+   Fuerza wrap y evita overflow horizontal en h3/h4/p dentro de <article>.
+   Sin "hyphens: auto": partía palabras en español con un guion visible
+   ("rit-mo", "ima-gen", "internacio-nales") en vez de bajar la palabra
+   entera a la siguiente línea. */
 article h3,
 article h4,
 article p,
 article span,
 article li {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 /* iframe de mapas mantiene su altura fija (necesaria para Google Maps) */
 iframe[title*="Maps"] {

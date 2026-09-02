@@ -53,8 +53,11 @@ export default function Manifesto() {
               {m.p2}
             </motion.p>
 
-            <motion.div {...rise(0.54)} className="flex items-center gap-6 pt-4">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-ink/80 shrink-0">
+            <motion.blockquote
+              {...rise(0.6)}
+              className="flex items-center gap-6 border-l-2 border-brand pl-6"
+            >
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-ink/80 shrink-0">
                 <img
                   src="/images/chimp-bw.jpg"
                   alt="Retrato en blanco y negro del chimpancé de MISTERRED360"
@@ -62,21 +65,14 @@ export default function Manifesto() {
                   loading="lazy"
                 />
               </div>
-              <p className="font-quote italic text-xl md:text-2xl text-ink/80 whitespace-pre-line">
-                {m.quote}
-              </p>
-            </motion.div>
-
-            <motion.blockquote
-              {...rise(0.66)}
-              className="border-l-2 border-brand pl-6"
-            >
-              <p className="font-quote italic text-lg md:text-xl text-ink/75 leading-snug">
-                {m.ceoQuote}
-              </p>
-              <cite className="mt-3 block not-italic text-[11px] font-semibold uppercase tracking-[0.24em] text-ink/45">
-                {m.ceoRole}
-              </cite>
+              <div>
+                <p className="font-quote italic text-lg md:text-xl text-ink/75 leading-snug">
+                  {m.ceoQuote}
+                </p>
+                <cite className="mt-3 block not-italic text-[11px] font-semibold uppercase tracking-[0.24em] text-ink/45">
+                  {m.ceoRole}
+                </cite>
+              </div>
             </motion.blockquote>
           </div>
 
@@ -86,7 +82,7 @@ export default function Manifesto() {
               initial={{ clipPath: "inset(100% 0 0 0)" }}
               animate={inView ? { clipPath: "inset(0% 0 0 0)" } : {}}
               transition={{ duration: 1, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
-              className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-w-[440px] lg:ml-auto group"
+              className="relative rounded-[2rem] overflow-hidden aspect-[4/5] max-w-[520px] lg:ml-auto group"
               data-cursor="view"
             >
               <motion.img

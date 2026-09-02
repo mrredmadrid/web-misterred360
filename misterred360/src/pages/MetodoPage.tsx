@@ -105,7 +105,6 @@ export default function MetodoPage({
         const isBrand = extra.accent === "brand";
         const isDark = i % 2 === 0;
         const reversed = i % 2 === 1;
-        const txtPrimary = isDark ? "text-paper" : "text-ink";
         const txtSecondary = isDark ? "text-smoke" : "text-ink/65";
         const txtMuted = isDark ? "text-ash" : "text-ink/45";
         const borderCol = isDark ? "border-white/10" : "border-ink/15";
@@ -156,7 +155,7 @@ export default function MetodoPage({
                   transition={{ duration: 0.8, delay: 0.1, ease }}
                   className={`lg:col-span-8 ${reversed ? "lg:order-1" : ""}`}
                 >
-                  <h2 className={`font-display font-semibold leading-tight text-[clamp(1.9rem,3.8vw,3.2rem)] ${txtPrimary}`}>
+                  <h2 className="font-display font-semibold leading-tight text-[clamp(1.9rem,3.8vw,3.2rem)] text-brand">
                     {step.title}
                   </h2>
                   <p className={`mt-6 text-lg leading-relaxed max-w-2xl ${isDark ? "text-paper/85" : "text-ink/85"}`}>

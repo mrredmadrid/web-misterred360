@@ -6,6 +6,7 @@ import { navigateTo } from "../lib/scroll";
 import { useI18n } from "../lib/i18n";
 import { Wordmark } from "./ui";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { buildWhatsAppUrl } from "../lib/whatsapp";
 
 /* ───────────────────────────────────────────────────────────
    Nav · sticky con blur + menú full-screen de autor + i18n
@@ -185,8 +186,18 @@ export default function Nav({
 
           <div className="justify-self-end flex flex-col lg:flex-row items-end lg:items-center gap-1.5 lg:gap-3">
             <a
-              href="/contacto"
-              onClick={(e) => go(e, "/contacto")}
+              href={buildWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lg:order-3 hidden xl:flex flex-col items-end leading-none mr-1 text-paper/80 hover:text-paper transition-colors"
+            >
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em]">Llámanos</span>
+              <span className="mt-1 text-[9px] uppercase tracking-[0.18em] text-smoke">Te escuchamos 24/7/365</span>
+            </a>
+            <a
+              href={buildWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="lg:order-2 group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-brand px-3.5 sm:px-5 py-1.5 sm:py-2.5 text-[10px] sm:text-[12px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-white transition-colors hover:bg-flame"
             >
               {t("nav.talk")}
@@ -234,8 +245,10 @@ export default function Nav({
                 {mobileLinks.map((l, i) => (
                   <div key={l.href} className="overflow-hidden">
                     <motion.a
-                      href={l.href}
-                      onClick={(e) => go(e, l.href)}
+                      href={l.key === "nav.talk" ? buildWhatsAppUrl() : l.href}
+                      target={l.key === "nav.talk" ? "_blank" : undefined}
+                      rel={l.key === "nav.talk" ? "noopener noreferrer" : undefined}
+                      onClick={l.key === "nav.talk" ? undefined : (e) => go(e, l.href)}
                       initial={{ y: "110%" }}
                       animate={{ y: "0%" }}
                       transition={{

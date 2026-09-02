@@ -23,8 +23,6 @@ function Rich({ text }: { text: string }) {
    de marca, con las ocho versiones completas
    ─────────────────────────────────────────────────────────── */
 
-const TREATMENTS = ["1", "2", "3", "4"];
-
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ElencoPage({
@@ -90,24 +88,6 @@ export default function ElencoPage({
             <p className="mt-5 text-lg leading-relaxed text-ink/70 max-w-xl">
               {t("page.ele.h.p2")}
             </p>
-
-            <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-xl">
-              {TREATMENTS.map((n, i) => (
-                <motion.div
-                  key={n}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.07, ease }}
-                  className="border border-ink/15 rounded-2xl p-5 transition-colors hover:border-brand"
-                >
-                  <p className="font-display font-semibold text-lg">
-                    {t(`page.ele.treat.${n}.t`)}
-                  </p>
-                  <p className="mt-1 text-sm text-ink/55">{t(`page.ele.treat.${n}.d`)}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
 
           <motion.div
