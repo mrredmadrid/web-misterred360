@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { testimonials } from "../lib/data";
 import { useI18n } from "../lib/i18n";
@@ -28,6 +28,8 @@ export default function Testimonials() {
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
   const item = testimonials[idx];
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-15%" });
 
   useEffect(() => {
     if (paused) return;
@@ -37,6 +39,7 @@ export default function Testimonials() {
 
   return (
     <section
+      ref={sectionRef}
       id="testimonios"
       className="relative bg-ink overflow-hidden"
       onMouseEnter={() => setPaused(true)}
@@ -44,13 +47,12 @@ export default function Testimonials() {
     >
       <div className="absolute inset-0 glow-ocean pointer-events-none" aria-hidden="true" />
       <div className="relative px-5 md:px-10 xl:px-16 py-24 md:py-36 max-w-[1600px] mx-auto grid lg:grid-cols-12 gap-14">
-        {/* Retrato */}
+        {/* Retrato: la foto de quien firma el testimonio activo */}
         <div className="hidden lg:block lg:col-span-4">
           <div className="sticky top-32">
             <motion.div
               initial={{ clipPath: "inset(0 0 100% 0)" }}
-              whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-              viewport={{ once: true, margin: "-15%" }}
+              animate={inView ? { clipPath: "inset(0 0 0% 0)" } : {}}
               transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
               className="relative rounded-[2rem] overflow-hidden aspect-[3/4] max-w-[380px] group"
               data-cursor="view"
@@ -59,15 +61,26 @@ export default function Testimonials() {
                 if (img) openLightbox({ src: img.currentSrc || img.src, alt: img.alt });
               }}
             >
-              <img
-                src="/images/chimp-bw.jpg"
-                alt="Retrato monocromo del chimpancé de MISTERRED360 escuchando atento"
-                className="w-full h-full object-cover object-[center_20%] duotone-red"
-                loading="lazy"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={idx}
+                  src={item.photo}
+                  alt={item.name}
+                  initial={{ opacity: 0, scale: 1.06 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-0 w-full h-full object-cover object-[center_20%] duotone-red"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/images/chimp-bw.jpg";
+                  }}
+                />
+              </AnimatePresence>
             </motion.div>
             <p className="mt-4 text-[11px] uppercase tracking-[0.28em] text-ash max-w-[380px]">
-              Escuchando a la manada desde 2011.
+              {item.name} · {item.role}
             </p>
           </div>
         </div>

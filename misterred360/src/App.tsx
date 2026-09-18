@@ -13,6 +13,7 @@ import Process from "./components/Process";
 import WhyUs from "./components/WhyUs";
 import AgentesIAPromo from "./components/AgentesIAPromo";
 import Testimonials from "./components/Testimonials";
+import ClientsCarousel from "./components/ClientsCarousel";
 import Faq from "./components/Faq";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
@@ -279,6 +280,9 @@ export default function App() {
 
         {/* 06 · Reputación */}
         <Testimonials />
+
+        {/* Carrusel de logos de clientes */}
+        <ClientsCarousel />
 
         {/* Preguntas frecuentes · rich snippets FAQPage */}
         <Faq />

@@ -26,6 +26,7 @@ import whyusContent from "../content/whyus.json";
 import statsContent from "../content/stats.json";
 import teamContent from "../content/team.json";
 import testimonialsContent from "../content/testimonials.json";
+import clientsContent from "../content/clients.json";
 import publicationsContent from "../content/publications.json";
 import pricingContent from "../content/pricing.json";
 import heroContent from "../content/hero.json";
@@ -182,6 +183,14 @@ export function getCastMembers(locale: Locale): CastMember[] {
 
 /* ── Testimonios ────────────────────────────────────────── */
 export const testimonials = testimonialsContent.items;
+
+/* ── Clientes (carrusel de logos) ──────────────────────────── */
+export function getClients(locale: Locale) {
+  return {
+    title: loc(clientsContent.title, locale),
+    items: clientsContent.items,
+  };
+}
 
 /* ── Publicaciones gestionadas (Gabinete de Prensa) ────────── */
 export const publications = publicationsContent;
