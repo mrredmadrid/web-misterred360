@@ -1,0 +1,13 @@
+{
+  "title": { "es": "Marcas que ya confían en nosotros", "en": "Brands that already trust us" },
+  "items": [
+    { "name": "Renova", "logo": "/images/renova-residencial.png" },
+    { "name": "Metropolitan House", "logo": "/images/metropolitan-house.png" },
+    { "name": "Metropoli Media", "logo": "/images/metropolimedia.png" },
+    { "name": "Habitat Insulae", "logo": "/images/habitatinsulae.png" },
+    { "name": "Genivs Insulae", "logo": "/images/genivs-insulae.png" },
+    { "name": "Fundación Metropolitan House", "logo": "/images/fundacion-metropolitan-house.png" },
+    { "name": "Fd Servicios", "logo": "/images/fdservicios.png" },
+    { "name": "Esenzia", "logo": "/images/esenzia-chamartin.png" }
+  ]
+}

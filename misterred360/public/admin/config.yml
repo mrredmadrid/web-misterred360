@@ -403,6 +403,20 @@ collections:
               - { label: "Cita", name: quote, widget: text }
               - { label: "Nombre", name: name, widget: string }
               - { label: "Cargo y empresa", name: role, widget: string }
+              - { label: "Foto", name: photo, widget: image, required: false }
+
+      - label: "Clientes (carrusel de logos)"
+        name: clients
+        file: "misterred360/src/content/clients.json"
+        fields:
+          - { label: "Frase pequeña sobre el carrusel", name: title, widget: object, fields: *loc_string }
+          - label: "Logos (en el orden en que se muestran)"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Nombre del cliente", name: name, widget: string }
+              - { label: "Logotipo", name: logo, widget: image }
 
       - label: "Publicaciones gestionadas (Gabinete de Prensa)"
         name: publications

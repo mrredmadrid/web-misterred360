@@ -10,6 +10,12 @@
   "lang": "es",
   "icons": [
     {
+      "src": "/images/favicon-mr-red.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
       "src": "/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any",
