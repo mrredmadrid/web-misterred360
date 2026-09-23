@@ -252,7 +252,7 @@ export default function ServiciosPage({
                           {s.long}
                         </p>
                         {s.id === "gabinete-de-prensa" && (
-                          <div className="mt-8 max-w-2xl space-y-3">
+                          <div className="mt-8 max-w-3xl space-y-3">
                             {publications.items.map((pub) => (
                               <div
                                 key={pub.client}
@@ -262,7 +262,7 @@ export default function ServiciosPage({
                               >
                                 <LogoSlot src={pub.clientLogo} alt={pub.client} big dark={isDark} />
                                 <span
-                                  className={`hidden sm:block h-9 w-px shrink-0 ${isDark ? "bg-white/10" : "bg-ink/10"}`}
+                                  className={`hidden sm:block h-10 w-px shrink-0 ${isDark ? "bg-white/10" : "bg-ink/10"}`}
                                   aria-hidden="true"
                                 />
                                 <div className="flex flex-wrap items-center gap-2.5">
@@ -457,7 +457,7 @@ function LogoSlot({
   const [failed, setFailed] = useState(false);
   const showPlaceholder = !src || failed;
   const className = `flex shrink-0 items-center justify-center rounded-xl ${
-    big ? "h-14 w-36 px-3" : "h-10 w-24 px-2"
+    big ? "h-16 w-44 px-3" : "h-12 w-28 px-2"
   } ${
     showPlaceholder
       ? `border border-dashed ${dark ? "border-white/20 bg-white/5" : "border-ink/20 bg-ink/[0.03]"}`
