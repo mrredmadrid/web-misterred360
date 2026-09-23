@@ -41,7 +41,7 @@ function ClientLogo({ name, src }: { name: string; src: string }) {
   return (
     <div
       title={name}
-      className={`flex h-14 md:h-16 w-32 md:w-40 shrink-0 items-center justify-center rounded-xl ${
+      className={`flex h-20 md:h-24 w-44 md:w-56 shrink-0 items-center justify-center rounded-xl ${
         showPlaceholder ? "border border-dashed border-ink/20 bg-ink/[0.03]" : ""
       }`}
     >
